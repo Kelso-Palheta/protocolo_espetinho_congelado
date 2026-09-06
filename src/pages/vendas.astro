@@ -653,6 +653,49 @@
       box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
     }
 
+    .offer-brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 10px auto 4px;
+      text-align: left;
+    }
+
+    .offer-brand-logo {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+      flex-shrink: 0;
+    }
+
+    .offer-brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.12;
+    }
+
+    .brand-line-1 {
+      font-family: 'Outfit', var(--font);
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-amber {
+      color: #f59e0b;
+    }
+
+    .brand-line-2 {
+      font-family: 'Outfit', var(--font);
+      font-size: 1.62rem;
+      font-weight: 900;
+      color: #f59e0b;
+      letter-spacing: -0.5px;
+    }
+
     .price-strike-wrapper {
       margin-top: 8px;
       margin-bottom: 2px;
@@ -821,6 +864,18 @@
 
       .price-strike {
         font-size: 1.05rem;
+      }
+
+      .offer-brand-logo {
+        height: 52px;
+      }
+
+      .brand-line-1 {
+        font-size: 1.2rem;
+      }
+
+      .brand-line-2 {
+        font-size: 1.4rem;
       }
     }
   </style>
@@ -1175,8 +1230,16 @@
     <section id="comprar" class="offer-card">
       <div class="badge-deal">CONDIÇÃO EXCLUSIVA DE LANÇAMENTO</div>
       
-      <h3 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 4px;">Protocolo Espetinho Congelado</h3>
-      <p style="font-size: 0.84rem; color: #94a3b8; margin-bottom: 12px;">O sistema operacional completo para produzir e faturar na sua cozinha</p>
+      <!-- Lockup Oficial: Logo Mascote + Tipografia Colorida -->
+      <div class="offer-brand-lockup">
+        <img src="/logo.png" alt="Logo Mascote Oficial" class="offer-brand-logo" />
+        <div class="offer-brand-text">
+          <div class="brand-line-1">Protocolo <span class="brand-amber">Espetinho</span></div>
+          <div class="brand-line-2">Congelado</div>
+        </div>
+      </div>
+
+      <p style="font-size: 0.84rem; color: #94a3b8; margin-top: 4px; margin-bottom: 12px;">O sistema operacional completo para produzir e faturar na sua cozinha</p>
 
       <div class="price-strike-wrapper">
         <div class="price-strike">De R$ 197,00</div>

@@ -6,6 +6,12 @@ import TabelaTecnica from '../components/TabelaTecnica.astro';
 import ChecklistOperacional from '../components/ChecklistOperacional.astro';
 import imgPreparacao from '../assets/illustrations/protocolo-1-preparacao.png';
 import imgCapa from '../assets/illustrations/capa-protocolo-1.png';
+import imgModeloFreezer from '../assets/illustrations/protocolo-1-modelo-freezer.jpg';
+import imgCozinha from '../assets/illustrations/protocolo-1-cozinha-organizacao.png';
+import imgEquipamentos from '../assets/illustrations/protocolo-1-equipamentos.jpg';
+import imgSeladora from '../assets/illustrations/protocolo-1-seladora-vacuo.png';
+import imgTrioSabores from '../assets/illustrations/protocolo-1-trio-sabores.png';
+import imgHigiene from '../assets/illustrations/protocolo-1-higiene-manutencao.jpg';
 ---
 
 <EbookLayout
@@ -20,420 +26,569 @@ import imgCapa from '../assets/illustrations/capa-protocolo-1.png';
   prevLink={{ title: "Sumário Geral", href: "/" }}
   nextLink={{ title: "Protocolo 2: Produção", href: "/protocolo-2" }}
 >
-  <!-- Bloco Visual com a Ilustração Gerada via IA (Sem Placeholders) -->
-  <VisualBlock
-    stepNumber="01"
-    badge="Estrutura de Bancada"
-    title="Bancada de Preparo e Precisão Milimétrica"
-    subtitle="O coração da sua central de produção doméstica padronizada"
-    description="A estrutura profissional não exige maquinário caro de fábrica, mas sim separação física rígida de áreas, lâminas de corte afiadas que preservem as fibras musculares, balança digital de alta precisão e palitos de bambu pré-hidratados."
-    tip="Nunca corte a carne ao lado de fontes de calor (como fogão aceso). Cada elevação na temperatura do produto cru prejudica a retenção de água e acelera a atividade bacteriana."
-    imageSrc={imgPreparacao.src}
-    imageAlt="Bancada de preparação de espetinhos com facas, balança digital e espetos de bambu sobre ardósia escura"
-    imagePosition="left"
-  />
-
-  <!-- 1. Como Funciona o Modelo de Espetinho Congelado em Casa -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">1.</span> Como Funciona o Modelo de Espetinho Congelado em Casa
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      A maioria das pessoas que tenta vender espetinhos comete o mesmo erro: compra uma churrasqueira, aluga um ponto comercial ou vai para a rua depender do movimento da calçada. Nesse modelo tradicional, o risco é alto, o investimento inicial é pesado e a comida que não é vendida na noite vira desperdício e prejuízo imediato.
-    </p>
-    <p class="text-zinc-300 leading-relaxed font-semibold">
-      O <strong class="text-amber-400">Protocolo Espetinho Congelado</strong> opera em uma lógica inversa:
-    </p>
-    <ul class="space-y-2.5 text-zinc-300 pl-2">
-      <li class="flex items-start gap-3">
-        <span class="text-amber-500 font-bold mt-1 text-base">•</span>
-        <span><strong class="text-zinc-100">O negócio não começa na churrasqueira; começa no freezer.</strong></span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-amber-500 font-bold mt-1 text-base">•</span>
-        <span>Você produz antecipadamente em lotes organizados.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-amber-500 font-bold mt-1 text-base">•</span>
-        <span>Padroniza o peso e a qualidade de cada unidade.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-amber-500 font-bold mt-1 text-base">•</span>
-        <span>Congela com técnica para não queimar a carne e não grudar os palitos.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-amber-500 font-bold mt-1 text-base">•</span>
-        <span>Divulga pacotes e kits comerciais por WhatsApp e redes sociais.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-amber-500 font-bold mt-1 text-base">•</span>
-        <span>Atende os pedidos por retirada programada ou entrega rápida na sua região.</span>
-      </li>
-    </ul>
-    <p class="text-zinc-300 leading-relaxed pt-2">
-      O cliente assa o espetinho em casa, no churrasco de fim de semana ou no jantar da família. Você não lida com fumaça, carvão ou atendimento noturno de rua, operando exclusivamente uma central de produção e distribuição doméstica.
-    </p>
-  </section>
-
-  <!-- 2. Diagnóstico do Espaço: A Cozinha Doméstica -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">2.</span> Diagnóstico do Espaço: A Cozinha Doméstica
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      Você não precisa de uma cozinha industrial para começar. A estrutura necessária é uma bancada limpa, uma pia com água corrente e espaço no congelador ou freezer da sua própria geladeira.
-    </p>
-    <p class="text-zinc-200 font-semibold text-sm">
-      Para estruturar o ambiente de trabalho:
-    </p>
-    <div class="grid sm:grid-cols-2 gap-4 pt-1">
-      <div class="rounded-xl border border-charcoal-800 bg-charcoal-900 p-5 space-y-2">
-        <h3 class="font-bold text-zinc-100 text-sm flex items-center gap-2">
-          <span class="text-amber-400">📍</span> Área Limpa de Manipulação
-        </h3>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Uma mesa firme ou bancada de pedra/inox, livre de qualquer objeto alheio à produção (livros, remédios, decorações ou alimentos não relacionados).
-        </p>
-      </div>
-      <div class="rounded-xl border border-charcoal-800 bg-charcoal-900 p-5 space-y-2">
-        <h3 class="font-bold text-zinc-100 text-sm flex items-center gap-2">
-          <span class="text-amber-400">🔥</span> Distância de Fontes de Calor
-        </h3>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Mantenha a área de corte e espetamento afastada do fogão aceso para não elevar a temperatura das peças de carne durante o manuseio.
-        </p>
-      </div>
-      <div class="rounded-xl border border-charcoal-800 bg-charcoal-900 p-5 space-y-2">
-        <h3 class="font-bold text-zinc-100 text-sm flex items-center gap-2">
-          <span class="text-amber-400">💧</span> Ponto de Higienização
-        </h3>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Acesso rápido à pia com detergente neutro, sabonete bactericida e papel toalha descartável (nunca use pano de prato de tecido para secar as mãos durante a manipulação de carnes cruas).
-        </p>
-      </div>
-      <div class="rounded-xl border border-charcoal-800 bg-charcoal-900 p-5 space-y-2">
-        <h3 class="font-bold text-zinc-100 text-sm flex items-center gap-2">
-          <span class="text-amber-400">❄️</span> Espaço no Freezer
-        </h3>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Organize o congelador com antecedência. Separe uma gaveta ou prateleira exclusiva para o pré-congelamento em bandejas e acondicionamento dos pacotes prontos, evitando contato com alimentos abertos da casa.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. Equipamentos e Utensílios Indispensáveis -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">3.</span> Equipamentos e Utensílios Indispensáveis
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      Antes de comprar itens novos, confira o que já está disponível na sua casa. Você só precisará de cinco itens básicos para executar o protocolo com padrão profissional:
-    </p>
-
-    <div class="space-y-3 text-sm">
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <div class="flex items-center justify-between">
-          <h3 class="font-bold text-zinc-100">Balança Digital de Precisão (1 g a 10 kg)</h3>
-          <span class="text-[11px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Essencial</span>
-        </div>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          É impossível padronizar produtos vendendo no "olhômetro". Cada grama fora da medida altera seu custo e corrói sua margem de lucro.
-        </p>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <div class="flex items-center justify-between">
-          <h3 class="font-bold text-zinc-100">Tábua de Corte Rígida (Polietileno ou Plástico Atóxico)</h3>
-          <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Higiene Rígida</span>
-        </div>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Evite tábuas de madeira, pois acumulam bactérias e umidade dentro das ranhuras. O ideal é ter uma tábua para carnes vermelhas e outra separada para aves/frangos.
-        </p>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <div class="flex items-center justify-between">
-          <h3 class="font-bold text-zinc-100">Faca de Corte Bem Afiada (Tamanho 8 a 10 polegadas)</h3>
-          <span class="text-[11px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Preservação de Fibras</span>
-        </div>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Uma lâmina cega rasga e machuca as fibras da carne em vez de fazer cortes limpos em cubos, aumentando o desperdício de aparas.
-        </p>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <div class="flex items-center justify-between">
-          <h3 class="font-bold text-zinc-100">Recipientes Plásticos com Tampa (Potes Médios e Grandes)</h3>
-          <span class="text-[11px] font-mono text-zinc-400 bg-charcoal-900 px-2 py-0.5 rounded border border-charcoal-700">Marinadas</span>
-        </div>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Destinados à preparação das marinadas e ao descanso das carnes temperadas antes da montagem.
-        </p>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <div class="flex items-center justify-between">
-          <h3 class="font-bold text-zinc-100">Assadeiras de Alumínio ou Bandejas Plásticas Rasas</h3>
-          <span class="text-[11px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Esteira IQF</span>
-        </div>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Utilizadas como esteiras para a técnica de pré-congelamento aberto, antes do ensacamento final.
-        </p>
-      </div>
-    </div>
-
-    <!-- O que NÃO comprar agora -->
-    <div class="rounded-xl border border-rose-500/20 bg-rose-500/5 p-5 space-y-3">
-      <h3 class="font-bold text-rose-300 text-sm flex items-center gap-2">
-        <span>🚫</span> O que NÃO comprar agora:
-      </h3>
-      <ul class="space-y-1.5 text-xs text-zinc-300 pl-4 list-disc marker:text-rose-400">
-        <li><strong>Máquinas automáticas de espetar:</strong> desnecessárias na fase de validação e início de produção doméstica.</li>
-        <li><strong>Seladoras a vácuo industriais caras:</strong> uma selagem manual bem feita é suficiente no início até a escala justificar o investimento.</li>
-        <li><strong>Freezers horizontais de grande porte:</strong> utilize a capacidade atual da sua geladeira e congelador até acumular capital com as vendas.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 4. Materiais de Embalagem e Insumos Básicos -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">4.</span> Materiais de Embalagem e Insumos Básicos
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      A conservação e a aparência visual do espetinho dependem dos materiais de consumo corretos:
-    </p>
-
-    <div class="space-y-4 text-sm text-zinc-300">
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
-        <h3 class="font-bold text-zinc-100 flex items-center gap-2">
-          <span class="text-amber-500">🎋</span> Palitos de Madeira para Espetinho (25 cm de comprimento)
-        </h3>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Dê preferência a palitos de bambu ou madeira reflorestada sem farpas. O bambu tem maior resistência mecânica e não enverga durante o espetamento de carnes firmes.
-        </p>
-      </div>
-
-      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
-        <h3 class="font-bold text-zinc-100 flex items-center gap-2">
-          <span class="text-amber-500">📦</span> Sacos Próprios para Embalagem a Vácuo e Congelamento (Micra 0,18 mm)
-        </h3>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Não utilize sacos comuns de bobina, sacolas finas ou plásticos lisos em seladoras de sucção externa doméstica. A conservação contra oxidação e queimadura de gelo exige embalagens com especificações corretas:
-        </p>
-        
-        <div class="grid sm:grid-cols-2 gap-3 pt-1">
-          <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1">
-            <h4 class="font-bold text-amber-300 text-xs">Saco Gofrado / Canelado (Texturizado)</h4>
-            <p class="text-[11px] text-zinc-400 leading-relaxed">
-              Obrigatório para máquinas embaladoras a vácuo portáteis ou domésticas. Ele possui ranhuras internas que formam microcanais para a saída total do ar.
-            </p>
-          </div>
-
-          <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1">
-            <h4 class="font-bold text-zinc-300 text-xs">Saco Liso</h4>
-            <p class="text-[11px] text-zinc-400 leading-relaxed">
-              Indicado exclusivamente para seladoras profissionais de câmara interna (não funciona em seladoras manuais comuns, pois as paredes colam e impedem o vácuo).
-            </p>
-          </div>
-
-          <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1 sm:col-span-2">
-            <h4 class="font-bold text-amber-300 text-xs">Espessura Padrão: Micra 0,18 mm</h4>
-            <p class="text-[11px] text-zinc-400 leading-relaxed">
-              Adote sacos na espessura de <strong>micra 0,18 mm</strong>. Essa gramatura grossa é resistente o suficiente para suportar o atrito das fibras de carne congelada e evitar furos causados pelas pontas dos palitos de bambu.
-            </p>
-          </div>
-        </div>
-
-        <div class="border-t border-charcoal-800 pt-3">
-          <p class="text-xs font-bold text-zinc-200 mb-2">Medidas Comerciais Recomendadas:</p>
-          <ul class="space-y-1 text-xs text-zinc-400 pl-4 list-disc marker:text-amber-500">
-            <li><strong>15 cm × 30 cm:</strong> Ideal para embalagens compactas de 1 a 3 espetinhos individuais.</li>
-            <li><strong>18 cm × 30 cm:</strong> Ideal para pacotes de 4 a 5 espetinhos alinhados.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-3">
-        <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-          <h3 class="font-bold text-zinc-100 text-xs">Filme Plástico PVC ou Papel Manteiga</h3>
-          <p class="text-[11px] text-zinc-400 leading-relaxed">
-            Utilizado como separador durante o pré-congelamento sobre as assadeiras para que os espetos não grudem na base metálica.
-          </p>
-        </div>
-
-        <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-          <h3 class="font-bold text-zinc-100 text-xs">Etiquetas Adesivas Resistentes ao Frio</h3>
-          <p class="text-[11px] text-zinc-400 leading-relaxed">
-            Etiquetas simples de papel soltam na umidade do congelador. Utilize etiquetas plásticas ou fitas com caneta permanente de tinta à base de álcool para marcação de datas e lotes.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. Definição do Mix Inicial: A Regra dos 2 a 3 Sabores -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">5.</span> Definição do Mix Inicial: A Regra dos 2 a 3 Sabores
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      O iniciante costuma errar ao tentar oferecer dez opções diferentes logo na estreia. Isso fragmenta o capital de compra, gera sobras de insumos e torna a montagem lenta e improdutiva.
-    </p>
-    <p class="text-zinc-300 leading-relaxed">
-      O Protocolo orienta começar com uma <strong class="text-amber-400">grade mínima de alto giro</strong>, composta por no máximo 2 a 3 sabores consolidados no mercado:
-    </p>
-
-    <div class="space-y-3 pt-2">
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
-        <span class="h-6 w-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
-        <div>
-          <h3 class="font-bold text-zinc-100 text-sm">Opção 1: Carne Bovina Clássica</h3>
-          <p class="text-xs text-zinc-400 leading-relaxed mt-1">
-            O carro-chefe de vendas de qualquer cardápio de espetinhos (cortes com maciez e preço viável, como alcatra, acém bem limpo ou contrafilé).
-          </p>
-        </div>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
-        <span class="h-6 w-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
-        <div>
-          <h3 class="font-bold text-zinc-100 text-sm">Opção 2: Frango / Peito ou Sobrecoxa com Bacon</h3>
-          <p class="text-xs text-zinc-400 leading-relaxed mt-1">
-            Produto com baixo custo por unidade, alta margem de lucro líquido e grande apelo de público.
-          </p>
-        </div>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
-        <span class="h-6 w-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
-        <div>
-          <h3 class="font-bold text-zinc-100 text-sm">Opção 3: Linguiça Suína Fina / Toscana</h3>
-          <p class="text-xs text-zinc-400 leading-relaxed mt-1">
-            O produto de montagem mais rápida e econômica, ideal para baratear kits promocionais sem aumentar o tempo de trabalho.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <p class="text-xs text-zinc-400 leading-relaxed pt-2">
-      Dominando o padrão e a velocidade de montagem desses três produtos, todo sabor complementar (coração, queijo coalho, medalhões) poderá ser inserido posteriormente de forma planejada.
-    </p>
-  </section>
-
-  <!-- 6. Segurança dos Alimentos e Higiene Operacional -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">6.</span> Segurança dos Alimentos e Higiene Operacional
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      A credibilidade do seu negócio caseiro reside na segurança e na limpeza impecável da entrega. Alimentos crus congelados exigem controle rígido de contaminação cruzada e temperatura:
-    </p>
-
-    <div class="grid sm:grid-cols-2 gap-4 text-xs">
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-zinc-100 flex items-center gap-2">
-          <span class="text-emerald-400">✓</span> Higienização Pessoal
-        </h3>
-        <p class="text-zinc-400 leading-relaxed">
-          Cabelos presos com touca descartável ou boné limpo, unhas curtas e sem esmalte, mãos lavadas e desinfetadas com álcool 70% a cada troca de etapa.
-        </p>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-zinc-100 flex items-center gap-2">
-          <span class="text-emerald-400">✓</span> Prevenção da Contaminação Cruzada
-        </h3>
-        <p class="text-zinc-400 leading-relaxed">
-          Nunca utilize a mesma tábua ou faca com frango cru e carne vermelha sem antes lavar com esponja e água morna com detergente.
-        </p>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-zinc-100 flex items-center gap-2">
-          <span class="text-amber-400">⏱️</span> Velocidade de Manipulação (Controle Térmico)
-        </h3>
-        <p class="text-zinc-400 leading-relaxed">
-          A carne nunca deve passar horas em temperatura ambiente sobre a bancada. Retire do refrigerador apenas a quantidade exata que será cortada nos próximos 20 minutos. Corte, tempere e retorne imediatamente para o frio antes de espetar.
-        </p>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-zinc-100 flex items-center gap-2">
-          <span class="text-emerald-400">✓</span> Sanitização da Bancada
-        </h3>
-        <p class="text-zinc-400 leading-relaxed">
-          Antes e depois do trabalho, higienize as superfícies com uma solução de água com água sanitária (1 colher de sopa para cada litro de água) ou álcool 70% líquido, secando com papel descartável.
-        </p>
-      </div>
-    </div>
-
-    <!-- Callouts Sanitários Formatados -->
-    <CalloutAlerta
-      tipo="perigo"
-      titulo="Alerta Sanitário: Proibição Estrita de Panos de Tecido e Madeira"
-      destaque="Risco de Contaminação Cruzada"
-      mensagem="Panos de prato convencionais e tábuas de corte de madeira acumulam umidade e bactérias nas ranhuras. Utilize exclusivamente tábuas de polietileno atóxico e papel toalha descartável para secagem das mãos e bancadas."
+  <!-- Prancha 2: Bloco Visual Hero (Ocupação Nobre de 90% da Página) -->
+  <div class="prancha">
+    <VisualBlock
+      stepNumber="01"
+      badge="Estrutura de Bancada"
+      title="Bancada de Preparo e Precisão Milimétrica"
+      subtitle="O coração da sua central de produção doméstica padronizada"
+      description="A estrutura profissional não exige maquinário caro de fábrica, mas sim separação física rígida de áreas, lâminas de corte afiadas que preservem as fibras musculares, balança digital de alta precisão e palitos de bambu pré-hidratados."
+      tip="Nunca corte a carne ao lado de fontes de calor (como fogão aceso). Cada elevação na temperatura do produto cru prejudica a retenção de água e acelera a atividade bacteriana."
+      imageSrc={imgPreparacao.src}
+      imageAlt="Bancada de preparação de espetinhos com facas, balança digital e espetos de bambu sobre ardósia escura"
+      imagePosition="left"
     />
+  </div>
 
-    <!-- Manutenção e Sanitização da Máquina de Vácuo -->
-    <div class="rounded-xl border border-charcoal-800 bg-charcoal-950 p-5 md:p-6 space-y-4">
-      <h3 class="font-display font-bold text-sm md:text-base text-amber-400 flex items-center gap-2">
-        <span>⚙️</span> MANUTENÇÃO E SANITIZAÇÃO DA MÁQUINA DE VÁCUO DOMÉSTICA
-      </h3>
-      <p class="text-xs md:text-sm text-zinc-300 leading-relaxed">
-        A máquina embaladora a vácuo é um ponto crítico de contaminação e falha mecânica se não for desinfetada ao final de cada lote:
-      </p>
-      <ul class="space-y-2 text-xs text-zinc-300 pl-4 list-disc marker:text-amber-500">
-        <li>Durante a sucção do ar, microgotas de gordura e sangue migram para a canaleta da câmara de sucção e para as borrachas de vedação.</li>
-        <li>
-          <strong class="text-zinc-100">Rotina pós-produção obrigatória:</strong>
-          <ul class="space-y-1 pt-1.5 pl-4 list-circle marker:text-zinc-500">
-            <li>Desconecte o equipamento da tomada.</li>
-            <li>Remova a espuma ou borracha de vedação da câmara e lave com água morna e detergente neutro, secando com papel toalha (nunca monte úmida).</li>
-            <li>Passe um pano com álcool 70% na canaleta interna e sobre a fita de teflon da barra de selagem térmica, eliminando qualquer crosta de gordura.</li>
-            <li><em class="text-amber-300">Benefício operacional:</em> Essa rotina impede odores na produção seguinte, evita o acúmulo de bactérias e impede que resíduos queimem a fita de teflon, garantindo selagens perfeitas sem perda de sacos plásticos.</li>
-          </ul>
-        </li>
-      </ul>
+  <!-- Prancha 3: Seção 1 - Como Funciona o Modelo de Espetinho Congelado em Casa -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="editorial-split">
+        <div class="editorial-col-text">
+          <div class="secao-header">
+            <h2 class="secao-titulo">
+              <span class="text-amber-500">1.</span> Como Funciona o Modelo de Espetinho Congelado em Casa
+            </h2>
+            <p class="secao-intro">
+              A maioria das pessoas que tenta vender espetinhos comete o mesmo erro: compra uma churrasqueira, aluga um ponto comercial ou vai para a rua depender do movimento da calçada. Nesse modelo tradicional, o risco é alto, o investimento inicial é pesado e a comida que não é vendida na noite vira desperdício e prejuízo imediato.
+            </p>
+          </div>
+
+          <div class="destaque-logica">
+            <p class="destaque-tag">
+              O PROTOCOLO ESPETINHO CONGELADO OPERA EM UMA LÓGICA INVERSA:
+            </p>
+            <ul class="lista-topicos">
+              <li>
+                <span class="marcador-amber">•</span>
+                <span><strong class="text-zinc-100 font-semibold">O negócio não começa na churrasqueira; começa no freezer.</strong></span>
+              </li>
+              <li>
+                <span class="marcador-amber">•</span>
+                <span>Você produz antecipadamente em lotes organizados.</span>
+              </li>
+              <li>
+                <span class="marcador-amber">•</span>
+                <span>Padroniza o peso e a qualidade de cada unidade.</span>
+              </li>
+              <li>
+                <span class="marcador-amber">•</span>
+                <span>Congela com técnica para não queimar a carne e não grudar os palitos.</span>
+              </li>
+              <li>
+                <span class="marcador-amber">•</span>
+                <span>Divulga pacotes e kits comerciais por WhatsApp e redes sociais.</span>
+              </li>
+              <li>
+                <span class="marcador-amber">•</span>
+                <span>Atende os pedidos por retirada programada ou entrega rápida na sua região.</span>
+              </li>
+            </ul>
+          </div>
+
+          <p class="secao-fechamento">
+            O cliente assa o espetinho em casa, no churrasco de fim de semana ou no jantar da família. Você não lida com fumaça, carvão ou atendimento noturno de rua, operando exclusivamente uma central de produção e distribuição doméstica.
+          </p>
+        </div>
+
+        <div class="editorial-col-media">
+          <div class="editorial-image-card">
+            <img
+              src={imgModeloFreezer.src}
+              alt="Freezer doméstico organizado com pacotes a vácuo de espetinhos e sacola de entrega"
+            />
+            <div class="editorial-image-caption">
+              Figura 1.1: O modelo Freezer-First: lotes a vácuo prontos para delivery
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 4: Seção 2 - Diagnóstico do Espaço: A Cozinha Doméstica -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="editorial-split">
+        <div class="editorial-col-text">
+          <div class="secao-header">
+            <h2 class="secao-titulo">
+              <span class="text-amber-500">2.</span> Diagnóstico do Espaço: A Cozinha Doméstica
+            </h2>
+            <p class="secao-intro">
+              Você não precisa de uma cozinha industrial para começar. A estrutura necessária é uma bancada limpa, uma pia com água corrente e espaço no congelador ou freezer da sua própria geladeira.
+            </p>
+            <p class="subtitulo-destaque">
+              Para estruturar o ambiente de trabalho:
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 quadrantes-grid">
+            <div class="subcard-item">
+              <h3 class="subcard-titulo">
+                <span class="text-amber-400">📍</span> Área Limpa de Manipulação
+              </h3>
+              <p class="subcard-texto">
+                Uma mesa firme ou bancada de pedra/inox, livre de qualquer objeto alheio à produção (livros, remédios, decorações ou alimentos não relacionados).
+              </p>
+            </div>
+
+            <div class="subcard-item">
+              <h3 class="subcard-titulo">
+                <span class="text-amber-400">🔥</span> Distância de Fontes de Calor
+              </h3>
+              <p class="subcard-texto">
+                Mantenha a área de corte e espetamento afastada do fogão aceso para não elevar a temperatura das peças de carne durante o manuseio.
+              </p>
+            </div>
+
+            <div class="subcard-item">
+              <h3 class="subcard-titulo">
+                <span class="text-amber-400">💧</span> Ponto de Higienização
+              </h3>
+              <p class="subcard-texto">
+                Acesso rápido à pia com detergente neutro, sabonete bactericida e papel toalha descartável (nunca use pano de prato de tecido para secar as mãos durante a manipulação de carnes cruas).
+              </p>
+            </div>
+
+            <div class="subcard-item">
+              <h3 class="subcard-titulo">
+                <span class="text-amber-400">❄️</span> Espaço no Freezer
+              </h3>
+              <p class="subcard-texto">
+                Organize o congelador com antecedência. Separe uma gaveta ou prateleira exclusiva para o pré-congelamento em bandejas e acondicionamento dos pacotes prontos, evitando contato com alimentos abertos da casa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-col-media">
+          <div class="editorial-image-card">
+            <img
+              src={imgCozinha.src}
+              alt="Estação de trabalho da cozinha organizada com pia e freezer"
+            />
+            <div class="editorial-image-caption">
+              Figura 1.2: Fluxo linear de produção (Pia → Bancada → Freezer)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 5: Seção 3 - Equipamentos e Utensílios Indispensáveis -->
+  <div class="prancha">
+    <section class="card-prancha secao-equipamentos">
+      <!-- 1. Topo Corrido na Página Toda -->
+      <div class="secao-header border-b border-charcoal-800/80 pb-2.5">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">3.</span> Equipamentos e Utensílios Indispensáveis
+        </h2>
+        <p class="secao-intro">
+          Antes de comprar itens novos, confira o que já está disponível na sua casa. Você só precisará de cinco itens básicos para executar o protocolo com padrão profissional:
+        </p>
+      </div>
+
+      <!-- 2. Miolo Simétrico: 4 Cards (Esquerda) vs Imagem Técnica (Direita) -->
+      <div class="equipamentos-grid">
+        <!-- Coluna Esquerda (4 cards em 2x2) -->
+        <div class="equipamentos-cards">
+          <div class="subcard-item flex flex-col justify-between">
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="subcard-titulo">Balança Digital de Precisão (1 g a 10 kg)</h3>
+              <span class="badge-tag amber">Essencial</span>
+            </div>
+            <p class="subcard-texto">
+              Essencial. É impossível padronizar produtos vendendo no "olhômetro". Cada grama fora da medida altera seu custo e corrói sua margem de lucro.
+            </p>
+          </div>
+
+          <div class="subcard-item flex flex-col justify-between">
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="subcard-titulo">Tábua de Corte Rígida (Polietileno)</h3>
+              <span class="badge-tag emerald">Higiene</span>
+            </div>
+            <p class="subcard-texto">
+              Evite tábuas de madeira, pois acumulam bactérias e umidade dentro das ranhuras. O ideal é ter uma tábua para carnes vermelhas e outra separada para aves/frangos.
+            </p>
+          </div>
+
+          <div class="subcard-item flex flex-col justify-between">
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="subcard-titulo">Faca de Corte Afiada (8" a 10")</h3>
+              <span class="badge-tag amber">Fibras</span>
+            </div>
+            <p class="subcard-texto">
+              Uma lâmina cega rasga e machuca as fibras da carne em vez de fazer cortes limpos em cubos, aumentando o desperdício de aparas.
+            </p>
+          </div>
+
+          <div class="subcard-item flex flex-col justify-between">
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="subcard-titulo">Recipientes Plásticos com Tampa</h3>
+              <span class="badge-tag zinc">Marinadas</span>
+            </div>
+            <p class="subcard-texto">
+              Potes médios e grandes destinados à preparação das marinadas e ao descanso controlado das carnes temperadas antes da montagem.
+            </p>
+          </div>
+        </div>
+
+        <!-- Coluna Direita (Imagem Técnica simétrica) -->
+        <div class="equipamentos-media">
+          <div class="editorial-image-card">
+            <img
+              src={imgEquipamentos.src}
+              alt="Kit essencial de utensílios para espetinho com balança digital 100g, tábua, faca e assadeira"
+            />
+            <div class="editorial-image-caption">
+              Figura 1.3: O kit de precisão (balança 100g, faca 8" e esteira IQF)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Base Corrida na Página Toda -->
+      <div class="space-y-2.5 pt-1">
+        <!-- 5º Item Extenso -->
+        <div class="subcard-item flex items-center justify-between gap-4">
+          <div class="space-y-1">
+            <h3 class="subcard-titulo flex items-center gap-2">
+              <span class="text-amber-500">5.</span> Assadeiras de Alumínio ou Bandejas Plásticas Rasas
+            </h3>
+            <p class="subcard-texto">
+              Utilizadas como esteiras para a técnica de pré-congelamento aberto individual, antes do ensacamento final, impedindo que os espetinhos grudem entre si.
+            </p>
+          </div>
+          <span class="badge-tag amber shrink-0">Esteira IQF</span>
+        </div>
+
+        <!-- Card de Alerta Extenso na Página Toda -->
+        <div class="alerta-nao-comprar">
+          <h3 class="alerta-titulo">
+            <span>🚫</span> O que NÃO comprar agora:
+          </h3>
+          <div class="alerta-itens-grid">
+            <div class="flex items-start gap-1.5">
+              <span class="text-rose-400 font-bold">•</span>
+              <span><strong>Máquinas automáticas de espetar:</strong> desnecessárias na fase inicial de validação caseira.</span>
+            </div>
+            <div class="flex items-start gap-1.5">
+              <span class="text-rose-400 font-bold">•</span>
+              <span><strong>Seladoras industriais caras:</strong> uma selagem manual ou portátil bem feita atende perfeitamente.</span>
+            </div>
+            <div class="flex items-start gap-1.5">
+              <span class="text-rose-400 font-bold">•</span>
+              <span><strong>Freezers gigantes:</strong> utilize a capacidade atual da sua geladeira até acumular capital.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 6: Seção 4 - Materiais de Embalagem e Insumos Básicos -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="editorial-split">
+        <div class="editorial-col-text">
+          <div class="secao-header">
+            <h2 class="secao-titulo">
+              <span class="text-amber-500">4.</span> Materiais de Embalagem e Insumos Básicos
+            </h2>
+            <p class="secao-intro">
+              A conservação e a aparência visual do espetinho dependem dos materiais de consumo corretos:
+            </p>
+          </div>
+
+          <div class="space-y-2.5">
+            <div class="subcard-item">
+              <h3 class="subcard-titulo">
+                <span class="text-amber-500">🎋</span> Palitos de Madeira para Espetinho (25 cm de comprimento)
+              </h3>
+              <p class="subcard-texto">
+                Dê preferência a palitos de bambu ou madeira reflorestada sem farpas. O bambu tem maior resistência mecânica e não enverga durante o espetamento de carnes firmes.
+              </p>
+            </div>
+
+            <div class="subcard-item space-y-2">
+              <h3 class="subcard-titulo">
+                <span class="text-amber-500">📦</span> Sacos Próprios para Embalagem a Vácuo e Congelamento (Micra 0,18 mm)
+              </h3>
+              <p class="subcard-texto">
+                Não utilize sacos comuns de bobina, sacolas finas ou plásticos lisos em seladoras de sucção externa doméstica. A conservação contra oxidação e queimadura de gelo exige embalagens com especificações corretas:
+              </p>
+              <div class="grid grid-cols-2 gap-2 pt-0.5">
+                <div class="subcard-mini">
+                  <h4 class="font-bold text-amber-300 text-xs">Saco Gofrado / Canelado (Texturizado)</h4>
+                  <p class="text-[11px] text-zinc-400 leading-relaxed">
+                    Obrigatório para máquinas portáteis/domésticas. As ranhuras internas formam microcanais para a saída total do ar.
+                  </p>
+                </div>
+                <div class="subcard-mini">
+                  <h4 class="font-bold text-zinc-300 text-xs">Saco Liso</h4>
+                  <p class="text-[11px] text-zinc-400 leading-relaxed">
+                    Exclusivo para seladoras profissionais de câmara interna (não funciona em seladoras comuns, pois as paredes colam).
+                  </p>
+                </div>
+              </div>
+              <div class="border-t border-charcoal-800/80 pt-1.5 flex flex-col gap-1 text-xs text-zinc-300">
+                <div>
+                  <strong class="text-amber-400">Espessura Padrão:</strong> Adote sacos na espessura de <strong>micra 0,18 mm</strong>. Essa gramatura grossa é resistente o suficiente para suportar o atrito das fibras de carne congelada e evitar furos causados pelas pontas dos palitos de bambu.
+                </div>
+                <div>
+                  <strong class="text-amber-400">Medidas Comerciais Recomendadas:</strong> <strong>15 cm × 30 cm</strong> (ideal para embalagens compactas de 1 a 3 espetinhos) e <strong>18 cm × 30 cm</strong> (ideal para pacotes de 4 a 5 espetinhos alinhados).
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div class="subcard-item">
+                <h3 class="subcard-titulo">
+                  <span class="text-amber-500">📄</span> Filme Plástico PVC ou Papel Manteiga
+                </h3>
+                <p class="subcard-texto">
+                  Utilizado como separador durante o pré-congelamento sobre as assadeiras.
+                </p>
+              </div>
+
+              <div class="subcard-item">
+                <h3 class="subcard-titulo">
+                  <span class="text-amber-500">🏷️</span> Etiquetas Adesivas Resistentes ao Frio
+                </h3>
+                <p class="subcard-texto">
+                  Etiquetas simples de papel soltam na umidade do congelador. Utilize etiquetas adesivas plásticas ou fitas adesivas com caneta permanente de tinta à base de álcool para marcação de datas e lotes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-col-media">
+          <div class="editorial-image-card">
+            <img
+              src={imgSeladora.src}
+              alt="Selagem a vácuo com saco gofrado e espetinhos congelados"
+            />
+            <div class="editorial-image-caption">
+              Figura 1.4: Vácuo em saco gofrado micra 0,18mm
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 7: Seção 5 - Definição do Mix Inicial: A Regra dos 2 a 3 Sabores -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="editorial-split reverse">
+        <div class="editorial-col-text">
+          <div class="secao-header">
+            <h2 class="secao-titulo">
+              <span class="text-amber-500">5.</span> Definição do Mix Inicial: A Regra dos 2 a 3 Sabores
+            </h2>
+            <p class="secao-intro">
+              O iniciante costuma errar ao tentar oferecer dez opções diferentes logo na estreia. Isso fragmenta o capital de compra, gera sobras de insumos e torna a montagem lenta e improdutiva.
+            </p>
+            <p class="subtitulo-destaque">
+              O Protocolo orienta começar com uma <strong class="text-amber-400">grade mínima de alto giro</strong>, composta por no máximo 2 a 3 sabores consolidados no mercado:
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-1">
+            <div class="subcard-item flex items-start gap-3.5">
+              <span class="flavor-badge">1</span>
+              <div class="space-y-1">
+                <h3 class="subcard-titulo text-sm text-zinc-100">Opção 1 (Carne Bovina Clássica)</h3>
+                <p class="subcard-texto">
+                  O carro-chefe de vendas de qualquer cardápio de espetinhos (cortes com maciez e preço viável, como alcatra, acém bem limpo ou contrafilé).
+                </p>
+              </div>
+            </div>
+
+            <div class="subcard-item flex items-start gap-3.5">
+              <span class="flavor-badge">2</span>
+              <div class="space-y-1">
+                <h3 class="subcard-titulo text-sm text-zinc-100">Opção 2 (Frango / Peito ou Sobrecoxa com Bacon)</h3>
+                <p class="subcard-texto">
+                  Produto com baixo custo por unidade, alta margem de lucro líquido e grande apelo de público.
+                </p>
+              </div>
+            </div>
+
+            <div class="subcard-item flex items-start gap-3.5">
+              <span class="flavor-badge">3</span>
+              <div class="space-y-1">
+                <h3 class="subcard-titulo text-sm text-zinc-100">Opção 3 (Linguiça Suína Fina / Toscana)</h3>
+                <p class="subcard-texto">
+                  O produto de montagem mais rápida e econômica, ideal para baratear kits promocionais sem aumentar o tempo de trabalho.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="secao-fechamento pt-2">
+            Dominando o padrão e a velocidade de montagem desses três produtos, todo sabor complementar (coração, queijo coalho, medalhões) poderá ser inserido posteriormente de forma planejada.
+          </p>
+        </div>
+
+        <div class="editorial-col-media">
+          <div class="editorial-image-card">
+            <img
+              src={imgTrioSabores.src}
+              alt="Trio de espetinhos: Carne bovina, Frango com bacon e Linguiça toscana"
+            />
+            <div class="editorial-image-caption">
+              Figura 1.5: O trio campeão de validação comercial
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 8: Seção 6 - Segurança dos Alimentos e Higiene Operacional -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="editorial-split items-start">
+        <div class="editorial-col-text">
+          <div class="secao-header">
+            <h2 class="secao-titulo">
+              <span class="text-amber-500">6.</span> Segurança dos Alimentos e Higiene Operacional
+            </h2>
+            <p class="secao-intro">
+              A credibilidade do seu negócio caseiro reside na segurança e na limpeza impecável da entrega. Alimentos crus congelados exigem controle rígido de contaminação cruzada e temperatura:
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2.5 quadrantes-grid">
+            <div class="subcard-item">
+              <h3 class="subcard-titulo">
+                <span class="text-emerald-400">✓</span> Higienização Pessoal
+              </h3>
+              <p class="subcard-texto">
+                Cabelos presos com touca descartável ou boné limpo, unhas curtas e sem esmalte, mãos lavadas e desinfetadas com álcool 70% a cada troca de etapa.
+              </p>
+            </div>
+
+            <div class="subcard-item">
+              <h3 class="subcard-titulo">
+                <span class="text-emerald-400">✓</span> Prevenção da Contaminação Cruzada
+              </h3>
+              <p class="subcard-texto">
+                Nunca utilize a mesma tábua ou faca com frango cru e carne vermelha sem antes lavar com esponja e água morna com detergente.
+              </p>
+            </div>
+
+            <div class="subcard-item">
+              <h3 class="subcard-titulo">
+                <span class="text-amber-400">⏱️</span> Velocidade de Manipulação (Controle Térmico)
+              </h3>
+              <p class="subcard-texto">
+                A carne nunca deve passar horas em temperatura ambiente sobre a bancada. Retire do refrigerador apenas a quantidade exata que será cortada nos próximos 20 minutos. Corte, tempere e retorne imediatamente para o frio antes de espetar.
+              </p>
+            </div>
+
+            <div class="subcard-item">
+              <h3 class="subcard-titulo">
+                <span class="text-emerald-400">✓</span> Sanitização da Bancada
+              </h3>
+              <p class="subcard-texto">
+                Antes e depois do trabalho, higienize as superfícies com uma solução de água com água sanitária (1 colher de sopa para cada litro de água) ou álcool 70% líquido, secando com papel descartável.
+              </p>
+            </div>
+          </div>
+
+          <!-- Callout Alerta Sanitário -->
+          <CalloutAlerta
+            tipo="perigo"
+            titulo="Alerta Sanitário: Proibição Estrita de Panos de Tecido e Madeira"
+            destaque="Risco Crítico de Contaminação Cruzada"
+            mensagem="Panos de prato de tecido e tábuas de corte de madeira acumulam umidade e bactérias nas ranhuras. Utilize exclusivamente tábuas de polietileno atóxico e papel toalha descartável para secagem das mãos e bancadas."
+          />
+        </div>
+
+        <div class="editorial-col-media space-y-3">
+          <div class="editorial-image-card">
+            <img
+              src={imgHigiene.src}
+              alt="Higienização e manutenção preventiva da seladora a vácuo com luvas e álcool 70%"
+            />
+            <div class="editorial-image-caption">
+              Figura 1.6: Limpeza da câmara de vácuo e barra de selagem térmica com álcool 70%
+            </div>
+          </div>
+
+          <!-- Manutenção e Sanitização da Máquina de Vácuo -->
+          <div class="manutencao-card">
+            <h3 class="manutencao-titulo">
+              <span>⚙️</span> MANUTENÇÃO E SANITIZAÇÃO DA MÁQUINA DE VÁCUO DOMÉSTICA
+            </h3>
+            <p class="manutencao-intro">
+              A máquina embaladora a vácuo é um ponto crítico de contaminação e falha mecânica se não for desinfetada ao final de cada lote. Durante a sucção do ar, microgotas de gordura e sangue migram para a canaleta da câmara de sucção e para as borrachas de vedação.
+            </p>
+            <div class="space-y-1.5 pt-1">
+              <p class="text-xs font-bold text-zinc-200">Rotina pós-produção obrigatória:</p>
+              <ul class="manutencao-lista">
+                <li>Desconecte o equipamento da tomada.</li>
+                <li>Remova a espuma ou borracha de vedação da câmara e lave com água morna e detergente neutro, secando com papel toalha (nunca monte úmida).</li>
+                <li>Passe um pano com álcool 70% na canaleta interna e sobre a fita de teflon da barra de selagem térmica, eliminando qualquer crosta de gordura.</li>
+              </ul>
+              <p class="manutencao-beneficio">
+                <strong>Benefício operacional:</strong> Essa rotina impede odores na produção seguinte, evita o acúmulo de bactérias e impede que resíduos queimem a fita de teflon, garantindo selagens perfeitas sem perda de sacos plásticos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 9: Tabela Técnica de Controle de Temperatura Operacional -->
+  <div class="prancha">
+    <div class="card-prancha flex flex-col justify-between p-6">
+      <TabelaTecnica
+        titulo="Tabela Técnica de Controle de Temperatura Operacional"
+        descricao="A manipulação de carnes cruas exige controle estrito da cadeia de frio em todas as etapas para evitar a proliferação bacteriana e garantir a segurança do consumidor:"
+        colunas={["Etapa do Processo", "Faixa de Temperatura Obrigatória", "Ação Prática de Controle"]}
+        linhas={[
+          ["Recebimento de Carnes", "0°C a 5°C", "Conferir se a carne chega resfriada, firme e sem acúmulo de líquido escuro."],
+          ["Manipulação na Bancada", "Menor tempo possível", "Retirar apenas a porção que será limpa e cortada nos próximos 20 minutos."],
+          ["Pré-Resfriamento", "0°C a 5°C", "Manter os espetos montados sob refrigeração caso não sejam congelados imediatamente."],
+          ["Congelamento Inicial", "-18°C ou menos", "Ligar o freezer na potência máxima para acelerar o congelamento sem formar cristais grandes."],
+          ["Armazenamento no Freezer", "-18°C ou menos", "Conservação estável com o freezer fechado e organizado por lotes."],
+          ["Transporte Refrigerado", "0°C a 5°C", "Para pedidos que serão assados no mesmo dia (uso imediato)."],
+          ["Transporte Congelado (Delivery)", "-18°C ou menos", "Em caixas isotérmicas com placas de gelo rígido reutilizável congeladas."]
+        ]}
+        destaqueIndice={1}
+        rodape="Fonte: Boas Práticas Sanitárias para Alimentos Congelados e Diretrizes Técnicas do Protocolo Espetinho Congelado."
+      />
     </div>
-  </section>
+  </div>
 
-  <!-- Tabela Técnica de Controle de Temperatura Operacional (100% Integral) -->
-  <TabelaTecnica
-    titulo="Tabela Técnica de Controle de Temperatura Operacional"
-    descricao="A manipulação de carnes cruas exige controle estrito da cadeia de frio em todas as etapas para evitar a proliferação bacteriana e garantir a segurança do consumidor"
-    colunas={["Etapa do Processo", "Faixa de Temperatura Obrigatória", "Ação Prática de Controle"]}
-    linhas={[
-      ["Recebimento de Carnes", "0°C a 5°C", "Conferir se a carne chega resfriada, firme e sem acúmulo de líquido escuro."],
-      ["Manipulação na Bancada", "Menor tempo possível", "Retirar apenas a porção que será limpa e cortada nos próximos 20 minutos."],
-      ["Pré-Resfriamento", "0°C a 5°C", "Manter os espetos montados sob refrigeração caso não sejam congelados imediatamente."],
-      ["Congelamento Inicial", "-18°C ou menos", "Ligar o freezer na potência máxima para acelerar o congelamento sem formar cristais grandes."],
-      ["Armazenamento no Freezer", "-18°C ou menos", "Conservação estável com o freezer fechado e organizado por lotes."],
-      ["Transporte Refrigerado", "0°C a 5°C", "Para pedidos que serão assados no mesmo dia (uso imediato)."],
-      ["Transporte Congelado (Delivery)", "-18°C ou menos", "Em caixas isotérmicas com placas de gelo rígido reutilizável congeladas."]
-    ]}
-    destaqueIndice={1}
-    rodape="Fonte: Boas Práticas Sanitárias para Alimentos Congelados e Protocolo Espetinho Congelado."
-  />
-
-  <!-- 7. Checklist Prático de Execução do Protocolo 1 (11 itens integrais) -->
-  <ChecklistOperacional
-    titulo="Checklist Prático de Execução do Protocolo 1"
-    subtitulo="Marque cada ponto antes de ligar para o açougue ou iniciar o corte dos alimentos"
-    itens={[
-      { texto: "Bancada de corte e pia completamente limpas, organizadas e desinfetadas.", obrigatorio: true, detalhe: "Ambiente asséptico antes de abrir as embalagens de carne." },
-      { texto: "Espaço livre reservado no freezer ou congelador para comportar as assadeiras de pré-congelamento.", obrigatorio: true, detalhe: "Garante fluxo sem pausas na fase de congelamento aberto." },
-      { texto: "Balança digital de precisão testada e funcionando com pilhas novas.", obrigatorio: true, detalhe: "Garante a padronização exata de cada espeto." },
-      { texto: "Facas afiadas e tábua de plástico atóxico lavadas.", obrigatorio: true, detalhe: "Cortes limpos sem esmagar as fibras musculares." },
-      { texto: "Pacote de palitos de 25 cm adquirido.", obrigatorio: true, detalhe: "Palitos de bambu ou madeira reflorestada sem farpas." },
-      { texto: "Sacos plásticos próprios para congelamento e etiquetas em mãos.", obrigatorio: true, detalhe: "Organização pronta para selagem e identificação de lotes." },
-      { texto: "Papel toalha e touca de proteção pessoal separados.", obrigatorio: true, detalhe: "Higiene do operador e controle sanitário." },
-      { texto: "Sabores iniciais definidos (máximo 3 opções).", obrigatorio: true, detalhe: "Foco no mix de alto giro: Bovina, Frango com Bacon e Linguiça." },
-      { texto: "Lista de compras com as quantidades exatas de carne calculadas.", obrigatorio: true, detalhe: "Evita compras excessivas e aparas sem saída imediata." },
-      { texto: "Sacos plásticos gofrados/canelados adquiridos na espessura de 0,18 mm (medidas 15x30 cm ou 18x30 cm).", obrigatorio: true, detalhe: "Microcanais para vácuo perfeito sem furos pelas pontas dos palitos." },
-      { texto: "Freezer calibrado e atingindo temperatura operacional de -18°C ou inferior.", obrigatorio: true, detalhe: "Congelamento ultrarrápido que preserva as fibras celulares." }
-    ]}
-  />
+  <!-- Prancha 10: Checklist Prático de Execução do Protocolo 1 -->
+  <div class="prancha">
+    <div class="card-prancha flex flex-col justify-between p-6">
+      <ChecklistOperacional
+        titulo="Checklist Prático de Execução do Protocolo 1"
+        subtitulo="Marque cada ponto antes de ligar para o açougue ou iniciar o corte dos alimentos:"
+        itens={[
+          { texto: "Bancada de corte e pia completamente limpas, organizadas e desinfetadas.", obrigatorio: true },
+          { texto: "Espaço livre reservado no freezer ou congelador para comportar as assadeiras de pré-congelamento.", obrigatorio: true },
+          { texto: "Balança digital de precisão testada e funcionando com pilhas novas.", obrigatorio: true },
+          { texto: "Facas afiadas e tábua de plástico atóxico lavadas.", obrigatorio: true },
+          { texto: "Pacote de palitos de 25 cm adquirido.", obrigatorio: false },
+          { texto: "Sacos plásticos próprios para congelamento e etiquetas em mãos.", obrigatorio: true },
+          { texto: "Papel toalha e touca de proteção pessoal separados.", obrigatorio: true },
+          { texto: "Sabores iniciais definidos (máximo 3 opções).", obrigatorio: false },
+          { texto: "Lista de compras com as quantidades exatas de carne calculadas.", obrigatorio: true },
+          { texto: "Sacos plásticos gofrados/canelados adquiridos na espessura de 0,18 mm (medidas 15x30 cm ou 18x30 cm).", obrigatorio: true },
+          { texto: "Freezer calibrado e atingindo temperatura operacional de -18°C ou inferior.", obrigatorio: true }
+        ]}
+      />
+    </div>
+  </div>
 </EbookLayout>
