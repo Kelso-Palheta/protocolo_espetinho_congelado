@@ -875,23 +875,27 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   .checklist-operacional ul {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px 14px !important;
+    gap: 12px 16px !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     margin: 0 !important;
     padding: 0 !important;
+    flex: 1 1 auto !important;
+    align-content: space-between !important;
   }
 
   .checklist-operacional li {
     break-inside: avoid !important;
     page-break-inside: avoid !important;
-    padding: 8px 12px !important;
+    padding: 11px 14px !important;
     margin: 0 !important;
     font-size: 13px !important;
-    line-height: 1.3 !important;
-    border-radius: 8px !important;
+    line-height: 1.35 !important;
+    border-radius: 10px !important;
     background: #121215 !important;
     border: 1px solid #27272a !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
   .checklist-operacional li .item-text {

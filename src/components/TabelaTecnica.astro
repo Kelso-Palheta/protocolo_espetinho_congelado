@@ -49,7 +49,7 @@ const {
         {linhas.map((linha, rowIndex) => (
           <tr class="transition-colors hover:bg-charcoal-800/40">
             {linha.map((celula, cellIndex) => (
-              <td class={`whitespace-nowrap px-6 py-4 font-mono text-xs md:text-sm ${cellIndex === 0 ? 'font-sans font-semibold text-zinc-100' : ''} ${cellIndex === destaqueIndice ? 'font-bold text-amber-400 bg-amber-500/5' : 'text-zinc-300'}`}>
+              <td class={`px-6 py-3.5 font-mono text-xs md:text-sm ${cellIndex === 0 ? 'font-sans font-semibold text-zinc-100 whitespace-nowrap' : 'whitespace-normal leading-relaxed'} ${cellIndex === destaqueIndice ? 'font-bold text-amber-400 bg-amber-500/5 whitespace-nowrap' : 'text-zinc-300'}`}>
                 {celula}
               </td>
             ))}
