@@ -1,0 +1,196 @@
+---
+import EbookLayout from '../layouts/EbookLayout.astro';
+import VisualBlock from '../components/VisualBlock.astro';
+import CalloutAlerta from '../components/CalloutAlerta.astro';
+import TabelaTecnica from '../components/TabelaTecnica.astro';
+import ChecklistOperacional from '../components/ChecklistOperacional.astro';
+import imgExpansao from '../assets/illustrations/bonus-3-crescimento.png';
+import imgCapa from '../assets/illustrations/capa-bonus-3.png';
+---
+
+<EbookLayout
+  title="Bônus 3 — Protocolo do Crescimento: Reinvestimento e Expansão Consciente"
+  category="bonus"
+  chapterNumber="03"
+  chapterTitle="BÔNUS 3 — PROTOCOLO DO CRESCIMENTO"
+  chapterSubtitle="Capital de Giro, Curva ABC de Produtos, Plano de Equipamentos e Parcerias Locais"
+  imagemCapa={imgCapa.src}
+  prevLink={{ title: "Bônus 2: Recompra", href: "/bonus-2" }}
+  nextLink={{ title: "Bônus 4: Primeiros 7 Dias", href: "/bonus-4" }}
+>
+  <!-- Bloco Visual com Ilustração Gerada via IA -->
+  <VisualBlock
+    stepNumber="B3"
+    badge="Escala & Finanças"
+    title="O Crescimento Seguro Sem Dívidas Financeiras"
+    subtitle="Financiando novos freezers e seladoras a partir do próprio lucro gerado"
+    description="O maior risco de quem começa a lucrar com alimentação caseira é misturar o caixa da produção com as contas pessoais de casa. Para manter sua operação sólida e pronta para escalar de 100 para 400 espetinhos semanais, o capital de giro para reposição de carne é intocável e o crescimento é financiado pelo lucro retido."
+    tip="Nunca compre equipamentos no cartão parcelado sem ter a demanda validada. O primeiro investimento deve ser sempre um segundo freezer para destravar capacidade de armazenamento."
+    imageSrc={imgExpansao.src}
+    imageAlt="Freezer horizontal organizado com caixas identificadas de espetinhos a vácuo"
+    imagePosition="right"
+  />
+
+  <!-- 1. A DIVISÃO DO DINHEIRO -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">1.</span> A Divisão do Dinheiro: Capital de Giro vs. Retirada Pessoal
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      O erro mais comum e fatal cometido por quem começa a lucrar com alimentação caseira é misturar o caixa da operação com as contas pessoais de casa. Quando o dinheiro entra via Pix ou dinheiro vivo, o produtor amador gasta o valor total acreditando que tudo aquilo é lucro, ficando sem recursos na semana seguinte para comprar mais carne e embalagens no açougue.
+    </p>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Para manter o seu negócio saudável e pronto para crescer, aplique a <strong class="text-amber-400">Regra da Separação Rígida</strong> desde a primeira semana:
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
+        <span class="text-xs font-bold text-amber-500 uppercase tracking-wider">45% a 55%</span>
+        <h4 class="font-bold text-zinc-100 text-sm">O Dinheiro da Reposição (Inviolável)</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">Pertence à reposição da mercadoria (carnes, palitos, embalagens e temperos). Retorna imediatamente para a conta da operação.</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
+        <span class="text-xs font-bold text-amber-500 uppercase tracking-wider">15% a 20%</span>
+        <h4 class="font-bold text-zinc-100 text-sm">A Parcela de Reinvestimento (Motor)</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">Fundo de reserva para melhorias de maquinário (freezer, seladora) sem endividamento bancário.</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
+        <span class="text-xs font-bold text-amber-500 uppercase tracking-wider">30% a 35%</span>
+        <h4 class="font-bold text-zinc-100 text-sm">A Retirada Pessoal (Pró-labore Real)</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">Sua remuneração líquida pelo trabalho, transferida para sua conta pessoal sem desfalcar o giro da produção.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ANÁLISE DA CURVA ABC -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">2.</span> Análise da Curva ABC: Os Produtos que Sustentam a Operação
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Conforme a produção ganha ritmo, você perceberá que nem todos os sabores de espetinho vendem na mesma velocidade ou deixam a mesma margem no bolso. Insistir em produzir sabores trabalhosos que quase não saem consome tempo e ocupa espaço precioso no freezer.
+    </p>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Classifique o seu cardápio em três categorias operacionais:
+    </p>
+    <ul class="space-y-3 text-sm text-zinc-300">
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div>
+          <strong class="text-zinc-100">Categoria A — Os Carros-Chefe (Alto Giro e Margem Estável):</strong> Geralmente representam 70% a 80% do seu faturamento semanal (exemplo: Bovino Tradicional e Frango com Bacon). Esses produtos nunca podem faltar no estoque e devem ter a produção priorizada no meio da semana.
+        </div>
+      </li>
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div>
+          <strong class="text-zinc-100">Categoria B — Os Complementos de Margem (Alto Lucro e Giro Médio):</strong> Itens com custo de produção muito baixo que alavancam o lucro dos kits (exemplo: Linguiça Toscana padronizada ou Queijo Coalho). Devem ser produzidos em lotes rápidos para acompanhar os kits principais.
+        </div>
+      </li>
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div>
+          <strong class="text-zinc-100">Categoria C — Os Produtos de Nicho / Baixo Giro:</strong> Sabores mais caros ou com toalete demorado que representam menos de 10% das vendas (exemplo: carne com legumes intercalados ou cortes nobres especiais). Mantenha esses itens estritamente sob encomenda antecipada para não empatar dinheiro em carne parada no congelador.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 3. O PLANO DE EQUIPAMENTOS -->
+  <TabelaTecnica
+    titulo="3. O Plano de Equipamentos: A Ordem Correta de Aquisição"
+    descricao="O crescimento físico de uma operação caseira deve ser gradual e financiado pelo lucro retido"
+    colunas={["Nível de Escala", "Equipamento Prioritário", "Capacidade Agregada", "Critério de Ativação"]}
+    linhas={[
+      ["Nível 1", "Segundo Freezer (Horizontal 150L a 200L)", "Dobra imediatamente a capacidade semanal de estoque", "Congelador da geladeira operando a 80% da capacidade"],
+      ["Nível 2", "Seladora a Vácuo Doméstica (Barra Larga)", "Elimina 100% de queimaduras de frio e amplia validade", "Após garantir espaço térmico para armazenar"],
+      ["Nível 3", "Moedor / Amaciador / Cortador Manual", "Acelera corte e viabiliza kaftas com aparas limpas", "Demanda semanal acima de 300 palitos"]
+    ]}
+    destaqueIndice={0}
+    rodape="Nunca compre equipamentos por impulso: o principal limitador caseiro é o espaço no freezer, não a bancada."
+  />
+
+  <!-- 4. GESTÃO DE TEMPO E CAPACIDADE PRODUTIVA CASEIRA -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">4.</span> Gestão de Tempo e Capacidade Produtiva Caseira
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Aumentar a produção não significa passar o dia inteiro na cozinha de forma estressante e desordenada. O segredo do aumento de capacidade está na especialização dos dias de trabalho:
+    </p>
+    <div class="space-y-2.5 text-xs md:text-sm text-zinc-300">
+      <p>• <strong class="text-amber-400">Segunda e Terça-feira (Pós-venda e Descanso):</strong> Contato com a base, compras no açougue parceiro e higienização pesada dos utensílios.</p>
+      <p>• <strong class="text-amber-400">Quarta-feira (O Dia do Corte e Marinada):</strong> Foco exclusivo em limpar as peças de carne, cortar todos os cubos da semana e aplicar marinadas, acondicionando tudo em potes tampados no refrigerador.</p>
+      <p>• <strong class="text-amber-400">Quinta-feira (O Dia da Montagem e Pré-Congelamento):</strong> Espetamento em fluxo contínuo na bancada, controle de peso na balança e abastecimento das bandejas de pré-congelamento.</p>
+      <p>• <strong class="text-amber-400">Sexta-feira (Embalagem e Expedição):</strong> Ensacamento dos produtos já duros, aplicação de etiquetas, contagem de estoque e início das entregas de fim de semana.</p>
+      <p>• <strong class="text-amber-400">Sábado e Domingo (Atendimento e Delivery):</strong> Foco no cumprimento de rotas e fechamento de pedidos de última hora.</p>
+    </div>
+    <p class="text-xs text-zinc-400 italic pt-1">
+      Trabalhar em blocos de tarefas permite produzir até 300 a 400 espetinhos por semana em ritmo doméstico tranquilo, sem interferir na rotina da família.
+    </p>
+  </section>
+
+  <!-- 5. PARCERIAS LOCAIS: EXPANDINDO ALÉM DO CONSUMIDOR FINAL -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">5.</span> Parcerias Locais: Expandindo Além do Consumidor Final
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Quando a rotina de produção estiver dominada e houver sobra de capacidade no freezer, você pode abrir novos canais de fornecimento local sem sair do modelo congelado:
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-2">
+        <h4 class="font-bold text-amber-400 text-sm">Distribuidoras de Bebidas & Depósitos</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">O cliente que compra carvão e gelo quer resolver a compra em um só lugar. Forneça pacotes de 10 unidades com desconto de atacado para revenda no freezer do estabelecimento.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-2">
+        <h4 class="font-bold text-amber-400 text-sm">Pequenos Mercados & Mercearias</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">Mercadinhos de bairro sem açougue próprio se interessam por linhas padronizadas de espetinhos a vácuo com rótulos claros e apresentação profissional.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-2">
+        <h4 class="font-bold text-amber-400 text-sm">Eventos e Confraternizações</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">Pacotes de 50 a 100 unidades para festas de aniversário, empresas e associações de bairro, com entrega agendada e pagamento antecipado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. MODELO DE PAINEL SIMPLES DE RESULTADOS MENSAIS -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">6.</span> Modelo de Painel Simples de Resultados Mensais
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Para manter a clareza sobre o crescimento do negócio, registre os números consolidados a cada 30 dias de operação:
+    </p>
+    <div class="rounded-xl border border-charcoal-800 bg-charcoal-950 p-5 font-mono text-xs md:text-sm text-zinc-300 leading-relaxed space-y-2">
+      <p>• <strong class="text-amber-400">Mês de Referência:</strong> [ _________________ / 2026 ]</p>
+      <p>• <strong class="text-amber-400">Quantidade Total de Espetinhos Produzidos no Mês:</strong> [ _________ ] unidades</p>
+      <p>• <strong class="text-amber-400">Quantidade Total de Espetinhos Vendidos no Mês:</strong> [ _________ ] unidades</p>
+      <p>• <strong class="text-amber-400">Faturamento Bruto Total (Vendas de Kits + Taxas de Entrega):</strong> R$ [ _________ ]</p>
+      <p>• <strong class="text-amber-400">Custos Totais com Carnes e Insumos:</strong> R$ [ _________ ]</p>
+      <p>• <strong class="text-amber-400">Custos com Embalagens, Palitos e Rótulos:</strong> R$ [ _________ ]</p>
+      <p>• <strong class="text-amber-400">Despesas Operacionais (Energia, Gás e Transporte):</strong> R$ [ _________ ]</p>
+      <div class="p-2.5 rounded bg-amber-950/30 border border-amber-500/30 text-amber-300 font-bold">
+        LUCRO LÍQUIDO REAL DO MÊS: R$ [ Faturamento Bruto - Custos Totais ]
+      </div>
+      <p class="pt-2 text-zinc-200"><strong class="text-amber-400">Destinação do Lucro:</strong></p>
+      <p class="pl-3">• Retirada Pessoal / Pró-labore (Ex: 70% do Líquido): R$ [ _________ ]</p>
+      <p class="pl-3">• Reserva para Próximo Equipamento (Ex: 30% do Líquido): R$ [ _________ ]</p>
+      <p class="pt-1"><strong class="text-amber-400">Saldo Acumulado no Fundo de Expansão:</strong> R$ [ _________ ]</p>
+    </div>
+  </section>
+
+  <!-- 7. CHECKLIST PRÁTICO DO PROTOCOLO DO CRESCIMENTO -->
+  <ChecklistOperacional
+    titulo="7. Checklist Prático do Protocolo do Crescimento"
+    subtitulo="Execução da gestão financeira e operacional do negócio:"
+    itens={[
+      { texto: "Conta ou separação financeira exclusiva do negócio operando sem misturar despesas pessoais", obrigatorio: true, detalhe: "Evita o sangramento do caixa da empresa." },
+      { texto: "Percentual de capital de giro (reposição de mercadoria) reinvestido imediatamente a cada venda", obrigatorio: true, detalhe: "Garante a compra de carne para o próximo lote." },
+      { texto: "Sabores classificados nas categorias A, B e C para otimizar o espaço do freezer", obrigatorio: true, detalhe: "Foco nos produtos de maior giro e lucratividade." },
+      { texto: "Fundo financeiro de expansão reservado para aquisição do segundo freezer ou seladora a vácuo", obrigatorio: true, detalhe: "Crescimento seguro sem recorrer a empréstimos." },
+      { texto: "Rotina de produção organizada em dias temáticos (Corte na quarta, montagem na quinta, entregas no fim de semana)", obrigatorio: true, detalhe: "Elimina estresse e amplia a produtividade horária." },
+      { texto: "Fechamento mensal preenchido no Painel Simples de Resultados", obrigatorio: true, detalhe: "Clareza contábil sobre o lucro líquido real de cada ciclo." }
+    ]}
+  />
+</EbookLayout>

@@ -1,0 +1,680 @@
+import puppeteer from 'puppeteer';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname, '..');
+const OUTPUT_DIR = path.join(ROOT_DIR, 'pdfs');
+const DIST_OUTPUT_DIR = path.join(ROOT_DIR, 'dist', 'pdfs');
+
+// Lista completa dos módulos do ecossistema
+const MODULOS_PDF = [
+  {
+    id: 'protocolo-1',
+    nomeArquivo: 'Protocolo-01-Preparacao.pdf',
+    titulo: 'Protocolo 1: Preparação (A Estrutura Mínima)',
+    path: '/protocolo-1'
+  },
+  {
+    id: 'protocolo-2',
+    nomeArquivo: 'Protocolo-02-Producao.pdf',
+    titulo: 'Protocolo 2: Produção (Matéria-Prima ao Espeto)',
+    path: '/protocolo-2'
+  },
+  {
+    id: 'protocolo-3',
+    nomeArquivo: 'Protocolo-03-Padronizacao.pdf',
+    titulo: 'Protocolo 3: Padronização (O DNA do Espetinho)',
+    path: '/protocolo-3'
+  },
+  {
+    id: 'protocolo-4',
+    nomeArquivo: 'Protocolo-04-Congelamento.pdf',
+    titulo: 'Protocolo 4: Congelamento (Estoque Vendável)',
+    path: '/protocolo-4'
+  },
+  {
+    id: 'protocolo-5',
+    nomeArquivo: 'Protocolo-05-Precificacao.pdf',
+    titulo: 'Protocolo 5: Precificação (Custo Real e Lucro)',
+    path: '/protocolo-5'
+  },
+  {
+    id: 'protocolo-6',
+    nomeArquivo: 'Protocolo-06-Oferta.pdf',
+    titulo: 'Protocolo 6: Oferta (Kits e Combos Lucrativos)',
+    path: '/protocolo-6'
+  },
+  {
+    id: 'protocolo-7',
+    nomeArquivo: 'Protocolo-07-Venda.pdf',
+    titulo: 'Protocolo 7: Venda (Divulgação Local e Atendimento)',
+    path: '/protocolo-7'
+  },
+  {
+    id: 'bonus-1',
+    nomeArquivo: 'Bonus-01-Operacao-Delivery.pdf',
+    titulo: 'Bônus 1: Operação de Pedidos & Delivery',
+    path: '/bonus-1'
+  },
+  {
+    id: 'bonus-2',
+    nomeArquivo: 'Bonus-02-Protocolo-Recompra.pdf',
+    titulo: 'Bônus 2: Protocolo da Recompra e Recorrência',
+    path: '/bonus-2'
+  },
+  {
+    id: 'bonus-3',
+    nomeArquivo: 'Bonus-03-Crescimento-Expansao.pdf',
+    titulo: 'Bônus 3: Crescimento e Expansão Consciente',
+    path: '/bonus-3'
+  },
+  {
+    id: 'bonus-4',
+    nomeArquivo: 'Bonus-04-Plano-7-Dias.pdf',
+    titulo: 'Bônus 4: Plano Prático Primeiros 7 Dias',
+    path: '/bonus-4'
+  },
+  {
+    id: 'modulo-whatsapp-vendas',
+    nomeArquivo: 'Modulo-Liberado-01-Kit-WhatsApp.pdf',
+    titulo: 'Módulo Liberado 1: Kit WhatsApp Que Vende',
+    path: '/modulo-whatsapp-vendas'
+  },
+  {
+    id: 'modulo-cardapio-visual',
+    nomeArquivo: 'Modulo-Liberado-02-Kit-Cardapio-Visual.pdf',
+    titulo: 'Módulo Liberado 2: Kit Cardápio & Comunicação Visual',
+    path: '/modulo-cardapio-visual'
+  }
+];
+
+// Porta padrão do Astro
+const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
+
+/**
+ * Prepara o HTML estático do Astro para renderização perfeita no Puppeteer:
+ * 1. Injeta os arquivos CSS do Tailwind diretamente inline no <head>
+ * 2. Converte todas as imagens PNG para Base64 Data URI (zero falhas ou placeholders)
+ * 3. Aplica estilos forçados de Dark Theme (#0f1117 / #f1f5f9)
+ * 4. Configura a Capa Modular na Página 1 com page-break-after: always
+ * 5. Oculta cabeçalhos web, menus drawers e botões interativos
+ */
+function prepararHtmlParaPdf(caminhoHtml) {
+  let html = fs.readFileSync(caminhoHtml, 'utf-8');
+
+  // 1. Injetar todos os arquivos CSS de /_astro/ inline no HTML
+  html = html.replace(/<link[^>]+rel="stylesheet"[^>]+href="\/_astro\/([^"]+)"[^>]*>/g, (match, cssFile) => {
+    const cssPath = path.join(ROOT_DIR, 'dist', '_astro', cssFile);
+    if (fs.existsSync(cssPath)) {
+      const cssContent = fs.readFileSync(cssPath, 'utf-8');
+      return `<style data-inlined="${cssFile}">\n${cssContent}\n</style>`;
+    }
+    return match;
+  });
+
+  html = html.replace(/<link[^>]+href="([^"]+\.css)"[^>]*>/g, (match, href) => {
+    const cleanHref = href.replace(/^\/_astro\//, '');
+    const cssPath = path.join(ROOT_DIR, 'dist', '_astro', cleanHref);
+    if (fs.existsSync(cssPath)) {
+      const cssContent = fs.readFileSync(cssPath, 'utf-8');
+      return `<style data-inlined="${cleanHref}">\n${cssContent}\n</style>`;
+    }
+    return match;
+  });
+
+  // 2. Converter todas as imagens /_astro/*.png e *.jpg para Base64 Data URI
+  html = html.replace(/src="\/_astro\/([^"]+)"/g, (match, imgFile) => {
+    const imgPath = path.join(ROOT_DIR, 'dist', '_astro', imgFile);
+    if (fs.existsSync(imgPath)) {
+      const ext = path.extname(imgFile).toLowerCase().replace('.', '');
+      const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'svg' ? 'image/svg+xml' : 'image/png';
+      const base64 = fs.readFileSync(imgPath).toString('base64');
+      return `src="data:${mime};base64,${base64}"`;
+    }
+    return match;
+  });
+
+  // Também cobrir imagens em url('/_astro/...') nos estilos
+  html = html.replace(/url\(['"]?\/_astro\/([^'")]+)['"]?\)/g, (match, imgFile) => {
+    const imgPath = path.join(ROOT_DIR, 'dist', '_astro', imgFile);
+    if (fs.existsSync(imgPath)) {
+      const ext = path.extname(imgFile).toLowerCase().replace('.', '');
+      const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'svg' ? 'image/svg+xml' : 'image/png';
+      const base64 = fs.readFileSync(imgPath).toString('base64');
+      return `url("data:${mime};base64,${base64}")`;
+    }
+    return match;
+  });
+
+  // 3. Injeção de Estilo Forçada (Dark Theme + Ocultação de Tela + Quebras de Página)
+  const estiloInjetado = `
+<style id="pdf-custom-styles">
+  /* ====================================================================
+     1. RESET GERAL & CONFIGURAÇÃO A4 PAISAGEM (HORIZONTAL)
+     ==================================================================== */
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  header.top-nav-header,
+  #open-menu-btn,
+  #close-menu-btn,
+  #menu-drawer,
+  #menu-overlay,
+  .navigation-footer,
+  nav,
+  button,
+  footer,
+  .btn-navegacao,
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  html, body {
+    background-color: #09090b !important;
+    color: #f4f4f5 !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  p, li, dd, blockquote {
+    orphans: 3 !important;
+    widows: 3 !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    color: #d4d4d8 !important;
+  }
+
+  p {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Tipografia Proporcional Editorial */
+  .text-xs { font-size: 11.5px !important; line-height: 1.4 !important; }
+  .text-sm { font-size: 13px !important; line-height: 1.45 !important; }
+  .text-base { font-size: 14px !important; line-height: 1.55 !important; }
+  .text-lg { font-size: 16px !important; line-height: 1.4 !important; }
+  .text-xl { font-size: 18px !important; line-height: 1.35 !important; }
+  .text-2xl { font-size: 22px !important; line-height: 1.3 !important; }
+
+  /* Títulos Firmes com Hierarquia Visual */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    color: #ffffff !important;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  }
+
+  h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.15 !important;
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    font-weight: 800 !important;
+  }
+
+  h2 {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+
+  h3 {
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+    margin-top: 0 !important;
+    margin-bottom: 6px !important;
+    font-weight: 600 !important;
+  }
+
+  h4 {
+    font-size: 0.95rem !important;
+    line-height: 1.3 !important;
+    margin-top: 0 !important;
+    margin-bottom: 4px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Capa Modular (Página 1 — Ocupação Total 100vh) */
+  .capa-modulo {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    padding: 36px 44px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    background-color: #09090b !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .capa-modulo .my-auto {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .capa-modulo h1 {
+    font-size: 2.6rem !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Estrutura de Conteúdo Principal (Main) */
+  main,
+  .main-content,
+  .container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 24px 36px !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    display: block !important;
+  }
+
+  /* O primeiro elemento dentro do main NUNCA quebra página (elimina folha em branco!) */
+  main > :first-child,
+  .visual-block:first-of-type {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+    margin-top: 0 !important;
+  }
+
+  /* Bloco Visual (Página 2 — Slide Hero com Ilustração IA) */
+  .visual-block {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    background: #18181b !important;
+    border: 1px solid #27272a !important;
+    border-radius: 16px !important;
+    padding: 24px 28px !important;
+    margin: 0 0 20px 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1.15fr !important;
+    gap: 24px !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .visual-media {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    max-height: 220px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background: #09090b !important;
+    border: 1px solid #27272a !important;
+  }
+
+  .visual-media img,
+  .visual-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    aspect-ratio: 16 / 9 !important;
+    display: block !important;
+    border-radius: 12px !important;
+  }
+
+  .visual-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .pro-tip {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    background: rgba(245, 158, 11, 0.08) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    border-radius: 10px !important;
+    padding: 10px 14px !important;
+    margin-top: 8px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .tip-content {
+    font-size: 12.5px !important;
+    color: #fef08a !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Cards de Seção (Restauração do Design Dark Steakhouse Original com Bordas Arredondadas) */
+  section:not(.capa-modulo) {
+    background-color: #18181b !important;
+    border: 1px solid #27272a !important;
+    border-radius: 16px !important;
+    padding: 22px 28px !important;
+    margin: 0 0 20px 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+    display: block !important;
+  }
+
+  /* Sub-cards dentro das seções (ex: 4 blocos de Diagnóstico, Equipamentos, etc.) */
+  section:not(.capa-modulo) .grid > div,
+  section:not(.capa-modulo) .rounded-xl,
+  .step-block {
+    background-color: #121215 !important;
+    border: 1px solid #27272a !important;
+    border-radius: 12px !important;
+    padding: 14px 16px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    box-sizing: border-box !important;
+  }
+
+  section:not(.capa-modulo) ul {
+    margin-bottom: 6px !important;
+  }
+
+  section:not(.capa-modulo) li {
+    font-size: 13.5px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Checklist Operacional (Página Dedicada 2 Colunas) */
+  .checklist-operacional {
+    page-break-before: always !important;
+    break-before: page !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    background-color: #18181b !important;
+    border: 1px solid #27272a !important;
+    border-radius: 16px !important;
+    padding: 24px 28px !important;
+    margin: 0 0 20px 0 !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .checklist-operacional .checklist-header {
+    margin-bottom: 14px !important;
+  }
+
+  .checklist-operacional ul {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px 14px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .checklist-operacional li {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    padding: 8px 12px !important;
+    margin: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+    border-radius: 8px !important;
+    background: #121215 !important;
+    border: 1px solid #27272a !important;
+  }
+
+  .checklist-operacional li .item-text {
+    font-size: 13px !important;
+    line-height: 1.25 !important;
+  }
+
+  .checklist-operacional li p {
+    font-size: 11.5px !important;
+    line-height: 1.2 !important;
+    margin-top: 2px !important;
+    color: #a1a1aa !important;
+  }
+
+  /* Tabelas Técnicas e Callouts de Alerta */
+  .tabela-tecnica {
+    background-color: #18181b !important;
+    border: 1px solid #27272a !important;
+    border-radius: 16px !important;
+    padding: 20px 24px !important;
+    margin: 0 0 20px 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    box-sizing: border-box !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  th, td {
+    padding: 10px 14px !important;
+    font-size: 13.5px !important;
+    line-height: 1.4 !important;
+  }
+
+  .callout-alerta {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border-radius: 12px !important;
+    padding: 14px 18px !important;
+    margin: 14px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .card-elegant {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Cores de Destaque */
+  .bg-charcoal-950 { background-color: #09090b !important; }
+  .bg-charcoal-900 { background-color: #18181b !important; }
+  .bg-charcoal-800 { background-color: #27272a !important; }
+  .border-charcoal-800 { border-color: #27272a !important; }
+  .text-zinc-100 { color: #f4f4f5 !important; }
+  .text-zinc-300 { color: #d4d4d8 !important; }
+  .text-zinc-400 { color: #a1a1aa !important; }
+  .text-amber-400 { color: #fbbf24 !important; }
+  .text-amber-500 { color: #f59e0b !important; }
+</style>
+`;
+
+  if (html.includes('</head>')) {
+    html = html.replace('</head>', `${estiloInjetado}\n</head>`);
+  } else {
+    html = estiloInjetado + html;
+  }
+
+  return html;
+}
+
+async function main() {
+  console.log('='.repeat(70));
+  console.log('📑 GERADOR DE FASCÍCULOS MODULARES EM PDF (PUPPETEER)');
+  console.log(`📁 Pasta Principal: ${OUTPUT_DIR}`);
+  console.log(`📁 Pasta Secundária: ${DIST_OUTPUT_DIR}`);
+  console.log('='.repeat(70));
+
+  // Garantir diretórios de saída
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  }
+  if (!fs.existsSync(DIST_OUTPUT_DIR)) {
+    fs.mkdirSync(DIST_OUTPUT_DIR, { recursive: true });
+  }
+
+  // Filtrar se o usuário passou id específico via CLI: node scripts/gerar-pdfs.js protocolo-1
+  const argFiltro = process.argv[2]?.toLowerCase();
+  const listaParaGerar = (argFiltro && argFiltro !== 'all')
+    ? MODULOS_PDF.filter(m => m.id.includes(argFiltro) || m.nomeArquivo.toLowerCase().includes(argFiltro))
+    : MODULOS_PDF;
+
+  if (listaParaGerar.length === 0) {
+    console.warn(`⚠️ Nenhum módulo encontrado com o filtro: "${argFiltro}".`);
+    console.log(`Módulos disponíveis: ${MODULOS_PDF.map(m => m.id).join(', ')}`);
+    return;
+  }
+
+  console.log(`\nIniciando geração de ${listaParaGerar.length} fascículo(s) em PDF com Dark Theme forçado e imagens embutidas...\n`);
+
+  let browser;
+  try {
+    browser = await puppeteer.launch({
+      headless: 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
+    });
+  } catch (err) {
+    console.error('❌ Falha ao iniciar o navegador Chromium via Puppeteer:', err.message);
+    process.exit(1);
+  }
+
+  let sucessos = 0;
+  let falhas = 0;
+
+  for (let i = 0; i < listaParaGerar.length; i++) {
+    const item = listaParaGerar[i];
+    const relativePath = item.path.replace(/^\//, '');
+    const arquivoDist = path.join(ROOT_DIR, 'dist', relativePath, 'index.html');
+
+    if (!fs.existsSync(arquivoDist)) {
+      console.warn(`⚠️ Arquivo HTML estático não encontrado em dist/${relativePath}/index.html. Execute 'npm run build' primeiro.`);
+      falhas++;
+      continue;
+    }
+
+    const caminhoDestino = path.join(OUTPUT_DIR, item.nomeArquivo);
+    const progresso = `[${i + 1}/${listaParaGerar.length}]`;
+
+    console.log(`----------------------------------------------------------------------`);
+    console.log(`${progresso} 📄 Gerando PDF: ${item.titulo}`);
+    console.log(`     Origem: dist/${relativePath}/index.html (HTML + CSS inlined + Base64 PNGs)`);
+    console.log(`     Arquivo: pdfs/${item.nomeArquivo}`);
+
+    const tempoInicio = Date.now();
+
+    try {
+      const page = await browser.newPage();
+
+      // Ajustar viewport padrão A4 Paisagem (Horizontal Widescreen)
+      await page.setViewport({ width: 1754, height: 1240, deviceScaleFactor: 2 });
+
+      // Preparar HTML com injeção forçada de Dark Theme, CSS Tailwind e Imagens Base64
+      const htmlProcessado = prepararHtmlParaPdf(arquivoDist);
+
+      // Carregar o HTML totalmente embutido
+      await page.setContent(htmlProcessado, {
+        waitUntil: ['load'],
+        timeout: 30000
+      });
+
+      // Forçar tema escuro no documento e classes Tailwind
+      await page.evaluate(() => {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('bg-[#0f1117]', 'text-slate-100');
+        document.body.style.backgroundColor = '#0f1117';
+        document.body.style.color = '#f1f5f9';
+      });
+
+      // Aguardar renderização de fontes locais/remotas
+      await page.evaluateHandle('document.fonts.ready').catch(() => {});
+
+      // Gerar PDF no formato A4 Paisagem (Horizontal) com margem zero no motor (adeus bordas brancas)
+      await page.pdf({
+        path: caminhoDestino,
+        format: 'A4',
+        landscape: true,
+        printBackground: true,
+        preferCSSPageSize: true,
+        margin: {
+          top: '0px',
+          right: '0px',
+          bottom: '0px',
+          left: '0px'
+        }
+      });
+
+      // Espelhar também para dist/pdfs/ por conveniência
+      try {
+        fs.copyFileSync(caminhoDestino, path.join(DIST_OUTPUT_DIR, item.nomeArquivo));
+      } catch (e) {}
+
+      await page.close();
+
+      const stats = fs.statSync(caminhoDestino);
+      const tamanhoMB = (stats.size / (1024 * 1024)).toFixed(2);
+      const duracao = ((Date.now() - tempoInicio) / 1000).toFixed(1);
+
+      console.log(`     ✅ PDF gerado com sucesso! (${tamanhoMB} MB | ${duracao}s)`);
+      console.log(`     ✨ Capa na Página 1 + Quebra limpa para conteúdo técnico + Dark Theme forçado`);
+      sucessos++;
+    } catch (erro) {
+      falhas++;
+      console.error(`     ❌ Erro ao exportar ${item.nomeArquivo}:`, erro.message);
+    }
+  }
+
+  await browser.close();
+
+  console.log('\n' + '='.repeat(70));
+  console.log(`🏁 Concluído! Sucessos: ${sucessos} | Falhas: ${falhas}`);
+  console.log(`📁 PDFs salvos em: pdfs/ e dist/pdfs/`);
+  console.log('='.repeat(70) + '\n');
+}
+
+main().catch((err) => {
+  console.error('❌ Erro fatal no script:', err);
+  process.exit(1);
+});

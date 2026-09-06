@@ -1,0 +1,220 @@
+---
+import EbookLayout from '../layouts/EbookLayout.astro';
+import VisualBlock from '../components/VisualBlock.astro';
+import CalloutAlerta from '../components/CalloutAlerta.astro';
+import TabelaTecnica from '../components/TabelaTecnica.astro';
+import ChecklistOperacional from '../components/ChecklistOperacional.astro';
+import imgOferta from '../assets/illustrations/protocolo-6-oferta.png';
+import imgCapa from '../assets/illustrations/capa-protocolo-6.png';
+---
+
+<EbookLayout
+  title="Protocolo 6 — Oferta: Kits e Combos Lucrativos"
+  category="protocolo"
+  chapterNumber="06"
+  chapterTitle="PROTOCOLO 6 — OFERTA"
+  chapterSubtitle="A Arte de Criar Kits, Combos e Cardápios de Alta Conversão"
+  focoTecnico="Ocasiões de Consumo & Ancoragem Visual"
+  parametroChave="Grade de 3 Tickets & Pedido Mínimo"
+  imagemCapa={imgCapa.src}
+  prevLink={{ title: "Protocolo 5: Precificação", href: "/protocolo-5" }}
+  nextLink={{ title: "Protocolo 7: Venda", href: "/protocolo-7" }}
+>
+  <!-- Bloco Visual com Ilustração Gerada via IA (Sem Placeholders) -->
+  <VisualBlock
+    stepNumber="06"
+    badge="Engenharia de Cardápio"
+    title="Da Carne no Palito à Solução do Churrasco em Família"
+    subtitle="Venda ocasiões resolvidas com ancoragem e ticket médio elevado"
+    description="Anunciar palitos soltos a R$ 6,50 ou R$ 8,50 atrai pedidos miúdos de R$ 20,00 com o mesmo custo operacional de entrega. O segredo é vender soluções completas: Kit Degustação, Kit Churrasco em Família e Kit da Galera. A ancoragem de preços evidencia uma economia real para o cliente enquanto blinda sua margem líquida."
+    tip="Mostre sempre o preço avulso riscado ao lado do valor do kit fechado (Ex: 'De R$ 140,00 por apenas R$ 119,00'). Isso gera decisão instantânea sem margem para contrapropostas."
+    imageSrc={imgOferta.src}
+    imageAlt="Kits e combos de churrasco em embalagens a vácuo sobre ardósia com sal grosso e ervas frescas"
+    imagePosition="right"
+  />
+
+  <!-- 1. A Diferença Entre Vender Produto Solto e Vender uma Ocasião de Consumo -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">1.</span> A Diferença Entre Vender Produto Solto e Vender uma Ocasião de Consumo
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O produtor amador entra no mercado anunciando carne no palito de forma isolada: <em>"Tenho espetinho de frango a R$ 6,50 e carne a R$ 8,50"</em>. Quando a comunicação é feita dessa maneira, o cliente pensa no consumo imediato e pede duas ou três unidades avulsas. O ticket médio fica em R$ 20,00, gerando o mesmo trabalho operacional de atendimento, embalagem e entrega de um pedido quatro vezes maior.
+    </p>
+    <p class="text-zinc-300 leading-relaxed font-semibold">
+      No <strong class="text-amber-400">Protocolo Espetinho Congelado</strong>, você não vende palitos soltos; você vende <strong>soluções para ocasiões de consumo</strong>:
+    </p>
+    <ul class="space-y-2 text-xs md:text-sm text-zinc-400 pl-4 list-disc marker:text-amber-500">
+      <li>O cliente não quer ficar calculando gramaturas ou somando unidades de sabores diferentes de cabeça.</li>
+      <li>Ele quer resolver o churrasco da família no domingo, o almoço prático do meio de semana, a resenha de futebol ou o estoque rápido da própria casa.</li>
+      <li>Ao transformar espetinhos padronizados em kits temáticos fechados, você tira o foco do preço da unidade individual e transfere a atenção do cliente para o valor total da experiência resolvida.</li>
+    </ul>
+  </section>
+
+  <!-- 2. A Matriz de Kits e Combos de Alto Giro -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">2.</span> A Matriz de Kits e Combos de Alto Giro
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O segredo de um cardápio lucrativo é manter poucas opções, porém extremamente bem desenhadas. Trabalhe sempre com uma grade estruturada em três níveis de ticket:
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-4 text-xs md:text-sm">
+      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2.5">
+        <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wide block">Nível 1 • Entrada</span>
+        <h3 class="font-bold text-zinc-100 text-sm">Kit Degustação / Casal (10 a 12 Unidades)</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          <strong>Objetivo:</strong> Produto de entrada para quebrar a desconfiança do cliente de primeira viagem.
+        </p>
+        <p class="text-zinc-300"><strong>Composição:</strong> 4 Bovinos + 4 Frangos com Bacon + 4 Linguiças.</p>
+        <p class="text-zinc-400"><strong>Ocasião:</strong> Duas pessoas ou refeição rápida no meio da semana.</p>
+        <p class="text-amber-400 font-bold pt-1">Ticket Médio: R$ 65,00 a R$ 75,00</p>
+      </div>
+
+      <div class="p-5 rounded-xl bg-amber-500/10 border-2 border-amber-500/40 space-y-2.5 shadow-lg shadow-amber-500/5">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono font-bold text-amber-300 uppercase tracking-wide block">Nível 2 • Campeão</span>
+          <span class="px-2 py-0.5 rounded bg-amber-500 text-charcoal-950 text-[10px] font-bold uppercase">Mais Vendido</span>
+        </div>
+        <h3 class="font-bold text-zinc-100 text-sm">Kit Churrasco em Família (20 a 24 Unidades)</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          <strong>Objetivo:</strong> O coração da sua operação, respondendo pela maior fatia do faturamento semanal.
+        </p>
+        <p class="text-zinc-200"><strong>Composição:</strong> 10 Bovinos + 6 Frangos com Bacon + 6 Linguiças + 2 Queijos ou Pães de Alho (opcionais).</p>
+        <p class="text-zinc-300"><strong>Ocasião:</strong> Atende de 4 a 6 pessoas em almoço de fim de semana.</p>
+        <p class="text-amber-400 font-extrabold text-base pt-1">Ticket Médio: R$ 119,00 a R$ 139,00</p>
+      </div>
+
+      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2.5">
+        <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wide block">Nível 3 • Eventos</span>
+        <h3 class="font-bold text-zinc-100 text-sm">Pacote da Galera / Evento (40 a 50 Unidades)</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          <strong>Objetivo:</strong> Alavancar o faturamento com pedidos corporativos, aniversários e confraternizações.
+        </p>
+        <p class="text-zinc-300"><strong>Composição:</strong> 20 Bovinos + 15 Frangos + 15 Linguiças.</p>
+        <p class="text-zinc-400"><strong>Ocasião:</strong> Reuniões de amigos e comemorações com 8 a 12 convidados.</p>
+        <p class="text-amber-400 font-bold pt-1">Ticket Médio: R$ 220,00 a R$ 260,00</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Ancoragem de Preço e a Política de Pedido Mínimo -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">3.</span> Ancoragem de Preço e a Política de Pedido Mínimo
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Para que o cliente decida rapidamente levar um combo em vez de unidades avulsas, aplique a técnica de ancoragem visual no cardápio:
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-4 text-xs md:text-sm">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <h3 class="font-bold text-amber-400 text-sm">Apresentação do Preço Avulso vs. Preço do Kit</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          Sempre mostre a soma dos itens individuais riscada ao lado do valor do pacote fechado.
+        </p>
+        <div class="p-3 rounded-lg bg-charcoal-900 border border-charcoal-800 text-center font-mono">
+          <span class="line-through text-zinc-400 text-sm">De R$ 140,00</span>
+          <span class="text-amber-400 font-extrabold text-base ml-2">Por apenas R$ 119,00</span>
+        </div>
+        <p class="text-xs text-zinc-400 leading-relaxed">
+          O cliente percebe uma vantagem financeira clara e imediata, enquanto você garante um pedido com margem líquida controlada e sem perda de sobras de produção.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <h3 class="font-bold text-rose-400 text-sm">A Regra Inegociável do Pedido Mínimo</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          Defina na base do cardápio uma trava operacional para entregas e retiradas.
+        </p>
+        <div class="p-3 rounded-lg bg-charcoal-900 border border-charcoal-800 text-center font-mono">
+          <span class="text-zinc-100 font-bold text-xs">Mínimo de 1 Pacote (10 un) ou R$ 60,00</span>
+        </div>
+        <p class="text-xs text-zinc-400 leading-relaxed">
+          Isso impede que clientes peçam apenas 3 ou 4 espetinhos, o que consumiria tempo de separação do freezer, etiqueta e atendimento de forma inviável.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Construção do Modelo de Cardápio Digital Enxuto -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">4.</span> Construção do Modelo de Cardápio Digital Enxuto
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O cardápio de quem vende pelo WhatsApp deve ser objetivo, legível e carregar em menos de dois segundos na tela do smartphone. Evite arquivos pesados ou catálogos de aplicativos complexos que exigem login do consumidor.
+    </p>
+
+    <div class="space-y-3 text-xs md:text-sm text-zinc-300">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <strong class="text-zinc-100 block">Estrutura de 1 Página:</strong>
+        <p class="text-zinc-400 leading-relaxed">
+          O cardápio deve ser diagramado em formato vertical (ideal para leitura na tela do celular), podendo ser enviado como uma imagem leve em JPEG ou documento PDF direto.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <strong class="text-amber-400 block">Blocos Obrigatórios do Cardápio:</strong>
+        <ol class="space-y-1.5 pl-4 list-decimal marker:text-amber-500 text-zinc-300">
+          <li><strong>Cabeçalho:</strong> Sua marca/nome simples com o slogan oficial (<em>"Espetinhos Congelados por Encomenda — Direto do Freezer para sua Brasa"</em>).</li>
+          <li><strong>Bloco dos Kits Principais:</strong> Nome do kit, composição dos sabores, peso total aproximado, quantas pessoas atende e preço de tabela ancorado.</li>
+          <li><strong>Bloco de Pacotes Fechados (Mono-sabor):</strong> Pacote com 10 unidades bovinas, pacote com 10 unidades de frango e pacote com 10 linguiças (com os preços de cada pacote).</li>
+          <li><strong>Rodapé Operacional:</strong> Dias de produção, regras de encomenda antecipada, formas de pagamento aceitas e informação sobre retirada ou taxa de entrega conforme a região.</li>
+        </ol>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <strong class="text-zinc-100 block">Fotos Reais e Sem Filtros Excessivos:</strong>
+        <p class="text-zinc-400 leading-relaxed">
+          Insira fotos bem iluminadas do seu produto cru montado na bandeja limpa e, ao lado, dele já assado e dourado. Não utilize imagens de bancos de fotos da internet com cortes inacessíveis; o cliente compra a verdade e o padrão real da sua produção caseira.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Estrutura da Oferta Irresistível (Mensagem de Venda Rápida) -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">5.</span> Estrutura da Oferta Irresistível (Mensagem de Venda Rápida)
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Quando um contato solicitar informações no WhatsApp, não envie apenas a imagem do cardápio solta. Acompanhe o arquivo com um texto padronizado e vendedor:
+    </p>
+
+    <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-5 space-y-3 text-xs md:text-sm text-zinc-200">
+      <p class="italic">
+        "Olá! Tudo bem? Aqui estão nossas opções de espetinhos artesanais congelados para o seu fim de semana.
+      </p>
+      <p class="italic">
+        Nossos produtos são 100% padronizados (100 g cada), temperados com temperos naturais e congelados na medida certa para você guardar no freezer e assar quando quiser!
+      </p>
+      <p class="italic font-semibold text-emerald-300">
+        Nosso destaque dessa semana é o <strong>Kit Churrasco em Família (20 unidades)</strong>, que já vem com carnes nobres, frango com bacon e linguiça selecionada por apenas R$ 119,00 (economia de mais de R$ 20,00).
+      </p>
+      <p class="italic">
+        Você prefere retirar aqui conosco ou quer que agendemos a entrega no seu endereço?"
+      </p>
+    </div>
+
+    <p class="text-xs text-zinc-400 italic">
+      Essa condução direciona o cliente para fechar um kit de valor agregado, em vez de deixá-lo indeciso sobre quantos palitos escolher.
+    </p>
+  </section>
+
+  <!-- 6. Checklist Prático do Protocolo 6 (Integral) -->
+  <ChecklistOperacional
+    titulo="Checklist Prático de Execução do Protocolo 6"
+    subtitulo="Auditoria comercial do cardápio e das ofertas ativas"
+    itens={[
+      { texto: "Grade de kits montada com três faixas claras de preço (Entrada, Principal e Evento).", obrigatorio: true, detalhe: "Degustação, Família e Galera definidos." },
+      { texto: "Preços de kits calculados mesclando produtos de alto e baixo custo para garantir lucro líquido acima de 40%.", obrigatorio: true, detalhe: "Margem protegida na mescla de sabores." },
+      { texto: "Ancoragem de preços (preço avulso riscado vs. preço do combo) inserida na comunicação visual.", obrigatorio: true, detalhe: "Percepção imediata de economia para o comprador." },
+      { texto: "Política de pedido mínimo definida para proteger a logística da operação.", obrigatorio: true, detalhe: "Trava mínima de 1 pacote ou R$ 60,00." },
+      { texto: "Cardápio digital montado em formato vertical de página única, leve e direto.", obrigatorio: true, detalhe: "Abertura rápida no WhatsApp sem exigir aplicativo." },
+      { texto: "Descrição clara de gramatura (100 g) e número de pessoas que cada kit atende colocada em destaque.", obrigatorio: true, detalhe: "Transparência total sobre rendimento da porção." },
+      { texto: "Script rápido de apresentação da oferta salvo para envio imediato no WhatsApp.", obrigatorio: true, detalhe: "Condução direta para escolha de kit e formato de entrega." }
+    ]}
+  />
+</EbookLayout>

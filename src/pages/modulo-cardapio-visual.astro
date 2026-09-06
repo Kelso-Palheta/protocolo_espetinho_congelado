@@ -1,0 +1,418 @@
+---
+import EbookLayout from '../layouts/EbookLayout.astro';
+import VisualBlock from '../components/VisualBlock.astro';
+import CalloutAlerta from '../components/CalloutAlerta.astro';
+import TabelaTecnica from '../components/TabelaTecnica.astro';
+import ChecklistOperacional from '../components/ChecklistOperacional.astro';
+import imgCardapio from '../assets/illustrations/modulo-cardapio-visual.png';
+import imgCapa from '../assets/illustrations/capa-modulo-cardapio-visual.png';
+---
+
+<EbookLayout
+  title="Módulo Liberado 2: Kit Cardápio & Comunicação Visual + Prompts de IA"
+  category="modulo-liberado"
+  chapterNumber="02"
+  chapterTitle="MÓDULO LIBERADO: KIT CARDÁPIO & COMUNICAÇÃO VISUAL"
+  chapterSubtitle="Design de Conversão, Modelos Prontos, Estratégia de Status e Prompts Mestres de IA"
+  imagemCapa={imgCapa.src}
+  prevLink={{ title: "Kit WhatsApp Que Vende", href: "/modulo-whatsapp-vendas" }}
+  nextLink={{ title: "Voltar ao Início", href: "/" }}
+>
+  <!-- Bloco Visual com Ilustração Gerada via IA -->
+  <VisualBlock
+    stepNumber="M2"
+    badge="Módulo Especial Liberado"
+    title="O Poder Visual que Transforma Carne em Desejo"
+    subtitle="Cardápios de alta conversão, fotos de bancada e inteligência artificial"
+    description="O cliente come com os olhos antes de abrir a carteira. Alimentos congelados e embalados a vácuo enfrentam a barreira da coloração natural da carne sem oxigênio. Para vender em alto volume, sua comunicação precisa ligar a pureza dos pacotes a vácuo à imagem apetitosa da carne dourando na grelha."
+    tip="Grave vídeos de 10 segundos em silêncio absoluto focando apenas no chiar da carne na brasa quente. O estímulo sensorial de áudio converte mais que anúncios caros."
+    imageSrc={imgCardapio.src}
+    imageAlt="Cardápio elegante de espetinhos com fotos apetitosas e cortes embalados a vácuo"
+    imagePosition="right"
+  />
+
+  <!-- 1. A PSICOLOGIA VISUAL DA VENDA DE CARNE CONGELADA -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">1.</span> A Psicologia Visual da Venda de Carne Congelada
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      O consumidor brasileiro compra carne com os olhos. Em açougues tradicionais, o balcão iluminado expõe cortes frescos e brilhantes. No entanto, ao trabalhar com <strong>alimentos crus congelados e embalados a vácuo</strong>, você enfrenta uma barreira de percepção natural: o plástico a vácuo comprime a proteína e a tonalidade da carne fica temporariamente mais escura pela ausência de oxigênio (mioglobina desoxigenada).
+    </p>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Se a sua comunicação visual for descuidada, o produto parecerá um bloco disforme de carne industrializada.
+    </p>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Para quebrar essa desconfiança e transformar o seu produto em um objeto de desejo imediato, sua comunicação deve obedecer a três pilares obrigatórios:
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
+        <h4 class="font-bold text-amber-400 text-sm">O Contraste da Transparência</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">Mostrar a limpeza impecável da bancada, as embalagens límpidas e sem excesso de sangue ou gelo solto.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
+        <h4 class="font-bold text-amber-400 text-sm">A Conexão do Cru ao Assado</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">Sempre associar o pacote cru selado a vácuo a uma imagem dele já assado, dourado e suculento sobre a tábua de corte.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
+        <h4 class="font-bold text-amber-400 text-sm">A Evidência do Zelo</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">Destacar a ausência de sebo, nervos ou retalhos, comprovando visualmente o padrão superior de cortes nobres.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. GUIA PRÁTICO DE FOTOGRAFIA COM SMARTPHONE -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">2.</span> Guia Prático de Fotografia com Smartphone (Produção Caseira)
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Você não precisa contratar fotógrafos profissionais ou comprar equipamentos caros de estúdio. Com qualquer smartphone moderno e seguindo cinco regras simples de bancada, suas fotos atingirão padrão comercial de alta conversão:
+    </p>
+    <ul class="space-y-3 text-sm text-zinc-300">
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div><strong class="text-zinc-100">1. Luz Natural Lateral (Evite o Flash):</strong> Nunca tire fotos com o flash do celular ligado (o reflexo estoura no plástico do vácuo e esbranquiça a carne). Fotografe durante o dia, posicionando a bancada próxima a uma janela com iluminação indireta.</div>
+      </li>
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div><strong class="text-zinc-100">2. Fundo Neutro e Higienizado:</strong> Utilize superfícies limpas e gastronômicas: tábua de madeira nobre selada, bancada de granito escuro ou chapa preta fosca. Retire qualquer elemento doméstico do fundo (detergentes, panos sujos, eletrodomésticos).</div>
+      </li>
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div><strong class="text-zinc-100">3. Ângulo de 45 Graus e Vista Superior (Top Down):</strong> Ângulo de 45° para mostrar volume dos cubos no palito e carne na tábua; Vista superior (90°) para registrar pacotes a vácuo alinhados lado a lado no kit.</div>
+      </li>
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div><strong class="text-zinc-100">4. O Momento da Brasa:</strong> Fotografe o espetinho sobre a grelha com a brasa incandescente ao fundo (sem labaredas pretas). Corte um cubo ao meio para mostrar o ponto rosado e a suculência interna.</div>
+      </li>
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div><strong class="text-zinc-100">5. Nada de Filtros Artificiais:</strong> Não aplique filtros coloridos de redes sociais. Ajuste apenas nitidez, brilho e contraste básico no editor nativo do celular para manter a veracidade do produto.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 3. ARQUITETURA DO CARDÁPIO DIGITAL DE 1 PÁGINA (MOBILE-FIRST) -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">3.</span> Arquitetura do Cardápio Digital de 1 Página (Mobile-First)
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      O consumidor atual toma decisões em poucos segundos navegando pela tela do celular. Cardápios em PDF longos com várias páginas geram perda de atenção e abandono de carrinho. O seu cardápio deve ser diagramado em formato vertical (proporção 9:16 ou 4:5), contendo cinco blocos organizados em sequência lógica:
+    </p>
+    <div class="rounded-xl border border-charcoal-800 bg-charcoal-950 p-5 font-mono text-xs text-zinc-300 space-y-3">
+      <div class="p-2.5 rounded bg-charcoal-900 border border-charcoal-800">
+        <p class="text-amber-400 font-bold">BLOCO 1: TOPO & IDENTIDADE</p>
+        <p class="text-zinc-300">[Logo / Nome da Marca] | Slogan: "Espetinhos Artesanais a Vácuo para seu Churrasco"</p>
+      </div>
+      <div class="p-2.5 rounded bg-charcoal-900 border border-charcoal-800">
+        <p class="text-amber-400 font-bold">BLOCO 2: OS COMBOS CAMPEÕES (ÂNCORAS DE VENDA)</p>
+        <p class="text-zinc-300">⭐ KIT CHURRASCO EM FAMÍLIA (20 unid.) - De R$ 140,00 por apenas R$ 119,00<br />• KIT CASAL / DEGUSTAÇÃO (12 unid.) - R$ 75,00<br />• PACOTE DA GALERA / EVENTO (40 unid.) - R$ 229,00</p>
+      </div>
+      <div class="p-2.5 rounded bg-charcoal-900 border border-charcoal-800">
+        <p class="text-amber-400 font-bold">BLOCO 3: PACOTES MONO-SABOR (A VÁCUO)</p>
+        <p class="text-zinc-300">Pacotes fechados com 4 unidades (aprox. 450g a 500g):<br />• Bovino Nobre: R$ 34,00 | • Medalhão Frango c/ Bacon: R$ 28,00 | • Linguiça Toscana: R$ 24,00</p>
+      </div>
+      <div class="p-2.5 rounded bg-charcoal-900 border border-charcoal-800">
+        <p class="text-amber-400 font-bold">BLOCO 4: ADICIONAIS & COMPLEMENTOS DE MARGEM</p>
+        <p class="text-zinc-300">• Queijo Coalho no Palito (4 unid.) - R$ 22,00<br />• Pão de Alho Especial (Pacote) - R$ 18,00</p>
+      </div>
+      <div class="p-2.5 rounded bg-charcoal-900 border border-charcoal-800">
+        <p class="text-amber-400 font-bold">BLOCO 5: REGRAS OPERACIONAIS & PEDIDOS</p>
+        <p class="text-zinc-300">• Pedido Mínimo: 1 pacote fechado ou R$ 60,00<br />• Retirada Programada Gratuita | Delivery com Taxa Fixa<br />• Encomendas até Quinta às 18h | Chave PIX: [Sua Chave]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TEMPLATES DE CARDÁPIO TEXTUAIS (COPIA E COLA) -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">4.</span> Templates de Cardápio Textuais (Copia e Cola)
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Caso você vá diagramar seu cardápio em ferramentas visuais gratuitas (como o Canva) ou enviar a tabela diretamente em formato de texto estruturado no WhatsApp, utilize os modelos oficiais abaixo:
+    </p>
+
+    <!-- Modelo A -->
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+      <h4 class="font-bold text-amber-400 text-sm uppercase tracking-wider">MODELO A — CARDÁPIO CLÁSSICO DE FIM DE SEMANA (FOCO EM COMBOS)</h4>
+      <div class="text-xs md:text-sm font-mono text-zinc-300 space-y-2 border-l-2 border-amber-500/40 pl-3">
+        <p><strong>[NOME DA SUA MARCA] | ESPETINHOS ARTESANAIS A VÁCUO</strong><br />
+        <em>O sabor do churrasco perfeito, direto do seu freezer para a grelha.</em></p>
+        <p class="text-amber-300 font-semibold pt-1">🔥 KITS PROMOCIONAIS PARA O FIM DE SEMANA</p>
+        <p>🏆 <strong>KIT CHURRASCO EM FAMÍLIA (20 Espetinhos)</strong> — <em>O Mais Pedido!</em><br />
+        • 8 Espetinhos Bovinos (Fraldinha ou Miolo de Acém macio)<br />
+        • 6 Medalhões de Filé de Frango envolvidos em Bacon crocante<br />
+        • 6 Espetinhos de Linguiça Toscana firme e selecionada<br />
+        • Embalados a vácuo em pacotes práticos de 3 a 4 unidades. <em>Serve com folga de 5 a 6 pessoas.</em><br />
+        <span class="line-through text-zinc-500">De R$ 140,00</span> por <strong>R$ 119,00</strong> <em>(Economia imediata de R$ 21,00!)</em></p>
+
+        <p>🥩 <strong>KIT DEGUSTAÇÃO / CASAL (12 Espetinhos)</strong><br />
+        • 4 Bovinos Nobres + 4 Medalhões de Frango com Bacon + 4 Linguiças Toscanas<br />
+        <em>Ideal para refeições a dois ou jantares práticos durante a semana.</em><br />
+        Por apenas <strong>R$ 75,00</strong></p>
+
+        <p>🎉 <strong>PACOTE DA GALERA / EVENTOS (40 Espetinhos)</strong><br />
+        • 16 Bovinos Nobres + 12 Medalhões de Frango + 12 Linguiças Toscanas<br />
+        <em>Ideal para reuniões de amigos, aniversários e confraternizações.</em><br />
+        De <span class="line-through text-zinc-500">R$ 280,00</span> por <strong>R$ 229,00</strong></p>
+
+        <p class="text-zinc-500 pt-1">───────────────</p>
+        <p class="text-amber-300 font-semibold">📦 LINHA DE PACOTES FECHADOS A VÁCUO (4 Unidades por Embalagem):</p>
+        <p>• <strong>Bovino Tradicional (Aprox. 450g):</strong> R$ 34,00<br />
+        • <strong>Medalhão de Frango com Bacon (Aprox. 500g):</strong> R$ 28,00<br />
+        • <strong>Linguiça Toscana Especial (Aprox. 450g):</strong> R$ 24,00</p>
+
+        <p class="text-zinc-500 pt-1">───────────────</p>
+        <p class="text-amber-300 font-semibold">📍 INFORMAÇÕES DE PEDIDOS E LOGÍSTICA:</p>
+        <p>• <strong>Pedido Mínimo:</strong> 1 Pacote ou R$ 60,00.<br />
+        • <strong>Retirada no Portão:</strong> Gratuita e com horário marcado na [Seu Bairro/Rua].<br />
+        • <strong>Entregas (Delivery):</strong> Transporte em caixas térmicas com gelo a -18°C. Consulte a taxa para o seu bairro.<br />
+        • <strong>Pedidos até Quinta-feira às 18h</strong> para garantir reserva de estoque fresco.</p>
+      </div>
+    </div>
+
+    <!-- Modelo B -->
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+      <h4 class="font-bold text-amber-400 text-sm uppercase tracking-wider">MODELO B — CARDÁPIO ECONÔMICO DE COMBATE (PARA ALTO VOLUME)</h4>
+      <div class="text-xs md:text-sm font-mono text-zinc-300 space-y-2 border-l-2 border-amber-500/40 pl-3">
+        <p><strong>[NOME DA SUA MARCA] | LINHA PRÁTICA CONGELADA</strong><br />
+        <em>Padronização de 100g por palito, tempero na medida e sem desperdício.</em></p>
+        <p class="text-amber-300 font-semibold pt-1">🎯 COMBOS ECONÔMICOS DE ALTO RENDIMENTO:</p>
+        <p>🔹 <strong>COMBO 1 — SEMANA PRÁTICA (10 Espetinhos):</strong><br />
+        • 4 Frangos com Bacon + 4 Linguiças Toscanas + 2 Bovinos Acém<br />
+        • Valor Promocional: <strong>R$ 62,00</strong></p>
+        <p>🔹 <strong>COMBO 2 — CHURRASCO POPULAR (30 Espetinhos):</strong><br />
+        • 10 Bovinos Acém + 10 Frangos com Bacon + 10 Linguiças Toscanas<br />
+        • Valor Promocional: <strong>R$ 169,00</strong></p>
+        <p class="text-zinc-500 pt-1">───────────────</p>
+        <p class="italic text-zinc-400">💡 Todos os produtos são selados a vácuo em micra grossa. Vão direto do freezer para a grelha sem perder maciez!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CRONOGRAMA VISUAL DE STATUS & STORIES -->
+  <TabelaTecnica
+    titulo="5. Cronograma Visual de Status & Stories (O Funil Semanal)"
+    descricao="Sequência cronológica para mostrar o processo acontecendo no tempo real da semana"
+    colunas={["Dia da Semana", "Gatilho Psicológico", "O que Fotografar / Postar", "Texto de Apoio na Imagem"]}
+    linhas={[
+      ["Quarta-feira", "Higiene e Zelo (Autoridade)", "Bancada limpa e peça sendo toaleteada sem peles/sebo", "'Começando a toalete dos lotes da semana. Aqui só entra carne limpa de verdade. Padrão artesanal!'"],
+      ["Quinta-feira", "Organização e Vácuo (Desejo)", "Espetos na seladora a vácuo e etiquetas sendo preenchidas", "'Lotes novos prontos e embalados a vácuo. Especiarias naturais prontas para o freezer. Encomendas abertas!'"],
+      ["Sexta-feira", "Escassez e Oferta (Decisão)", "Cardápio oficial com Kit Família + foto do freezer abastecido", "'Grade aberta! Restam apenas 6 unidades do Kit Família disponíveis no freezer. Garanta o seu no privado!'"],
+      ["Sábado", "Logística e Prova (Validação)", "Caixa térmica com gelo rígido e sacolas etiquetadas para rota", "'Pedidos saindo nas caixas térmicas a -18°C! Carne chega perfeita no portão. Bom churrasco a todos!'"],
+      ["Domingo", "Gula e Prova Social (Retenção)", "Espetinhos dourando na brasa ou print de elogio no WhatsApp", "'Domingo perfeito! Olha a suculência desse medalhão na brasa. Quem garantiu o kit aproveita sem trabalho!'"]
+    ]}
+    destaqueIndice={2}
+    rodape="A consistência de postagens de quarta a domingo converte compradores recorrentes sem anúncios pagos."
+  />
+
+  <!-- 6. ROTEIROS DE VÍDEOS CURTOS PARA STATUS (15 SEGUNDOS) -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">6.</span> Roteiros de Vídeos Curtos para Status (15 Segundos)
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Grave vídeos objetivos segurando o próprio celular na vertical, sem necessidade de falas longas:
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2 text-xs text-zinc-300">
+        <h4 class="font-bold text-amber-400 text-sm">Roteiro 1 — O Teste do Vácuo</h4>
+        <p>• <strong>Cena (0 a 5s):</strong> Aproxime a câmera da embalagem a vácuo, mostrando o plástico colado rente à carne sem bolhas de ar.<br />
+        • <strong>Cena (5 a 10s):</strong> Bata levemente no pacote demonstrando rigidez.<br />
+        • <strong>Legenda:</strong> <em>"Embalagem a vácuo profissional. A carne não resseca e não queima no freezer. Praticidade total para seu fim de semana!"</em></p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2 text-xs text-zinc-300">
+        <h4 class="font-bold text-amber-400 text-sm">Roteiro 2 — O Teste da Balança</h4>
+        <p>• <strong>Cena (0 a 5s):</strong> Mostre a balança digital zerada.<br />
+        • <strong>Cena (5 a 10s):</strong> Coloque um espetinho recém-montado marcando entre 105g e 115g.<br />
+        • <strong>Legenda:</strong> <em>"Aqui o peso é real! Padrão comercial garantido da primeira à última unidade. Nada de palitos miúdos!"</em></p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2 text-xs text-zinc-300">
+        <h4 class="font-bold text-amber-400 text-sm">Roteiro 3 — O Barulho da Brasa</h4>
+        <p>• <strong>Cena (0 a 10s):</strong> Grave em silêncio absoluto apenas o barulho da carne chiando na grelha e a gordura do bacon gotejando.<br />
+        • <strong>Legenda:</strong> <em>"Aumente o som. Isso é o que te espera no almoço de domingo se você pedir o Kit Família hoje!"</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. MODELO DE TAG DE IDENTIFICAÇÃO E MODO DE PREPARO -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">7.</span> Modelo de Tag de Identificação e Modo de Preparo (Impressão)
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Imprima este modelo em papel cartão comum ou adesivo fosco e coloque dentro ou grampeado à sacola de entrega de cada cliente:
+    </p>
+    <div class="rounded-xl border border-charcoal-800 bg-charcoal-950 p-5 font-mono text-xs md:text-sm text-zinc-300 leading-relaxed space-y-2">
+      <p class="text-center font-bold text-amber-400">[NOME DO SEU NEGÓCIO]<br />ESPETINHOS ARTESANAIS CONGELADOS A VÁCUO</p>
+      <p class="text-zinc-300 text-center italic text-xs">Parabéns por escolher carne artesanal com corte nobre, padronização de bancada e selagem a vácuo profissional!</p>
+      <p class="text-amber-300 font-semibold pt-2">🔥 DICAS DO MESTRE PARA O CHURRASCO PERFEITO:</p>
+      <p><strong>1. DIRETO NA BRASA:</strong> Não há necessidade de descongelar totalmente na bancada. Nossos espetos podem ir direto para a grelha média/alta (cerca de 30 cm da brasa).</p>
+      <p><strong>2. SEM PRESSA:</strong> Deixe assar por 8 a 10 minutos no calor médio para que o centro atinja o ponto ideal. Desça para a brasa mais forte apenas nos 2 minutos finais para dourar e formar a crostinha crocante.</p>
+      <p><strong>3. FRIGIDEIRA OU AIRFRYER:</strong> Se for fazer em casa sem brasa, deixe o pacote na geladeira por 3 horas antes e use a frigideira bem quente untada com azeite ou manteiga!</p>
+      <p class="pt-2 border-t border-charcoal-800 text-[11px] text-zinc-400">
+        ❄️ Armazenamento: Conservar a -18°C no freezer.<br />
+        WhatsApp de Pedidos & Dúvidas: [Seu WhatsApp Aqui]
+      </p>
+    </div>
+  </section>
+
+  <!-- 8. CHECKLIST DE IMPLEMENTAÇÃO VISUAL -->
+  <ChecklistOperacional
+    titulo="8. Checklist de Implementação Visual"
+    subtitulo="Tarefas fundamentais antes de iniciar as campanhas:"
+    itens={[
+      { texto: "Modelo de cardápio digital (Modelo A ou B) preenchido com seus preços e dados PIX", obrigatorio: true, detalhe: "Cardápio 100% calibrado." },
+      { texto: "Cardápio exportado em formato de imagem vertical de alta resolução salvo no celular", obrigatorio: true, detalhe: "Envio instantâneo para clientes." },
+      { texto: "Pelo menos 3 fotos de boa qualidade produzidas (bancada, pacote a vácuo e grelha)", obrigatorio: true, detalhe: "Acervo de autoridade e prova social." },
+      { texto: "Calendário de postagens programado para rodar de quarta a domingo nos Status", obrigatorio: true, detalhe: "Presença digital consistente." },
+      { texto: "Tags com orientações de preparo impressas e prontas para as sacolas", obrigatorio: false, detalhe: "Encantamento no recebimento." }
+    ]}
+  />
+
+  <!-- 9. PROMPTS MESTRES DE INTELIGÊNCIA ARTIFICIAL -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-6">
+    <div>
+      <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+        <span class="text-amber-500">9.</span> Prompts Mestres: Crie com Inteligência Artificial de Forma Rápida e Fácil
+      </h2>
+      <p class="text-zinc-300 text-sm md:text-base leading-relaxed mt-2">
+        Esta estrutura de <strong>Prompts Mestres</strong> foi desenhada para ser inserida como uma ferramenta prática. O aluno só precisa copiar o texto, preencher as variáveis indicadas entre <strong>[COLCHETES EM MAIÚSCULAS]</strong> com as suas informações e da cidade, e colar diretamente no ChatGPT ou Gemini para receber o material personalizado em segundos.
+      </p>
+    </div>
+
+    <!-- PROMPT 1 -->
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
+      <div class="flex items-center justify-between border-b border-charcoal-800 pb-2">
+        <h3 class="font-bold text-amber-400 text-sm md:text-base">PROMPT 1 — CALCULADORA AUTOMÁTICA DE CUSTOS, PRECIFICAÇÃO E KITS</h3>
+        <span class="text-xs text-zinc-400 font-mono">Engenharia Financeira</span>
+      </div>
+      <p class="text-xs text-zinc-300"><strong>Objetivo:</strong> Calcular o custo exato por unidade considerando perdas de toalete, rateio de insumos invisíveis e gerar os preços dos kits com lucro líquido garantido.</p>
+      <div class="p-4 rounded-lg bg-charcoal-900 font-mono text-xs text-zinc-300 space-y-2 border border-charcoal-800">
+        <p class="text-amber-400 font-bold">COPIE E COLE O TEXTO ABAIXO NO CHATGPT OU GEMINI:</p>
+        <p>"Atue como um especialista em engenharia de cardápio e precificação de alimentos artesanais congelados. Com base no modelo de negócios do 'Protocolo Espetinho Congelado', calcule os custos diretos, margens e preços de venda do meu produto utilizando os meus dados reais de compra abaixo:</p>
+        <p class="text-amber-200"><strong>[DADOS DE ENTRADA DO ALUNO]</strong><br />
+        • Corte bovino utilizado: [Ex: Miolo de Acém / Fraldinha]<br />
+        • Preço por kg pago no açougue (carne bovina): R$ [Ex: 34,00]<br />
+        • Perda estimada de toalete/limpeza da carne bovina: [Ex: 12% a 15%]<br />
+        • Preço por kg do Filé de Frango: R$ [Ex: 20,00]<br />
+        • Preço por kg do Bacon fatiado: R$ [Ex: 38,00]<br />
+        • Preço por kg da Linguiça Toscana: R$ [Ex: 19,00]<br />
+        • Custo do cento de sacos a vácuo 0,18 micras: R$ [Ex: 45,00]<br />
+        • Custo do cento de palitos de bambu: R$ [Ex: 8,00]<br />
+        • Peso padrão por espetinho: [Ex: 100g a 110g]<br />
+        • Margem de lucro líquido desejada sobre o preço de venda: [Ex: 45% a 50%]</p>
+        <p><strong>Com base nesses dados, gere para mim:</strong><br />
+        1. A apuração do Custo da Carne Limpa por kg e por espetinho (bovino, frango com bacon e linguiça toscana).<br />
+        2. O Custo Direto Unitário de Fabricação (carne + R$ 0,20 de tempero seco + palito + embalagem a vácuo).<br />
+        3. A adição da taxa operacional de 7% (energia/gás/água).<br />
+        4. A tabela de Preço Sugerido de Venda Unitário e em pacotes a vácuo fechados com 4 unidades.<br />
+        5. A precificação dos 3 Combos Oficiais (Kit Casal com 12 un, Kit Família com 20 un e Pacote da Galera com 40 un), aplicando a ancoragem correta (preço avulso riscado vs. preço do combo) com o lucro líquido em reais de cada combo."</p>
+      </div>
+    </div>
+
+    <!-- PROMPT 2 -->
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
+      <div class="flex items-center justify-between border-b border-charcoal-800 pb-2">
+        <h3 class="font-bold text-amber-400 text-sm md:text-base">PROMPT 2 — GERADOR DE CARDÁPIO DIGITAL DE 1 PÁGINA PARA WHATSAPP</h3>
+        <span class="text-xs text-zinc-400 font-mono">Copywriting & Oferta</span>
+      </div>
+      <p class="text-xs text-zinc-300"><strong>Objetivo:</strong> Criar um cardápio mobile-first em formato de texto estruturado, pronto com emojis, regras de pedido mínimo e ancoragem comercial.</p>
+      <div class="p-4 rounded-lg bg-charcoal-900 font-mono text-xs text-zinc-300 space-y-2 border border-charcoal-800">
+        <p class="text-amber-400 font-bold">COPIE E COLE O TEXTO ABAIXO NO CHATGPT OU GEMINI:</p>
+        <p>"Atue como um redator profissional de copywriting gastronômico focado em vendas locais por WhatsApp. Crie para mim um Cardápio Digital em Texto (formato vertical de 1 página) de alta conversão para o meu negócio de espetinhos artesanais congelados e embalados a vácuo, baseado nas seguintes informações:</p>
+        <p class="text-amber-200"><strong>[DADOS DE ENTRADA DO ALUNO]</strong><br />
+        • Nome do Meu Negócio: [Ex: Estação do Espeto Artesanal]<br />
+        • Minha Cidade / Região de Atendimento: [Ex: Belém / Ananindeua]<br />
+        • Sabores que produzo: [Ex: Bovino Nobre, Medalhão de Frango com Bacon, Linguiça Toscana Aferventada]<br />
+        • Preço do Kit Casal (12 espetos): [Ex: De R$ 86,00 por R$ 75,00]<br />
+        • Preço do Kit Família (20 espetos - Campeão de Vendas): [Ex: De R$ 140,00 por R$ 119,00]<br />
+        • Preço do Pacote Galera (40 espetos): [Ex: De R$ 280,00 por R$ 229,00]<br />
+        • Preço dos pacotes com 4 unidades a vácuo: [Ex: Bovino R$ 34 / Medalhão R$ 28 / Toscana R$ 24]<br />
+        • Regras de Retirada / Entrega: [Ex: Retirada gratuita no Bairro Centro; taxa fixa de R$ 8 para bairros próximos; pedidos até Quinta às 18h]<br />
+        • Minha Chave PIX: [Ex: Celular (XX) XXXXX-XXXX]</p>
+        <p><strong>Diretrizes de Formatação:</strong><br />
+        • O cardápio deve ser visualmente limpo, com leitura rápida na tela do celular e uso estratégico de espaçamentos e emojis.<br />
+        • Destaque o Kit Família como a escolha mais inteligente e econômica.<br />
+        • Enfatize que os espetos são limpos (sem sebo/nervos), padronizados em 100g-120g e embalados a vácuo (vão direto do freezer para a grelha).<br />
+        • Adicione o rodapé institucional com as instruções de agendamento e pagamento antecipado."</p>
+      </div>
+    </div>
+
+    <!-- PROMPT 3 -->
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
+      <div class="flex items-center justify-between border-b border-charcoal-800 pb-2">
+        <h3 class="font-bold text-amber-400 text-sm md:text-base">PROMPT 3 — LINHA EDITORIAL DE STATUS DO WHATSAPP & STORIES</h3>
+        <span class="text-xs text-zinc-400 font-mono">Conteúdo Semanal</span>
+      </div>
+      <p class="text-xs text-zinc-300"><strong>Objetivo:</strong> Gerar um cronograma de postagens para os Status e Stories (de quarta a domingo), entregando a foto/vídeo exato e o texto de apoio da legenda.</p>
+      <div class="p-4 rounded-lg bg-charcoal-900 font-mono text-xs text-zinc-300 space-y-2 border border-charcoal-800">
+        <p class="text-amber-400 font-bold">COPIE E COLE O TEXTO ABAIXO NO CHATGPT OU GEMINI:</p>
+        <p>"Atue como um estrategista de conteúdo para negócios locais de alimentação. Monte para mim uma sequência semanal completa de publicações para os Status do WhatsApp e Instagram Stories (de quarta-feira a domingo) para vender meu lote semanal de espetinhos artesanais a vácuo.</p>
+        <p class="text-amber-200"><strong>[DADOS DE ENTRADA DO ALUNO]</strong><br />
+        • Nome da Minha Marca: [Ex: Brasa Nobre Congelados]<br />
+        • Dias de Produção e Embalagem: [Ex: Quarta e Quinta]<br />
+        • Dias de Entregas e Retiradas: [Ex: Sexta e Sábado]<br />
+        • Sabor em destaque nesta semana: [Ex: Medalhão de Frango com Bacon]<br />
+        • Bairros atendidos: [Ex: Bairros X, Y e Z]</p>
+        <p><strong>Para cada dia da semana (Quarta, Quinta, Sexta, Sábado e Domingo), estruture:</strong><br />
+        1. O Gatilho do Dia (Higiene, Vácuo/Zelo, Escassez/Oferta, Logística de Entrega ou Prova Social da Brasa).<br />
+        2. O Roteiro Visual Prático (Exatamente o que eu devo fotografar ou gravar com o celular na minha cozinha).<br />
+        3. O Texto Curto de Legenda (Pronto para copiar e sobrepor na imagem, sem enrolação e com chamada para ação no privado)."</p>
+      </div>
+    </div>
+
+    <!-- PROMPT 4 -->
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
+      <div class="flex items-center justify-between border-b border-charcoal-800 pb-2">
+        <h3 class="font-bold text-amber-400 text-sm md:text-base">PROMPT 4 — SIMULADOR DE RESPOSTAS RÁPIDAS E QUEBRA DE OBJEÇÕES</h3>
+        <span class="text-xs text-zinc-400 font-mono">Conversão & Scripts</span>
+      </div>
+      <p class="text-xs text-zinc-300"><strong>Objetivo:</strong> Gerar respostas humanizadas para quando o cliente perguntar o preço, sumir no meio da conversa ou apresentar objeções sobre o valor do frete e carne dura.</p>
+      <div class="p-4 rounded-lg bg-charcoal-900 font-mono text-xs text-zinc-300 space-y-2 border border-charcoal-800">
+        <p class="text-amber-400 font-bold">COPIE E COLE O TEXTO ABAIXO NO CHATGPT OU GEMINI:</p>
+        <p>"Atue como um vendedor experiente de WhatsApp Business especialista em vendas de alimentos de qualidade. Escreva para mim scripts de resposta rápida adaptados ao meu negócio de espetinhos artesanais a vácuo, considerando meus dados abaixo:</p>
+        <p class="text-amber-200"><strong>[DADOS DE ENTRADA DO ALUNO]</strong><br />
+        • Meu Nome / Atendente: [Ex: Carlos]<br />
+        • Nome do Meu Negócio: [Ex: Sabor no Espeto]<br />
+        • Cortes bovinos que utilizo: [Ex: Miolo de Acém e Fraldinha selecionada]<br />
+        • Valor da Minha Taxa de Entrega: [Ex: R$ 7,00]<br />
+        • Valor para Frete Grátis: [Ex: Acima de R$ 180,00]</p>
+        <p><strong>Gere para mim os seguintes scripts humanizados e diretos:</strong><br />
+        1. Resposta para quem pergunta apenas: 'Quanto custa?' (direcionando para o Kit Família sem assustar).<br />
+        2. Resposta para a objeção: 'Achei mais caro do que no açougue' (explicando a perda de peso por toalete, ausência de nervos e os 100g reais).<br />
+        3. Resposta para a dúvida: 'Como descongelar? A carne não solta água e fica dura?' (explicando a barreira térmica do vácuo e o tempero seco).<br />
+        4. Resposta para a objeção: 'O frete ficou caro para o meu endereço' (oferecendo a retirada no portão ou a compra em grupo).<br />
+        5. Mensagem de resgate para o cliente que visualizou o cardápio e não respondeu há mais de 4 horas."</p>
+      </div>
+    </div>
+
+    <!-- PROMPT 5 -->
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
+      <div class="flex items-center justify-between border-b border-charcoal-800 pb-2">
+        <h3 class="font-bold text-amber-400 text-sm md:text-base">PROMPT 5 — MÁQUINA DE RECOMPRA E INDICAÇÃO (PÓS-VENDA)</h3>
+        <span class="text-xs text-zinc-400 font-mono">Retenção & Viralização</span>
+      </div>
+      <p class="text-xs text-zinc-300"><strong>Objetivo:</strong> Manter a base de compradores ativa, extrair depoimentos para usar como prova social e disparar pedidos de indicação lucrativos.</p>
+      <div class="p-4 rounded-lg bg-charcoal-900 font-mono text-xs text-zinc-300 space-y-2 border border-charcoal-800">
+        <p class="text-amber-400 font-bold">COPIE E COLE O TEXTO ABAIXO NO CHATGPT OU GEMINI:</p>
+        <p>"Atue como um especialista em fidelização e retenção de clientes para negócios de gastronomia. Crie uma sequência de mensagens pós-venda para a minha carteira de clientes que compraram espetinhos congelados a vácuo para o fim de semana.</p>
+        <p class="text-amber-200"><strong>[DADOS DE ENTRADA DO ALUNO]</strong><br />
+        • Nome do Meu Negócio: [Ex: Espeto Nobre]<br />
+        • Benefício que posso oferecer para quem indicar um amigo: [Ex: R$ 15 de desconto no próximo pedido ou 1 pacote de espetinhos de linguiça grátis]</p>
+        <p><strong>Escreva para mim 3 mensagens amigáveis e sem tom apelativo:</strong><br />
+        1. Mensagem de Pós-Venda de Segunda-Feira (perguntando como foi o churrasco, a maciez e o ponto de sal).<br />
+        2. Mensagem disparada logo após o elogio do cliente, solicitando indicação de amigos/vizinhos em troca do benefício acima.<br />
+        3. Mensagem de Quinta-Feira para reativação de clientes que compraram há mais de 15 dias, avisando sobre a reserva prioritária dos novos lotes da semana."</p>
+      </div>
+    </div>
+
+    <p class="text-xs text-zinc-400 italic pt-2">
+      Esses 5 prompts resolvem a personalização do aluno: ele não precisa aprender copywriting ou engenharia financeira; basta preencher os valores das carnes que comprou no açougue da esquina e o ChatGPT ou Gemini devolve o ecossistema comercial do negócio pronto para rodar.
+    </p>
+  </section>
+</EbookLayout>

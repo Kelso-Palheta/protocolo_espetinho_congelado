@@ -1,0 +1,140 @@
+---
+interface ItemChecklist {
+  texto: string;
+  detalhe?: string;
+  obrigatorio?: boolean;
+}
+
+interface Props {
+  titulo?: string;
+  subtitulo?: string;
+  itens?: (string | ItemChecklist)[];
+  id?: string;
+}
+
+const {
+  titulo = "Checklist Operacional de Produção",
+  subtitulo = "Marque cada etapa conforme a execução para garantir conformidade técnica",
+  itens = [],
+  id = `checklist-${Math.random().toString(36).substring(2, 9)}`
+} = Astro.props;
+
+const normalizados: ItemChecklist[] = itens.map((item) =>
+  typeof item === 'string' ? { texto: item, obrigatorio: true } : item
+);
+---
+
+<section class="checklist-operacional my-8 rounded-2xl border border-charcoal-700/70 bg-gradient-to-b from-charcoal-900 to-charcoal-950 p-6 shadow-2xl backdrop-blur-md" id={id}>
+  <!-- Header -->
+  <div class="mb-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-charcoal-700/60 pb-4">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex h-2.5 w-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+        <h3 class="font-display text-lg md:text-xl font-bold text-zinc-100 tracking-tight flex items-center gap-2">
+          {titulo}
+        </h3>
+      </div>
+      {subtitulo && <p class="text-xs md:text-sm text-zinc-400">{subtitulo}</p>}
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="flex items-center gap-3 self-start md:self-auto bg-charcoal-800/80 px-3 py-1.5 rounded-lg border border-charcoal-700/80">
+      <span class="text-xs font-mono font-semibold text-amber-400 checklist-status">0/{normalizados.length || 0}</span>
+      <div class="h-2 w-20 bg-charcoal-700 rounded-full overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-amber-500 to-orange-500 w-0 transition-all duration-300 checklist-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checklist Items -->
+  <ul class="space-y-3 checklist-items">
+    {normalizados.map((item, index) => (
+      <li class="group flex items-start gap-3.5 rounded-xl border border-charcoal-800/80 bg-charcoal-800/40 p-3.5 transition-all duration-200 hover:border-amber-500/40 hover:bg-charcoal-800/70 cursor-pointer">
+        <label class="relative flex items-center justify-center cursor-pointer mt-0.5">
+          <input
+            type="checkbox"
+            class="peer sr-only checklist-input"
+            data-item-index={index}
+          />
+          <div class="h-5 w-5 rounded-md border-2 border-zinc-500 bg-charcoal-900 transition-all peer-checked:border-amber-500 peer-checked:bg-amber-500 peer-focus:ring-2 peer-focus:ring-amber-500/30 flex items-center justify-center">
+            <svg class="h-3.5 w-3.5 text-charcoal-950 font-black opacity-0 transition-opacity peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+        </label>
+
+        <div class="flex-1 select-none">
+          <div class="flex items-center gap-2">
+            <span class="text-sm md:text-base font-medium text-zinc-200 transition-colors group-hover:text-zinc-100 peer-checked:text-zinc-500 peer-checked:line-through item-text">
+              {item.texto}
+            </span>
+            {item.obrigatorio && (
+              <span class="rounded bg-rose-950/60 px-1.5 py-0.2 text-[10px] font-semibold text-rose-400 border border-rose-800/40">
+                Crítico
+              </span>
+            )}
+          </div>
+          {item.detalhe && (
+            <p class="mt-1 text-xs text-zinc-400 leading-normal">{item.detalhe}</p>
+          )}
+        </div>
+      </li>
+    ))}
+  </ul>
+
+  <!-- Slot for custom extra items -->
+  <slot />
+</section>
+
+<script>
+  function setupChecklists() {
+    document.querySelectorAll('.checklist-operacional').forEach((container) => {
+      const inputs = container.querySelectorAll<HTMLInputElement>('.checklist-input');
+      const statusEl = container.querySelector('.checklist-status');
+      const barEl = container.querySelector<HTMLElement>('.checklist-bar');
+      const total = inputs.length;
+
+      function updateProgress() {
+        const checked = container.querySelectorAll<HTMLInputElement>('.checklist-input:checked').length;
+        if (statusEl) statusEl.textContent = `${checked}/${total}`;
+        if (barEl && total > 0) {
+          const pct = Math.round((checked / total) * 100);
+          barEl.style.width = `${pct}%`;
+        }
+      }
+
+      inputs.forEach((input) => {
+        input.addEventListener('change', () => {
+          const itemText = input.closest('li')?.querySelector('.item-text');
+          if (itemText) {
+            if (input.checked) {
+              itemText.classList.add('text-zinc-500', 'line-through');
+              itemText.classList.remove('text-zinc-200');
+            } else {
+              itemText.classList.remove('text-zinc-500', 'line-through');
+              itemText.classList.add('text-zinc-200');
+            }
+          }
+          updateProgress();
+        });
+      });
+
+      updateProgress();
+    });
+  }
+
+  // Run on mount and page transitions
+  setupChecklists();
+  document.addEventListener('astro:page-load', setupChecklists);
+</script>
+
+<style>
+  @media print {
+    .checklist-operacional {
+      page-break-before: always !important;
+      break-before: page !important;
+      margin-top: 1.5rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+  }
+</style>

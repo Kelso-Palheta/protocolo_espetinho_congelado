@@ -1,0 +1,279 @@
+---
+import EbookLayout from '../layouts/EbookLayout.astro';
+import VisualBlock from '../components/VisualBlock.astro';
+import CalloutAlerta from '../components/CalloutAlerta.astro';
+import TabelaTecnica from '../components/TabelaTecnica.astro';
+import ChecklistOperacional from '../components/ChecklistOperacional.astro';
+import imgVenda from '../assets/illustrations/protocolo-7-venda.png';
+import imgCapa from '../assets/illustrations/capa-protocolo-7.png';
+---
+
+<EbookLayout
+  title="Protocolo 7 — Venda: Primeiros Pedidos e Atendimento"
+  category="protocolo"
+  chapterNumber="07"
+  chapterTitle="PROTOCOLO 7 — VENDA"
+  chapterSubtitle="Atendimento, Divulgação Local Orgânica e Primeiros Pedidos no WhatsApp"
+  focoTecnico="Venda Local Orgânica & WhatsApp Comercial"
+  parametroChave="Funil de 5 Passos & Script Anti-Spam"
+  imagemCapa={imgCapa.src}
+  prevLink={{ title: "Protocolo 6: Oferta", href: "/protocolo-6" }}
+  nextLink={{ title: "Bônus 1: Delivery", href: "/bonus-1" }}
+>
+  <!-- Bloco Visual com Ilustração Gerada via IA (Sem Placeholders) -->
+  <VisualBlock
+    stepNumber="07"
+    badge="Comercialização Prática"
+    title="Atendimento Consultivo e Fechamento no WhatsApp"
+    subtitle="Movimentar o estoque do freezer com pedidos da sua região"
+    description="Não é necessário investir fortunas em anúncios pagos para começar. A demanda por churrasco prático de qualidade existe nos seus vizinhos, amigos, colegas de trabalho e contatos da sua cidade. Com fotos reais de bastidores e scripts de condução ativa, você transforma conversas em pedidos confirmados via Pix."
+    tip="Nunca encerre uma mensagem com ponto final passivo. Pergunte sempre: 'Consigo separar esse kit para você retirar no sábado ou prefere agendar uma entrega no seu endereço?'"
+    imageSrc={imgVenda.src}
+    imageAlt="Smartphone exibindo pedidos de WhatsApp ao lado de embalagens a vácuo sobre bancada rústica"
+    imagePosition="left"
+  />
+
+  <!-- 1. O Papel da Venda Local e a Filosofia Orgânica -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">1.</span> O Papel da Venda Local e a Filosofia Orgânica
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Muitos iniciantes acreditam que para começar a vender é obrigatório investir centenas de reais em anúncios complexos de internet ou dominar estratégias avançadas de marketing digital. Esse pensamento gera paralisia e adia o início da operação.
+    </p>
+    <p class="text-zinc-300 leading-relaxed font-semibold">
+      O <strong class="text-amber-400">Protocolo Espetinho Congelado</strong> adota a filosofia da venda local, simples e direta:
+    </p>
+    <ul class="space-y-2 text-xs md:text-sm text-zinc-400 pl-4 list-disc marker:text-amber-500">
+      <li>Você não precisa vender para o Brasil inteiro; precisa vender para pessoas da sua rua, do seu bairro, do seu trabalho e da sua cidade.</li>
+      <li>O produto atende a uma demanda concreta de quem consome churrasco e refeições práticas em casa.</li>
+      <li>O objetivo inicial é colocar o estoque do freezer em movimento rápido, gerando o primeiro retorno financeiro e validando o método na prática.</li>
+      <li>O Protocolo foca no processo operacional de oferta e fechamento, sem promessas ilusórias de faturamento fácil ou garantias irreais de volume de clientes.</li>
+    </ul>
+  </section>
+
+  <!-- 2. Preparação do Canal Principal: WhatsApp Profissional -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">2.</span> Preparação do Canal Principal: WhatsApp Profissional
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O WhatsApp é a principal ferramenta de fechamento de pedidos e atendimento da sua operação caseira. Para transmitir segurança ao comprador desde o primeiro contato, ajuste a sua apresentação comercial:
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-3 text-xs md:text-sm">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <h3 class="font-bold text-zinc-100">Foto de Perfil Adequada</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Utilize uma foto nítida e bem iluminada dos espetinhos montados, da logomarca do seu negócio ou uma imagem pessoal alinhada e profissional. Evite fotos escuras, recortadas de forma amadora ou sem relação com alimentação.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <h3 class="font-bold text-zinc-100">Nome e Descrição Comercial</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Configure o nome do seu negócio de forma clara e, na biografia do perfil, defina exatamente o que você faz: <em>"Espetinhos Artesanais Congelados por Encomenda | Produção caseira padronizada para seu churrasco | Retirada ou Entrega local"</em>.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <h3 class="font-bold text-zinc-100">Respostas Rápidas Salvas</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Configure atalhos no teclado com o texto do cardápio oficial, as regras de entrega/retirada e a chave Pix da sua conta. Isso permite responder interessados em poucos segundos, sem digitar tudo do zero a cada mensagem recebida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. O Roteiro de Lançamento para a Rede de Contatos Primária -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">3.</span> O Roteiro de Lançamento para a Rede de Contatos Primária
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Os seus primeiros clientes não virão de anúncios pagos; virão do seu círculo imediato de contatos (amigos, familiares, vizinhos, colegas de trabalho e conhecidos da sua cidade).
+    </p>
+
+    <div class="rounded-xl border border-rose-500/20 bg-rose-500/5 p-4 text-xs md:text-sm text-zinc-300">
+      <strong class="text-rose-300">A Regra Anti-Spam:</strong> Nunca crie grupos coletivos sem autorização e não dispare mensagens genéricas em listas de transmissão frias. O contato inicial deve ser individual, respeitoso e personalizado.
+    </div>
+
+    <!-- Script de Apresentação Direta -->
+    <div class="rounded-xl border border-charcoal-800 bg-charcoal-950 p-5 md:p-6 space-y-3">
+      <h3 class="font-bold text-amber-400 text-sm">
+        Script de Apresentação Direta (Envio Individual):
+      </h3>
+      <div class="p-4 rounded-lg bg-charcoal-900 border border-charcoal-800 text-xs md:text-sm text-zinc-200 italic space-y-2 leading-relaxed">
+        <p>"Oi, [Nome do Contato], tudo bem?</p>
+        <p>Passando rapidinho para te contar uma novidade: iniciei uma produção artesanal de espetinhos congelados aqui na minha cozinha, com cortes selecionados e padrão de 100 g por palito, prontos para guardar no freezer e assar quando quiser!</p>
+        <p>Como você é meu amigo/conhecido, estou te mandando em primeira mão o nosso cardápio de kits para o fim de semana. Estamos com opções práticas para churrasco em família ou pequenas reuniões.</p>
+        <p>Vou deixar a foto do nosso cardápio aqui abaixo. Se você tiver interesse em garantir um pacote para o fim de semana, só me avisar por aqui que separo o seu lote!"</p>
+      </div>
+      <p class="text-xs text-zinc-400 italic">
+        Esse tipo de abordagem não soa como propaganda forçada e ativa a curiosidade e o apoio da sua própria rede de convivência.
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. Rotina de Divulgação em Status e Redes Sociais Locais -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">4.</span> Rotina de Divulgação em Status e Redes Sociais Locais
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O consumo de carne e churrasco é fortemente orientado pelo calendário semanal. Planeje a sua divulgação visual nos Status do WhatsApp e no Instagram acompanhando o ritmo do consumidor:
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-4 text-xs md:text-sm">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wide block">Quarta e Quinta-Feira</span>
+        <h3 class="font-bold text-zinc-100">Antecipação e Bastidores</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Poste fotos da bancada higienizada, dos cubos de carne sendo porcionados e pesados na balança digital.
+        </p>
+        <p class="text-xs text-zinc-300 italic pt-1">
+          "Preparando os lotes frescos da semana. Quem quiser garantir espetinhos padronizados para o fim de semana, encomendas abertas até sexta-feira!"
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wide block">Sexta-Feira</span>
+        <h3 class="font-bold text-zinc-100">Chamada para Encomenda</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Publique o cardápio oficial com a ancoragem dos kits (destacando o Kit Família).
+        </p>
+        <p class="text-xs text-zinc-300 italic pt-1">
+          "Freezer abastecido! Garanta seus pacotes congelados e não perca tempo preparando carne no sábado. Retiradas e entregas programadas disponíveis."
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wide block">Sábado e Domingo</span>
+        <h3 class="font-bold text-zinc-100">Desejo e Prova Visual</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Poste fotos ou vídeos curtos de espetinhos dourando na brasa ou depoimentos espontâneos de quem comprou.
+        </p>
+        <p class="text-xs text-zinc-300 italic pt-1">
+          Desperta a vontade de consumo imediato e planta a decisão de compra para o fim de semana seguinte.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Condução do Atendimento e Fechamento Rápido do Pedido -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">5.</span> Condução do Atendimento e Fechamento Rápido do Pedido
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Quando um interessado responder ao seu anúncio ou Status perguntando <em>"Quanto custa?"</em> ou <em>"Como funciona?"</em>, assuma a liderança da conversa com clareza:
+    </p>
+
+    <div class="space-y-3 text-xs md:text-sm text-zinc-300">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <strong class="text-amber-400 block">Passo 1 — Acolhimento e Envio do Cardápio:</strong>
+        <p class="text-zinc-400 leading-relaxed">
+          Cumprimente pelo nome e envie a imagem do cardápio acompanhada da descrição rápida do padrão de 100 g e carnes limpas.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <strong class="text-amber-400 block">Passo 2 — Direcionamento para o Combo:</strong>
+        <p class="text-zinc-400 leading-relaxed">
+          Pergunte de imediato a ocasião de consumo para sugerir a opção mais vantajosa: <em>"Você está pensando em um almoço para quantas pessoas no fim de semana?"</em> Indique o Kit 2 (Kit Família) como a escolha de melhor custo-benefício.
+        </p>
+      </div>
+
+      <!-- Passo 3: Quebra de Dúvidas Operacionais Comuns -->
+      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
+        <strong class="text-amber-400 block text-sm">Passo 3 — Quebra de Dúvidas Operacionais Comuns:</strong>
+        <p class="text-zinc-400 leading-relaxed">
+          Nunca recomende ao cliente descongelar o pacote de espetinhos sobre a pia ou em temperatura ambiente, pois a parte externa atinge faixas perigosas de contaminação antes do centro descongelar. Insira na etiqueta e nas respostas do WhatsApp apenas as duas orientações técnicas corretas:
+        </p>
+        <div class="space-y-2 pl-2 text-xs">
+          <p><strong class="text-zinc-200">• Direto do Freezer para a Grelha:</strong> Como os espetos vêm embalados a vácuo e sem excesso de água, eles podem ir direto para a churrasqueira. Posicione na parte mais alta da grelha (brasa média/baixa) para assar por dentro e desça para a brasa forte apenas nos minutos finais para dourar.</p>
+          <p><strong class="text-zinc-200">• Descongelamento sob Refrigeração:</strong> Caso o cliente queira assar em chapa ou frigideira, retire o pacote do freezer e transfira para a parte de baixo da geladeira 4 a 6 horas antes do consumo, mantendo a carne macia e sem perda de sucos.</p>
+          <p><strong class="text-zinc-200">• Já vem temperado?</strong> Explique que a carne já recebe temperos secos naturais e azeite protetor, com sal equilibrado para manter a suculência.</p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <strong class="text-amber-400 block">Passo 4 — Fechamento Direto:</strong>
+        <p class="text-zinc-400 leading-relaxed">
+          Nunca termine uma resposta com ponto final passivo. Encerre sempre com uma pergunta de ação: <em>"Consigo separar esse kit para você retirar no sábado de manhã ou você prefere agendar uma entrega?"</em>
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <strong class="text-amber-400 block">Passo 5 — Confirmação e Pagamento:</strong>
+        <p class="text-zinc-400 leading-relaxed">
+          Assim que o cliente confirmar o item, envie o resumo formal do pedido com o valor total, chave Pix e solicite o comprovante para reservar o pacote no freezer.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Modelo de Controle de Pedidos -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">6.</span> Modelo de Controle de Pedidos
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Mantenha um caderno de pedidos ou planilha simples com os dados estruturados de cada encomenda para evitar atrasos ou trocas de produtos:
+    </p>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Número do Pedido</span>
+        <span class="text-zinc-200 font-bold">[ Ex: Pedido #001 ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Nome do Cliente</span>
+        <span class="text-zinc-200 font-bold">[ ______________________ ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">WhatsApp de Contato</span>
+        <span class="text-zinc-200 font-bold">[ (___) _______________ ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Produtos / Kits Encomendados</span>
+        <span class="text-amber-400 font-bold">Ex: 1x Kit Família (20 un)</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Valor Total do Pedido</span>
+        <span class="text-amber-400 font-bold">R$ [ _________ ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Forma de Pagamento</span>
+        <span class="text-zinc-200 font-bold">Pix antecipado / Cartão</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Modalidade</span>
+        <span class="text-zinc-200 font-bold">Retirada / Entrega</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Data e Horário Combinados</span>
+        <span class="text-zinc-200 font-bold">[ ___ / ___ às ___:___ ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Status do Pedido</span>
+        <span class="text-emerald-400 font-bold">Reservado / Em trânsito / Pago</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Checklist Prático do Protocolo 7 (Integral) -->
+  <ChecklistOperacional
+    titulo="Checklist Prático de Execução do Protocolo 7"
+    subtitulo="Auditoria do atendimento e ativação comercial de contatos"
+    itens={[
+      { texto: "Foto de perfil profissional e informações claras de bio configuradas no WhatsApp.", obrigatorio: true, detalhe: "Apresentação comercial e confiabilidade." },
+      { texto: "Atalhos de respostas rápidas (cardápio, Pix e regras) salvos no aplicativo.", obrigatorio: true, detalhe: "Agilidade no tempo de resposta aos interessados." },
+      { texto: "Script de lançamento individual enviado para uma lista de 20 a 30 contatos do círculo próximo.", obrigatorio: true, detalhe: "Venda direta e personalizada sem grupos coletivos." },
+      { texto: "Fotos de bastidores da produção e pesagem postadas nos Status entre quarta e quinta-feira.", obrigatorio: true, detalhe: "Gera antecipação e desejo visual." },
+      { texto: "Oferta oficial de fim de semana divulgada na sexta-feira pela manhã.", obrigatorio: true, detalhe: "Momento chave para captação de encomendas." },
+      { texto: "Atendimento ágil prestado com direcionamento para kits de valor agregado.", obrigatorio: true, detalhe: "Foco no Kit Família para elevar o ticket médio." },
+      { texto: "Pedidos confirmados registrados formalmente no Controle de Pedidos com pagamento alinhado.", obrigatorio: true, detalhe: "Organização da entrega e confirmação por Pix." }
+    ]}
+  />
+</EbookLayout>

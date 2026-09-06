@@ -1,0 +1,293 @@
+---
+import EbookLayout from '../layouts/EbookLayout.astro';
+import VisualBlock from '../components/VisualBlock.astro';
+import CalloutAlerta from '../components/CalloutAlerta.astro';
+import TabelaTecnica from '../components/TabelaTecnica.astro';
+import ChecklistOperacional from '../components/ChecklistOperacional.astro';
+import imgPrecificacao from '../assets/illustrations/protocolo-5-precificacao.png';
+import imgCapa from '../assets/illustrations/capa-protocolo-5.png';
+---
+
+<EbookLayout
+  title="Protocolo 5 — Precificação: A Matemática do Custo Real"
+  category="protocolo"
+  chapterNumber="05"
+  chapterTitle="PROTOCOLO 5 — PRECIFICAÇÃO"
+  chapterSubtitle="A Matemática do Custo Real e do Lucro Líquido Blindado"
+  focoTecnico="Custo da Carne Limpa & Insumos Invisíveis"
+  parametroChave="Markup 1,8x & Margem 45% a 55%"
+  imagemCapa={imgCapa.src}
+  prevLink={{ title: "Protocolo 4: Congelamento", href: "/protocolo-4" }}
+  nextLink={{ title: "Protocolo 6: Oferta", href: "/protocolo-6" }}
+>
+  <!-- Bloco Visual com Ilustração Gerada via IA (Sem Placeholders) -->
+  <VisualBlock
+    stepNumber="05"
+    badge="Engenharia Financeira"
+    title="A Matemática do Custo Real e Margem Protegida"
+    subtitle="Descubra o custo por grama limpa antes de fixar o preço de venda"
+    description="O maior erro do iniciante é calcular o custo pelo quilo bruto da carne na nota fiscal do açougue. Após aparar 600g de gordura dura e aponeuroses em 5kg de carne, o quilo limpo salta de R$ 36,00 para R$ 40,90. Quem ignora essa matemática perde R$ 0,49 por espetinho sem perceber."
+    tip="Mescle cortes nobres com cortes de alto giro (como linguiça e frango) nos kits promocionais. Isso permite dar um desconto perceptível de R$ 21,00 para o cliente mantendo mais de R$ 54,00 de lucro líquido limpo no bolso em cada venda."
+    imageSrc={imgPrecificacao.src}
+    imageAlt="Caderno gastronômico com cálculos de ficha técnica e cubos de carne sobre balança digital em ardósia"
+    imagePosition="left"
+  />
+
+  <!-- 1. O Perigo de Copiar o Preço da Concorrência -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">1.</span> O Perigo de Copiar o Preço da Concorrência
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O erro mais comum cometido por quem começa a vender espetinhos em casa é olhar quanto o vendedor da esquina ou o concorrente do bairro cobra e colocar o mesmo preço na própria tabela. Copiar o preço de terceiros é o caminho mais rápido para quebrar a operação.
+    </p>
+    <p class="text-zinc-200 font-semibold text-sm">
+      Você não sabe:
+    </p>
+    <ul class="space-y-2 text-xs md:text-sm text-zinc-400 pl-4 list-disc marker:text-rose-400">
+      <li>A que preço o outro comprou a carne no atacado.</li>
+      <li>O peso exato que ele coloca no palito (muitas vezes unidades de 70 g ou 80 g vendidas pelo preço de 100 g).</li>
+      <li>A quantidade de sebo e nervo que ele empurrou no meio do espetinho para baratear o produto.</li>
+      <li>Se ele realmente lucra ou se está apenas acumulando dívidas sem perceber.</li>
+    </ul>
+    <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs md:text-sm text-amber-200 leading-relaxed">
+      O <strong class="text-amber-400">Protocolo Espetinho Congelado</strong> estabelece uma regra inegociável: seu preço de venda não nasce da adivinhação, nasce da sua própria planilha de custos. Você precisa dominar o ciclo financeiro do método: <strong>Quanto Custa → Quanto Cobrar → Quanto Sobra</strong>.
+    </div>
+  </section>
+
+  <!-- 2. Apuração do Custo da Carne Limpa (Peso Real Utilizado) -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">2.</span> Apuração do Custo da Carne Limpa (Peso Real Utilizado)
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O cálculo do custo da carne não é feito com base no peso que você comprou no açougue, mas sim no <strong>peso que realmente sobrou na tábua após a limpeza</strong> (Peso Limpo).
+    </p>
+
+    <!-- Exemplo Real -->
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3 text-xs md:text-sm">
+      <h3 class="font-bold text-amber-400 text-sm">Exemplo de Cálculo Real:</h3>
+      <ul class="space-y-2 text-zinc-300 pl-4 list-disc marker:text-amber-500">
+        <li>Você compra 5,0 kg de alcatra no açougue por R$ 36,00 o quilo, pagando um total de R$ 180,00.</li>
+        <li>Durante a toalete, você retira 600 g de membranas, peles e gorduras inutilizáveis, restando 4,4 kg de carne limpa em cubos.</li>
+        <li>Se você dividir os R$ 180,00 gastos pelos 4,4 kg úteis, o custo real do quilo limpo foi de <strong class="text-amber-300">R$ 40,90</strong> (e não os R$ 36,00 da nota de compra).</li>
+      </ul>
+      <div class="border-t border-charcoal-800 pt-3">
+        <p class="text-zinc-300 leading-relaxed">
+          Se o seu espetinho tem o padrão oficial de 100 g de carne, o custo exclusivo da carne em cada unidade é calculado dividindo o quilo limpo por 10:
+        </p>
+        <p class="text-base font-extrabold text-amber-400 mt-1">
+          Custo da carne por espetinho: R$ 40,90 ÷ 10 = R$ 4,09 por unidade.
+        </p>
+      </div>
+      <p class="text-xs text-rose-300/90 leading-relaxed border-l-2 border-rose-500/40 pl-3">
+        Ignorar o peso das perdas faz você vender acreditando que a carne custou R$ 3,60, gerando um prejuízo invisível de R$ 0,49 em cada espetinho comercializado. Em 200 espetinhos, são quase R$ 100,00 do seu bolso jogados fora.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. Insumos Invisíveis: Palito, Temperos e Embalagem -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">3.</span> Insumos Invisíveis: Palito, Temperos e Embalagem
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Para saber o custo de fábrica do produto pronto, você precisa ratear os materiais de consumo que acompanham a peça:
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-3 text-xs md:text-sm">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <strong class="text-zinc-100 block">Palitos de Madeira/Bambu</strong>
+        <p class="text-zinc-400">Pacote com 100 palitos por R$ 8,00</p>
+        <span class="text-amber-400 font-bold block pt-1">= R$ 0,08 por espetinho</span>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <strong class="text-zinc-100 block">Temperos e Emulsão</strong>
+        <p class="text-zinc-400">R$ 1,50 a R$ 2,50 de temperos por kg</p>
+        <span class="text-amber-400 font-bold block pt-1">= R$ 0,20 por espetinho</span>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <strong class="text-zinc-100 block">Embalagem e Etiqueta</strong>
+        <p class="text-zinc-400">Saco (R$ 0,45) + Etiqueta (R$ 0,20) ÷ 10</p>
+        <span class="text-amber-400 font-bold block pt-1">= R$ 0,07 por espetinho</span>
+      </div>
+    </div>
+
+    <!-- Consolidação dos Custos Diretos -->
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
+      <h3 class="font-bold text-zinc-100 text-sm">
+        Consolidação dos Custos Diretos (Custo Unitário de Fabricação):
+      </h3>
+      <div class="space-y-1.5 text-xs md:text-sm text-zinc-300 font-mono">
+        <div class="flex justify-between border-b border-charcoal-800/80 pb-1">
+          <span>Carne limpa (100 g):</span>
+          <span class="text-zinc-100">R$ 4,09</span>
+        </div>
+        <div class="flex justify-between border-b border-charcoal-800/80 pb-1">
+          <span>Palito de bambu:</span>
+          <span class="text-zinc-100">R$ 0,08</span>
+        </div>
+        <div class="flex justify-between border-b border-charcoal-800/80 pb-1">
+          <span>Temperos e óleo vegetal:</span>
+          <span class="text-zinc-100">R$ 0,20</span>
+        </div>
+        <div class="flex justify-between border-b border-charcoal-800/80 pb-1">
+          <span>Embalagem primária e etiqueta:</span>
+          <span class="text-zinc-100">R$ 0,07</span>
+        </div>
+        <div class="flex justify-between pt-1 font-bold text-amber-400 text-sm">
+          <span>Custo Direto Total por Unidade:</span>
+          <span>R$ 4,44</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Taxa Operacional Doméstica (Energia, Gás e Água) -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">4.</span> Taxa Operacional Doméstica (Energia, Gás e Água)
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Produzir em casa não significa custo zero de utilidades. O freezer ligado em potência alta consome eletricidade, e a limpeza consome água e materiais de higienização.
+    </p>
+    <p class="text-zinc-300 leading-relaxed">
+      Para manter a gestão simples sem relatórios contábeis complexos, o Protocolo adota a <strong>Taxa Operacional Padrão de 5% a 8%</strong> sobre os custos diretos:
+    </p>
+    <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2 text-xs md:text-sm">
+      <p class="text-zinc-300">
+        Se o custo direto do produto foi R$ 4,44, adicione 7% (R$ 0,31) a título de reserva operacional.
+      </p>
+      <p class="text-sm md:text-base font-extrabold text-amber-400">
+        Custo Total Apurado por Espetinho: R$ 4,44 + R$ 0,31 = R$ 4,75.
+      </p>
+      <p class="text-xs text-zinc-400 italic">
+        Esse valor final de R$ 4,75 é o seu piso absoluto. Vender abaixo desse valor significa pagar para trabalhar.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. Formação do Preço de Venda e Margem de Lucro -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">5.</span> Formação do Preço de Venda e Margem de Lucro
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O preço de venda deve garantir o pagamento de todos os custos e deixar uma margem de lucro líquido atraente no seu bolso.
+    </p>
+    <p class="text-zinc-300 leading-relaxed">
+      No mercado de espetinhos artesanais congelados para encomenda, a margem de contribuição saudável situa-se entre <strong>40% e 55% sobre o preço final de venda</strong> (ou uma aplicação de multiplicador de markup entre 1,7 e 2,0 sobre o custo total):
+    </p>
+
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-amber-500/30 space-y-2 text-xs md:text-sm">
+      <h3 class="font-bold text-amber-300 text-sm">Cenário de Margem Recomendada (Markup de 1,8x):</h3>
+      <ul class="space-y-1.5 text-zinc-300 pl-4 list-disc marker:text-amber-500 font-mono">
+        <li>Custo Total Apurado: R$ 4,75</li>
+        <li>Preço de Venda Unitário Sugerido: R$ 4,75 × 1,8 = <strong class="text-amber-400">R$ 8,50</strong></li>
+        <li>Lucro Bruto por Espetinho: R$ 8,50 - R$ 4,75 = <strong class="text-emerald-400">R$ 3,75 por unidade vendida</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Engenharia de Preço para Kits e Combos -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">6.</span> Engenharia de Preço para Kits e Combos
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Você nunca deve oferecer descontos diminuindo a margem dos produtos mais caros de forma desordenada. O segredo para criar kits promocionais com alta percepção de economia e excelente margem no bolso é mesclar produtos de custos diferentes no mesmo pacote:
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-3 text-xs">
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <strong class="text-zinc-100 block">Espetinho Bovino</strong>
+        <span class="text-zinc-400">Custo unitário: R$ 4,75</span>
+        <span class="text-amber-400 font-bold block">Tabela: R$ 8,50</span>
+      </div>
+
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <strong class="text-zinc-100 block">Frango com Bacon</strong>
+        <span class="text-zinc-400">Custo unitário: R$ 2,60</span>
+        <span class="text-amber-400 font-bold block">Tabela: R$ 6,50</span>
+      </div>
+
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <strong class="text-zinc-100 block">Linguiça Suína</strong>
+        <span class="text-zinc-400">Custo unitário: R$ 1,90</span>
+        <span class="text-amber-400 font-bold block">Tabela: R$ 5,50</span>
+      </div>
+    </div>
+
+    <!-- Exemplo Prático Kit -->
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3 text-xs md:text-sm">
+      <h3 class="font-bold text-amber-400 text-sm">
+        Exemplo Prático: Kit Churrasco em Família (20 Unidades)
+      </h3>
+      <p class="text-zinc-300">
+        Composição do Kit: <strong>8 Bovinos + 6 Frangos + 6 Linguiças</strong>.
+      </p>
+      <div class="space-y-1 text-zinc-400 font-mono text-xs">
+        <p>• Somado pelo preço avulso de tabela: (8 × R$ 8,50) + (6 × R$ 6,50) + (6 × R$ 5,50) = R$ 68,00 + R$ 39,00 + R$ 33,00 = <strong class="text-zinc-200">R$ 140,00</strong>.</p>
+        <p>• Custo Real de Produção do Kit: (8 × R$ 4,75) + (6 × R$ 2,60) + (6 × R$ 1,90) = R$ 38,00 + R$ 15,60 + R$ 11,40 = <strong class="text-zinc-200">R$ 65,00</strong>.</p>
+        <p>• Preço Promocional de Venda do Kit: <strong class="text-amber-400 text-sm">R$ 119,00</strong>.</p>
+      </div>
+
+      <div class="border-t border-charcoal-800 pt-3 space-y-1">
+        <strong class="text-emerald-400 block text-sm">O Resultado Comercial:</strong>
+        <p class="text-zinc-300">
+          O cliente enxerga uma economia expressiva de R$ 21,00 em relação à tabela avulsa e fecha o pedido rapidamente. Você recebe R$ 119,00, tem um custo de R$ 65,00 e coloca <strong class="text-emerald-300">R$ 54,00 de lucro líquido limpo</strong> no bolso em uma única venda de pacote.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Guia Operacional da Calculadora Oficial de Custos & Preço -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">7.</span> Guia Operacional da Calculadora Oficial de Custos & Preço
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      A ferramenta oficial foi estruturada para ser preenchida em 5 etapas sequenciais:
+    </p>
+
+    <div class="space-y-3 text-xs md:text-sm text-zinc-300">
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">Passo 1:</span>
+        <p><strong class="text-zinc-100">Matéria-Prima:</strong> Insira o valor pago pelo quilo da carne no açougue, o peso bruto comprado e o peso das aparas retiradas. A ferramenta calcula o valor real do quilo limpo.</p>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">Passo 2:</span>
+        <p><strong class="text-zinc-100">Rendimento:</strong> Insira a gramatura da unidade (ex: 100 g). A ferramenta indica quantos espetinhos o lote vai render.</p>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">Passo 3:</span>
+        <p><strong class="text-zinc-100">Insumos:</strong> Preencha os valores de compra do pacote de palitos, temperos e sacos plásticos com etiquetas. A ferramenta apura o Custo Direto Unitário.</p>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">Passo 4:</span>
+        <p><strong class="text-zinc-100">Margem Alvo:</strong> Selecione o percentual de margem desejado (ex: 45% a 50% de margem sobre o preço de venda).</p>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">Passo 5:</span>
+        <p><strong class="text-zinc-100">Resultado:</strong> A ferramenta gera automaticamente o <strong>Preço Mínimo de Venda</strong>, o <strong>Preço Sugerido de Tabela</strong> e a simulação de desconto máximo permitido para kits sem comprometer seu lucro.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Checklist Prático do Protocolo 5 (Integral) -->
+  <ChecklistOperacional
+    titulo="Checklist Prático de Execução do Protocolo 5"
+    subtitulo="Auditoria financeira antes de divulgar qualquer tabela de preços"
+    itens={[
+      { texto: "Peso bruto e peso limpo da carne pesados na balança e anotados.", obrigatorio: true, detalhe: "Conferência rigorosa de quebra e toalete." },
+      { texto: "Custo do quilo limpo apurado considerando o descarte de nervos e aparas.", obrigatorio: true, detalhe: "Evita o prejuízo invisível da matéria-prima." },
+      { texto: "Rateio de palitos, condimentos secos e embalagens plásticas somado à carne.", obrigatorio: true, detalhe: "Inclusão de 100% dos insumos de consumo." },
+      { texto: "Taxa operacional de suporte adicionada ao custo de fabricação (5% a 8%).", obrigatorio: true, detalhe: "Reserva para energia, água e sanitização." },
+      { texto: "Margem de lucro de segurança aplicada sobre o custo total apurado (markup 1,8x).", obrigatorio: true, detalhe: "Garante retorno líquido consistente." },
+      { texto: "Preços de tabela unitários definidos e registrados.", obrigatorio: true, detalhe: "Base matemática para ancorar as ofertas." },
+      { texto: "Preços dos kits estruturados com margem preservada através da mescla de sabores.", obrigatorio: true, detalhe: "Desconto perceptível para o cliente com lucro alto no bolso." }
+    ]}
+  />
+</EbookLayout>

@@ -1,0 +1,319 @@
+---
+import CalloutAlerta from '../components/CalloutAlerta.astro';
+import TabelaTecnica from '../components/TabelaTecnica.astro';
+import ChecklistOperacional from '../components/ChecklistOperacional.astro';
+import imgHero from '../assets/illustrations/hero-banner.png';
+
+const protocolos = [
+  { num: "01", rota: "/protocolo-1", tag: "Infraestrutura", titulo: "Preparação: A Estrutura Mínima", desc: "Diagnóstico da cozinha doméstica, equipamentos indispensáveis, controle sanitário e separação física da bancada." },
+  { num: "02", rota: "/protocolo-2", tag: "Engenharia de Corte", titulo: "Produção: Matéria-Prima em Espetinhos", desc: "Matriz de cortes cárneos, regra contra recongelamento, toalete PB vs PL, cubagem e uso de palitos secos." },
+  { num: "03", rota: "/protocolo-3", tag: "Industrialização", titulo: "Padronização: O DNA do Espetinho", desc: "Ficha técnica oficial, as 3 faixas de peso comercial, tolerância de ±2g e a fórmula da Base Seca Universal." },
+  { num: "04", rota: "/protocolo-4", tag: "Cadeia de Frio", titulo: "Congelamento: Estoque Vendável", desc: "Técnica antiaderente do pré-congelamento aberto (IQF), selagem técnica a vácuo e prevenção de queima por frio." },
+  { num: "05", rota: "/protocolo-5", tag: "Finanças", titulo: "Precificação: Custo Real e Margem", desc: "A matemática da carne limpa, rateio de palito e embalagem, taxa de utilidades e multiplicador de lucro acima de 45%." },
+  { num: "06", rota: "/protocolo-6", tag: "Conversão", titulo: "Oferta: Kits e Cardápios Lucrativos", desc: "Vender ocasiões de consumo em vez de palitos soltos, matriz de combos e ancoragem de preço avulso riscado." },
+  { num: "07", rota: "/protocolo-7", tag: "Vendas", titulo: "Venda: Atendimento e Primeiros Pedidos", desc: "Filosofia da venda local orgânica, scripts individuais para WhatsApp e rotina semanal de divulgação em Status." },
+];
+
+const bonus = [
+  { num: "B1", rota: "/bonus-1", titulo: "Operação de Pedidos & Delivery", desc: "Logística sem degelo no trânsito, caixas isotérmicas, blocos térmicos rígidos e conferência pré-saída zero erro." },
+  { num: "B2", rota: "/bonus-2", titulo: "Protocolo da Recompra e Recorrência", desc: "Como construir carteira de 20 famílias compradoras quinzenais, timing da mensagem de 48h e scripts de indicação." },
+  { num: "B3", rota: "/bonus-3", titulo: "Crescimento e Expansão Consciente", desc: "Separação rígida de caixa, Curva ABC no freezer, aquisição de equipamentos com lucro retido e parcerias locais." },
+  { num: "B4", rota: "/bonus-4", titulo: "Plano Prático Primeiros 7 Dias", desc: "Roteiro sequencial de uma única missão diária: da escolha dos utensílios à primeira entrega faturada no fim de semana." },
+];
+
+const modulosLiberados = [
+  {
+    num: "K1",
+    rota: "/modulo-whatsapp-vendas",
+    titulo: "Kit WhatsApp Que Vende & Scripts de Fechamento",
+    desc: "A metodologia do atendimento invisível, CRM de etiquetas coloridas, quebra de objeções por áudio curto e condução irresistível ao Kit Família.",
+    destaques: ["CRM de 5 Cores", "Scripts Prontos Copia e Cola", "Respostas Rápidas"]
+  },
+  {
+    num: "K2",
+    rota: "/modulo-cardapio-visual",
+    titulo: "Kit Cardápio & Comunicação Visual Gastronômica",
+    desc: "A psicologia visual da carne a vácuo, guia de fotografia gastronômica com celular, modelos de cardápio vertical e prompts de IA culinária.",
+    destaques: ["Cardápio Vertical 9:16", "Fotografia com Smartphone", "Prompts de IA 4K"]
+  }
+];
+---
+
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Operacional | Protocolo Espetinho Congelado</title>
+    <meta name="description" content="Portal oficial de treinamento e manuais operacionais do Protocolo Espetinho Congelado. Todos os protocolos, bônus e kits liberados." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-charcoal-950 text-zinc-100 font-sans antialiased selection:bg-amber-500 selection:text-charcoal-950 min-h-screen">
+
+    <!-- Top Navigation Header -->
+    <header class="sticky top-0 z-50 border-b border-charcoal-800/80 bg-charcoal-950/90 backdrop-blur-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2.5 text-zinc-100">
+          <span class="text-2xl">🔥</span>
+          <span class="font-display font-bold text-lg md:text-xl tracking-tight">Protocolo <strong class="text-amber-500 font-extrabold">Espetinho Congelado</strong></span>
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="#protocolos" class="hidden sm:inline text-xs font-semibold text-zinc-400 hover:text-zinc-200 transition-colors">Protocolos</a>
+          <a href="#bonus" class="hidden sm:inline text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">Bônus</a>
+          <a href="#modulos-liberados" class="hidden sm:inline text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors">Módulos Liberados</a>
+          <span class="text-xs font-mono font-bold tracking-wide px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">
+            Portal Completo
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative overflow-hidden border-b border-charcoal-800 bg-charcoal-950 py-16 md:py-24">
+      <div class="pointer-events-none absolute inset-0 z-0 opacity-25">
+        <img src={imgHero.src} alt="Espetinhos na brasa" class="h-full w-full object-cover filter brightness-50 contrast-125" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/80 to-charcoal-950/60"></div>
+      </div>
+      <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-amber-500/10 blur-3xl"></div>
+      
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 space-y-6">
+        <div class="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-xs font-semibold text-amber-400 tracking-wide uppercase">
+          <span>Manual Técnico de Produção & Venda em Casa</span>
+        </div>
+
+        <h1 class="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-50 leading-tight">
+          Transforme sua Cozinha em uma Central de <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500">Espetinhos Congelados</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          Sem fumaça, sem ponto de rua e sem desperdício. Produza antecipadamente em lotes controlados, congele a vácuo com integridade celular e atenda clientes por encomendas e delivery local.
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-4 max-w-3xl mx-auto">
+          <div class="rounded-xl border border-charcoal-800 bg-charcoal-900/80 p-4">
+            <span class="font-display text-2xl md:text-3xl font-extrabold text-amber-400">-18°C</span>
+            <p class="text-[11px] text-zinc-400 font-medium uppercase tracking-wider mt-1">Cadeia de Frio IQF</p>
+          </div>
+          <div class="rounded-xl border border-charcoal-800 bg-charcoal-900/80 p-4">
+            <span class="font-display text-2xl md:text-3xl font-extrabold text-amber-400">100g</span>
+            <p class="text-[11px] text-zinc-400 font-medium uppercase tracking-wider mt-1">Padrão por Espeto</p>
+          </div>
+          <div class="rounded-xl border border-charcoal-800 bg-charcoal-900/80 p-4">
+            <span class="font-display text-2xl md:text-3xl font-extrabold text-amber-400">60 Dias</span>
+            <p class="text-[11px] text-zinc-400 font-medium uppercase tracking-wider mt-1">Validade a Vácuo</p>
+          </div>
+          <div class="rounded-xl border border-charcoal-800 bg-charcoal-900/80 p-4">
+            <span class="font-display text-2xl md:text-3xl font-extrabold text-amber-400">+45%</span>
+            <p class="text-[11px] text-zinc-400 font-medium uppercase tracking-wider mt-1">Margem Líquida Real</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-20 space-y-20">
+
+      <!-- Seção 1: Os 7 Protocolos Oficiais -->
+      <section id="protocolos" class="space-y-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-charcoal-800 pb-5">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-500 font-bold">Trilha Principal</span>
+            <h2 class="font-display text-2xl md:text-3xl font-extrabold text-zinc-100 tracking-tight mt-1">
+              Os 7 Protocolos Operacionais Oficiais
+            </h2>
+          </div>
+          <p class="text-xs md:text-sm text-zinc-400 max-w-md">
+            O método sequencial passo a passo: da escolha dos utensílios à entrega do pedido fechado.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {protocolos.map((item) => (
+            <a
+              href={item.rota}
+              class="group relative flex flex-col justify-between rounded-2xl border border-charcoal-800 bg-charcoal-900/70 p-6 transition-all duration-300 hover:border-amber-500/50 hover:bg-charcoal-900 hover:-translate-y-1 shadow-xl hover:shadow-amber-500/10"
+            >
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">
+                    Capítulo {item.num}
+                  </span>
+                  <span class="text-[11px] font-mono text-zinc-400">{item.tag}</span>
+                </div>
+                <h3 class="font-display text-lg font-bold text-zinc-100 group-hover:text-amber-400 transition-colors">
+                  {item.titulo}
+                </h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+
+              <div class="pt-5 mt-4 border-t border-charcoal-800 flex items-center justify-between text-xs font-semibold text-amber-400 group-hover:text-amber-300">
+                <span>Acessar Capítulo</span>
+                <span class="transition-transform group-hover:translate-x-1">→</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Seção 2: Bônus Exclusivos -->
+      <section id="bonus" class="space-y-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-charcoal-800 pb-5">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">Especialização</span>
+            <h2 class="font-display text-2xl md:text-3xl font-extrabold text-zinc-100 tracking-tight mt-1">
+              Módulos Bônus: Operação & Crescimento
+            </h2>
+          </div>
+          <p class="text-xs md:text-sm text-zinc-400 max-w-md">
+            Guias avançados de delivery, retenção de clientes recorrentes, escala consciente e execução em 7 dias.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {bonus.map((item) => (
+            <a
+              href={item.rota}
+              class="group flex flex-col justify-between rounded-xl border border-charcoal-800 bg-charcoal-900/60 p-5 transition-all duration-300 hover:border-emerald-500/50 hover:bg-charcoal-900 hover:-translate-y-1 shadow-lg"
+            >
+              <div class="space-y-2.5">
+                <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 inline-block">
+                  {item.num}
+                </span>
+                <h3 class="font-display text-sm font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors">
+                  {item.titulo}
+                </h3>
+                <p class="text-[11px] text-zinc-400 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+
+              <div class="pt-4 mt-3 border-t border-charcoal-800 text-[11px] font-semibold text-emerald-400 group-hover:text-emerald-300 flex items-center justify-between">
+                <span>Ver Bônus</span>
+                <span>→</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Seção 3: Módulos Liberados (Kits Estratégicos) -->
+      <section id="modulos-liberados" class="space-y-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-charcoal-800 pb-5">
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-[10px] font-bold uppercase tracking-wider mb-1">
+              <span>🌟 Conteúdo Desbloqueado</span>
+            </div>
+            <h2 class="font-display text-2xl md:text-3xl font-extrabold text-zinc-100 tracking-tight">
+              Módulos Liberados: Kits de Aceleração
+            </h2>
+          </div>
+          <p class="text-xs md:text-sm text-zinc-400 max-w-md">
+            Módulos práticos de alta conversão para estruturar seu WhatsApp comercial e seu design visual.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {modulosLiberados.map((item) => (
+            <a
+              href={item.rota}
+              class="group relative overflow-hidden flex flex-col justify-between rounded-2xl border border-amber-500/40 bg-gradient-to-br from-charcoal-900 via-charcoal-900 to-amber-950/20 p-7 transition-all duration-300 hover:border-amber-400 hover:-translate-y-1 shadow-2xl hover:shadow-amber-500/20"
+            >
+              <div class="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-amber-500/10 blur-2xl"></div>
+
+              <div class="space-y-4 relative z-10">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-xs font-bold text-amber-300 bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/40">
+                    Módulo Liberado {item.num}
+                  </span>
+                  <span class="text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                    <span>✓</span> Acesso Ativo
+                  </span>
+                </div>
+
+                <h3 class="font-display text-xl font-extrabold text-zinc-50 group-hover:text-amber-300 transition-colors">
+                  {item.titulo}
+                </h3>
+
+                <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                  {item.desc}
+                </p>
+
+                <div class="flex flex-wrap gap-2 pt-1">
+                  {item.destaques.map((tag) => (
+                    <span class="text-[11px] font-mono px-2.5 py-0.5 rounded bg-charcoal-950/90 text-amber-300 border border-charcoal-800">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div class="pt-6 mt-6 border-t border-charcoal-800 flex items-center justify-between text-sm font-bold text-amber-400 group-hover:text-amber-300 relative z-10">
+                <span>Abrir Módulo de Expansão</span>
+                <span class="transition-transform group-hover:translate-x-1">→</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Seção de Demonstração dos Componentes do Parser -->
+      <section class="space-y-6 pt-6 border-t border-charcoal-800">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <span class="text-xs font-mono uppercase tracking-widest text-amber-500 font-bold">Design System Operacional</span>
+          <h2 class="font-display text-2xl font-bold text-zinc-100">Componentes Integrados do E-book</h2>
+          <p class="text-xs text-zinc-400">
+            Cada capítulo utiliza automaticamente checklists interativos com contagem em tempo real, tabelas técnicas com contraste de brasa e alertas com brilho perimétrico.
+          </p>
+        </div>
+
+        <CalloutAlerta
+          tipo="temperatura"
+          titulo="Ponto Crítico de Controle (PCC): Cadeia de Frio"
+          destaque="-18°C Contínuo"
+          mensagem="Flutuações térmicas acima de -12°C causam recristalização da água intracelular, perfurando as paredes musculares da carne. Mantenha os freezers calibrados e com monitoramento diário."
+        />
+
+        <TabelaTecnica
+          titulo="Parâmetros Técnicos por Tipo de Corte"
+          descricao="Especificações para corte, salga técnica, tempo de congelamento rápido (IQF) e temperatura mínima interna"
+          colunas={["Corte / Proteína", "Calibre do Cubo", "Salga Seca", "Tempo Pré-Freezer (-18°C)", "Temp. Interna Brasa"]}
+          linhas={[
+            ["Alcatra / Miolo de Alcatra", "2,5 cm (cubos)", "1,3% do peso", "1h 45 min", "54°C (Ao ponto)"],
+            ["Fraldinha Especial", "3,0 cm (dobrada)", "1,2% do peso", "2h 00 min", "55°C (Ao ponto)"],
+            ["Peito de Frango c/ Bacon", "2,5 cm + fatia", "1,5% do peso", "1h 30 min", "74°C (Bem passado)"],
+            ["Lombo / Copa Suína", "2,5 cm (cubos)", "1,4% do peso", "1h 50 min", "68°C (Ponto seguro)"],
+          ]}
+          destaqueIndice={3}
+          rodape="Dados calculados para bandejas em camada única de espetos com peso padrão entre 90g e 110g."
+        />
+
+        <ChecklistOperacional
+          titulo="Checklist de Conformidade de Lote"
+          subtitulo="Verificação obrigatória antes da embalagem a vácuo e armazenagem final"
+          itens={[
+            { texto: "Palitos de bambu pré-hidratados por 30 minutos antes do espetamento", obrigatorio: true, detalhe: "Evita queima prematura e desprendimento de lascas na grelha." },
+            { texto: "Espetamento perpendicular (contra as fibras da carne)", obrigatorio: true, detalhe: "Garante mordida macia e rompimento fácil das fibras pelo consumidor." },
+            { texto: "Peso conferido na balança de precisão (tolerância 95g ± 5g)", obrigatorio: false, detalhe: "Padronização de custo e tempo uniforme de churrasqueira." },
+            { texto: "Pré-congelamento individual em bandeja plana sem sobreposição", obrigatorio: true, detalhe: "Impede que os espetos grudem entre si no vácuo." },
+            { texto: "Proteção plástica nas pontas dos palitos antes da selagem a vácuo", obrigatorio: true, detalhe: "Evita microperfurações no filme plástico durante o transporte." },
+            { texto: "Etiquetagem com lote, data de corte, corte e validade de 90 dias", obrigatorio: true, detalhe: "Rastreabilidade sanitária e controle FIFO (PEPS)." }
+          ]}
+        />
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-charcoal-800/80 bg-charcoal-950 py-12 text-center text-xs text-zinc-400">
+      <div class="max-w-6xl mx-auto px-4 space-y-3">
+        <p class="font-display font-semibold text-zinc-300">Protocolo Espetinho Congelado © {new Date().getFullYear()}</p>
+        <p class="text-[11px] text-zinc-400">Desenvolvido com Astro, Tailwind e Parser Semântico Automático.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+---
+interface Props {
+  tipo?: 'temperatura' | 'perigo' | 'alerta' | 'norma';
+  titulo?: string;
+  destaque?: string;
+  mensagem?: string;
+}
+
+const {
+  tipo = 'alerta',
+  titulo,
+  destaque,
+  mensagem
+} = Astro.props;
+
+const config = {
+  temperatura: {
+    icon: '❄️',
+    border: 'border-cyan-500/40 hover:border-cyan-400/60',
+    glow: 'from-cyan-950/40 to-charcoal-900',
+    badgeBg: 'bg-cyan-500/10 text-cyan-300 border-cyan-500/30',
+    defaultTitle: 'Ponto Crítico de Temperatura',
+    accentText: 'text-cyan-400'
+  },
+  perigo: {
+    icon: '⛔',
+    border: 'border-rose-600/50 hover:border-rose-500/70',
+    glow: 'from-rose-950/50 to-charcoal-900',
+    badgeBg: 'bg-rose-500/10 text-rose-300 border-rose-500/30',
+    defaultTitle: 'Alerta Crítico de Segurança',
+    accentText: 'text-rose-400'
+  },
+  norma: {
+    icon: '📜',
+    border: 'border-amber-500/40 hover:border-amber-400/60',
+    glow: 'from-amber-950/40 to-charcoal-900',
+    badgeBg: 'bg-amber-500/10 text-amber-300 border-amber-500/30',
+    defaultTitle: 'Norma Técnica / Vácuo',
+    accentText: 'text-amber-400'
+  },
+  alerta: {
+    icon: '🔥',
+    border: 'border-orange-500/40 hover:border-orange-400/60',
+    glow: 'from-orange-950/40 to-charcoal-900',
+    badgeBg: 'bg-orange-500/10 text-orange-300 border-orange-500/30',
+    defaultTitle: 'Atenção Operacional',
+    accentText: 'text-orange-400'
+  }
+}[tipo];
+---
+
+<aside class={`relative my-6 overflow-hidden rounded-2xl border bg-gradient-to-br ${config.glow} ${config.border} p-5 shadow-2xl backdrop-blur-md transition-all duration-300`}>
+  <!-- Glowing ember backdrop effect -->
+  <div class="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-amber-500/10 blur-2xl"></div>
+  
+  <div class="flex items-start gap-4">
+    <!-- Icon Container -->
+    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-charcoal-800/90 border border-charcoal-700/60 text-2xl shadow-inner shadow-black/40">
+      <span>{config.icon}</span>
+    </div>
+
+    <!-- Content Block -->
+    <div class="flex-1 space-y-1.5">
+      <div class="flex flex-wrap items-center gap-2.5">
+        <h4 class="font-display font-bold text-base md:text-lg text-zinc-100 tracking-tight">
+          {titulo || config.defaultTitle}
+        </h4>
+        {destaque && (
+          <span class={`rounded-full border px-2.5 py-0.5 text-xs font-mono font-bold tracking-wide ${config.badgeBg}`}>
+            {destaque}
+          </span>
+        )}
+      </div>
+
+      <div class="text-sm md:text-base text-zinc-300/90 leading-relaxed">
+        {mensagem ? <p>{mensagem}</p> : <slot />}
+      </div>
+    </div>
+  </div>
+</aside>

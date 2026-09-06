@@ -1,0 +1,262 @@
+---
+import EbookLayout from '../layouts/EbookLayout.astro';
+import VisualBlock from '../components/VisualBlock.astro';
+import CalloutAlerta from '../components/CalloutAlerta.astro';
+import TabelaTecnica from '../components/TabelaTecnica.astro';
+import ChecklistOperacional from '../components/ChecklistOperacional.astro';
+import imgDelivery from '../assets/illustrations/bonus-1-delivery.png';
+import imgCapa from '../assets/illustrations/capa-bonus-1.png';
+---
+
+<EbookLayout
+  title="Bônus 1 — Operação de Pedidos & Delivery Eficiente"
+  category="bonus"
+  chapterNumber="01"
+  chapterTitle="BÔNUS 1 — OPERAÇÃO DE PEDIDOS & DELIVERY"
+  chapterSubtitle="Logística de Pedidos, Retiradas Programadas e Transporte Frio sem Degelo"
+  imagemCapa={imgCapa.src}
+  prevLink={{ title: "Protocolo 7: Venda", href: "/protocolo-7" }}
+  nextLink={{ title: "Bônus 2: Recompra", href: "/bonus-2" }}
+>
+  <!-- Bloco Visual com Ilustração Gerada via IA -->
+  <VisualBlock
+    stepNumber="B1"
+    badge="Logística & Expedição"
+    title="O Pós-Venda que Fideliza no Primeiro Contato"
+    subtitle="Da separação no freezer até a entrega na porta do cliente"
+    description="Vender no WhatsApp é apenas metade da jornada. O cliente se torna fiel quando o pedido chega pontualmente, perfeitamente congelado e sem suor na embalagem. O produto só sai do congelador minutos antes da expedição, protegido por caixas isotérmicas e blocos de gelo rígido."
+    tip="Nunca use cubos de gelo soltos na caixa térmica: eles derretem, formam poças de água e soltam as etiquetas adesivas dos pacotes. Use placas de gelo rígido (gelol) congeladas a -18°C."
+    imageSrc={imgDelivery.src}
+    imageAlt="Caixa térmica com espetinhos a vácuo e placas de gelo rígido para delivery"
+    imagePosition="right"
+  />
+
+  <!-- 1. O FLUXO PÓS-VENDA -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">1.</span> O Fluxo Pós-Venda: O que Acontece Depois que o Pedido Entra
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Fechar a venda no WhatsApp é apenas metade do trabalho. A experiência que transforma um comprador comum em um cliente fiel e recorrente depende da pontualidade, da precisão na separação dos itens e da conservação impecável da temperatura da carne até o momento da entrega.
+    </p>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      O pós-venda da sua operação caseira deve seguir uma rotina sem improvisos:
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-2">
+        <h4 class="font-bold text-amber-400 text-sm">O Pedido Entrou</h4>
+        <p class="text-xs text-zinc-300">Registro imediato na planilha com confirmação de pagamento ou agendamento do método de cobrança.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-2">
+        <h4 class="font-bold text-amber-400 text-sm">A Carne Permanece no Freezer</h4>
+        <p class="text-xs text-zinc-300">Nenhum pacote deve ficar esperando sobre a bancada em temperatura ambiente. O produto só sai do congelador minutos antes da entrega ou na chegada do cliente.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-2">
+        <h4 class="font-bold text-amber-400 text-sm">A Separação Organizada</h4>
+        <p class="text-xs text-zinc-300">O pedido é agrupado em sacola ou caixa térmica com identificação clara do destinatário.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-2">
+        <h4 class="font-bold text-amber-400 text-sm">A Expedição Pontual</h4>
+        <p class="text-xs text-zinc-300">O pacote é despachado na rota programada ou entregue em mãos no portão com a conferência dos itens.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MODALIDADE 1 — RETIRADA PROGRAMADA NO LOCAL -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">2.</span> Modalidade 1 — Retirada Programada no Local (Takeaway Caseiro)
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      A retirada pelo próprio cliente é a modalidade mais econômica e simples de operar, pois não envolve custos de combustível, taxas de motoboy ou desgaste com transporte. No entanto, para não transformar sua casa em uma recepção confusa, a retirada exige regras claras:
+    </p>
+    <ul class="space-y-3 text-sm text-zinc-300">
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div>
+          <strong class="text-zinc-100">Janelas de Retirada Fixas:</strong> Nunca combine horários totalmente soltos (como "pode passar a qualquer hora"). Estabeleça faixas horárias de atendimento pré-definidas:
+          <div class="mt-1.5 pl-4 border-l-2 border-amber-500/30 space-y-1 text-xs text-zinc-400">
+            <p><strong>Sexta-feira:</strong> das 17h às 20h.</p>
+            <p><strong>Sábado:</strong> das 09h às 12h ou das 15h às 18h.</p>
+            <p><strong>Domingo:</strong> das 09h às 11h30.</p>
+          </div>
+        </div>
+      </li>
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div>
+          <strong class="text-zinc-100">Aviso de Deslocamento:</strong> Oriente o cliente no momento do agendamento: <em class="text-amber-200/90">"Por favor, me avise 15 minutos antes de sair de casa para eu separar seus espetinhos do freezer e deixar tudo pronto no ponto de entrega"</em>.
+        </div>
+      </li>
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div>
+          <strong class="text-zinc-100">Ponto de Entrega Limpo:</strong> Atenda o cliente com agilidade no portão ou porta de entrada, entregando o pacote já higienizado e dentro de uma sacola plástica resistente. Evite a circulação de pessoas estranhas dentro da sua área de manipulação e cozinha.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 3. MODALIDADE 2 — DELIVERY LOCAL: RAIO DE ATENDIMENTO E TAXAS -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">3.</span> Modalidade 2 — Delivery Local: Raio de Atendimento e Taxas
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Se você optar por entregar diretamente no endereço do cliente, o serviço precisa ser sustentável e cobrir todas as despesas de deslocamento sem consumir a sua margem de lucro.
+    </p>
+    <div class="space-y-4 pt-1">
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
+        <h4 class="font-bold text-amber-400 text-sm">Delimitação do Raio de Cobertura</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          Não tente atender a cidade inteira no início. Delimite uma área de atendimento viável (geralmente entre 3 km e 7 km de distância da sua casa). Entregas muito distantes aumentam o risco de descongelamento da carne no trânsito e encarecem a taxa de frete, tornando o pedido pouco atraente para o cliente.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
+        <h4 class="font-bold text-amber-400 text-sm">Precificação da Taxa de Entrega</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          <strong>Taxa Fixa por Bairro:</strong> Estabeleça um valor único para o seu próprio bairro (exemplo: R$ 5,00 a R$ 7,00) e uma taxa ajustada para bairros adjacentes (exemplo: R$ 10,00 a R$ 12,00).<br />
+          <strong>Frete Grátis Estratégico:</strong> Utilize a isenção de entrega apenas como incentivo de ticket alto. Estabeleça que compras acima de R$ 180,00 ou R$ 200,00 contam com taxa de entrega gratuita, garantindo que o volume do pedido absorva o custo do frete com facilidade.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
+        <h4 class="font-bold text-amber-400 text-sm">Agrupamento de Rotas (Entregas em Bloco)</h4>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          Não faça uma viagem de ida e volta para cada pedido individual. Agrupe as entregas do mesmo bairro ou região em um único bloco de horário (exemplo: saída única às 10h da manhã no sábado), entregando 4 a 6 pedidos em sequência na mesma rota.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabela Técnica: Modalidades Operacionais -->
+  <TabelaTecnica
+    titulo="Matriz das Modalidades de Expedição"
+    descricao="Regras de atendimento para manter a operação em casa organizada e sem custos desnecessários"
+    colunas={["Modalidade", "Janela Operacional", "Regra de Custos / Frete", "Ação de Segurança"]}
+    linhas={[
+      ["Retirada no Portão (Takeaway)", "Sex 17h-20h / Sáb 09h-12h / Dom 09h-11h30", "Custo zero para ambas as partes", "Aviso prévio de 15 min antes de chegar"],
+      ["Delivery Local Bairro Próprio", "Rotas em bloco às 10h da manhã", "Taxa fixa de R$ 5,00 a R$ 7,00", "Entrega sequencial em até 3 km"],
+      ["Delivery Bairros Adjacentes", "Rotas em bloco no início da tarde", "Taxa de R$ 10,00 a R$ 12,00", "Raio máximo seguro de 5 a 7 km"],
+      ["Frete Grátis Estratégico", "Válido para qualquer modalidade", "Isenção em compras acima de R$ 180 a R$ 200", "Absorvido pelo alto volume do kit"]
+    ]}
+    destaqueIndice={3}
+    rodape="Nunca faça viagens individuais de ida e volta para cada cliente: agrupe os pedidos da mesma região em rotas de 4 a 6 entregas seguidas."
+  />
+
+  <!-- 4. TRANSPORTE TÉRMICO E CONSERVAÇÃO DA CADEIA DE FRIO -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">4.</span> Transporte Térmico e Conservação da Cadeia de Frio
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      O maior erro operacional no delivery de alimentos crus é o degelo no trajeto. O espetinho não pode chegar à casa do consumidor amolecido, soltando água ou "suado".
+    </p>
+    <ul class="space-y-3 text-sm text-zinc-300">
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div>
+          <strong class="text-zinc-100">Equipamentos de Transporte:</strong><br />
+          - <em>Caixa Térmica de Poliestireno (Isopor) ou Caixa Plástica Isotérmica:</em> Caixa rígida, limpa e com tampa de vedação firme.<br />
+          - <em>Bolsas Térmicas Reforçadas:</em> Alternativa prática para entregas de moto ou bicicleta, desde que possuam manta térmica interna de alta densidade.
+        </div>
+      </li>
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div>
+          <strong class="text-zinc-100">Uso de Gelo Rígido Reutilizável (Gelol):</strong><br />
+          - Nunca jogue cubos de gelo soltos dentro da caixa de transporte, pois eles derretem, criam poças de água e danificam as etiquetas adesivas dos pacotes.<br />
+          - Utilize blocos de gelo químico rígido (placas reutilizáveis de gel) congelados previamente a -18°C.<br />
+          - Posicione duas placas na base da caixa e uma placa sobre os pacotes para manter o ar interno gelado durante todo o trajeto.
+        </div>
+      </li>
+      <li class="flex items-start gap-2.5">
+        <span class="text-amber-500 font-bold">•</span>
+        <div>
+          <strong class="text-zinc-100">Limite Máximo de Deslocamento:</strong> O tempo de trânsito entre a retirada do produto do freezer doméstico e a entrega na mão do cliente não deve ultrapassar 40 a 50 minutos.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Alerta Crítico: Cadeia de Frio no Transporte -->
+  <CalloutAlerta
+    tipo="temperatura"
+    titulo="Ponto Crítico de Controle: Transporte sem Degelo"
+    destaque="Máximo 40 a 50 Minutos"
+    mensagem="O tempo entre a saída do freezer e a entrega na mão do cliente nunca deve ultrapassar 40 a 50 minutos. Utilize caixas isotérmicas com placas de gelo rígido congeladas a -18°C na base e sobre os pacotes para garantir que o produto chegue 100% rígido e seco."
+  />
+
+  <!-- 5. CHECKLIST DE CONFERÊNCIA PRÉ-SAÍDA (ZERO ERRO) -->
+  <ChecklistOperacional
+    titulo="5. Checklist de Conferência Pré-Saída (Zero Erro)"
+    subtitulo="Antes de lacrar a sacola ou fechar a tampa da caixa térmica, execute a checagem obrigatória:"
+    itens={[
+      { texto: "Os kits e sabores conferem exatamente com o registrado no pedido do cliente?", obrigatorio: true, detalhe: "Evita mandar sabores errados ou esquecer itens contratados." },
+      { texto: "As quantidades de unidades e pacotes estão corretas?", obrigatorio: true, detalhe: "Conferência quantitativa antes do fechamento da embalagem." },
+      { texto: "As embalagens plásticas estão seladas e sem furos ou rasgos?", obrigatorio: true, detalhe: "Garante a integridade do vácuo e proteção contra contaminação." },
+      { texto: "As etiquetas estão devidamente afixadas e legíveis (data e sabor)?", obrigatorio: true, detalhe: "Rastreabilidade e apresentação profissional ao cliente." },
+      { texto: "O endereço de entrega com número, bairro e ponto de referência foi confirmado no mapa?", obrigatorio: true, detalhe: "Agilidade para não rodar à toa e evitar degelo no trânsito." },
+      { texto: "A forma de pagamento foi combinada (Pix antecipado conferido ou máquina de cartão com bateria)?", obrigatorio: true, detalhe: "Elimina constrangimentos ou perda de tempo na cobrança." },
+      { texto: "O cliente foi avisado de que o pedido saiu para a rota de entrega?", obrigatorio: true, detalhe: "Garante que alguém estará no portão para receber imediatamente." }
+    ]}
+  />
+
+  <!-- 6. POLÍTICA OFICIAL DE DELIVERY E RETIRADA -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">6.</span> Política Oficial de Delivery e Retirada (Modelo Copiar e Colar)
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Salve este modelo institucional nas respostas automáticas do seu WhatsApp para esclarecer as condições de entrega aos compradores:
+    </p>
+    <div class="rounded-xl border border-charcoal-800 bg-charcoal-950 p-5 font-mono text-xs md:text-sm text-zinc-300 leading-relaxed space-y-3">
+      <p class="text-amber-400 font-bold">POLÍTICA DE ENTREGAS E RETIRADAS — [NOME DO SEU NEGÓCIO]</p>
+      <p class="italic text-zinc-400">Para garantir que nossos espetinhos cheguem perfeitamente congelados e com máxima qualidade à sua casa, operamos sob as seguintes condições:</p>
+      
+      <p class="text-amber-300 font-semibold pt-2">1. Retirada Gratuita:</p>
+      <p>• Endereço: [Rua, Número, Bairro].<br />
+      • Dias e Horários: Sextas-feiras (17h às 20h) e Sábados (09h às 12h).<br />
+      • Pedimos o aviso prévio de 15 minutos para que possamos retirar seu lote do freezer na hora certa.</p>
+
+      <p class="text-amber-300 font-semibold pt-2">2. Entregas em Domicílio (Delivery):</p>
+      <p>• Atendimento no raio de até [X] km.<br />
+      • Taxa fixa de entrega: R$ [Valor] para o bairro [Nome] e R$ [Valor] para as regiões adjacentes.<br />
+      • Entregas realizadas em caixas isotérmicas mantendo os produtos 100% congelados.<br />
+      • Frete Grátis em pedidos acima de R$ [Valor mínimo].</p>
+
+      <p class="text-amber-300 font-semibold pt-2">3. Confirmação e Agendamento:</p>
+      <p>• As encomendas devem ser agendadas até [Dia da semana, ex: quinta-feira] às [Horário] para garantir a reserva do seu estoque.</p>
+    </div>
+  </section>
+
+  <!-- 7. MODELO DE CONTROLE DE ENTREGAS E EXPEDIÇÃO -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">7.</span> Modelo de Controle de Entregas e Expedição
+    </h2>
+    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
+      Preencha os campos abaixo para manter a rastreabilidade diária das viagens e recebimentos:
+    </p>
+    <div class="rounded-xl border border-charcoal-800 bg-charcoal-950 p-5 font-mono text-xs md:text-sm text-zinc-300 leading-relaxed space-y-3">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-zinc-200">
+        <p><strong class="text-amber-400">Data da Rota:</strong> [ ____/____/________ ]</p>
+        <p><strong class="text-amber-400">Horário de Saída da Base:</strong> [ ____:____ ] | <strong class="text-amber-400">Horário de Retorno:</strong> [ ____:____ ]</p>
+      </div>
+      
+      <p class="text-amber-300 font-semibold pt-2">Ordem da Rota:</p>
+      <div class="space-y-2 text-xs text-zinc-300 pl-3 border-l border-charcoal-800">
+        <p>• <strong>Entrega 1:</strong> Pedido #[ _____ ] | Cliente: [ ___________________________ ] | Bairro: [ ___________________________ ] | Valor Pedido: R$ [ _________ ] | Taxa: R$ [ _________ ] | Status Pagamento: [ _____ ]</p>
+        <p>• <strong>Entrega 2:</strong> Pedido #[ _____ ] | Cliente: [ ___________________________ ] | Bairro: [ ___________________________ ] | Valor Pedido: R$ [ _________ ] | Taxa: R$ [ _________ ] | Status Pagamento: [ _____ ]</p>
+        <p>• <strong>Entrega 3:</strong> Pedido #[ _____ ] | Cliente: [ ___________________________ ] | Bairro: [ ___________________________ ] | Valor Pedido: R$ [ _________ ] | Taxa: R$ [ _________ ] | Status Pagamento: [ _____ ]</p>
+      </div>
+
+      <div class="pt-3 border-t border-charcoal-800 space-y-1.5 text-zinc-200">
+        <p><strong class="text-amber-400">Total Arrecadado em Taxas de Frete:</strong> R$ [ _________ ]</p>
+        <p><strong class="text-amber-400">Total Faturado nos Produtos da Rota:</strong> R$ [ _________ ]</p>
+        <p><strong class="text-amber-400">Ocorrências ou Atrasos no Trajeto:</strong> [ __________________________________________________ ]</p>
+      </div>
+    </div>
+  </section>
+</EbookLayout>

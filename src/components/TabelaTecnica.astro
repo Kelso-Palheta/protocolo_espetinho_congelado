@@ -1,0 +1,70 @@
+---
+interface Props {
+  titulo?: string;
+  descricao?: string;
+  colunas?: string[];
+  linhas?: (string | number)[][];
+  destaqueIndice?: number;
+  rodape?: string;
+}
+
+const {
+  titulo,
+  descricao,
+  colunas = [],
+  linhas = [],
+  destaqueIndice = -1,
+  rodape
+} = Astro.props;
+---
+
+<div class="tabela-tecnica my-8 overflow-hidden rounded-2xl border border-charcoal-700/80 bg-gradient-to-b from-charcoal-900 to-charcoal-950 shadow-2xl backdrop-blur-md">
+  {titulo && (
+    <div class="border-b border-charcoal-700/70 bg-charcoal-900/90 px-6 py-4">
+      <div class="flex items-center gap-2">
+        <span class="h-2 w-2 rounded-full bg-amber-500"></span>
+        <h4 class="font-display text-base md:text-lg font-bold text-zinc-100 tracking-tight">
+          {titulo}
+        </h4>
+      </div>
+      {descricao && <p class="mt-1 text-xs md:text-sm text-zinc-400">{descricao}</p>}
+    </div>
+  )}
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-sm text-zinc-300">
+      {colunas.length > 0 && (
+        <thead class="bg-charcoal-950/80 text-xs font-semibold uppercase tracking-wider text-amber-400/90 border-b border-charcoal-800">
+          <tr>
+            {colunas.map((col, idx) => (
+              <th scope="col" class={`px-6 py-3.5 ${idx === destaqueIndice ? 'text-amber-300 bg-amber-500/5' : ''}`}>
+                {col}
+              </th>
+            ))}
+          </tr>
+        </thead>
+      )}
+
+      <tbody class="divide-y divide-charcoal-800/80">
+        {linhas.map((linha, rowIndex) => (
+          <tr class="transition-colors hover:bg-charcoal-800/40">
+            {linha.map((celula, cellIndex) => (
+              <td class={`whitespace-nowrap px-6 py-4 font-mono text-xs md:text-sm ${cellIndex === 0 ? 'font-sans font-semibold text-zinc-100' : ''} ${cellIndex === destaqueIndice ? 'font-bold text-amber-400 bg-amber-500/5' : 'text-zinc-300'}`}>
+                {celula}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <!-- Support for raw HTML table slot if provided -->
+    <slot />
+  </div>
+
+  {rodape && (
+    <div class="border-t border-charcoal-800 bg-charcoal-950/60 px-6 py-2.5 text-[11px] font-mono text-zinc-400 flex items-center gap-1.5">
+      <span class="text-amber-500">ℹ</span> {rodape}
+    </div>
+  )}
+</div>

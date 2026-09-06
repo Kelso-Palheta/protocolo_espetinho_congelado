@@ -1,0 +1,599 @@
+---
+import CapaModulo from '../components/CapaModulo.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  category: 'protocolo' | 'bonus' | 'modulo-liberado' | 'order-bump';
+  chapterNumber?: number | string;
+  chapterTitle: string;
+  chapterSubtitle?: string;
+  imagemCapa?: string;
+  focoTecnico?: string;
+  parametroChave?: string;
+  prevLink?: { title: string; href: string };
+  nextLink?: { title: string; href: string };
+}
+
+const {
+  title,
+  description = "Protocolo Espetinho Congelado — Guia Operacional Definitivo",
+  category,
+  chapterNumber,
+  chapterTitle,
+  chapterSubtitle,
+  imagemCapa,
+  focoTecnico,
+  parametroChave,
+  prevLink,
+  nextLink
+} = Astro.props;
+
+const menuModules = [
+  { group: "Protocolos Oficiais", items: [
+    { num: "01", title: "Preparação: A Estrutura Mínima", href: "/protocolo-1" },
+    { num: "02", title: "Produção: Da Matéria-Prima ao Espeto", href: "/protocolo-2" },
+    { num: "03", title: "Padronização: O DNA do Espetinho", href: "/protocolo-3" },
+    { num: "04", title: "Congelamento: Estoque Vendável", href: "/protocolo-4" },
+    { num: "05", title: "Precificação: Custo Real e Lucro", href: "/protocolo-5" },
+    { num: "06", title: "Oferta: Kits e Cardápios Lucrativos", href: "/protocolo-6" },
+    { num: "07", title: "Venda: Divulgação e Primeiros Pedidos", href: "/protocolo-7" },
+  ]},
+  { group: "Módulos de Especialização (Bônus)", items: [
+    { num: "B1", title: "Operação de Pedidos & Delivery", href: "/bonus-1" },
+    { num: "B2", title: "Protocolo da Recompra e Recorrência", href: "/bonus-2" },
+    { num: "B3", title: "Crescimento e Expansão Consciente", href: "/bonus-3" },
+    { num: "B4", title: "Plano Prático Primeiros 7 Dias", href: "/bonus-4" },
+  ]},
+  { group: "Módulos Liberados (Kits Estratégicos)", items: [
+    { num: "K1", title: "Kit WhatsApp Que Vende & Scripts", href: "/modulo-whatsapp-vendas", badge: "Liberado" },
+    { num: "K2", title: "Kit Cardápio & Comunicação Visual", href: "/modulo-cardapio-visual", badge: "Liberado" },
+  ]}
+];
+
+const categoryBadge = {
+  protocolo: { text: `Protocolo ${chapterNumber || ''}`, color: "bg-amber-500/10 text-amber-400 border-amber-500/30" },
+  bonus: { text: `Bônus Exclusivo ${chapterNumber || ''}`, color: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30" },
+  'modulo-liberado': { text: `🌟 Módulo Liberado`, color: "bg-amber-400/20 text-amber-300 border-amber-400/40 shadow-sm shadow-amber-500/10" }
+}[category];
+---
+
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Protocolo Espetinho Congelado</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-charcoal-950 text-zinc-100 font-sans antialiased selection:bg-amber-500 selection:text-charcoal-950 min-h-screen flex flex-col">
+    
+    <!-- Top Navigation Header -->
+    <header class="top-nav-header sticky top-0 z-50 border-b border-charcoal-800/80 bg-charcoal-950/90 backdrop-blur-md">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 text-zinc-200 hover:text-amber-400 transition-colors">
+          <span class="text-xl">🔥</span>
+          <span class="font-display font-bold text-lg tracking-tight">Protocolo <strong class="text-amber-500 font-extrabold">Espetinho</strong></span>
+        </a>
+
+        <div class="flex items-center gap-3">
+          <span class={`text-xs font-mono font-bold tracking-wide px-3 py-1 rounded-full border ${categoryBadge.color}`}>
+            {categoryBadge.text}
+          </span>
+          
+          <!-- Sumário Drawer Trigger -->
+          <button
+            type="button"
+            id="open-menu-btn"
+            class="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg border border-charcoal-700 bg-charcoal-900 text-zinc-300 hover:text-white hover:border-amber-500/50 hover:bg-charcoal-800 transition-all cursor-pointer"
+            aria-label="Abrir sumário de capítulos"
+          >
+            <span>☰</span>
+            <span class="hidden sm:inline">Sumário</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Drawer Lateral de Navegação -->
+    <div id="menu-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <aside id="menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-charcoal-900 border-l border-charcoal-800 z-50 translate-x-full transition-transform duration-300 overflow-y-auto p-6 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-charcoal-800 pb-4 mb-5">
+        <h3 class="font-display font-bold text-base text-zinc-100 flex items-center gap-2">
+          <span>📖</span> Sumário do E-book
+        </h3>
+        <button id="close-menu-btn" class="text-zinc-400 hover:text-white text-lg p-1">✕</button>
+      </div>
+
+      <div class="space-y-6 text-sm">
+        {menuModules.map((group) => (
+          <div>
+            <h4 class="text-xs font-mono uppercase tracking-wider text-amber-500 font-bold mb-2">
+              {group.group}
+            </h4>
+            <ul class="space-y-1.5">
+              {group.items.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="flex items-center justify-between p-2 rounded-lg text-zinc-300 hover:text-white hover:bg-charcoal-800/80 transition-colors group"
+                  >
+                    <span class="flex items-center gap-2 truncate">
+                      <span class="text-xs font-mono text-zinc-400 group-hover:text-amber-400">{item.num}</span>
+                      <span class="truncate text-xs">{item.title}</span>
+                    </span>
+                    {item.badge && (
+                      <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1.5 py-0.5 rounded">
+                        {item.badge}
+                      </span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </aside>
+
+    <!-- Capa Modular Oficial (Página 1 do PDF / Hero Editorial Web) -->
+    <CapaModulo
+      tipo={category}
+      numero={chapterNumber}
+      titulo={chapterTitle}
+      subtitulo={chapterSubtitle}
+      descricao={description}
+      imagemFundo={imagemCapa}
+      focoTecnico={focoTecnico}
+      parametroChave={parametroChave}
+    />
+
+    <!-- Main Content Slot (Página 2 em diante no PDF) -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 md:py-14 space-y-12 flex-1 w-full">
+      <slot />
+
+      <!-- Previous / Next Navigation Footer -->
+      <nav class="navigation-footer flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-charcoal-800 mt-12">
+        {prevLink ? (
+          <a
+            href={prevLink.href}
+            class="w-full sm:w-auto text-center px-5 py-3 rounded-xl border border-charcoal-700 bg-charcoal-900 text-zinc-300 hover:text-white hover:border-zinc-500 text-sm font-medium transition-colors"
+          >
+            ← {prevLink.title}
+          </a>
+        ) : (
+          <a
+            href="/"
+            class="w-full sm:w-auto text-center px-5 py-3 rounded-xl border border-charcoal-700 bg-charcoal-900 text-zinc-300 hover:text-white hover:border-zinc-500 text-sm font-medium transition-colors"
+          >
+            ← Painel Principal
+          </a>
+        )}
+
+        {nextLink && (
+          <a
+            href={nextLink.href}
+            class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-charcoal-950 text-sm font-bold shadow-lg shadow-amber-500/20 hover:brightness-110 transition-all"
+          >
+            {nextLink.title} →
+          </a>
+        )}
+      </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-charcoal-800/80 bg-charcoal-950 py-8 text-center text-xs text-zinc-400 mt-auto">
+      <div class="max-w-4xl mx-auto px-4 space-y-2">
+        <p>© {new Date().getFullYear()} Protocolo Espetinho Congelado. Guia Técnico Operacional.</p>
+        <p class="text-[11px] text-zinc-400">Diagramado com parser semântico e ilustrações gastronômicas geradas por IA.</p>
+      </div>
+    </footer>
+
+    <!-- Script for Drawer -->
+    <script>
+      function setupMenu() {
+        const openBtn = document.getElementById('open-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const drawer = document.getElementById('menu-drawer');
+        const overlay = document.getElementById('menu-overlay');
+
+        function open() {
+          drawer?.classList.remove('translate-x-full');
+          overlay?.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function close() {
+          drawer?.classList.add('translate-x-full');
+          overlay?.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        openBtn?.addEventListener('click', open);
+        closeBtn?.addEventListener('click', close);
+        overlay?.addEventListener('click', close);
+      }
+
+    </script>
+
+    <style is:global>
+      @media print {
+        @page {
+          size: A4 landscape;
+          margin: 0;
+        }
+
+        header.top-nav-header,
+        #open-menu-btn,
+        #close-menu-btn,
+        #menu-drawer,
+        #menu-overlay,
+        .navigation-footer,
+        nav,
+        button,
+        footer,
+        .btn-navegacao,
+        .no-print {
+          display: none !important;
+          visibility: hidden !important;
+          height: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
+
+        html, body {
+          background-color: #09090b !important;
+          color: #f4f4f5 !important;
+          font-size: 14px !important;
+          line-height: 1.55 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 100% !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        }
+
+        *, *::before, *::after {
+          box-sizing: border-box !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        p, li, dd, blockquote {
+          orphans: 3 !important;
+          widows: 3 !important;
+          font-size: 14px !important;
+          line-height: 1.55 !important;
+          color: #d4d4d8 !important;
+        }
+
+        p {
+          margin-top: 0 !important;
+          margin-bottom: 8px !important;
+        }
+
+        /* Tipografia Proporcional Editorial */
+        .text-xs { font-size: 11.5px !important; line-height: 1.4 !important; }
+        .text-sm { font-size: 13px !important; line-height: 1.45 !important; }
+        .text-base { font-size: 14px !important; line-height: 1.55 !important; }
+        .text-lg { font-size: 16px !important; line-height: 1.4 !important; }
+        .text-xl { font-size: 18px !important; line-height: 1.35 !important; }
+        .text-2xl { font-size: 22px !important; line-height: 1.3 !important; }
+
+        /* Títulos Firmes com Hierarquia Visual */
+        h1, h2, h3, h4, h5, h6 {
+          page-break-after: avoid !important;
+          break-after: avoid !important;
+          color: #ffffff !important;
+          font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
+        }
+
+        h1 {
+          font-size: 1.85rem !important;
+          line-height: 1.15 !important;
+          margin-top: 0 !important;
+          margin-bottom: 10px !important;
+          font-weight: 800 !important;
+        }
+
+        h2 {
+          font-size: 1.35rem !important;
+          line-height: 1.25 !important;
+          margin-top: 0 !important;
+          margin-bottom: 8px !important;
+          font-weight: 700 !important;
+        }
+
+        h3 {
+          font-size: 1.1rem !important;
+          line-height: 1.3 !important;
+          margin-top: 0 !important;
+          margin-bottom: 6px !important;
+          font-weight: 600 !important;
+        }
+
+        h4 {
+          font-size: 0.95rem !important;
+          line-height: 1.3 !important;
+          margin-top: 0 !important;
+          margin-bottom: 4px !important;
+          font-weight: 600 !important;
+        }
+
+        /* Capa Modular (Página 1 — Ocupação Total 100vh) */
+        .capa-modulo {
+          page-break-before: avoid !important;
+          break-before: avoid !important;
+          page-break-after: always !important;
+          break-after: page !important;
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          height: 100vh !important;
+          min-height: 100vh !important;
+          max-height: 100vh !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-between !important;
+          box-sizing: border-box !important;
+          padding: 36px 44px !important;
+          border-radius: 0 !important;
+          border: none !important;
+          width: 100% !important;
+          max-width: none !important;
+          background-color: #09090b !important;
+          position: relative !important;
+          overflow: hidden !important;
+        }
+
+        .capa-modulo .my-auto {
+          margin-top: auto !important;
+          margin-bottom: auto !important;
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+        }
+
+        .capa-modulo h1 {
+          font-size: 2.6rem !important;
+          line-height: 1.1 !important;
+        }
+
+        /* Estrutura de Conteúdo Principal (Main) */
+        main,
+        .main-content,
+        .container {
+          width: 100% !important;
+          max-width: none !important;
+          margin: 0 !important;
+          padding: 24px 36px !important;
+          box-sizing: border-box !important;
+          background: transparent !important;
+          display: block !important;
+        }
+
+        /* O primeiro elemento dentro do main NUNCA quebra página (elimina folha em branco!) */
+        main > :first-child,
+        .visual-block:first-of-type {
+          page-break-before: avoid !important;
+          break-before: avoid !important;
+          margin-top: 0 !important;
+        }
+
+        /* Bloco Visual (Página 2 — Slide Hero com Ilustração IA) */
+        .visual-block {
+          page-break-before: avoid !important;
+          break-before: avoid !important;
+          page-break-after: always !important;
+          break-after: page !important;
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          background: #18181b !important;
+          border: 1px solid #27272a !important;
+          border-radius: 16px !important;
+          padding: 24px 28px !important;
+          margin: 0 0 20px 0 !important;
+          display: grid !important;
+          grid-template-columns: 1fr 1.15fr !important;
+          gap: 24px !important;
+          align-items: center !important;
+          box-sizing: border-box !important;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .visual-media {
+          width: 100% !important;
+          aspect-ratio: 16 / 9 !important;
+          max-height: 220px !important;
+          border-radius: 12px !important;
+          overflow: hidden !important;
+          background: #09090b !important;
+          border: 1px solid #27272a !important;
+        }
+
+        .visual-media img,
+        .visual-image {
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+          aspect-ratio: 16 / 9 !important;
+          display: block !important;
+          border-radius: 12px !important;
+        }
+
+        .visual-content {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 8px !important;
+        }
+
+        .pro-tip {
+          display: flex !important;
+          align-items: flex-start !important;
+          gap: 10px !important;
+          background: rgba(245, 158, 11, 0.08) !important;
+          border: 1px solid rgba(245, 158, 11, 0.3) !important;
+          border-radius: 10px !important;
+          padding: 10px 14px !important;
+          margin-top: 8px !important;
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+        }
+
+        .tip-content {
+          font-size: 12.5px !important;
+          color: #fef08a !important;
+          line-height: 1.4 !important;
+        }
+
+        /* Cards de Seção (Restauração do Design Dark Steakhouse Original com Bordas Arredondadas) */
+        section:not(.capa-modulo) {
+          background-color: #18181b !important;
+          border: 1px solid #27272a !important;
+          border-radius: 16px !important;
+          padding: 22px 28px !important;
+          margin: 0 0 20px 0 !important;
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          box-sizing: border-box !important;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+          display: block !important;
+        }
+
+        /* Sub-cards dentro das seções (ex: 4 blocos de Diagnóstico, Equipamentos, etc.) */
+        section:not(.capa-modulo) .grid > div,
+        section:not(.capa-modulo) .rounded-xl,
+        .step-block {
+          background-color: #121215 !important;
+          border: 1px solid #27272a !important;
+          border-radius: 12px !important;
+          padding: 14px 16px !important;
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          box-sizing: border-box !important;
+        }
+
+        section:not(.capa-modulo) ul {
+          margin-bottom: 6px !important;
+        }
+
+        section:not(.capa-modulo) li {
+          font-size: 13.5px !important;
+          line-height: 1.45 !important;
+        }
+
+        /* Checklist Operacional (Página Dedicada 2 Colunas) */
+        .checklist-operacional {
+          page-break-before: always !important;
+          break-before: page !important;
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          background-color: #18181b !important;
+          border: 1px solid #27272a !important;
+          border-radius: 16px !important;
+          padding: 24px 28px !important;
+          margin: 0 0 20px 0 !important;
+          box-sizing: border-box !important;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        .checklist-operacional .checklist-header {
+          margin-bottom: 14px !important;
+        }
+
+        .checklist-operacional ul {
+          display: grid !important;
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 8px 14px !important;
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        .checklist-operacional li {
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          padding: 8px 12px !important;
+          margin: 0 !important;
+          font-size: 13px !important;
+          line-height: 1.3 !important;
+          border-radius: 8px !important;
+          background: #121215 !important;
+          border: 1px solid #27272a !important;
+        }
+
+        .checklist-operacional li .item-text {
+          font-size: 13px !important;
+          line-height: 1.25 !important;
+        }
+
+        .checklist-operacional li p {
+          font-size: 11.5px !important;
+          line-height: 1.2 !important;
+          margin-top: 2px !important;
+          color: #a1a1aa !important;
+        }
+
+        /* Tabelas Técnicas e Callouts de Alerta */
+        .tabela-tecnica {
+          background-color: #18181b !important;
+          border: 1px solid #27272a !important;
+          border-radius: 16px !important;
+          padding: 20px 24px !important;
+          margin: 0 0 20px 0 !important;
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          box-sizing: border-box !important;
+        }
+
+        table {
+          width: 100% !important;
+          border-collapse: collapse !important;
+        }
+
+        thead {
+          display: table-header-group !important;
+        }
+
+        tr {
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+        }
+
+        th, td {
+          padding: 10px 14px !important;
+          font-size: 13.5px !important;
+          line-height: 1.4 !important;
+        }
+
+        .callout-alerta {
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          border-radius: 12px !important;
+          padding: 14px 18px !important;
+          margin: 14px 0 !important;
+          box-sizing: border-box !important;
+        }
+
+        .card-elegant {
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+        }
+
+        /* Cores de Destaque */
+        .bg-charcoal-950 { background-color: #09090b !important; }
+        .bg-charcoal-900 { background-color: #18181b !important; }
+        .bg-charcoal-800 { background-color: #27272a !important; }
+        .border-charcoal-800 { border-color: #27272a !important; }
+        .text-zinc-100 { color: #f4f4f5 !important; }
+        .text-zinc-300 { color: #d4d4d8 !important; }
+        .text-zinc-400 { color: #a1a1aa !important; }
+        .text-amber-400 { color: #fbbf24 !important; }
+        .text-amber-500 { color: #f59e0b !important; }
+      }
+    </style>
+  </body>
+</html>

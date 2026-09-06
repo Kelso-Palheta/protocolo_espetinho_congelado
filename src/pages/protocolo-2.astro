@@ -1,0 +1,442 @@
+---
+import EbookLayout from '../layouts/EbookLayout.astro';
+import VisualBlock from '../components/VisualBlock.astro';
+import CalloutAlerta from '../components/CalloutAlerta.astro';
+import TabelaTecnica from '../components/TabelaTecnica.astro';
+import ChecklistOperacional from '../components/ChecklistOperacional.astro';
+import imgProducao from '../assets/illustrations/protocolo-2-producao.png';
+import imgCapa from '../assets/illustrations/capa-protocolo-2.png';
+---
+
+<EbookLayout
+  title="Protocolo 2 — Produção: Transformando Matéria-Prima em Espetinhos"
+  category="protocolo"
+  chapterNumber="02"
+  chapterTitle="PROTOCOLO 2 — PRODUÇÃO"
+  chapterSubtitle="Transformando Matéria-Prima em Espetinhos de Alta Margem"
+  focoTecnico="Toalete, Cubagem 3-4cm e Fibras a 90°"
+  parametroChave="Base Seca & Palitos Rigorosamente Secos"
+  imagemCapa={imgCapa.src}
+  prevLink={{ title: "Protocolo 1: Preparação", href: "/protocolo-1" }}
+  nextLink={{ title: "Protocolo 3: Padronização", href: "/protocolo-3" }}
+>
+  <!-- Bloco Visual com Ilustração Gerada via IA (Sem Placeholders) -->
+  <VisualBlock
+    stepNumber="02"
+    badge="Engenharia de Cortes"
+    title="Corte Perpendicular e Fibras Alinhadas"
+    subtitle="A técnica de toalete, cubagem e montagem ergonômica"
+    description="A maciez inesquecível do espetinho artesanal não depende de amaciantes químicos: nasce no toalete preciso da carne, no corte rigoroso a 90 graus contra as fibras musculares e na aplicação da Base Seca Universal com óleo protetor."
+    tip="Use palitos de bambu rigorosamente SECOS ao embalar a vácuo. Palitos molhados soltam água sob sucção, desestabilizam a selagem térmica e formam cristais de gelo que rompem a carne."
+    imageSrc={imgProducao.src}
+    imageAlt="Corte perpendicular de carne bovina para espetinho artesanal sobre tábua escura com faca afiada"
+    imagePosition="right"
+  />
+
+  <!-- 1. Seleção de Cortes Cárneos com Foco Comercial -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">1.</span> Seleção de Cortes Cárneos com Foco Comercial
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O objetivo na escolha da carne não é comprar o corte mais caro da vitrine, nem o mais barato e duro. O foco é a relação entre <strong>maciez, rendimento pós-limpeza e custo por quilo</strong>.
+    </p>
+
+    <div class="border-t border-charcoal-800 pt-4 space-y-4">
+      <h3 class="font-display text-base md:text-lg font-bold text-amber-400">
+        A MATRIZ DE CORTES: O SEGREDO DO CUSTO-BENEFÍCIO REAL
+      </h3>
+
+      <!-- Bovinos -->
+      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
+        <h4 class="font-bold text-zinc-100 text-sm flex items-center gap-2">
+          <span class="text-amber-500">🥩</span> Bovinos
+        </h4>
+        <p class="text-xs md:text-sm text-zinc-300 leading-relaxed">
+          Embora cortes nobres como alcatra, contrafilé e maminha possam ser usados em linhas sob encomenda, o núcleo de alta margem de um negócio de espetinho congelado apoia-se em dois cortes específicos:
+        </p>
+        <ul class="space-y-2 text-xs md:text-sm text-zinc-400 pl-4 list-disc marker:text-amber-500">
+          <li>
+            <strong class="text-zinc-200">Fraldinha:</strong> Possui fibras longas, maciez natural e teor de gordura entremeada que conserva a suculência no congelamento. Cortada estritamente contra a fibra, entrega uma experiência comparável a carnes nobres com custo por quilo significativamente menor.
+          </li>
+          <li>
+            <strong class="text-zinc-200">Miolo do Acém:</strong> O corte de maior rendimento comercial. Após a toalete das aponeuroses e peles, o miolo do acém entrega cubos firmes, macios e saborosos na brasa.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Frango -->
+      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
+        <h4 class="font-bold text-zinc-100 text-sm flex items-center gap-2">
+          <span class="text-amber-500">🍗</span> Frango
+        </h4>
+        <ul class="space-y-2 text-xs md:text-sm text-zinc-400 pl-4 list-disc marker:text-amber-500">
+          <li>
+            <strong class="text-zinc-200">Filé de Peito para Medalhão com Bacon:</strong> Para a confecção de medalhões de frango envolvidos em bacon, corte os cubos de peito com <strong>peso individual de aproximadamente 23 g</strong>. Esse peso exato facilita o enrolamento da fatia de bacon e garante que o espetinho montado com 4 pedaços atinja com precisão a faixa comercial de 120 g a 130 g, sem estourar o limite de custo da ficha técnica.
+          </li>
+          <li>
+            <strong class="text-zinc-200">Sobrecoxa Desossada:</strong> Mais úmida, macia e estável para congelamento, excelente para montagem intercalada com cubos de bacon.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Suínos e Linguiças -->
+      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
+        <h4 class="font-bold text-zinc-100 text-sm flex items-center gap-2">
+          <span class="text-amber-500">🥓</span> Suínos e Linguiças
+        </h4>
+        <ul class="space-y-2.5 text-xs md:text-sm text-zinc-400 pl-4 list-disc marker:text-amber-500">
+          <li>
+            <strong class="text-zinc-200">Cortes Suínos de Alto Giro:</strong> Além do pernil e lombo magros, inclua a <strong>Copa-Lombo</strong> (mais marmorizada e úmida após assada) e a <strong>Panceta em cubos de 3 cm a 4 cm</strong> para pacotes especiais, baratas que absorvem bem temperos secos e cítricos moderados.
+          </li>
+          <li>
+            <strong class="text-zinc-200">Linguiça Toscana (Técnica do Choque Térmico):</strong> Nunca corte ou espete a linguiça toscana crua logo após tirar do pacote, pois o gomo amolece e desmancha no corte. Antes de fatiar, coloque os gomos de linguiça inteiros em água fervente por <strong>apenas 5 minutos</strong> (somente até a película externa mudar de cor e a gordura interna firmar). Retire da água, deixe escorrer e esfriar. Em seguida, fatie em rodelas uniformes de 3 cm a 4 cm. Essa técnica garante que o pedaço fique firme no palito e não quebre durante o congelamento e a embalagem a vácuo.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Regra Sanitária Inegociável -->
+    <CalloutAlerta
+      tipo="perigo"
+      titulo="A Regra Sanitária Inegociável: NUNCA Recongelar Carne Crua"
+      destaque="Perigo Microbiológico e Perda Celular"
+      mensagem="Trabalhe prioritariamente com cortes bovinos e suínos frescos e resfriados direto do açougue parceiro. Se comprar carne que já foi congelada, descongelá-la na bancada para cortar e recongelar depois causará dois problemas graves: destruição da textura/suculência (a carne solta toda a água na brasa e fica dura) e multiplicação descontrolada da carga bacteriana. Exceção controlada: no peito de frango congelado no atacado, descongele exclusivamente dentro da geladeira (0°C a 5°C) e manipule em fluxo contínuo e rápido direto para o congelamento a -18°C."
+    />
+  </section>
+
+  <!-- 2. O Toalete da Carne e o Controle Real de Perdas -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">2.</span> O Toalete da Carne e o Controle Real de Perdas
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O erro clássico de quem precifica errado começa no açougue: pagar por 5 kg de carne inteira e achar que tem 5 kg de espetinho para vender. Todo corte passa por toalete (limpeza).
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-4 text-xs md:text-sm pt-2">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <h3 class="font-bold text-zinc-100 flex items-center gap-2">
+          <span class="text-amber-400">⚖️</span> Conceito de Peso Bruto (PB)
+        </h3>
+        <p class="text-zinc-400 leading-relaxed">
+          O peso total da peça de carne exatamente como saiu da balança do fornecedor, incluindo gorduras excedentes, peles e membranas (aponeuroses).
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <h3 class="font-bold text-zinc-100 flex items-center gap-2">
+          <span class="text-amber-400">🔪</span> Execução da Limpeza
+        </h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Com a ponta da faca afiada, descole a membrana prateada e retire os blocos de gordura amarelada dura e os nervos grossos. Mantenha apenas a gordura macia que ajuda na hidratação da carne durante a cocção.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <h3 class="font-bold text-zinc-100 flex items-center gap-2">
+          <span class="text-emerald-400">🥩</span> Conceito de Peso Limpo (PL)
+        </h3>
+        <p class="text-zinc-400 leading-relaxed">
+          A quantidade líquida de carne aproveitável que sobrou sobre a tábua pronta para ser fatiada em cubos padronizados.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <h3 class="font-bold text-zinc-100 flex items-center gap-2">
+          <span class="text-amber-400">♻️</span> Destino das Aparas Limpas
+        </h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Pedaços pequenos de carne que escapam do tamanho do cubo não vão para o lixo. Separe em sacos higienizados no freezer para moer e produzir produtos secundários (como kaftas ou hambúrgueres).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. A Técnica de Corte em Cubos Uniformes -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">3.</span> A Técnica de Corte em Cubos Uniformes
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O tamanho do corte determina a taxa de absorção de sal e o tempo de cozimento na brasa:
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-3">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 text-center">
+        <p class="text-xs text-zinc-400 uppercase font-mono tracking-wider">Cortes Bovinos e Suínos</p>
+        <p class="text-xl font-extrabold text-amber-400 mt-1">3 cm a 4 cm</p>
+        <p class="text-[11px] text-zinc-400 mt-1">Evita queimar por fora ou ressecar por excesso de sal</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 text-center">
+        <p class="text-xs text-zinc-400 uppercase font-mono tracking-wider">Frango e Queijo Coalho</p>
+        <p class="text-xl font-extrabold text-amber-400 mt-1">3 cm cravados</p>
+        <p class="text-[11px] text-zinc-400 mt-1">Cozimento uniforme no tempo exato</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 text-center">
+        <p class="text-xs text-zinc-400 uppercase font-mono tracking-wider">Toscana Aferventada</p>
+        <p class="text-xl font-extrabold text-amber-400 mt-1">3 cm a 4 cm</p>
+        <p class="text-[11px] text-zinc-400 mt-1">Rodelas firmes que não desmancham no palito</p>
+      </div>
+    </div>
+
+    <!-- A Regra do Misto Inteligente -->
+    <div class="rounded-xl border border-charcoal-800 bg-charcoal-950 p-5 space-y-3">
+      <h3 class="font-bold text-zinc-100 text-sm flex items-center gap-2">
+        <span>💡</span> A Regra do Misto Inteligente (Sem Vegetais Crus)
+      </h3>
+      <p class="text-xs md:text-sm text-zinc-300 leading-relaxed">
+        Evite montar espetinhos mistos intercalados com cebola crua e pimentão. No congelamento doméstico prolongado, os vegetais perdem água, amolecem e soltam líquidos ácidos sobre a carne, além de aumentarem a complexidade da montagem.
+      </p>
+      <p class="text-xs md:text-sm text-zinc-200 font-semibold">
+        Adote a estratégia do <strong>Misto Duplo Comercial</strong>:
+      </p>
+      <ul class="space-y-1.5 text-xs text-zinc-400 pl-4 list-disc marker:text-amber-500">
+        <li><strong>Opção 1:</strong> Cubos de Carne Bovina intercalados com rodelas de Linguiça Toscana.</li>
+        <li><strong>Opção 2:</strong> Filé de Peito de Frango intercalado com rodelas de Linguiça Toscana.</li>
+      </ul>
+      <p class="text-xs text-zinc-400 italic">
+        Isso simplifica a linha de produção, padroniza o peso e não gera risco de vegetais murchos na entrega.
+      </p>
+    </div>
+
+    <!-- Direção das Fibras -->
+    <div class="space-y-3 pt-2">
+      <p class="text-zinc-300 leading-relaxed text-sm">
+        A espessura e a direção do corte determinam se o espetinho ficará macio ao morder e se todos os pedaços assarão no mesmo tempo:
+      </p>
+      <ul class="space-y-2 text-xs md:text-sm text-zinc-400 pl-4 list-disc marker:text-amber-500">
+        <li>
+          <strong class="text-zinc-200">Sentido da Fibra:</strong> Observe as linhas paralelas que percorrem a carne. Posicione a lâmina sempre a 90 graus dessas linhas e faça o corte <strong>contra a fibra</strong>. Isso quebra a rigidez da carne e garante maciez imediata na mordida.
+        </li>
+        <li>
+          <strong class="text-zinc-200">Fatiamento em Bifes Espessos:</strong> Primeiro, corte a peça limpa em bifes grossos (tiras largas).
+        </li>
+        <li>
+          <strong class="text-zinc-200">Corte das Tiras e Cubos:</strong> Transforme os bifes em tiras e, em seguida, em cubos regulares.
+        </li>
+        <li>
+          <strong class="text-zinc-200">Evite Formatos Irregulares:</strong> Fuja de cortes triangulares ou pedaços com pontas muito finas, pois as pontas queimam no fogo antes do centro da carne atingir o ponto correto.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Marinadas e Temperos para Alimentos Congelados -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">4.</span> Marinadas e Temperos para Alimentos Congelados
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      O tempero voltado para o congelamento possui regras químicas diferentes do tempero de consumo no mesmo dia:
+    </p>
+
+    <div class="space-y-3 text-xs md:text-sm text-zinc-300">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
+        <h3 class="font-bold text-zinc-100 text-sm">O Perigo do Sal em Excesso na Entrada</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          O sal puro desidrata as células da carne se aplicado horas antes do congelamento, puxando a água para fora e formando cristais de gelo que rasgam as fibras. O sal deve ser equilibrado (entre 12 g e 15 g por quilo de carne).
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
+        <h3 class="font-bold text-zinc-100 text-sm">Evite Ingredientes Frescos com Alta Atividade de Água</h3>
+        <ul class="space-y-1 pl-4 list-disc marker:text-rose-400 text-zinc-400">
+          <li><strong>Não use cebola fresca ralada:</strong> Ela oxida com facilidade no freezer, escurece a carne e adquire sabor amargo após 7 a 10 dias de congelamento.</li>
+          <li><strong>Não exagere no alho cru:</strong> Pode fermentar e transferir um odor sulfuroso forte para o produto cru.</li>
+        </ul>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
+        <h3 class="font-bold text-zinc-100 text-sm">Aposte em Condimentos Secos e Desidratados</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Alho em pó, cebola granulada/desidratada, páprica defumada, pimenta-do-reino moída na hora, ervas secas (orégano, chimichurri desidratado, tomilho).
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
+        <h3 class="font-bold text-zinc-100 text-sm">O Papel do Óleo / Azeite (Película Protetora)</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Sempre envolva os cubos de carne em uma fina camada de óleo vegetal ou azeite antes de aplicar os condimentos secos. A gordura dissolve os aromas dos temperos, fixa o sal e forma uma capa impermeabilizante sobre as fibras da carne, blindando-a contra o ressecamento do ar frio do congelador.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
+        <h3 class="font-bold text-zinc-100 text-sm">Tempo de Descanso</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Deixe a carne coberta com o tempero e azeite descansando em refrigeração por 20 a 30 minutos antes da montagem para incorporar os sabores, sem deixar marinando de um dia para o outro em líquidos ácidos (vinagre ou limão puro amolecem excessivamente o corte).
+        </p>
+      </div>
+    </div>
+
+    <!-- Regra de Ouro de Tempero -->
+    <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-5 space-y-3">
+      <h3 class="font-bold text-amber-300 text-sm flex items-center gap-2">
+        <span>⭐</span> REGRA DE OURO DE TEMPERO: A DIVISÃO ENTRE CONGELADO E FRESCO
+      </h3>
+      <p class="text-xs md:text-sm text-zinc-200 leading-relaxed">
+        A química do congelamento sob vácuo não tolera o uso indiscriminado de marinadas líquidas ácidas:
+      </p>
+      <div class="grid sm:grid-cols-2 gap-3 pt-2 text-xs">
+        <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1.5">
+          <h4 class="font-bold text-amber-400">Para Espetinhos Congelados e a Vácuo (90% da Produção)</h4>
+          <p class="text-zinc-300 leading-relaxed">
+            Utilize <strong>exclusivamente a Base Seca Universal</strong> (20 g/kg). A umidade deve vir apenas de 20 ml de óleo ou azeite por quilo para ancorar os temperos. Ácidos como vinagre puro e limão esfarelam as fibras da carne, soltam água dentro do saco e são sugados pela bomba da seladora, destruindo a solda.
+          </p>
+        </div>
+
+        <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1.5">
+          <h4 class="font-bold text-emerald-400">Para Espetinhos Frescos ou Consumo Imediato</h4>
+          <p class="text-zinc-300 leading-relaxed">
+            Aqui as marinadas líquidas (com limão, molho inglês e alho in natura) são permitidas, exigindo descanso sob refrigeração de 2 a 4 horas (bovinos/aves) ou 3 a 6 horas (suínos) antes de irem para a brasa viva.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Uso dos Palitos: Regra para Congelamento e Embalagem a Vácuo -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">5.</span> Uso dos Palitos: Regra para Congelamento e Embalagem a Vácuo
+    </h2>
+    <div class="p-5 rounded-xl bg-charcoal-950 border border-amber-500/20 space-y-3">
+      <p class="text-sm font-semibold text-amber-300">
+        Diferente do churrasco feito e assado no mesmo dia, para espetinhos que serão embalados a vácuo e congelados, os palitos de bambu devem ser utilizados totalmente secos.
+      </p>
+      <ul class="space-y-2 text-xs md:text-sm text-zinc-400 pl-4 list-disc marker:text-amber-500">
+        <li>
+          <strong class="text-zinc-200">Por que NÃO hidratar antes de congelar:</strong> Colocar palitos molhados dentro da embalagem introduz umidade residual no saco plástico. Essa água migra para a máquina na hora da sucção de ar, prejudica a solda térmica da seladora e forma cristais de gelo que rasgam as fibras da carne durante a estocagem.
+        </li>
+        <li>
+          <strong class="text-zinc-200">Quando a hidratação é indicada:</strong> A regra de molhar os palitos em água por 20 minutos aplica-se única e exclusivamente para produtos que vão direto para a grelha no mesmo dia, para evitar que a madeira queime na brasa viva.
+        </li>
+        <li>
+          <strong class="text-zinc-200">Critérios dos Palitos Secos:</strong> Utilize palitos de bambu de 25 cm, retos, com pontas intactas e livres de farpas ou mofo, mantidos em recipientes secos e protegidos de poeira até o momento do espetamento.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Sequência Ergonômica e Montagem na Bancada -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">6.</span> Sequência Ergonômica e Montagem na Bancada
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      A velocidade da sua produção depende de uma bancada posicionada em linha reta para evitar movimentos desnecessários com as mãos:
+    </p>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <span class="text-amber-400 font-bold block">1. Lado Esquerdo</span>
+        <p class="text-zinc-300">Recipiente com a carne temperada e fria.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <span class="text-amber-400 font-bold block">2. Centro</span>
+        <p class="text-zinc-300">Tábua de apoio limpa com balança digital zerada ao lado.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <span class="text-amber-400 font-bold block">3. Frente do Operador</span>
+        <p class="text-zinc-300">Vasilha rasa com os palitos secos e organizados.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <span class="text-amber-400 font-bold block">4. Lado Direito</span>
+        <p class="text-zinc-300">Bandeja ou assadeira forrada para acomodar os espetos.</p>
+      </div>
+    </div>
+
+    <div class="space-y-3 pt-2 text-xs md:text-sm text-zinc-300">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
+        <h3 class="font-bold text-zinc-100">Técnica de Espetamento</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Segure o cubo de carne entre o polegar e o indicador sem esmagar. Insira a ponta do palito exatamente no centro geométrico do pedaço, empurrando em movimento firme e reto, sem deixar pontas laterais soltas. Repita a operação com 4 a 5 cubos de tamanho proporcional até cobrir a área útil do palito.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
+        <h3 class="font-bold text-zinc-100">Reserva de Empunhadura (7 cm a 8 cm)</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Sempre deixe entre 7 cm e 8 cm de palito livre na base (cerca de 4 dedos). Essa área é fundamental para que o cliente segure o espetinho sem encostar na carne e sem queimar os dedos na grelha.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
+        <h3 class="font-bold text-zinc-100">Compactação Certa</h3>
+        <p class="text-zinc-400 leading-relaxed">
+          Não aperte excessivamente um cubo contra o outro (o meio fica cru ao assar), nem deixe vãos abertos entre eles (a madeira queima no espaço vazio). Mantenha os pedaços apenas encostados suavemente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Modelo de Ficha de Produção e Controle de Rendimento -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">7.</span> Modelo de Ficha de Produção e Controle de Rendimento
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Para ter controle total da operação, preencha esta ficha a cada lote trabalhado:
+    </p>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Data da Produção</span>
+        <span class="text-zinc-200 font-bold">[ ___ / ___ / ______ ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Produto / Sabor</span>
+        <span class="text-amber-400 font-bold">Ex: Espetinho Bovino Tradicional</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Tipo de Corte Utilizado</span>
+        <span class="text-zinc-200 font-bold">Ex: Miolo da Alcatra / Acém</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Fornecedor / Açougue</span>
+        <span class="text-zinc-200 font-bold">[ ______________________ ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Custo por Quilo da Peça</span>
+        <span class="text-amber-400 font-bold">R$ [ _________ ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Peso Bruto da Peça (PB)</span>
+        <span class="text-zinc-200 font-bold">[ _________ ] kg</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Peso das Aparas Descartadas</span>
+        <span class="text-rose-400 font-bold">[ _________ ] kg</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Peso Limpo Útil (PL)</span>
+        <span class="text-emerald-400 font-bold">[ _________ ] kg</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Total de Espetinhos Produzidos</span>
+        <span class="text-amber-400 font-bold">[ _________ ] unidades</span>
+      </div>
+      <div class="col-span-2 sm:col-span-2 md:col-span-3 p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Média de Peso por Espetinho</span>
+        <span class="text-zinc-200 font-bold">[ Peso Limpo ÷ Total de Unidades ] = 100g padrão</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Checklist Prático do Protocolo 2 (Integral) -->
+  <ChecklistOperacional
+    titulo="Checklist Prático de Execução do Protocolo 2"
+    subtitulo="Verifique cada etapa antes de fechar a esteira de montagem"
+    itens={[
+      { texto: "Corte cárneo limpo de peles duras e nervos excessivos.", obrigatorio: true, detalhe: "Toalete rigorosa que garante a maciez na mordida." },
+      { texto: "Aparas limpas pesadas e reservadas separadamente para outros produtos.", obrigatorio: true, detalhe: "Aproveitamento integral para kaftas e hambúrgueres." },
+      { texto: "Pedaços cortados contra a fibra em cubos homogêneos de tamanho médio (3 a 4 cm).", obrigatorio: true, detalhe: "Quebra das fibras para maciez sem amaciante químico." },
+      { texto: "Marinada aplicada com óleo/azeite e temperos secos, sem excesso de água ou sal.", obrigatorio: true, detalhe: "Capa lipídica que protege a carne contra queimaduras de frio." },
+      { texto: "Palitos de bambu utilizados totalmente secos para produtos a vácuo.", obrigatorio: true, detalhe: "Evita que a máquina puxe água e comprometa a solda térmica." },
+      { texto: "Espetinhos montados com centro alinhado e espaço de empunhadura reservado (7 a 8 cm).", obrigatorio: true, detalhe: "Segurança para manusear na grelha sem queimar os dedos." },
+      { texto: "Lote total pesado e registrado na Ficha de Produção.", obrigatorio: true, detalhe: "Garantia de margem de lucro e conferência de perdas." }
+    ]}
+  />
+</EbookLayout>

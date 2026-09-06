@@ -1,0 +1,357 @@
+---
+import EbookLayout from '../layouts/EbookLayout.astro';
+import VisualBlock from '../components/VisualBlock.astro';
+import CalloutAlerta from '../components/CalloutAlerta.astro';
+import TabelaTecnica from '../components/TabelaTecnica.astro';
+import ChecklistOperacional from '../components/ChecklistOperacional.astro';
+import imgPadronizacao from '../assets/illustrations/protocolo-3-padronizacao.png';
+import imgCapa from '../assets/illustrations/capa-protocolo-3.png';
+---
+
+<EbookLayout
+  title="Protocolo 3 — Padronização: O DNA do Espetinho"
+  category="protocolo"
+  chapterNumber="03"
+  chapterTitle="PROTOCOLO 3 — PADRONIZAÇÃO"
+  chapterSubtitle="O DNA do Espetinho: Da Cozinha Amadora ao Produto Industrial Repetível"
+  focoTecnico="Padronização Milimétrica & Base Seca Universal"
+  parametroChave="Padrão Ouro 100g (±2g a 3g)"
+  imagemCapa={imgCapa.src}
+  prevLink={{ title: "Protocolo 2: Produção", href: "/protocolo-2" }}
+  nextLink={{ title: "Protocolo 4: Congelamento", href: "/protocolo-4" }}
+>
+  <!-- Bloco Visual com Ilustração Gerada via IA (Sem Placeholders) -->
+  <VisualBlock
+    stepNumber="03"
+    badge="Padronização Industrial"
+    title="O Segredo do Produto Idêntico e Repetível"
+    subtitle="Proteger a margem e fidelizar pela consistência"
+    description="Se um espetinho sai com 110g e o outro com 85g no mesmo pacote, o cliente percebe a desigualdade e desconfia. Além disso, 15g a mais por espetinho em 500 unidades representam 7,5 kg de carne limpa jogados fora direto do seu lucro líquido. Padronizar é blindar sua rentabilidade."
+    tip="Mantenha a balança digital zerada e posicionada imediatamente ao lado da tábua. Cada palito montado toca a balança antes de ir para a esteira de pré-congelamento."
+    imageSrc={imgPadronizacao.src}
+    imageAlt="Fileira de espetinhos padronizados lado a lado sobre ardósia escura com balança digital de alta precisão"
+    imagePosition="left"
+  />
+
+  <!-- 1. A Diferença Entre Fazer Espetinho e Criar um Produto Repetível -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">1.</span> A Diferença Entre Fazer Espetinho e Criar um Produto Repetível
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      A maioria das pessoas que inicia uma produção caseira comete o erro de operar como cozinheiro amador em vez de fabricante de um produto comercial. A diferença central entre o amadorismo e o modelo escalável reside em uma distinção simples:
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+      <div class="rounded-xl border border-rose-900/40 bg-rose-950/20 p-5 space-y-2">
+        <span class="text-xs font-mono font-bold text-rose-400 uppercase tracking-wide">O Amador</span>
+        <p class="text-sm font-semibold text-zinc-200">"Eu sei fazer um bom espetinho."</p>
+      </div>
+
+      <div class="rounded-xl border border-amber-500/40 bg-amber-500/10 p-5 space-y-2">
+        <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wide">O Empreendedor do Protocolo</span>
+        <p class="text-sm font-semibold text-zinc-100">"Eu tenho um produto padronizado que consigo produzir exatamente igual toda vez."</p>
+      </div>
+    </div>
+
+    <p class="text-zinc-300 leading-relaxed pt-2">
+      Quando você vende sem padrão, cada pacote entregue tem um tamanho diferente. Se um espetinho sai com 110 g e o outro com 85 g, o cliente percebe a desigualdade e desconfia da entrega. Além disso, se você colocar 15 g de carne a mais em cada espetinho sem cobrar por isso, ao final de 500 unidades produzidas você terá jogado fora 7,5 kg de carne limpa direto do seu lucro líquido. Padronizar é proteger sua margem e blindar sua reputação.
+    </p>
+  </section>
+
+  <!-- 2. Os 8 Pilares do DNA do Espetinho -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">2.</span> Os 8 Pilares do DNA do Espetinho
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      No Protocolo, cada espetinho desenvolvido deixa de ser uma receita aleatória e passa a possuir uma identidade operacional fixa composta por 8 pilares indispensáveis:
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-3.5 text-xs md:text-sm">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <h3 class="font-bold text-amber-400">1. Composição</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          A fórmula exata da carne, dos condimentos e dos complementos (exemplo: miolo de alcatra limpo, azeite protetor, sal refinado, alho em pó e páprica defumada).
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <h3 class="font-bold text-amber-400">2. Peso</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          A gramatura líquida oficial da unidade montada pronta para congelar (exemplo: cravado em 100 g).
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <h3 class="font-bold text-amber-400">3. Padrão</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          A geometria física da peça (tamanho médio de cada cubo, 4 a 5 pedaços alinhados no palito, proporção visual entre gordura e carne).
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <h3 class="font-bold text-amber-400">4. Rendimento</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          A taxa de conversão matemática de unidades obtidas a partir de cada quilo limpo de carne (exemplo: 1 kg limpo = exatamente 10 espetinhos de 100 g).
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <h3 class="font-bold text-amber-400">5. Embalagem</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          O método de acondicionamento para preservação da qualidade (exemplo: pacote de polietileno selado com 5 ou 10 unidades com separadores plásticos).
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <h3 class="font-bold text-amber-400">6. Custo</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          O valor em reais que a unidade pronta representa após o rateio da carne, temperos, palito, plástico e etiqueta.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <h3 class="font-bold text-amber-400">7. Preço</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          O valor unitário de tabela para fins de cálculo e composição de pacotes.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1">
+        <h3 class="font-bold text-amber-400">8. Oferta</h3>
+        <p class="text-zinc-300 leading-relaxed">
+          A forma de apresentação comercial do produto final diante do cliente (integrando o cardápio em pacotes individuais, kits família ou combos promocionais).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. O Ciclo Operacional de Padronização -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">3.</span> O Ciclo Operacional de Padronização
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Para que o produto alcance o nível industrial em ambiente doméstico, a bancada deve executar continuamente o ciclo em sete etapas:
+    </p>
+
+    <div class="space-y-3 text-xs md:text-sm text-zinc-300">
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">1.</span>
+        <div>
+          <strong class="text-zinc-100">Definir:</strong> Escolha a meta exata de peso e formato do espetinho antes de tocar na carne (exemplo: padronizar o espetinho bovino em 100 g).
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">2.</span>
+        <div>
+          <strong class="text-zinc-100">Pesar:</strong> Cada palito montado na bancada vai imediatamente para a balança digital zerada ao lado da tábua.
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">3.</span>
+        <div>
+          <strong class="text-zinc-100">Registrar:</strong> Anote na ficha de produção o peso obtido nas primeiras amostras do lote.
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">4.</span>
+        <div>
+          <strong class="text-zinc-100">Repetir:</strong> Monte as unidades seguintes buscando calibrar o olho e as mãos para cortar pedaços que sempre atinjam a mesma meta de peso.
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">5.</span>
+        <div>
+          <strong class="text-zinc-100">Comparar:</strong> Coloque três espetinhos lado a lado e confira se a altura da carne no palito, a reserva da empunhadura e o volume visual estão idênticos.
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">6.</span>
+        <div>
+          <strong class="text-zinc-100">Ajustar:</strong> Se a balança marcar 115 g, retire uma apara; se marcar 88 g, troque um cubo por um pedaço proporcional até bater a tolerância aceitável.
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
+        <span class="font-mono font-bold text-amber-400 shrink-0">7.</span>
+        <div>
+          <strong class="text-zinc-100">Congelar o Padrão:</strong> Assim que o lote atender rigorosamente às medidas, homologue a fórmula na Ficha Técnica Oficial e não altere mais o processo.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. As Três Faixas de Peso Comercial Reconhecidas no Mercado -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">4.</span> As Três Faixas de Peso Comercial Reconhecidas no Mercado
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      A padronização não precisa ser rígida em um único tamanho para todos os tipos de cliente, mas cada linha do seu cardápio deve respeitar uma das três faixas de peso comercial estabelecidas no mercado:
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-4 text-xs md:text-sm">
+      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2 text-center">
+        <p class="font-mono text-zinc-400 uppercase tracking-wider text-xs">Padrão Pequeno</p>
+        <p class="text-2xl font-black text-zinc-200">80 g a 100 g</p>
+        <p class="text-xs text-zinc-400 leading-relaxed">
+          Recomendado para linhas de combate, kits promocionais de alto volume e espetinhos para festas infantis ou grandes confraternizações.
+        </p>
+      </div>
+
+      <div class="p-5 rounded-xl bg-amber-500/10 border-2 border-amber-500/40 space-y-2 text-center shadow-lg shadow-amber-500/5">
+        <span class="inline-block px-2.5 py-0.5 rounded-full bg-amber-500 text-charcoal-950 text-[10px] font-bold uppercase tracking-wide">Padrão Ouro</span>
+        <p class="font-mono text-amber-300 uppercase tracking-wider text-xs">Padrão Médio</p>
+        <p class="text-2xl font-black text-amber-400">100 g a 120 g</p>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          O padrão ouro comercial do Protocolo e o mais aceito pelo consumidor final para churrasco doméstico (equilibra tamanho visual, facilidade de cocção e excelente margem de lucro).
+        </p>
+      </div>
+
+      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2 text-center">
+        <p class="font-mono text-zinc-400 uppercase tracking-wider text-xs">Padrão Grande / Premium</p>
+        <p class="text-2xl font-black text-zinc-200">130 g a 180 g</p>
+        <p class="text-xs text-zinc-400 leading-relaxed">
+          Linha voltada para cortes nobres com bacon, medalhões e opções especiais de ticket mais alto.
+        </p>
+      </div>
+    </div>
+
+    <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs md:text-sm text-amber-200 leading-relaxed">
+      <strong>Regra de Ouro:</strong> Escolha uma faixa para cada sabor e mantenha a tolerância rigorosa de apenas <strong>2 g a 3 g para mais ou para menos</strong> em todas as unidades do mesmo lote.
+    </div>
+  </section>
+
+  <!-- 5. Ficha Técnica Oficial do Espetinho (Modelo Operacional) -->
+  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
+    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
+      <span class="text-amber-500">5.</span> Ficha Técnica Oficial do Espetinho (Modelo Operacional)
+    </h2>
+    <p class="text-zinc-300 leading-relaxed">
+      A Ficha Técnica é o documento que consolida a regra definitiva de fabricação de cada item do cardápio. Preencha uma ficha exclusiva para cada sabor desenvolvido:
+    </p>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Nome do Produto</span>
+        <span class="text-zinc-200 font-bold">[ Ex: Espetinho Bovino Clássico ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Peso Alvo por Unidade</span>
+        <span class="text-amber-400 font-bold">[ Ex: 100 g líquido (carne montada) ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Margem de Tolerância Permitida</span>
+        <span class="text-zinc-200 font-bold">[ Ex: 98 g a 102 g ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Comprimento do Palito</span>
+        <span class="text-zinc-200 font-bold">[ Ex: 25 cm bambu ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Espaço Livre na Base (Empunhadura)</span>
+        <span class="text-zinc-200 font-bold">[ Ex: 7,5 cm livre ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Número de Cubos por Palito</span>
+        <span class="text-zinc-200 font-bold">[ Ex: 4 a 5 cubos regulares ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Proporção de Gordura Aceitável</span>
+        <span class="text-zinc-200 font-bold">[ Ex: 10% a 15% de gordura macia ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Embalagem Padrão</span>
+        <span class="text-zinc-200 font-bold">[ Ex: Saco plástico 15x30 cm c/ 10 un ]</span>
+      </div>
+      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
+        <span class="text-zinc-400 block font-mono">Identificação</span>
+        <span class="text-zinc-200 font-bold">[ Ex: Etiqueta frontal com lote e data ]</span>
+      </div>
+    </div>
+
+    <!-- Fórmula Oficial da Base Seca Universal -->
+    <div class="rounded-xl border border-amber-500/30 bg-charcoal-950 p-5 md:p-6 space-y-4">
+      <h3 class="font-display font-bold text-sm md:text-base text-amber-400 flex items-center gap-2">
+        <span>🧪</span> FÓRMULA OFICIAL DA BASE SECA UNIVERSAL (Rendimento para Grandes Lotes)
+      </h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs text-zinc-300">
+        <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+          <span class="text-zinc-400 block">Sal refinado:</span>
+          <strong class="text-zinc-100">700 g</strong>
+        </div>
+        <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+          <span class="text-zinc-400 block">Realçador de sabor (glutamato):</span>
+          <strong class="text-zinc-100">60 g</strong>
+        </div>
+        <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+          <span class="text-zinc-400 block">Chimichurri desidratado:</span>
+          <strong class="text-zinc-100">120 g</strong>
+        </div>
+        <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+          <span class="text-zinc-400 block">Colorau (para cor):</span>
+          <strong class="text-zinc-100">80 g</strong>
+        </div>
+        <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+          <span class="text-zinc-400 block">Páprica doce ou defumada:</span>
+          <strong class="text-zinc-100">25 g</strong>
+        </div>
+        <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+          <span class="text-zinc-400 block">Pimenta-do-reino moída:</span>
+          <strong class="text-zinc-100">10 g (bovinos/suínos)</strong>
+        </div>
+        <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+          <span class="text-zinc-400 block">Lemon pepper:</span>
+          <strong class="text-zinc-100">15 g (para frango)</strong>
+        </div>
+        <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+          <span class="text-zinc-400 block">Alho desidratado / em pó:</span>
+          <strong class="text-zinc-100">20 g</strong>
+        </div>
+        <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+          <span class="text-zinc-400 block">Cebola desidratada:</span>
+          <strong class="text-zinc-100">20 g</strong>
+        </div>
+        <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800 col-span-2 sm:col-span-3">
+          <span class="text-zinc-400 block">Açafrão / Cúrcuma (para frango):</span>
+          <strong class="text-zinc-100">30 g</strong>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-2 text-xs md:text-sm text-zinc-300">
+        <p class="leading-relaxed">
+          <strong class="text-amber-300">A Dosagem Padrão de Bancada:</strong> Pese e utilize rigorosamente <strong>20 g dessa mistura seca para cada 1 kg de carne limpa</strong> (o equivalente a 1 colher de sopa cheia). Adicione 20 ml de óleo ou azeite por quilo para fixar o pó nas fibras sem soltar água.
+        </p>
+
+        <CalloutAlerta
+          tipo="perigo"
+          titulo="Alerta Crítico de Sal no Bacon (Medalhões)"
+          destaque="Concentração Variável de Sódio"
+          mensagem="Antes de temperar carne bovina ou peito de frango que serão envolvidos em bacon, experimente o nível de sal do bacon cru. Bacons industriais possuem concentrações de sódio variáveis. Ao produzir medalhões, reduza a dose da Base Seca para 10 g a 12 g por quilo para evitar a perda do lote por excesso de sal."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Checklist Prático do Protocolo 3 (Integral) -->
+  <ChecklistOperacional
+    titulo="Checklist Prático de Execução do Protocolo 3"
+    subtitulo="Auditoria de bancada antes de homologar e embalar cada lote"
+    itens={[
+      { texto: "Peso alvo de cada espetinho estabelecido antes de começar o lote.", obrigatorio: true, detalhe: "Definição clara da gramatura alvo (ex: 100g)." },
+      { texto: "Balança digital zerada e posicionada imediatamente ao lado da tábua de montagem.", obrigatorio: true, detalhe: "Acesso contínuo em cada unidade espetada." },
+      { texto: "Cada unidade pesada individualmente antes de ser enviada para a bandeja.", obrigatorio: true, detalhe: "Conferência obrigatória peça a peça." },
+      { texto: "Tolerância mantida rigorosamente dentro de mais ou menos 2 a 3 gramas.", obrigatorio: true, detalhe: "Blindagem de custo e consistência para o cliente." },
+      { texto: "Proporção visual e alinhamento dos cubos conferidos no palito.", obrigatorio: true, detalhe: "Aparência padronizada e profissional." },
+      { texto: "Reserva de empunhadura da base respeitada (mínimo de 7 cm).", obrigatorio: true, detalhe: "Área livre para pega segura sem tocar na carne." },
+      { texto: "Ficha Técnica preenchida e arquivada como padrão oficial daquele sabor.", obrigatorio: true, detalhe: "Registro permanente para replicar a produção com fidelidade." }
+    ]}
+  />
+</EbookLayout>

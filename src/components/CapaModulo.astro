@@ -1,0 +1,181 @@
+---
+interface Props {
+  tipo: 'protocolo' | 'bonus' | 'modulo-liberado' | 'order-bump';
+  numero?: string | number;
+  titulo: string;
+  subtitulo?: string;
+  descricao?: string;
+  imagemFundo?: string;
+  focoTecnico?: string;
+  parametroChave?: string;
+}
+
+const {
+  tipo,
+  numero,
+  titulo,
+  subtitulo,
+  descricao,
+  imagemFundo,
+  focoTecnico = "Padronização & Lucratividade",
+  parametroChave = "Qualidade & Vácuo"
+} = Astro.props;
+
+const badgeConfig = {
+  protocolo: {
+    texto: `MÓDULO OFICIAL ${numero ? `• CAPÍTULO ${numero}` : ''}`,
+    classe: "bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-300 border-amber-500/40 shadow-amber-500/10",
+    corPonto: "bg-amber-400"
+  },
+  bonus: {
+    texto: `BÔNUS EXCLUSIVO ${numero ? `• ${numero}` : ''}`,
+    classe: "bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-300 border-emerald-500/40 shadow-emerald-500/10",
+    corPonto: "bg-emerald-400"
+  },
+  'modulo-liberado': {
+    texto: `🌟 MÓDULO LIBERADO • ACELERAÇÃO`,
+    classe: "bg-gradient-to-r from-amber-400/25 via-yellow-500/20 to-amber-600/25 text-amber-200 border-amber-400/50 shadow-amber-400/20",
+    corPonto: "bg-amber-300"
+  },
+  'order-bump': {
+    texto: `🌟 MÓDULO LIBERADO • ACELERAÇÃO`,
+    classe: "bg-gradient-to-r from-amber-400/25 via-yellow-500/20 to-amber-600/25 text-amber-200 border-amber-400/50 shadow-amber-400/20",
+    corPonto: "bg-amber-300"
+  }
+}[tipo];
+---
+
+<section class="capa-modulo relative w-full overflow-hidden bg-charcoal-950 text-zinc-100 flex flex-col justify-between p-8 sm:p-12 md:p-16 border-b border-charcoal-800 print:border-0 print:p-14">
+  
+  <!-- Imagem de Fundo em Alta Definição com Dark Steakhouse Gradient -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    {imagemFundo ? (
+      <img
+        src={imagemFundo}
+        alt={`Capa do ${titulo}`}
+        class="h-full w-full object-cover object-center filter brightness-45 contrast-125 transform scale-105"
+      />
+    ) : (
+      <!-- Fallback Visual Escuro Texturizado -->
+      <div class="h-full w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-950/30 via-charcoal-900 to-charcoal-950 opacity-90"></div>
+    )}
+
+    <!-- Gradientes de Escurecimento Editorial -->
+    <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/80 to-charcoal-950/40"></div>
+    <div class="absolute inset-0 bg-radial-gradient from-transparent via-charcoal-950/60 to-charcoal-950"></div>
+    
+    <!-- Brilho de Brasa Incandescente -->
+    <div class="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-amber-600/15 blur-3xl"></div>
+    <div class="absolute -top-20 -right-20 h-80 w-80 rounded-full bg-orange-600/10 blur-3xl"></div>
+  </div>
+
+  <!-- Cabeçalho da Capa: Identidade & Badge -->
+  <div class="relative z-10 space-y-6">
+    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-charcoal-800/80 pb-5">
+      <div class="flex items-center gap-2.5">
+        <span class="text-2xl">🔥</span>
+        <div>
+          <p class="font-display font-bold text-sm tracking-tight text-zinc-100">
+            PROTOCOLO <strong class="text-amber-500 font-extrabold">ESPETINHO CONGELADO</strong>
+          </p>
+          <p class="text-[10px] font-mono tracking-widest uppercase text-zinc-400">
+            MANUAL TÉCNICO MODULAR • FASCÍCULO INDIVIDUAL
+          </p>
+        </div>
+      </div>
+
+      <!-- Badge de Categoria -->
+      <div class={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-mono font-bold tracking-wider uppercase shadow-lg backdrop-blur-md ${badgeConfig.classe}`}>
+        <span class={`h-2 w-2 rounded-full ${badgeConfig.corPonto} animate-pulse`}></span>
+        <span>{badgeConfig.texto}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloco Central: Tipografia Editorial de Alto Impacto -->
+  <div class="relative z-10 my-auto py-10 md:py-16 space-y-5 max-w-3xl">
+    {subtitulo && (
+      <p class="font-mono text-xs md:text-sm font-bold uppercase tracking-widest text-amber-400/90 flex items-center gap-2">
+        <span class="h-px w-6 bg-amber-400/60"></span>
+        <span>{subtitulo}</span>
+      </p>
+    )}
+
+    <h1 class="font-display text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-50 leading-[1.08] drop-shadow-md">
+      {titulo}
+    </h1>
+
+    {descricao && (
+      <p class="text-sm md:text-base text-zinc-300/90 leading-relaxed font-normal pt-1 max-w-2xl border-l-2 border-amber-500/50 pl-4">
+        {descricao}
+      </p>
+    )}
+
+    <!-- Mini Grade de Parâmetros da Capa -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6 max-w-xl">
+      <div class="rounded-xl border border-charcoal-800/80 bg-charcoal-900/80 backdrop-blur-md p-3">
+        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Foco Técnico</span>
+        <span class="text-xs font-bold text-zinc-200 mt-0.5 block truncate">{focoTecnico}</span>
+      </div>
+
+      <div class="rounded-xl border border-charcoal-800/80 bg-charcoal-900/80 backdrop-blur-md p-3">
+        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Parâmetro Chave</span>
+        <span class="text-xs font-bold text-amber-400 mt-0.5 block truncate">{parametroChave}</span>
+      </div>
+
+      <div class="col-span-2 sm:col-span-1 rounded-xl border border-charcoal-800/80 bg-charcoal-900/80 backdrop-blur-md p-3">
+        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Edição</span>
+        <span class="text-xs font-bold text-zinc-200 mt-0.5 block">Versão 1.0 Oficial</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé da Capa: Direitos e Ecossistema -->
+  <div class="relative z-10 border-t border-charcoal-800/80 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono text-zinc-400">
+    <div class="flex items-center gap-2">
+      <span class="text-amber-500">🔒</span>
+      <span>Material Oficial do Ecossistema Protocolo Espetinho Congelado</span>
+    </div>
+    <div class="text-right text-[10px] text-zinc-400">
+      Uso exclusivo do aluno • Proibida a reprodução ou revenda não autorizada
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* Otimização Estrita para PDF / Impressão */
+  .capa-modulo {
+    min-height: 92vh;
+  }
+
+  @media print {
+    .capa-modulo {
+      min-height: 100vh !important;
+      height: 100vh !important;
+      max-height: 100vh !important;
+      page-break-after: always !important;
+      break-after: page !important;
+      margin: 0 !important;
+      padding: 40px 48px !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      width: 100% !important;
+      max-width: none !important;
+    }
+
+    .capa-modulo .my-auto {
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+    }
+
+    .capa-modulo h1 {
+      font-size: 2.75rem !important;
+      line-height: 1.15 !important;
+    }
+  }
+</style>
