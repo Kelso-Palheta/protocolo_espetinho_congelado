@@ -491,7 +491,7 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     display: flex !important;
     flex-direction: row !important;
     align-items: stretch !important;
-    gap: 22px !important;
+    gap: 24px !important;
     width: 100% !important;
     height: 100% !important;
     flex: 1 1 auto !important;
@@ -500,7 +500,7 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   .editorial-split.items-start {
-    align-items: flex-start !important;
+    align-items: stretch !important;
   }
 
   .editorial-split.reverse {
@@ -519,15 +519,16 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
     height: 100% !important;
     min-height: 0 !important;
   }
 
   .editorial-col-media {
-    flex: 0 0 calc(42% - 22px) !important;
-    width: calc(42% - 22px) !important;
-    max-width: calc(42% - 22px) !important;
+    flex: 0 0 calc(42% - 24px) !important;
+    width: calc(42% - 24px) !important;
+    max-width: calc(42% - 24px) !important;
     min-width: 0 !important;
     background: transparent !important;
     border: none !important;
@@ -545,14 +546,15 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   .secao-equipamentos {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
     height: 100% !important;
   }
 
   .equipamentos-grid {
     display: flex !important;
     flex-direction: row !important;
-    gap: 16px !important;
+    gap: 18px !important;
     align-items: stretch !important;
     width: 100% !important;
     flex: 1 1 auto !important;
@@ -565,7 +567,7 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     max-width: 58% !important;
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 8px !important;
+    gap: 10px !important;
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
@@ -574,9 +576,9 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   .equipamentos-media {
-    flex: 0 0 calc(42% - 16px) !important;
-    width: calc(42% - 16px) !important;
-    max-width: calc(42% - 16px) !important;
+    flex: 0 0 calc(42% - 18px) !important;
+    width: calc(42% - 18px) !important;
+    max-width: calc(42% - 18px) !important;
     display: flex !important;
     flex-direction: column !important;
     height: 100% !important;
@@ -625,8 +627,8 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   .editorial-image-caption {
-    padding: 6px 10px !important;
-    font-size: 10.5px !important;
+    padding: 7px 12px !important;
+    font-size: 11px !important;
     color: #a1a1aa !important;
     text-align: center !important;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
@@ -635,93 +637,101 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     flex-shrink: 0 !important;
   }
 
-  /* Componentes Semânticos Ricos das Pranchas */
+  /* Componentes Semânticos Ricos das Pranchas (Tipografia A4 Robusta) */
   .secao-titulo {
     font-family: 'Outfit', sans-serif !important;
-    font-size: 20px !important;
-    line-height: 1.25 !important;
-    font-weight: 700 !important;
+    font-size: 25px !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
     color: #ffffff !important;
-    margin-bottom: 3px !important;
+    margin-bottom: 4px !important;
   }
 
   .secao-intro {
-    font-size: 12px !important;
-    line-height: 1.45 !important;
+    font-size: 14.5px !important;
+    line-height: 1.55 !important;
     color: #d4d4d8 !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 4px !important;
   }
 
   .subtitulo-destaque {
-    font-size: 11px !important;
+    font-size: 13px !important;
     font-weight: 700 !important;
     letter-spacing: 0.05em !important;
     text-transform: uppercase !important;
     color: #fbbf24 !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 6px !important;
   }
 
   .destaque-tag {
-    font-size: 10.5px !important;
+    font-size: 12px !important;
     font-weight: 700 !important;
     letter-spacing: 0.05em !important;
     text-transform: uppercase !important;
     color: #fbbf24 !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 6px !important;
   }
 
   .lista-topicos {
     list-style: none !important;
     padding: 0 !important;
-    margin: 0 0 5px 0 !important;
+    margin: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 4px !important;
+    justify-content: space-evenly !important;
+    flex: 1 1 auto !important;
+    gap: 8px !important;
   }
 
   .lista-topicos li {
     display: flex !important;
     align-items: flex-start !important;
-    gap: 6px !important;
-    font-size: 11.5px !important;
-    line-height: 1.4 !important;
-    color: #d4d4d8 !important;
+    gap: 8px !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    color: #e4e4e7 !important;
   }
 
   .marcador-amber {
     color: #f59e0b !important;
-    font-weight: 800 !important;
+    font-weight: 900 !important;
+    font-size: 16px !important;
     flex-shrink: 0 !important;
   }
 
   .secao-fechamento {
-    font-size: 11px !important;
-    line-height: 1.4 !important;
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
     color: #a1a1aa !important;
-    margin-top: 3px !important;
+    margin-top: auto !important;
+    padding-top: 6px !important;
   }
 
   .subcard-item {
     background-color: #121215 !important;
     border: 1px solid #27272a !important;
-    border-radius: 10px !important;
-    padding: 7px 11px !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
     box-sizing: border-box !important;
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
   }
 
   .subcard-titulo {
-    font-size: 11.5px !important;
+    font-size: 13.5px !important;
     font-weight: 700 !important;
     color: #f4f4f5 !important;
-    margin-bottom: 2px !important;
+    margin-bottom: 4px !important;
     display: flex !important;
     align-items: center !important;
-    gap: 4px !important;
+    gap: 6px !important;
   }
 
   .subcard-texto {
-    font-size: 10.5px !important;
-    line-height: 1.4 !important;
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
     color: #a1a1aa !important;
     margin: 0 !important;
   }
@@ -729,116 +739,116 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   .subcard-mini {
     background-color: #18181b !important;
     border: 1px solid #27272a !important;
-    border-radius: 8px !important;
-    padding: 5px 9px !important;
+    border-radius: 10px !important;
+    padding: 8px 12px !important;
     box-sizing: border-box !important;
   }
 
   .badge-tag {
     font-family: ui-monospace, monospace !important;
-    font-size: 9.5px !important;
-    padding: 2px 6px !important;
-    border-radius: 4px !important;
-    font-weight: 600 !important;
+    font-size: 10.5px !important;
+    padding: 3px 8px !important;
+    border-radius: 5px !important;
+    font-weight: 700 !important;
   }
 
   .badge-tag.amber {
     color: #fbbf24 !important;
-    background: rgba(245, 158, 11, 0.12) !important;
-    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    background: rgba(245, 158, 11, 0.15) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
   }
 
   .badge-tag.emerald {
     color: #34d399 !important;
-    background: rgba(16, 185, 129, 0.12) !important;
-    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    background: rgba(16, 185, 129, 0.15) !important;
+    border: 1px solid rgba(16, 185, 129, 0.35) !important;
   }
 
   .badge-tag.zinc {
-    color: #a1a1aa !important;
+    color: #d4d4d8 !important;
     background: #18181b !important;
     border: 1px solid #3f3f46 !important;
   }
 
   .flavor-badge {
-    height: 22px !important;
-    width: 22px !important;
+    height: 28px !important;
+    width: 28px !important;
     border-radius: 50% !important;
-    background: rgba(245, 158, 11, 0.18) !important;
+    background: rgba(245, 158, 11, 0.2) !important;
     color: #fbbf24 !important;
-    font-weight: 700 !important;
-    font-size: 11px !important;
+    font-weight: 800 !important;
+    font-size: 13px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     flex-shrink: 0 !important;
-    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
   }
 
   .alerta-nao-comprar {
-    border: 1px solid rgba(244, 63, 94, 0.25) !important;
-    background: rgba(244, 63, 94, 0.05) !important;
-    border-radius: 10px !important;
-    padding: 7px 11px !important;
+    border: 1px solid rgba(244, 63, 94, 0.3) !important;
+    background: rgba(244, 63, 94, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 10px 16px !important;
     box-sizing: border-box !important;
   }
 
   .alerta-titulo {
-    font-size: 11px !important;
+    font-size: 12.5px !important;
     font-weight: 700 !important;
     color: #fda4af !important;
-    margin-bottom: 2px !important;
+    margin-bottom: 4px !important;
     display: flex !important;
     align-items: center !important;
-    gap: 4px !important;
+    gap: 6px !important;
   }
 
   .alerta-itens-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 8px !important;
-    font-size: 10px !important;
-    color: #e4e4e7 !important;
-    line-height: 1.35 !important;
+    gap: 12px !important;
+    font-size: 11px !important;
+    color: #f4f4f5 !important;
+    line-height: 1.4 !important;
   }
 
   .manutencao-card {
     background-color: #121215 !important;
     border: 1px solid #27272a !important;
-    border-radius: 10px !important;
-    padding: 7px 11px !important;
+    border-radius: 12px !important;
+    padding: 10px 14px !important;
     box-sizing: border-box !important;
   }
 
   .manutencao-titulo {
-    font-size: 10.5px !important;
+    font-size: 12px !important;
     font-weight: 700 !important;
     color: #fbbf24 !important;
-    margin-bottom: 2px !important;
+    margin-bottom: 3px !important;
     display: flex !important;
     align-items: center !important;
-    gap: 4px !important;
+    gap: 5px !important;
   }
 
   .manutencao-intro {
-    font-size: 9.5px !important;
-    line-height: 1.35 !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
     color: #d4d4d8 !important;
-    margin-bottom: 2px !important;
+    margin-bottom: 4px !important;
   }
 
   .manutencao-lista {
     list-style: disc !important;
-    padding-left: 12px !important;
-    margin: 0 0 2px 0 !important;
-    font-size: 9.5px !important;
-    line-height: 1.3 !important;
+    padding-left: 14px !important;
+    margin: 0 0 4px 0 !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
     color: #a1a1aa !important;
   }
 
   .manutencao-beneficio {
-    font-size: 9px !important;
-    line-height: 1.3 !important;
+    font-size: 10.5px !important;
+    line-height: 1.35 !important;
     color: #fbbf24 !important;
     margin: 0 !important;
   }
@@ -848,8 +858,8 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   section:not(.capa-modulo) li {
-    font-size: 13.5px !important;
-    line-height: 1.45 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
   }
 
   /* Checklist Operacional (Página Dedicada 2 Colunas) */
@@ -866,30 +876,34 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     width: 100% !important;
     box-sizing: border-box !important;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
   }
 
   .checklist-operacional .checklist-header {
-    margin-bottom: 14px !important;
+    margin-bottom: 8px !important;
   }
 
   .checklist-operacional ul {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px 16px !important;
+    gap: 10px 16px !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     margin: 0 !important;
     padding: 0 !important;
     flex: 1 1 auto !important;
-    align-content: space-between !important;
+    align-content: space-evenly !important;
   }
 
   .checklist-operacional li {
     break-inside: avoid !important;
     page-break-inside: avoid !important;
-    padding: 11px 14px !important;
+    padding: 12px 15px !important;
     margin: 0 !important;
-    font-size: 13px !important;
+    font-size: 13.5px !important;
     line-height: 1.35 !important;
     border-radius: 10px !important;
     background: #121215 !important;
@@ -899,18 +913,19 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   .checklist-operacional li .item-text {
-    font-size: 13px !important;
-    line-height: 1.25 !important;
+    font-size: 13.5px !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
   }
 
   .checklist-operacional li p {
-    font-size: 11.5px !important;
-    line-height: 1.2 !important;
-    margin-top: 2px !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    margin-top: 3px !important;
     color: #a1a1aa !important;
   }
 
-  /* Tabelas Técnicas e Callouts de Alerta */
+  /* Tabelas Técnicas */
   .tabela-tecnica {
     background-color: #18181b !important;
     border: 1px solid #27272a !important;
@@ -921,6 +936,32 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .tabela-tecnica table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    flex: 1 1 auto !important;
+  }
+
+  .tabela-tecnica tbody tr {
+    height: 48px !important;
+  }
+
+  .tabela-tecnica th {
+    padding: 12px 16px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+  }
+
+  .tabela-tecnica td {
+    padding: 12px 16px !important;
+    font-size: 13.5px !important;
+    line-height: 1.45 !important;
   }
 
   table {
