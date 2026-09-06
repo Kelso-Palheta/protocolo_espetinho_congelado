@@ -328,7 +328,7 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   /* ====================================================================
-     PRANCHAS EDITORIAIS AUTOCONTIDAS (Uma prancha por folha A4 Paisagem)
+     PRANCHAS EDITORIAIS AUTOCONTIDAS (Ocupação Nobre de 90% da Página A4)
      ==================================================================== */
   .prancha {
     page-break-before: always !important;
@@ -347,7 +347,7 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     justify-content: center !important;
     align-items: center !important;
     box-sizing: border-box !important;
-    padding: 16px 44px !important;
+    padding: 10mm 13mm !important;
     overflow: hidden !important;
     background-color: #09090b !important;
   }
@@ -359,14 +359,32 @@ export function prepararHtmlParaPdf(caminhoHtml) {
 
   .prancha > section,
   .prancha > .visual-block,
-  .prancha > div {
+  .prancha > div,
+  .prancha > .card-prancha {
     width: 100% !important;
-    max-width: 1100px !important;
-    margin: 0 auto !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    margin: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* Bloco Visual (Página 2 — Slide Hero com Ilustração IA Sozinha na Folha) */
+  /* Card de Prancha Editorial (Preenche 100% da área útil = 90% da folha) */
+  .card-prancha {
+    background-color: #18181b !important;
+    border: 1px solid #27272a !important;
+    border-radius: 16px !important;
+    padding: 20px 26px !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+    overflow: hidden !important;
+  }
+
+  /* Bloco Visual (Página 2 — Slide Hero Ocupando 90% da Página) */
   .visual-block {
     page-break-before: avoid !important;
     break-before: avoid !important;
@@ -377,7 +395,7 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     background: #18181b !important;
     border: 1px solid #27272a !important;
     border-radius: 18px !important;
-    padding: 28px 32px !important;
+    padding: 28px 34px !important;
     margin: 0 !important;
     display: grid !important;
     grid-template-columns: 1.15fr 1fr !important;
@@ -386,12 +404,15 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     box-sizing: border-box !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
     width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: 100% !important;
   }
 
   .visual-media {
     width: 100% !important;
-    aspect-ratio: 16 / 10 !important;
-    max-height: 330px !important;
+    height: 100% !important;
+    max-height: 520px !important;
     border-radius: 14px !important;
     overflow: hidden !important;
     background: #09090b !important;
@@ -403,7 +424,6 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    aspect-ratio: 16 / 9 !important;
     display: block !important;
     border-radius: 12px !important;
   }
@@ -411,7 +431,10 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   .visual-content {
     display: flex !important;
     flex-direction: column !important;
-    gap: 8px !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    padding: 6px 0 !important;
+    box-sizing: border-box !important;
   }
 
   .pro-tip {
@@ -433,22 +456,26 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     line-height: 1.4 !important;
   }
 
-  /* Cards de Seção (Restauração do Design Dark Steakhouse Original com Bordas Arredondadas) */
+  /* Cards de Seção */
   section:not(.capa-modulo) {
     background-color: #18181b !important;
     border: 1px solid #27272a !important;
     border-radius: 16px !important;
-    padding: 22px 28px !important;
+    padding: 20px 26px !important;
     margin: 0 !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     box-sizing: border-box !important;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-    display: block !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
     width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
   }
 
-  /* Sub-cards dentro das seções (ex: blocos de passos e cards destacados) */
+  /* Sub-cards dentro das seções */
   .step-block {
     background-color: #121215 !important;
     border: 1px solid #27272a !important;
@@ -459,21 +486,16 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     box-sizing: border-box !important;
   }
 
-  .equipamentos-cards,
-  .equipamentos-media {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-  }
-
   /* Layout Editorial Split (Duas colunas reais em paisagem: 58% texto / 42% mídia) */
   .editorial-split {
     display: flex !important;
     flex-direction: row !important;
-    align-items: center !important;
-    gap: 24px !important;
+    align-items: stretch !important;
+    gap: 22px !important;
     width: 100% !important;
+    height: 100% !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
     box-sizing: border-box !important;
   }
 
@@ -486,7 +508,7 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   .editorial-col-text {
-    flex: 1 1 58% !important;
+    flex: 0 0 58% !important;
     width: 58% !important;
     max-width: 58% !important;
     min-width: 0 !important;
@@ -495,27 +517,46 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     padding: 0 !important;
     box-shadow: none !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    min-height: 0 !important;
   }
 
   .editorial-col-media {
-    flex: 1 1 42% !important;
-    width: 42% !important;
-    max-width: 42% !important;
+    flex: 0 0 calc(42% - 22px) !important;
+    width: calc(42% - 22px) !important;
+    max-width: calc(42% - 22px) !important;
     min-width: 0 !important;
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
     box-shadow: none !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    height: 100% !important;
+    min-height: 0 !important;
   }
 
   /* Grid Simétrico de Equipamentos (Seção 3) */
+  .secao-equipamentos {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+  }
+
   .equipamentos-grid {
     display: flex !important;
     flex-direction: row !important;
     gap: 16px !important;
     align-items: stretch !important;
     width: 100% !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
   }
 
   .equipamentos-cards {
@@ -529,6 +570,7 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     border: none !important;
     padding: 0 !important;
     box-shadow: none !important;
+    height: 100% !important;
   }
 
   .equipamentos-media {
@@ -538,7 +580,6 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     display: flex !important;
     flex-direction: column !important;
     height: 100% !important;
-    max-height: none !important;
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
@@ -547,7 +588,6 @@ export function prepararHtmlParaPdf(caminhoHtml) {
 
   .equipamentos-media .editorial-image-card {
     height: 100% !important;
-    max-height: none !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
@@ -562,39 +602,26 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     object-fit: cover !important;
   }
 
-
   .editorial-image-card {
     border-radius: 12px !important;
     overflow: hidden !important;
     border: 1px solid #27272a !important;
     background: #09090b !important;
     width: 100% !important;
-  }
-
-  .editorial-image-card img {
-    width: 100% !important;
-    aspect-ratio: 16 / 10 !important;
-    max-height: 220px !important;
-    object-fit: cover !important;
-    display: block !important;
-  }
-
-  .editorial-image-card.h-full,
-  .h-full.editorial-image-card,
-  .editorial-image-card[class*="h-full"] {
     height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
   }
 
-  .editorial-image-card.h-full img,
-  .h-full.editorial-image-card img,
-  .editorial-image-card[class*="h-full"] img {
-    max-height: none !important;
+  .editorial-image-card img {
+    width: 100% !important;
     height: 100% !important;
     flex: 1 1 auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
     object-fit: cover !important;
+    display: block !important;
   }
 
   .editorial-image-caption {
@@ -605,6 +632,215 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
     background-color: #121215 !important;
     border-top: 1px solid #27272a !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Componentes Semânticos Ricos das Pranchas */
+  .secao-titulo {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 3px !important;
+  }
+
+  .secao-intro {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    color: #d4d4d8 !important;
+    margin-bottom: 5px !important;
+  }
+
+  .subtitulo-destaque {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: #fbbf24 !important;
+    margin-bottom: 5px !important;
+  }
+
+  .destaque-tag {
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: #fbbf24 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .lista-topicos {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 5px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+  .lista-topicos li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    color: #d4d4d8 !important;
+  }
+
+  .marcador-amber {
+    color: #f59e0b !important;
+    font-weight: 800 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .secao-fechamento {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    color: #a1a1aa !important;
+    margin-top: 3px !important;
+  }
+
+  .subcard-item {
+    background-color: #121215 !important;
+    border: 1px solid #27272a !important;
+    border-radius: 10px !important;
+    padding: 7px 11px !important;
+    box-sizing: border-box !important;
+  }
+
+  .subcard-titulo {
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #f4f4f5 !important;
+    margin-bottom: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .subcard-texto {
+    font-size: 10.5px !important;
+    line-height: 1.4 !important;
+    color: #a1a1aa !important;
+    margin: 0 !important;
+  }
+
+  .subcard-mini {
+    background-color: #18181b !important;
+    border: 1px solid #27272a !important;
+    border-radius: 8px !important;
+    padding: 5px 9px !important;
+    box-sizing: border-box !important;
+  }
+
+  .badge-tag {
+    font-family: ui-monospace, monospace !important;
+    font-size: 9.5px !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+  }
+
+  .badge-tag.amber {
+    color: #fbbf24 !important;
+    background: rgba(245, 158, 11, 0.12) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  }
+
+  .badge-tag.emerald {
+    color: #34d399 !important;
+    background: rgba(16, 185, 129, 0.12) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  }
+
+  .badge-tag.zinc {
+    color: #a1a1aa !important;
+    background: #18181b !important;
+    border: 1px solid #3f3f46 !important;
+  }
+
+  .flavor-badge {
+    height: 22px !important;
+    width: 22px !important;
+    border-radius: 50% !important;
+    background: rgba(245, 158, 11, 0.18) !important;
+    color: #fbbf24 !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  }
+
+  .alerta-nao-comprar {
+    border: 1px solid rgba(244, 63, 94, 0.25) !important;
+    background: rgba(244, 63, 94, 0.05) !important;
+    border-radius: 10px !important;
+    padding: 7px 11px !important;
+    box-sizing: border-box !important;
+  }
+
+  .alerta-titulo {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #fda4af !important;
+    margin-bottom: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .alerta-itens-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    font-size: 10px !important;
+    color: #e4e4e7 !important;
+    line-height: 1.35 !important;
+  }
+
+  .manutencao-card {
+    background-color: #121215 !important;
+    border: 1px solid #27272a !important;
+    border-radius: 10px !important;
+    padding: 7px 11px !important;
+    box-sizing: border-box !important;
+  }
+
+  .manutencao-titulo {
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    color: #fbbf24 !important;
+    margin-bottom: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  .manutencao-intro {
+    font-size: 9.5px !important;
+    line-height: 1.35 !important;
+    color: #d4d4d8 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .manutencao-lista {
+    list-style: disc !important;
+    padding-left: 12px !important;
+    margin: 0 0 2px 0 !important;
+    font-size: 9.5px !important;
+    line-height: 1.3 !important;
+    color: #a1a1aa !important;
+  }
+
+  .manutencao-beneficio {
+    font-size: 9px !important;
+    line-height: 1.3 !important;
+    color: #fbbf24 !important;
+    margin: 0 !important;
   }
 
   section:not(.capa-modulo) ul {
