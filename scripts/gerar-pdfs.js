@@ -125,24 +125,36 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     return match;
   });
 
-  // 2. Converter todas as imagens /_astro/*.png e *.jpg para Base64 Data URI
-  html = html.replace(/src="\/_astro\/([^"]+)"/g, (match, imgFile) => {
-    const imgPath = path.join(ROOT_DIR, 'dist', '_astro', imgFile);
+  // 2. Converter todas as imagens (/... ou /_astro/...) para Base64 Data URI
+  html = html.replace(/src="\/([^"]+\.(png|jpg|jpeg|svg|webp))"/gi, (match, imgRelative) => {
+    let imgPath = path.join(ROOT_DIR, 'dist', imgRelative);
+    if (!fs.existsSync(imgPath)) {
+      imgPath = path.join(ROOT_DIR, 'dist', '_astro', path.basename(imgRelative));
+    }
+    if (!fs.existsSync(imgPath)) {
+      imgPath = path.join(ROOT_DIR, 'public', imgRelative);
+    }
     if (fs.existsSync(imgPath)) {
-      const ext = path.extname(imgFile).toLowerCase().replace('.', '');
-      const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'svg' ? 'image/svg+xml' : 'image/png';
+      const ext = path.extname(imgPath).toLowerCase().replace('.', '');
+      const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'svg' ? 'image/svg+xml' : ext === 'webp' ? 'image/webp' : 'image/png';
       const base64 = fs.readFileSync(imgPath).toString('base64');
       return `src="data:${mime};base64,${base64}"`;
     }
     return match;
   });
 
-  // Também cobrir imagens em url('/_astro/...') nos estilos
-  html = html.replace(/url\(['"]?\/_astro\/([^'")]+)['"]?\)/g, (match, imgFile) => {
-    const imgPath = path.join(ROOT_DIR, 'dist', '_astro', imgFile);
+  // Também cobrir imagens em url('/_astro/...') ou url('/...') nos estilos
+  html = html.replace(/url\(['"]?\/([^'")]+\.(png|jpg|jpeg|svg|webp))['"]?\)/gi, (match, imgRelative) => {
+    let imgPath = path.join(ROOT_DIR, 'dist', imgRelative);
+    if (!fs.existsSync(imgPath)) {
+      imgPath = path.join(ROOT_DIR, 'dist', '_astro', path.basename(imgRelative));
+    }
+    if (!fs.existsSync(imgPath)) {
+      imgPath = path.join(ROOT_DIR, 'public', imgRelative);
+    }
     if (fs.existsSync(imgPath)) {
-      const ext = path.extname(imgFile).toLowerCase().replace('.', '');
-      const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'svg' ? 'image/svg+xml' : 'image/png';
+      const ext = path.extname(imgPath).toLowerCase().replace('.', '');
+      const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'svg' ? 'image/svg+xml' : ext === 'webp' ? 'image/webp' : 'image/png';
       const base64 = fs.readFileSync(imgPath).toString('base64');
       return `url("data:${mime};base64,${base64}")`;
     }
@@ -394,66 +406,140 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     page-break-inside: avoid !important;
     background: #18181b !important;
     border: 1px solid #27272a !important;
-    border-radius: 18px !important;
-    padding: 28px 34px !important;
+    border-radius: 20px !important;
+    padding: 24px 30px !important;
     margin: 0 !important;
     display: grid !important;
     grid-template-columns: 1.15fr 1fr !important;
-    gap: 28px !important;
-    align-items: center !important;
+    gap: 36px !important;
+    align-items: stretch !important;
     box-sizing: border-box !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
     width: 100% !important;
     height: 100% !important;
     min-height: 100% !important;
     max-height: 100% !important;
+    overflow: hidden !important;
   }
 
   .visual-media {
     width: 100% !important;
     height: 100% !important;
-    max-height: 520px !important;
-    border-radius: 14px !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    border-radius: 16px !important;
     overflow: hidden !important;
     background: #09090b !important;
     border: 1px solid #27272a !important;
+    display: flex !important;
   }
 
   .visual-media img,
   .visual-image {
     width: 100% !important;
     height: 100% !important;
+    min-height: 100% !important;
+    max-height: none !important;
     object-fit: cover !important;
+    object-position: center !important;
     display: block !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
   }
 
   .visual-content {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
     height: 100% !important;
-    padding: 6px 0 !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
   }
 
-  .pro-tip {
+  .visual-content .meta-header {
     display: flex !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     gap: 10px !important;
-    background: rgba(245, 158, 11, 0.08) !important;
-    border: 1px solid rgba(245, 158, 11, 0.3) !important;
-    border-radius: 10px !important;
-    padding: 10px 14px !important;
-    margin-top: 8px !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
+    margin-bottom: 14px !important;
+    flex-shrink: 0 !important;
   }
 
-  .tip-content {
-    font-size: 12.5px !important;
+  .visual-content .step-pill {
+    background: #be123c !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    padding: 5px 14px !important;
+    border-radius: 9999px !important;
+  }
+
+  .visual-content .tag-badge {
+    background: rgba(245, 158, 11, 0.15) !important;
+    color: #fcd34d !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 5px 12px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+  }
+
+  .visual-content .visual-title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin: 0 0 12px 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .visual-content .visual-subtitle {
+    font-size: 17.5px !important;
+    line-height: 1.35 !important;
+    font-weight: 600 !important;
+    color: #fbbf24 !important;
+    margin: 0 0 16px 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .visual-content .visual-desc {
+    font-size: 15.5px !important;
+    line-height: 1.6 !important;
+    color: #d4d4d8 !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .visual-content .pro-tip {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    background: rgba(245, 158, 11, 0.09) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    margin-top: auto !important; /* Pushes to exact bottom of column */
+    box-sizing: border-box !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    flex-shrink: 0 !important;
+  }
+
+  .visual-content .tip-icon {
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .visual-content .tip-content {
+    font-size: 13.5px !important;
     color: #fef08a !important;
-    line-height: 1.4 !important;
+    line-height: 1.5 !important;
+  }
+
+  .visual-content .tip-content strong {
+    color: #f59e0b !important;
+    font-weight: 700 !important;
   }
 
   /* Cards de Seção */
@@ -703,15 +789,113 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     font-size: 13.5px !important;
     line-height: 1.5 !important;
     color: #a1a1aa !important;
-    margin-top: auto !important;
-    padding-top: 6px !important;
+    margin-top: 14px !important;
+    padding-top: 0 !important;
+  }
+
+  /* Expansão vertical para Seção 1 (Lógica Inversa) */
+  .destaque-logica {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+    margin: 8px 0 !important;
+  }
+
+  /* Expansão vertical inteligente para Seção 2 (Quadrantes) */
+  .quadrantes-grid {
+    flex: 1 1 auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    margin-top: 8px !important;
+  }
+
+  .quadrantes-grid .subcard-item {
+    height: 100% !important;
+    padding: 16px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  /* Ajustes específicos de alta densidade: Seção 5 (Sabores) */
+  .secao-sabores .cards-sabores {
+    gap: 8px !important;
+    margin: 6px 0 !important;
+  }
+  .secao-sabores .subcard-item {
+    padding: 10px 14px !important;
+  }
+  .secao-sabores .secao-intro {
+    font-size: 13.5px !important;
+    margin-bottom: 3px !important;
+  }
+  .secao-sabores .subtitulo-destaque {
+    font-size: 12px !important;
+    margin-bottom: 4px !important;
+  }
+  .secao-sabores .secao-fechamento {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    margin-top: 6px !important;
+  }
+
+  /* Ajustes específicos de alta densidade: Seção 4 (Embalagens) */
+  .secao-embalagem .subcard-item {
+    padding: 8px 14px !important;
+  }
+  .secao-embalagem .subcard-titulo {
+    font-size: 12.5px !important;
+    margin-bottom: 2px !important;
+  }
+  .secao-embalagem .subcard-texto {
+    font-size: 11.5px !important;
+    line-height: 1.35 !important;
+  }
+  .secao-embalagem .subcard-mini {
+    padding: 6px 10px !important;
+  }
+
+  /* Ajustes específicos de alta densidade: Seção 6 (Higiene) */
+  .secao-higiene .secao-intro {
+    font-size: 13px !important;
+    margin-bottom: 4px !important;
+  }
+  .secao-higiene .subcard-item {
+    padding: 8px 12px !important;
+  }
+  .secao-higiene .subcard-titulo {
+    font-size: 12px !important;
+    margin-bottom: 2px !important;
+  }
+  .secao-higiene .subcard-texto {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+  .secao-higiene .manutencao-card {
+    padding: 8px 12px !important;
+  }
+  .secao-higiene .manutencao-titulo {
+    font-size: 11.5px !important;
+  }
+  .secao-higiene .manutencao-intro {
+    font-size: 10.5px !important;
+  }
+  .secao-higiene .manutencao-lista {
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+  }
+  .secao-higiene .callout-alerta {
+    padding: 8px 14px !important;
+    margin: 0 !important;
   }
 
   .subcard-item {
     background-color: #121215 !important;
     border: 1px solid #27272a !important;
     border-radius: 12px !important;
-    padding: 12px 16px !important;
+    padding: 14px 18px !important;
     box-sizing: border-box !important;
     flex: 1 1 auto !important;
     display: flex !important;
@@ -930,7 +1114,7 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     background-color: #18181b !important;
     border: 1px solid #27272a !important;
     border-radius: 16px !important;
-    padding: 20px 24px !important;
+    padding: 16px 22px !important;
     margin: 0 !important;
     width: 100% !important;
     break-inside: avoid !important;
@@ -939,7 +1123,7 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    gap: 14px !important;
+    gap: 8px !important;
   }
 
   .tabela-tecnica table {
@@ -949,19 +1133,19 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   .tabela-tecnica tbody tr {
-    height: 48px !important;
+    height: auto !important;
   }
 
   .tabela-tecnica th {
-    padding: 12px 16px !important;
-    font-size: 13px !important;
+    padding: 8px 14px !important;
+    font-size: 12px !important;
     font-weight: 700 !important;
   }
 
   .tabela-tecnica td {
-    padding: 12px 16px !important;
-    font-size: 13.5px !important;
-    line-height: 1.45 !important;
+    padding: 7px 14px !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
   }
 
   table {
@@ -1085,21 +1269,25 @@ async function main() {
     const tempoInicio = Date.now();
 
     try {
+      console.log('     ⏱️ [1/6] Criando nova página no navegador...');
       const page = await browser.newPage();
 
       // Ajustar viewport padrão A4 Paisagem (Horizontal Widescreen)
-      await page.setViewport({ width: 1123, height: 794, deviceScaleFactor: 2 });
+      await page.setViewport({ width: 1754, height: 1240, deviceScaleFactor: 2 });
 
       // Preparar HTML com injeção forçada de Dark Theme, CSS Tailwind e Imagens Base64
+      console.log('     ⏱️ [2/6] Injetando CSS e convertendo imagens para Base64...');
       const htmlProcessado = prepararHtmlParaPdf(arquivoDist);
 
       // Carregar o HTML totalmente embutido
+      console.log('     ⏱️ [3/6] Carregando HTML no Puppeteer...');
       await page.setContent(htmlProcessado, {
-        waitUntil: ['load'],
-        timeout: 30000
+        waitUntil: 'domcontentloaded',
+        timeout: 25000
       });
 
       // Forçar tema escuro no documento e classes Tailwind
+      console.log('     ⏱️ [4/6] Aplicando dark theme forçado...');
       await page.evaluate(() => {
         document.documentElement.classList.add('dark');
         document.body.classList.add('bg-[#0f1117]', 'text-slate-100');
@@ -1107,16 +1295,22 @@ async function main() {
         document.body.style.color = '#f1f5f9';
       });
 
-      // Aguardar renderização de fontes locais/remotas
-      await page.evaluateHandle('document.fonts.ready').catch(() => {});
+      // Aguardar renderização de fontes com timeout de segurança
+      console.log('     ⏱️ [5/6] Aguardando fontes...');
+      await page.evaluate(() => Promise.race([
+        document.fonts.ready,
+        new Promise(resolve => setTimeout(resolve, 2000))
+      ])).catch(() => {});
 
       // Gerar PDF no formato A4 Paisagem (Horizontal) com margem zero no motor (adeus bordas brancas)
+      console.log('     ⏱️ [6/6] Renderizando PDF final via Chromium printToPDF...');
       await page.pdf({
         path: caminhoDestino,
         format: 'A4',
         landscape: true,
         printBackground: true,
         preferCSSPageSize: true,
+        timeout: 60000,
         margin: {
           top: '0px',
           right: '0px',
@@ -1141,7 +1335,7 @@ async function main() {
       sucessos++;
     } catch (erro) {
       falhas++;
-      console.error(`     ❌ Erro ao exportar ${item.nomeArquivo}:`, erro.message);
+      console.error(`     ❌ Erro ao exportar ${item.nomeArquivo}:`, erro.stack || erro.message);
     }
   }
 
