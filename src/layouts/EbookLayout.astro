@@ -219,9 +219,422 @@ const categoryBadge = {
     </script>
 
     <style is:global>
+      /* ====================================================================
+         DESIGN SYSTEM & COMPONENTES GERAIS (TELA & EBOOK INTERATIVO)
+         ==================================================================== */
+      .prancha {
+        width: 100%;
+        margin-bottom: 2.5rem;
+        box-sizing: border-box;
+      }
+
+      .card-prancha {
+        background-color: #18181b;
+        border: 1px solid #27272a;
+        border-radius: 16px;
+        padding: 24px 28px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 100%;
+        gap: 16px;
+      }
+
+      /* Editorial Split (58% Texto / 42% Mídia) */
+      .editorial-split {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 24px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .editorial-split.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .editorial-split.items-start {
+        align-items: flex-start;
+      }
+
+      .editorial-col-text {
+        flex: 0 0 58%;
+        width: 58%;
+        max-width: 58%;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px;
+        box-sizing: border-box;
+      }
+
+      .editorial-col-media {
+        flex: 0 0 calc(42% - 24px);
+        width: calc(42% - 24px);
+        max-width: calc(42% - 24px);
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 900px) {
+        .editorial-split,
+        .editorial-split.reverse {
+          flex-direction: column !important;
+          gap: 20px !important;
+        }
+
+        .editorial-col-text,
+        .editorial-col-media {
+          flex: 1 1 100% !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+      }
+
+      /* Image Card */
+      .editorial-image-card {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #27272a;
+        background: #09090b;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .editorial-image-card img {
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .editorial-image-caption {
+        padding: 7px 12px;
+        font-size: 11px;
+        color: #a1a1aa;
+        text-align: center;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        background-color: #121215;
+        border-top: 1px solid #27272a;
+        flex-shrink: 0;
+      }
+
+      /* Tipografia Editorial */
+      .secao-titulo {
+        font-family: 'Outfit', sans-serif;
+        font-size: 24px;
+        line-height: 1.25;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 6px;
+      }
+
+      .secao-intro {
+        font-size: 14.5px;
+        line-height: 1.55;
+        color: #d4d4d8;
+        margin-bottom: 6px;
+      }
+
+      .subtitulo-destaque {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #fbbf24;
+        margin-bottom: 6px;
+      }
+
+      .destaque-tag {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #fbbf24;
+        margin-bottom: 6px;
+      }
+
+      .secao-fechamento {
+        font-size: 13.5px;
+        line-height: 1.5;
+        color: #a1a1aa;
+        margin-top: 12px;
+      }
+
+      /* Lógica Inversa & Lista de Tópicos */
+      .destaque-logica {
+        background: rgba(245, 158, 11, 0.03);
+        border: 1px solid rgba(245, 158, 11, 0.2);
+        border-radius: 12px;
+        padding: 14px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin: 8px 0;
+      }
+
+      .lista-topicos {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .lista-topicos li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 13.5px;
+        line-height: 1.45;
+        color: #e4e4e7;
+      }
+
+      .marcador-amber {
+        color: #f59e0b;
+        font-weight: 900;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      /* Quadrantes Grid */
+      .quadrantes-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      @media (max-width: 640px) {
+        .quadrantes-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+
+      /* Subcards & Badges */
+      .subcard-item {
+        background-color: #121215;
+        border: 1px solid #27272a;
+        border-radius: 12px;
+        padding: 14px 16px;
+        box-sizing: border-box;
+      }
+
+      .subcard-titulo {
+        font-size: 13px;
+        font-weight: 700;
+        color: #f4f4f5;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .subcard-texto {
+        font-size: 12px;
+        line-height: 1.45;
+        color: #a1a1aa;
+        margin: 0;
+      }
+
+      .subcard-mini {
+        background-color: #18181b;
+        border: 1px solid #27272a;
+        border-radius: 10px;
+        padding: 8px 12px;
+        box-sizing: border-box;
+      }
+
+      .badge-tag {
+        font-family: ui-monospace, monospace;
+        font-size: 10.5px;
+        padding: 3px 8px;
+        border-radius: 5px;
+        font-weight: 700;
+      }
+
+      .badge-tag.amber {
+        color: #fbbf24;
+        background: rgba(245, 158, 11, 0.15);
+        border: 1px solid rgba(245, 158, 11, 0.35);
+      }
+
+      .badge-tag.emerald {
+        color: #34d399;
+        background: rgba(16, 185, 129, 0.15);
+        border: 1px solid rgba(16, 185, 129, 0.35);
+      }
+
+      .badge-tag.zinc {
+        color: #d4d4d8;
+        background: #18181b;
+        border: 1px solid #3f3f46;
+      }
+
+      .flavor-badge {
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background: rgba(245, 158, 11, 0.2);
+        color: #fbbf24;
+        font-weight: 800;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border: 1px solid rgba(245, 158, 11, 0.4);
+      }
+
+      /* Equipamentos Grid */
+      .secao-equipamentos {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .equipamentos-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 18px;
+        align-items: stretch;
+        width: 100%;
+      }
+
+      .equipamentos-cards {
+        flex: 0 0 58%;
+        width: 58%;
+        max-width: 58%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .equipamentos-media {
+        flex: 0 0 calc(42% - 18px);
+        width: calc(42% - 18px);
+        max-width: calc(42% - 18px);
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media (max-width: 900px) {
+        .equipamentos-grid {
+          flex-direction: column !important;
+        }
+        .equipamentos-cards,
+        .equipamentos-media {
+          flex: 1 1 100% !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .equipamentos-cards {
+          grid-template-columns: 1fr !important;
+        }
+      }
+
+      /* Alerta Não Comprar */
+      .alerta-nao-comprar {
+        border: 1px solid rgba(244, 63, 94, 0.3);
+        background: rgba(244, 63, 94, 0.08);
+        border-radius: 12px;
+        padding: 12px 16px;
+        box-sizing: border-box;
+      }
+
+      .alerta-titulo {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #fda4af;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .alerta-itens-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        font-size: 11.5px;
+        color: #f4f4f5;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 768px) {
+        .alerta-itens-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+
+      /* Sabores */
+      .cards-sabores {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+      }
+
+      /* Manutenção Seladora */
+      .manutencao-card {
+        background-color: #121215;
+        border: 1px solid #27272a;
+        border-radius: 12px;
+        padding: 12px 16px;
+        box-sizing: border-box;
+      }
+
+      .manutencao-titulo {
+        font-size: 12px;
+        font-weight: 700;
+        color: #fbbf24;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .manutencao-intro {
+        font-size: 11.5px;
+        line-height: 1.45;
+        color: #d4d4d8;
+        margin-bottom: 4px;
+      }
+
+      .manutencao-lista {
+        list-style: disc;
+        padding-left: 16px;
+        margin: 0 0 4px 0;
+        font-size: 11px;
+        line-height: 1.4;
+        color: #a1a1aa;
+      }
+
+      .manutencao-beneficio {
+        font-size: 10.5px;
+        line-height: 1.35;
+        color: #fbbf24;
+        margin: 0;
+      }
+
+      /* ====================================================================
+         PRINT & EXPORTAÇÃO PDF (A4 PAISAGEM)
+         ==================================================================== */
       @media print {
         @page {
-          size: A4 landscape;
+          size: 297mm 210mm;
           margin: 0;
         }
 
@@ -250,119 +663,15 @@ const categoryBadge = {
           color: #f4f4f5 !important;
           font-size: 14px !important;
           line-height: 1.55 !important;
-          margin: 0 !important;
-          padding: 0 !important;
-          width: 100% !important;
           -webkit-print-color-adjust: exact !important;
           print-color-adjust: exact !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 297mm !important;
+          height: 210mm !important;
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
         }
 
-        *, *::before, *::after {
-          box-sizing: border-box !important;
-          -webkit-print-color-adjust: exact !important;
-          print-color-adjust: exact !important;
-        }
-
-        p, li, dd, blockquote {
-          orphans: 3 !important;
-          widows: 3 !important;
-          font-size: 14px !important;
-          line-height: 1.55 !important;
-          color: #d4d4d8 !important;
-        }
-
-        p {
-          margin-top: 0 !important;
-          margin-bottom: 8px !important;
-        }
-
-        /* Tipografia Proporcional Editorial */
-        .text-xs { font-size: 11.5px !important; line-height: 1.4 !important; }
-        .text-sm { font-size: 13px !important; line-height: 1.45 !important; }
-        .text-base { font-size: 14px !important; line-height: 1.55 !important; }
-        .text-lg { font-size: 16px !important; line-height: 1.4 !important; }
-        .text-xl { font-size: 18px !important; line-height: 1.35 !important; }
-        .text-2xl { font-size: 22px !important; line-height: 1.3 !important; }
-
-        /* Títulos Firmes com Hierarquia Visual */
-        h1, h2, h3, h4, h5, h6 {
-          page-break-after: avoid !important;
-          break-after: avoid !important;
-          color: #ffffff !important;
-          font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
-        }
-
-        h1 {
-          font-size: 1.85rem !important;
-          line-height: 1.15 !important;
-          margin-top: 0 !important;
-          margin-bottom: 10px !important;
-          font-weight: 800 !important;
-        }
-
-        h2 {
-          font-size: 1.35rem !important;
-          line-height: 1.25 !important;
-          margin-top: 0 !important;
-          margin-bottom: 8px !important;
-          font-weight: 700 !important;
-        }
-
-        h3 {
-          font-size: 1.1rem !important;
-          line-height: 1.3 !important;
-          margin-top: 0 !important;
-          margin-bottom: 6px !important;
-          font-weight: 600 !important;
-        }
-
-        h4 {
-          font-size: 0.95rem !important;
-          line-height: 1.3 !important;
-          margin-top: 0 !important;
-          margin-bottom: 4px !important;
-          font-weight: 600 !important;
-        }
-
-        /* Capa Modular (Página 1 — Ocupação Total 100vh) */
-        .capa-modulo {
-          page-break-before: avoid !important;
-          break-before: avoid !important;
-          page-break-after: always !important;
-          break-after: page !important;
-          break-inside: avoid !important;
-          page-break-inside: avoid !important;
-          height: 100vh !important;
-          min-height: 100vh !important;
-          max-height: 100vh !important;
-          display: flex !important;
-          flex-direction: column !important;
-          justify-content: space-between !important;
-          box-sizing: border-box !important;
-          padding: 36px 44px !important;
-          border-radius: 0 !important;
-          border: none !important;
-          width: 100% !important;
-          max-width: none !important;
-          background-color: #09090b !important;
-          position: relative !important;
-          overflow: hidden !important;
-        }
-
-        .capa-modulo .my-auto {
-          margin-top: auto !important;
-          margin-bottom: auto !important;
-          padding-top: 0 !important;
-          padding-bottom: 0 !important;
-        }
-
-        .capa-modulo h1 {
-          font-size: 2.6rem !important;
-          line-height: 1.1 !important;
-        }
-
-        /* Estrutura de Conteúdo Principal (Main) */
         main,
         .main-content,
         .container {
@@ -375,25 +684,30 @@ const categoryBadge = {
           display: block !important;
         }
 
-        /* O primeiro elemento dentro do main NUNCA quebra página (elimina folha em branco!) */
-        main > :first-child,
-        .visual-block:first-of-type,
-        .prancha:first-of-type {
+        .capa-modulo {
           page-break-before: avoid !important;
           break-before: avoid !important;
-          margin-top: 0 !important;
+          page-break-after: always !important;
+          break-after: page !important;
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+          height: 210mm !important;
+          min-height: 210mm !important;
+          max-height: 210mm !important;
+          width: 297mm !important;
+          max-width: 297mm !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-between !important;
+          box-sizing: border-box !important;
+          padding: 32px 44px !important;
+          border-radius: 0 !important;
+          border: none !important;
+          background-color: #09090b !important;
+          position: relative !important;
+          overflow: hidden !important;
         }
 
-        main > *,
-        main > :not([hidden]) ~ :not([hidden]),
-        .prancha {
-          margin-top: 0 !important;
-          margin-bottom: 0 !important;
-        }
-
-        /* ====================================================================
-           PRANCHAS EDITORIAIS AUTOCONTIDAS (Ocupação Nobre de 90% da Página A4)
-           ==================================================================== */
         .prancha {
           page-break-before: always !important;
           break-before: page !important;
@@ -412,6 +726,7 @@ const categoryBadge = {
           align-items: center !important;
           box-sizing: border-box !important;
           padding: 10mm 13mm !important;
+          margin: 0 !important;
           overflow: hidden !important;
           background-color: #09090b !important;
         }
@@ -433,677 +748,54 @@ const categoryBadge = {
           box-sizing: border-box !important;
         }
 
-        /* Card de Prancha Editorial (Preenche 100% da área útil = 90% da folha) */
         .card-prancha {
-          background-color: #18181b !important;
-          border: 1px solid #27272a !important;
-          border-radius: 16px !important;
+          height: 100% !important;
           padding: 20px 26px !important;
-          height: 100% !important;
-          display: flex !important;
-          flex-direction: column !important;
-          justify-content: space-between !important;
-          box-sizing: border-box !important;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
           overflow: hidden !important;
         }
 
-        /* Bloco Visual (Página 2 — Slide Hero Ocupando 90% da Página) */
-        .visual-block {
-          page-break-before: avoid !important;
-          break-before: avoid !important;
-          page-break-after: avoid !important;
-          break-after: avoid !important;
-          break-inside: avoid !important;
-          page-break-inside: avoid !important;
-          background: #18181b !important;
-          border: 1px solid #27272a !important;
-          border-radius: 18px !important;
-          padding: 28px 34px !important;
-          margin: 0 !important;
-          display: grid !important;
-          grid-template-columns: 1.15fr 1fr !important;
-          gap: 28px !important;
-          align-items: center !important;
-          box-sizing: border-box !important;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
-          width: 100% !important;
-          height: 100% !important;
-          min-height: 100% !important;
-          max-height: 100% !important;
-        }
-
-        .visual-media {
-          width: 100% !important;
-          height: 100% !important;
-          max-height: 520px !important;
-          border-radius: 14px !important;
-          overflow: hidden !important;
-          background: #09090b !important;
-          border: 1px solid #27272a !important;
-        }
-
-        .visual-media img,
-        .visual-image {
-          width: 100% !important;
-          height: 100% !important;
-          object-fit: cover !important;
-          display: block !important;
-          border-radius: 12px !important;
-        }
-
-        .visual-content {
-          display: flex !important;
-          flex-direction: column !important;
-          justify-content: space-between !important;
-          height: 100% !important;
-          padding: 6px 0 !important;
-          box-sizing: border-box !important;
-        }
-
-        .pro-tip {
-          display: flex !important;
-          align-items: flex-start !important;
-          gap: 10px !important;
-          background: rgba(245, 158, 11, 0.08) !important;
-          border: 1px solid rgba(245, 158, 11, 0.3) !important;
-          border-radius: 10px !important;
-          padding: 10px 14px !important;
-          margin-top: 8px !important;
-          break-inside: avoid !important;
-          page-break-inside: avoid !important;
-        }
-
-        .tip-content {
-          font-size: 12.5px !important;
-          color: #fef08a !important;
-          line-height: 1.4 !important;
-        }
-
-        /* Cards de Seção */
-        section:not(.capa-modulo) {
-          background-color: #18181b !important;
-          border: 1px solid #27272a !important;
-          border-radius: 16px !important;
-          padding: 20px 26px !important;
-          margin: 0 !important;
-          break-inside: avoid !important;
-          page-break-inside: avoid !important;
-          box-sizing: border-box !important;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-          display: flex !important;
-          flex-direction: column !important;
-          justify-content: space-between !important;
-          width: 100% !important;
-          height: 100% !important;
-          overflow: hidden !important;
-        }
-
-        /* Sub-cards dentro das seções */
-        .step-block {
-          background-color: #121215 !important;
-          border: 1px solid #27272a !important;
-          border-radius: 12px !important;
-          padding: 12px 16px !important;
-          break-inside: avoid !important;
-          page-break-inside: avoid !important;
-          box-sizing: border-box !important;
-        }
-
-        /* Layout Editorial Split (Duas colunas reais em paisagem: 58% texto / 42% mídia) */
         .editorial-split {
-          display: flex !important;
-          flex-direction: row !important;
-          align-items: stretch !important;
-          gap: 22px !important;
-          width: 100% !important;
           height: 100% !important;
           flex: 1 1 auto !important;
           min-height: 0 !important;
-          box-sizing: border-box !important;
         }
 
-        .editorial-split.items-start {
-          align-items: flex-start !important;
-        }
-
-        .editorial-split.reverse {
-          flex-direction: row-reverse !important;
+        .editorial-col-text,
+        .editorial-col-media {
+          height: 100% !important;
+          min-height: 0 !important;
         }
 
         .editorial-col-text {
           flex: 0 0 58% !important;
           width: 58% !important;
           max-width: 58% !important;
-          min-width: 0 !important;
-          background: transparent !important;
-          border: none !important;
-          padding: 0 !important;
-          box-shadow: none !important;
-          box-sizing: border-box !important;
-          display: flex !important;
-          flex-direction: column !important;
-          justify-content: space-between !important;
-          height: 100% !important;
-          min-height: 0 !important;
         }
 
         .editorial-col-media {
-          flex: 0 0 calc(42% - 22px) !important;
-          width: calc(42% - 22px) !important;
-          max-width: calc(42% - 22px) !important;
-          min-width: 0 !important;
-          background: transparent !important;
-          border: none !important;
-          padding: 0 !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: stretch !important;
-    gap: 24px !important;
-    width: 100% !important;
-    height: 100% !important;
-    flex: 1 1 auto !important;
-    min-height: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  .editorial-split.items-start {
-    align-items: stretch !important;
-  }
-
-  .editorial-split.reverse {
-    flex-direction: row-reverse !important;
-  }
-
-  .editorial-col-text {
-    flex: 0 0 58% !important;
-    width: 58% !important;
-    max-width: 58% !important;
-    min-width: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    gap: 12px !important;
-    height: 100% !important;
-    min-height: 0 !important;
-  }
-
-  .editorial-col-media {
-    flex: 0 0 calc(42% - 24px) !important;
-    width: calc(42% - 24px) !important;
-    max-width: calc(42% - 24px) !important;
-    min-width: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    height: 100% !important;
-    min-height: 0 !important;
-  }
-
-  /* Grid Simétrico de Equipamentos (Seção 3) */
-  .secao-equipamentos {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    gap: 10px !important;
-    height: 100% !important;
-  }
-
-  .equipamentos-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 18px !important;
-    align-items: stretch !important;
-    width: 100% !important;
-    flex: 1 1 auto !important;
-    min-height: 0 !important;
-  }
-
-  .equipamentos-cards {
-    flex: 0 0 58% !important;
-    width: 58% !important;
-    max-width: 58% !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    height: 100% !important;
-  }
-
-  .equipamentos-media {
-    flex: 0 0 calc(42% - 18px) !important;
-    width: calc(42% - 18px) !important;
-    max-width: calc(42% - 18px) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-  }
-
-  .equipamentos-media .editorial-image-card {
-    height: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-  }
-
-  .equipamentos-media .editorial-image-card img {
-    height: 100% !important;
-    flex: 1 1 auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    width: 100% !important;
-    object-fit: cover !important;
-  }
-
-  .editorial-image-card {
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    border: 1px solid #27272a !important;
-    background: #09090b !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-  }
-
-  .editorial-image-card img {
-    width: 100% !important;
-    height: 100% !important;
-    flex: 1 1 auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    display: block !important;
-  }
-
-  .editorial-image-caption {
-    padding: 7px 12px !important;
-    font-size: 11px !important;
-    color: #a1a1aa !important;
-    text-align: center !important;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
-    background-color: #121215 !important;
-    border-top: 1px solid #27272a !important;
-    flex-shrink: 0 !important;
-  }
-
-  /* Componentes Semânticos Ricos das Pranchas (Tipografia A4 Robusta) */
-  .secao-titulo {
-    font-family: 'Outfit', sans-serif !important;
-    font-size: 25px !important;
-    line-height: 1.2 !important;
-    font-weight: 800 !important;
-    color: #ffffff !important;
-    margin-bottom: 4px !important;
-  }
-
-  .secao-intro {
-    font-size: 14.5px !important;
-    line-height: 1.55 !important;
-    color: #d4d4d8 !important;
-    margin-bottom: 4px !important;
-  }
-
-  .subtitulo-destaque {
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
-    color: #fbbf24 !important;
-    margin-bottom: 6px !important;
-  }
-
-  .destaque-tag {
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
-    color: #fbbf24 !important;
-    margin-bottom: 6px !important;
-  }
-
-  .lista-topicos {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-evenly !important;
-    flex: 1 1 auto !important;
-    gap: 8px !important;
-  }
-
-  .lista-topicos li {
-    display: flex !important;
-    align-items: flex-start !important;
-    gap: 8px !important;
-    font-size: 14px !important;
-    line-height: 1.45 !important;
-    color: #e4e4e7 !important;
-  }
-
-  .marcador-amber {
-    color: #f59e0b !important;
-    font-weight: 900 !important;
-    font-size: 16px !important;
-    flex-shrink: 0 !important;
-  }
-
-  .secao-fechamento {
-    font-size: 13.5px !important;
-    line-height: 1.5 !important;
-    color: #a1a1aa !important;
-    margin-top: auto !important;
-    padding-top: 6px !important;
-  }
-
-  .subcard-item {
-    background-color: #121215 !important;
-    border: 1px solid #27272a !important;
-    border-radius: 12px !important;
-    padding: 12px 16px !important;
-    box-sizing: border-box !important;
-    flex: 1 1 auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-  }
-
-  .subcard-titulo {
-    font-size: 13.5px !important;
-    font-weight: 700 !important;
-    color: #f4f4f5 !important;
-    margin-bottom: 4px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-  }
-
-  .subcard-texto {
-    font-size: 12.5px !important;
-    line-height: 1.45 !important;
-    color: #a1a1aa !important;
-    margin: 0 !important;
-  }
-
-  .subcard-mini {
-    background-color: #18181b !important;
-    border: 1px solid #27272a !important;
-    border-radius: 10px !important;
-    padding: 8px 12px !important;
-    box-sizing: border-box !important;
-  }
-
-  .badge-tag {
-    font-family: ui-monospace, monospace !important;
-    font-size: 10.5px !important;
-    padding: 3px 8px !important;
-    border-radius: 5px !important;
-    font-weight: 700 !important;
-  }
-
-  .badge-tag.amber {
-    color: #fbbf24 !important;
-    background: rgba(245, 158, 11, 0.15) !important;
-    border: 1px solid rgba(245, 158, 11, 0.35) !important;
-  }
-
-  .badge-tag.emerald {
-    color: #34d399 !important;
-    background: rgba(16, 185, 129, 0.15) !important;
-    border: 1px solid rgba(16, 185, 129, 0.35) !important;
-  }
-
-  .badge-tag.zinc {
-    color: #d4d4d8 !important;
-    background: #18181b !important;
-    border: 1px solid #3f3f46 !important;
-  }
-
-  .flavor-badge {
-    height: 28px !important;
-    width: 28px !important;
-    border-radius: 50% !important;
-    background: rgba(245, 158, 11, 0.2) !important;
-    color: #fbbf24 !important;
-    font-weight: 800 !important;
-    font-size: 13px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-shrink: 0 !important;
-    border: 1px solid rgba(245, 158, 11, 0.4) !important;
-  }
-
-  .alerta-nao-comprar {
-    border: 1px solid rgba(244, 63, 94, 0.3) !important;
-    background: rgba(244, 63, 94, 0.08) !important;
-    border-radius: 12px !important;
-    padding: 10px 16px !important;
-    box-sizing: border-box !important;
-  }
-
-  .alerta-titulo {
-    font-size: 12.5px !important;
-    font-weight: 700 !important;
-    color: #fda4af !important;
-    margin-bottom: 4px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-  }
-
-  .alerta-itens-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 12px !important;
-    font-size: 11px !important;
-    color: #f4f4f5 !important;
-    line-height: 1.4 !important;
-  }
-
-  .manutencao-card {
-    background-color: #121215 !important;
-    border: 1px solid #27272a !important;
-    border-radius: 12px !important;
-    padding: 10px 14px !important;
-    box-sizing: border-box !important;
-  }
-
-  .manutencao-titulo {
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    color: #fbbf24 !important;
-    margin-bottom: 3px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 5px !important;
-  }
-
-  .manutencao-intro {
-    font-size: 11px !important;
-    line-height: 1.4 !important;
-    color: #d4d4d8 !important;
-    margin-bottom: 4px !important;
-  }
-
-  .manutencao-lista {
-    list-style: disc !important;
-    padding-left: 14px !important;
-    margin: 0 0 4px 0 !important;
-    font-size: 11px !important;
-    line-height: 1.4 !important;
-    color: #a1a1aa !important;
-  }
-
-  .manutencao-beneficio {
-    font-size: 10.5px !important;
-    line-height: 1.35 !important;
-    color: #fbbf24 !important;
-    margin: 0 !important;
-  }
-
-  section:not(.capa-modulo) ul {
-    margin-bottom: 6px !important;
-  }
-
-  section:not(.capa-modulo) li {
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-  }
-
-  /* Checklist Operacional (Página Dedicada 2 Colunas) */
-  .checklist-operacional {
-    page-break-before: avoid !important;
-    break-before: avoid !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-    background-color: #18181b !important;
-    border: 1px solid #27272a !important;
-    border-radius: 16px !important;
-    padding: 24px 28px !important;
-    margin: 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    gap: 16px !important;
-  }
-
-  .checklist-operacional .checklist-header {
-    margin-bottom: 8px !important;
-  }
-
-  .checklist-operacional ul {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 10px 16px !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    flex: 1 1 auto !important;
-    align-content: space-evenly !important;
-  }
-
-  .checklist-operacional li {
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-    padding: 12px 15px !important;
-    margin: 0 !important;
-    font-size: 13.5px !important;
-    line-height: 1.35 !important;
-    border-radius: 10px !important;
-    background: #121215 !important;
-    border: 1px solid #27272a !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  .checklist-operacional li .item-text {
-    font-size: 13.5px !important;
-    line-height: 1.3 !important;
-    font-weight: 600 !important;
-  }
-
-  .checklist-operacional li p {
-    font-size: 12px !important;
-    line-height: 1.3 !important;
-    margin-top: 3px !important;
-    color: #a1a1aa !important;
-  }
-
-  /* Tabelas Técnicas */
-  .tabela-tecnica {
-    background-color: #18181b !important;
-    border: 1px solid #27272a !important;
-    border-radius: 16px !important;
-    padding: 20px 24px !important;
-    margin: 0 !important;
-    width: 100% !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    gap: 14px !important;
-  }
-
-  .tabela-tecnica table {
-    width: 100% !important;
-    border-collapse: collapse !important;
-    flex: 1 1 auto !important;
-  }
-
-  .tabela-tecnica tbody tr {
-    height: 48px !important;
-  }
-
-  .tabela-tecnica th {
-    padding: 12px 16px !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-  }
-
-  .tabela-tecnica td {
-    padding: 12px 16px !important;
-    font-size: 13.5px !important;
-    line-height: 1.45 !important;
-  }
-
-        table {
-          width: 100% !important;
-          border-collapse: collapse !important;
+          flex: 0 0 calc(42% - 24px) !important;
+          width: calc(42% - 24px) !important;
+          max-width: calc(42% - 24px) !important;
         }
 
-        thead {
-          display: table-header-group !important;
+        .equipamentos-cards {
+          flex: 0 0 58% !important;
+          width: 58% !important;
+          max-width: 58% !important;
         }
 
-        tr {
-          page-break-inside: avoid !important;
-          break-inside: avoid !important;
+        .equipamentos-media {
+          flex: 0 0 calc(42% - 18px) !important;
+          width: calc(42% - 18px) !important;
+          max-width: calc(42% - 18px) !important;
         }
 
-        th, td {
-          padding: 10px 14px !important;
-          font-size: 13.5px !important;
-          line-height: 1.4 !important;
-        }
-
-        .callout-alerta {
-          break-inside: avoid !important;
-          page-break-inside: avoid !important;
-          border-radius: 12px !important;
-          padding: 14px 18px !important;
-          margin: 14px 0 !important;
-          box-sizing: border-box !important;
-        }
-
-        .card-elegant {
-          break-inside: avoid !important;
-          page-break-inside: avoid !important;
+        .visual-block {
+          height: 100% !important;
+          min-height: 100% !important;
+          max-height: 100% !important;
+          padding: 24px 30px !important;
+          margin: 0 !important;
         }
 
         /* Cores de Destaque */
