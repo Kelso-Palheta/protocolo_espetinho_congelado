@@ -1,0 +1,1090 @@
+---
+// Página de Vendas de Alta Conversão - Protocolo Espetinho Congelado
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protocolo Espetinho Congelado | O Negócio Começa no Freezer</title>
+  <meta name="description" content="Aprenda a transformar o freezer da sua casa em um estoque lucrativo de espetinhos artesanais a vácuo para vender por encomenda no WhatsApp.">
+  <style>
+    /* ==========================================================
+       RESET & HIGH-PERFORMANCE NEURODESIGN (Connect Rate 95%+)
+       ========================================================== */
+    :root {
+      --bg-main: #0a0b0e;
+      --bg-card: #13151b;
+      --bg-card-hover: #181b23;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(247, 127, 0, 0.35);
+      --text-main: #f3f4f6;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-ember: #f77f00;
+      --accent-amber: #f59e0b;
+      --accent-crimson: #e63946;
+      --accent-red-subtle: rgba(239, 68, 68, 0.15);
+      --cta-green: #10b981;
+      --cta-green-hover: #059669;
+      --whatsapp-bg: #0b141a;
+      --whatsapp-bubble: #005c4b;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(247, 127, 0, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 10% 30%, rgba(230, 57, 70, 0.04) 0%, transparent 35%),
+        radial-gradient(circle at 90% 65%, rgba(245, 158, 11, 0.03) 0%, transparent 35%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ==========================================================
+       PADRONIZAÇÃO DOS TÍTULOS DE TODAS AS SEÇÕES
+       ========================================================== */
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      text-align: center;
+      line-height: 1.25;
+    }
+
+    .section-title span.highlight-amber {
+      background: linear-gradient(135deg, #fbbf24 0%, #f77f00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 26px;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    /* ==========================================================
+       TOP NOTIFICATION BAR
+       ========================================================== */
+    .top-bar {
+      text-align: center;
+      padding: 9px 14px;
+      background: rgba(19, 21, 27, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent-amber);
+      letter-spacing: 0.5px;
+    }
+
+    /* ==========================================================
+       HERO SECTION (PRIMEIRA DOBRA)
+       ========================================================== */
+    .hero {
+      padding: 34px 0 24px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 50px;
+      color: #fbbf24;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      margin-bottom: 14px;
+    }
+
+    .hero-title span.highlight {
+      display: block;
+      margin-top: 8px;
+      background: linear-gradient(135deg, #ff4d5a 0%, #f77f00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .mockup-container {
+      position: relative;
+      width: 100%;
+      max-width: 680px;
+      margin: 14px auto 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mockup-img {
+      width: 100%;
+      height: auto;
+      max-height: 310px;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 22px rgba(247, 127, 0, 0.12));
+    }
+
+    .hero-subtitle {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 14px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      max-width: 390px;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, var(--cta-green) 0%, var(--cta-green-hover) 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.96rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: 10px;
+      box-shadow: 0 10px 22px rgba(16, 185, 129, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(16, 185, 129, 0.45);
+    }
+
+    .cta-subtext {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      margin-top: 5px;
+    }
+
+    /* ==========================================================
+       RUMINAÇÕES MENTAIS
+       ========================================================== */
+    .pain-box {
+      margin: 32px 0 38px;
+      padding: 24px 18px;
+      background: linear-gradient(180deg, rgba(25, 28, 36, 0.7) 0%, rgba(19, 21, 27, 0.95) 100%);
+      border: 1px solid var(--border-subtle);
+      border-left: 4px solid var(--accent-ember);
+      border-radius: 14px;
+    }
+
+    .pain-box h3 {
+      font-size: 1.12rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+
+    .thought-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .thought-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      font-style: italic;
+    }
+
+    .thought-item svg {
+      flex-shrink: 0;
+      width: 15px;
+      height: 15px;
+      fill: var(--accent-ember);
+      margin-top: 3px;
+    }
+
+    /* ==========================================================
+       MARCADORES VISUAIS DE COMPARAÇÃO
+       ========================================================== */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 35px 0;
+    }
+
+    .compare-col {
+      padding: 22px 18px;
+      border-radius: 14px;
+    }
+
+    .col-bad {
+      background: rgba(239, 68, 68, 0.03);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .col-good {
+      background: rgba(247, 127, 0, 0.03);
+      border: 1px solid rgba(247, 127, 0, 0.25);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .compare-col h4 {
+      font-size: 1.02rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .col-bad h4 { color: #f87171; }
+    .col-good h4 { color: #fbbf24; }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      font-size: 0.86rem;
+      color: #cbd5e1;
+    }
+
+    .compare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      line-height: 1.38;
+    }
+
+    .marker-bad {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border-radius: 4px;
+      background: var(--accent-red-subtle);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #f87171;
+      font-size: 0.68rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .marker-good {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border-radius: 4px;
+      background: rgba(247, 127, 0, 0.15);
+      border: 1px solid rgba(247, 127, 0, 0.35);
+      color: #fbbf24;
+      font-size: 0.72rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ==========================================================
+       SEÇÃO: COMO A OPERAÇÃO FUNCIONA NA PRÁTICA (3 ETAPAS)
+       ========================================================== */
+    .steps-section {
+      margin: 42px 0 48px;
+      text-align: center;
+    }
+
+    .steps-modular-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .step-img-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+    }
+
+    .step-img-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(247, 127, 0, 0.35);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(247, 127, 0, 0.1);
+    }
+
+    .step-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ==========================================================
+       OS 7 PROTOCOLOS (GRID VISUAL 3D)
+       ========================================================== */
+    .protocols-section {
+      margin: 48px 0 52px;
+    }
+
+    .protocols-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 13px;
+      margin-top: 24px;
+    }
+
+    .card-3d {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.6);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card-3d:hover {
+      transform: translateY(-3px);
+      border-color: rgba(247, 127, 0, 0.3);
+    }
+
+    .proto-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--accent-ember);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .proto-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .proto-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ==========================================================
+       PROVA SOCIAL (WHATSAPP DEPOIMENTOS)
+       ========================================================== */
+    .social-proof {
+      margin: 48px 0 52px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 22px;
+    }
+
+    .wa-card {
+      background: var(--whatsapp-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .wa-header {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 8px;
+    }
+
+    .wa-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f77f00, #e63946);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.82rem;
+      color: #fff;
+    }
+
+    .wa-user {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .wa-city {
+      font-size: 0.68rem;
+      color: var(--text-dim);
+    }
+
+    .wa-msg {
+      background: var(--whatsapp-bubble);
+      color: #e9edef;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .wa-meta {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      font-size: 0.64rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 4px;
+    }
+
+    .wa-checks {
+      color: #53bdeb;
+      font-size: 0.78rem;
+      line-height: 1;
+    }
+
+    /* ==========================================================
+       BÔNUS
+       ========================================================== */
+    .bonus-box {
+      background: linear-gradient(180deg, #151820 0%, #101217 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 26px 20px;
+      margin: 36px 0;
+    }
+
+    .bonus-item {
+      display: flex;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .bonus-item:last-child { border-bottom: none; }
+
+    .bonus-badge {
+      background: rgba(247, 127, 0, 0.12);
+      color: var(--accent-ember);
+      padding: 4px 7px;
+      border-radius: 5px;
+      font-weight: 800;
+      font-size: 0.72rem;
+      height: fit-content;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================
+       CARD DA OFERTA (CHECKOUT)
+       ========================================================== */
+    .offer-card {
+      max-width: 520px;
+      margin: 38px auto;
+      padding: 32px 20px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, rgba(247, 127, 0, 0.1) 0%, #12141a 75%);
+      border: 1px solid rgba(247, 127, 0, 0.3);
+      border-radius: 18px;
+      position: relative;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(247, 127, 0, 0.08);
+    }
+
+    .badge-deal {
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-amber);
+      color: #0f172a;
+      padding: 3px 14px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+    }
+
+    .price-strike {
+      font-size: 0.92rem;
+      color: #64748b;
+      text-decoration: line-through;
+      margin-top: 6px;
+    }
+
+    .price-current {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      margin: 5px 0 4px;
+      letter-spacing: -1px;
+    }
+
+    .price-current span {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent-ember);
+      margin-right: 2px;
+    }
+
+    .price-sub {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .price-sub span.dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #475569;
+    }
+
+    /* ==========================================================
+       GARANTIA & FAQ
+       ========================================================== */
+    .guarantee-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      margin: 30px 0;
+    }
+
+    .guarantee-box svg {
+      width: 42px;
+      height: 42px;
+      fill: var(--accent-amber);
+      flex-shrink: 0;
+    }
+
+    .faq-section {
+      margin: 44px 0 52px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      margin-bottom: 8px;
+      background: var(--bg-card);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 14px 15px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.25rem;
+      color: var(--accent-ember);
+      transition: transform 0.2s;
+    }
+
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+
+    .faq-content {
+      padding: 0 15px 15px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================
+       RESPONSIVIDADE MOBILE
+       ========================================================== */
+    @media (max-width: 768px) {
+      .hero { padding: 24px 0 18px; }
+      .eyebrow { font-size: 0.72rem; padding: 4px 12px; margin-bottom: 12px; }
+      .hero-title { font-size: 1.45rem; margin-bottom: 10px; line-height: 1.22; }
+      .hero-title span.highlight { margin-top: 6px; }
+      
+      .mockup-container { width: 100%; max-width: 100%; margin: 8px auto 12px; }
+      .mockup-img { max-height: 250px; width: 100%; }
+      
+      .hero-subtitle { font-size: 0.84rem; line-height: 1.4; margin: 0 auto 14px; max-width: 100%; }
+      .cta-btn { font-size: 0.94rem; padding: 14px 18px; border-radius: 9px; max-width: 100%; }
+      .cta-subtext { font-size: 0.7rem; margin-top: 5px; }
+
+      .section-title { font-size: 1.35rem; line-height: 1.25; }
+      .section-subtitle { font-size: 0.82rem; margin-bottom: 20px; }
+
+      .compare-grid { grid-template-columns: 1fr; }
+      
+      .steps-modular-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .step-img-card {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DE TOPO COM ALERTA SUTIL -->
+  <div class="top-bar">
+    ⚡ VAGAS LIBERADAS PARA O LOTE DE LANÇAMENTO — ACESSO IMEDIATO
+  </div>
+
+  <main class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="eyebrow">
+        <span>Sem fumaça • Sem ponto comercial • Sem prejuízo</span>
+      </div>
+      
+      <h1 class="hero-title">
+        O negócio de espetinhos não começa na churrasqueira.
+        <span class="highlight">Começa dentro do seu freezer.</span>
+      </h1>
+
+      <div class="mockup-container">
+        <img 
+          src="/mockup_protocolo_espetinho_congelado.png" 
+          alt="Sistema Completo do Protocolo Espetinho Congelado" 
+          class="mockup-img"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+
+      <p class="hero-subtitle">
+        Descubra como transformar o espaço ocioso da sua cozinha em um estoque lucrativo de espetinhos a vácuo e vender por encomenda no WhatsApp para famílias do seu bairro, com margem de 40% a 50%.
+      </p>
+
+      <a href="#comprar" class="cta-btn">
+        <span>QUERO APRENDER O PROTOCOLO</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      <p class="cta-subtext">Acesso digital imediato por apenas R$ 67 • Risco Zero</p>
+    </section>
+
+    <!-- BLOCO DE IDENTIFICAÇÃO VISCERAL -->
+    <section class="pain-box">
+      <h3>Você já se pegou mastigando esses pensamentos na sua cozinha?</h3>
+      <ul class="thought-list">
+        <li class="thought-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          "Meu salário não dá mais para nada. Todo mês é a mesma coisa: paga uma conta, aparece outra."
+        </li>
+        <li class="thought-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          "Eu preciso de uma renda extra, mas começar um negócio de comida parece caro demais."
+        </li>
+        <li class="thought-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          "E se eu gastar meu pouco dinheiro comprando carne, tempero, embalagem e ficar com o freezer encalhado?"
+        </li>
+        <li class="thought-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          "Eu sei fazer comida, mas não sei quanto cobrar. Se colocar caro, ninguém compra; se colocar barato, trabalho de graça."
+        </li>
+        <li class="thought-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          "Eu não posso errar. Perder R$ 200 ou R$ 300 agora vai fazer uma falta danada em casa."
+        </li>
+      </ul>
+    </section>
+
+    <!-- COMPARAÇÃO DOS MODELOS -->
+    <section>
+      <div class="compare-grid">
+        <div class="compare-col col-bad">
+          <h4>❌ O Modelo da Churrasqueira na Calçada</h4>
+          <ul class="compare-list">
+            <li>
+              <span class="marker-bad">✕</span>
+              <span>Aluguel de ponto comercial e custos fixos pesados.</span>
+            </li>
+            <li>
+              <span class="marker-bad">✕</span>
+              <span>Noites inteiras respirando fumaça no meio da rua.</span>
+            </li>
+            <li>
+              <span class="marker-bad">✕</span>
+              <span>Dependência total do clima: se choveu, ninguém aparece.</span>
+            </li>
+            <li>
+              <span class="marker-bad">✕</span>
+              <span>Carne assada que sobra vira prejuízo imediato no lixo.</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="compare-col col-good">
+          <h4>✅ O Protocolo do Freezer Sob Encomenda</h4>
+          <ul class="compare-list">
+            <li>
+              <span class="marker-good">✓</span>
+              <span>Produção na bancada de casa nos seus dias e horários livres.</span>
+            </li>
+            <li>
+              <span class="marker-good">✓</span>
+              <span>Selagem a vácuo: carne protegida por até 60 dias sem queimar.</span>
+            </li>
+            <li>
+              <span class="marker-good">✓</span>
+              <span>Pedidos fechados com antecedência no WhatsApp e pagos no PIX.</span>
+            </li>
+            <li>
+              <span class="marker-good">✓</span>
+              <span>O cliente assa na casa dele: você só entrega ou libera no portão.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: COMO A OPERAÇÃO FUNCIONA NA PRÁTICA -->
+    <section class="steps-section">
+      <h2 class="section-title">
+        Como a <span class="highlight-amber">Operação Funciona</span> na Prática
+      </h2>
+      <p class="section-subtitle">
+        Sem mistério e sem equipamentos industriais: a esteira do açougue até o pagamento no PIX
+      </p>
+
+      <div class="steps-modular-grid">
+        <!-- CARD 01: CORTE & PADRONIZAÇÃO -->
+        <div class="step-img-card">
+          <img 
+            src="/corte_e_padronizacao.png" 
+            alt="01 - Corte e Padronização de Espetinhos" 
+            class="step-card-img"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- CARD 02: VÁCUO & ESTOQUE SEGURO -->
+        <div class="step-img-card">
+          <img 
+            src="/vacuo_e_estoque.png" 
+            alt="02 - Vácuo e Estoque Seguro" 
+            class="step-card-img"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- CARD 03: ENCOMENDAS NO WHATSAPP COM FALLBACK AUTOMÁTICO DE EXTENSÃO -->
+        <div class="step-img-card">
+          <img 
+            src="/encomendas_whatsapp.png" 
+            alt="03 - Encomendas no WhatsApp" 
+            class="step-card-img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: OS 7 PROTOCOLOS -->
+    <section class="protocols-section">
+      <h2 class="section-title">
+        A <span class="highlight-amber">Esteira Operacional</span> de 7 Fases
+      </h2>
+      <p class="section-subtitle">
+        O método passo a passo para transformar carne crua em produto padronizado e lucrativo
+      </p>
+
+      <div class="protocols-grid">
+        <div class="card-3d">
+          <span class="proto-tag">Protocolo 01</span>
+          <h3 class="proto-title">Preparação & Higiene</h3>
+          <p class="proto-desc">Organização da bancada caseira, fluxos de desinfecção e cadeia de frio obrigatória (0°C a 5°C no corte e -18°C no freezer).</p>
+        </div>
+        <div class="card-3d">
+          <span class="proto-tag">Protocolo 02</span>
+          <h3 class="proto-title">Produção & Cortes</h3>
+          <p class="proto-desc">Cortes de alto rendimento (fraldinha e acém), técnica contra a fibra, uso de palitos secos e choque térmico na linguiça toscana.</p>
+        </div>
+        <div class="card-3d">
+          <span class="proto-tag">Protocolo 03</span>
+          <h3 class="proto-title">Padronização & DNA</h3>
+          <p class="proto-desc">Pesagem na balança em 100g-120g, fórmula da Base Seca Universal (20g/kg) e o teste de sal do bacon nos medalhões.</p>
+        </div>
+        <div class="card-3d">
+          <span class="proto-tag">Protocolo 04</span>
+          <h3 class="proto-title">Vácuo & Congelamento</h3>
+          <p class="proto-desc">Operação de seladoras portáteis com sacos gofrados de 0,18 micras, pré-resfriamento e congelamento em camada fina sem amassar.</p>
+        </div>
+        <div class="card-3d">
+          <span class="proto-tag">Protocolo 05</span>
+          <h3 class="proto-title">Precificação Real</h3>
+          <p class="proto-desc">A matemática completa: perdas de toalete, insumos rateados (palito, plástico, energia) e markup com 40% a 50% de lucro líquido.</p>
+        </div>
+        <div class="card-3d">
+          <span class="proto-tag">Protocolo 06</span>
+          <h3 class="proto-title">Oferta & Combos</h3>
+          <p class="proto-desc">Engenharia do Kit Família (20 un) para liquidar a venda avulsa, ancorando preços e garantindo tickets de R$ 119 a R$ 140 por cliente.</p>
+        </div>
+        <div class="card-3d">
+          <span class="proto-tag">Protocolo 07</span>
+          <h3 class="proto-title">Vendas & WhatsApp</h3>
+          <p class="proto-desc">Funil de Status semanal (quarta a domingo), scripts de abordagem ativa sem parecer chato e fechamento antecipado com PIX.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: PROVA SOCIAL / DEPOIMENTOS -->
+    <section class="social-proof">
+      <h2 class="section-title">
+        Quem Começou com o <span class="highlight-amber">Freezer de Casa</span> Fala:
+      </h2>
+      <p class="section-subtitle">
+        Pessoas comuns que tinham medo de ficar com carne encalhada e hoje vendem lotes semanais
+      </p>
+
+      <div class="testimonials-grid">
+        <div class="wa-card">
+          <div class="wa-header">
+            <div class="wa-avatar">MP</div>
+            <div>
+              <div class="wa-user">Marcos P.</div>
+              <div class="wa-city">Condomínio Residencial • São Paulo</div>
+            </div>
+          </div>
+          <div class="wa-msg">
+            "Eu estava com receio de comprar carne à toa. Comecei na quinta fazendo só 12 pacotes de medalhão e bovino seguindo o passo a passo. Soltei o script no grupo do condomínio na sexta e vendi TUDO até o meio-dia de sábado. R$ 410 no PIX sem sair do portão."
+            <div class="wa-meta">
+              <span>14:32</span>
+              <span class="wa-checks">✓✓</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-card">
+          <div class="wa-header">
+            <div class="wa-avatar" style="background: linear-gradient(135deg, #10b981, #059669);">CS</div>
+            <div>
+              <div class="wa-user">Cláudia Soares</div>
+              <div class="wa-city">Produção Doméstica • Minas Gerais</div>
+            </div>
+          </div>
+          <div class="wa-msg">
+            "Meu freezer é só o da geladeira normal de duas portas. Achei que não ia caber nada, mas a dica dos pacotes planos de 3 espetinhos é ótima! Coube certinho 45 espetinhos na gaveta. Vendi 2 Kit Família pras mães da escola do meu filho e já pagou todos os custos."
+            <div class="wa-meta">
+              <span>18:15</span>
+              <span class="wa-checks">✓✓</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-card">
+          <div class="wa-header">
+            <div class="wa-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">RA</div>
+            <div>
+              <div class="wa-user">Renato Alves</div>
+              <div class="wa-city">Bairro Industrial • Paraná</div>
+            </div>
+          </div>
+          <div class="wa-msg">
+            "Eu quase comprei uma churrasqueira de tambor de 800 reais pra tentar vender na rua. O protocolo me abriu o olho: produzir a vácuo em casa é infinitamente mais seguro. O cliente assa no domingo dele e eu durmo em paz na sexta-feira com o lucro no bolso."
+            <div class="wa-meta">
+              <span>09:47</span>
+              <span class="wa-checks">✓✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OS 4 BÔNUS OFICIAIS -->
+    <section class="bonus-box">
+      <h3 class="section-title" style="font-size: 1.3rem; margin-bottom: 16px;">
+        🎁 4 Bônus Operacionais <span class="highlight-amber">Inclusos no Pacote:</span>
+      </h3>
+      <div class="bonus-item">
+        <span class="bonus-badge">BÔNUS 1</span>
+        <div>
+          <strong style="color: #fff;">Operação de Pedidos & Delivery Local</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 3px;">Regras de retirada programada, transporte em caixas térmicas com gelo rígido sem descongelar e precificação de frete justo.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-badge">BÔNUS 2</span>
+        <div>
+          <strong style="color: #fff;">Protocolo da Recompra Programada</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 3px;">Calendário de pós-venda na segunda-feira, controle de clientes e roteiros para ativar pedidos de indicação lucrativos.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-badge">BÔNUS 3</span>
+        <div>
+          <strong style="color: #fff;">Protocolo do Crescimento Consciente</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 3px;">A regra da divisão do caixa (capital de giro vs retirada) e o plano de compra do 2º freezer financiado pelo próprio lucro.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-badge">BÔNUS 4</span>
+        <div>
+          <strong style="color: #fff;">Plano de Ação Primeiros 7 Dias</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 3px;">O roteiro diário do Dia 1 ao Dia 7. Uma tarefa prática por dia para colocar seu primeiro lote congelado e vendido até sábado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARD DA OFERTA (CHECKOUT) -->
+    <section id="comprar" class="offer-card">
+      <div class="badge-deal">CONDIÇÃO EXCLUSIVA DE LANÇAMENTO</div>
+      
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 4px;">Protocolo Espetinho Congelado</h3>
+      <p style="font-size: 0.84rem; color: #94a3b8; margin-bottom: 12px;">O sistema operacional completo para produzir e faturar na sua cozinha</p>
+
+      <div class="price-strike">De R$ 197,00</div>
+      <div class="price-current"><span>R$</span>67</div>
+      
+      <div class="price-sub">
+        <span>Acesso vitalício</span>
+        <span class="dot"></span>
+        <span>Pagamento único</span>
+        <span class="dot"></span>
+        <span>Sem mensalidades</span>
+      </div>
+
+      <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="cta-btn">
+        <span>QUERO COMEÇAR AGORA</span>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+
+      <p class="cta-subtext" style="margin-top: 10px; color: #64748b; font-size: 0.76rem;">
+        🔒 Pagamento 100% seguro • Acesso imediato via E-mail
+      </p>
+    </section>
+
+    <!-- GARANTIA BLINDADA -->
+    <section class="guarantee-box">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+      <div>
+        <h4 style="font-size: 0.98rem; font-weight: 800; color: #fff; margin-bottom: 3px;">Garantia Incondicional de 7 Dias</h4>
+        <p style="font-size: 0.82rem; color: var(--text-muted);">
+          Abra o material, leia os protocolos e teste o cronograma. Se você achar que o método não é para você, basta enviar um único e-mail para receber 100% do seu reembolso. O risco financeiro é todo nosso.
+        </p>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: FAQ -->
+    <section class="faq-section">
+      <h2 class="section-title">
+        Perguntas <span class="highlight-amber">Frequentes</span>
+      </h2>
+      <p class="section-subtitle">
+        Tudo o que você precisa saber para começar sua produção com segurança
+      </p>
+
+      <details class="faq-item">
+        <summary>Meu freezer é pequeno, o da própria geladeira. Eu consigo começar?</summary>
+        <div class="faq-content">
+          Sim. Como os espetinhos são acondicionados em pacotes planos a vácuo de 3 a 4 unidades, eles ocupam um espaço mínimo. Uma única gaveta livre do seu freezer comporta perfeitamente de 30 a 50 espetinhos, o suficiente para montar seus primeiros kits do fim de semana.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Preciso comprar seladora e máquinas caras logo no início?</summary>
+        <div class="faq-content">
+          Não. Você começa com os utensílios da sua cozinha (faca afiada, tábua plástica e uma balança digital de R$ 30). A seladora a vácuo portátil é um equipamento de baixo custo que você adquire conforme os primeiros pedidos entrarem.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Eu não sei vender e tenho vergonha de oferecer. Isso funciona?</summary>
+        <div class="faq-content">
+          Você não precisa se expor, dançar na internet ou ficar implorando para parentes comprarem. O protocolo ensina a atender a demanda de quem já consome churrasco toda semana no seu bairro, usando apenas postagens informativas nos Status e cardápio padronizado.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como recebo o acesso ao material?</summary>
+        <div class="faq-content">
+          O envio é imediato e automatizado. Assim que o pagamento via PIX ou cartão for processado, você recebe no seu e-mail o link para acessar todos os manuais, fichas técnicas e ferramentas no celular, tablet ou computador.
+        </div>
+      </details>
+    </section>
+
+  </main>
+</body>
+</html>

@@ -1,10 +1,22 @@
+# Build and dependencies
 node_modules/
+/node_modules
 dist/
+/dist
 .astro/
-.vercel
+/.astro
+
+# Generated artifacts & PDFs
+pdfs/
+/pdfs
+*.pdf
+
+# Environment and sensitive data
 .env
 .env.*
 !.env.example
-.DS_Store
-scratch*
 
+# OS & Temp files
+.DS_Store
+.vercel
+scratch*

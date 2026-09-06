@@ -112,20 +112,20 @@ const badgeConfig = {
     )}
 
     <!-- Mini Grade de Parâmetros da Capa -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6 max-w-xl">
-      <div class="rounded-xl border border-charcoal-800/80 bg-charcoal-900/80 backdrop-blur-md p-3">
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6 max-w-2xl">
+      <div class="rounded-xl border border-charcoal-800/80 bg-charcoal-900/80 backdrop-blur-md p-3.5">
         <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Foco Técnico</span>
-        <span class="text-xs font-bold text-zinc-200 mt-0.5 block truncate">{focoTecnico}</span>
+        <span class="text-xs font-bold text-zinc-200 mt-0.5 block leading-snug">{focoTecnico}</span>
       </div>
 
-      <div class="rounded-xl border border-charcoal-800/80 bg-charcoal-900/80 backdrop-blur-md p-3">
+      <div class="rounded-xl border border-charcoal-800/80 bg-charcoal-900/80 backdrop-blur-md p-3.5">
         <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Parâmetro Chave</span>
-        <span class="text-xs font-bold text-amber-400 mt-0.5 block truncate">{parametroChave}</span>
+        <span class="text-xs font-bold text-amber-400 mt-0.5 block leading-snug">{parametroChave}</span>
       </div>
 
-      <div class="col-span-2 sm:col-span-1 rounded-xl border border-charcoal-800/80 bg-charcoal-900/80 backdrop-blur-md p-3">
+      <div class="col-span-2 sm:col-span-1 rounded-xl border border-charcoal-800/80 bg-charcoal-900/80 backdrop-blur-md p-3.5">
         <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block">Edição</span>
-        <span class="text-xs font-bold text-zinc-200 mt-0.5 block">Versão 1.0 Oficial</span>
+        <span class="text-xs font-bold text-zinc-200 mt-0.5 block leading-snug">Versão 1.0 Oficial</span>
       </div>
     </div>
   </div>
@@ -151,19 +151,21 @@ const badgeConfig = {
 
   @media print {
     .capa-modulo {
-      min-height: 100vh !important;
-      height: 100vh !important;
-      max-height: 100vh !important;
+      min-height: 210mm !important;
+      height: 210mm !important;
+      max-height: 210mm !important;
+      width: 297mm !important;
+      max-width: 297mm !important;
       page-break-after: always !important;
       break-after: page !important;
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
       margin: 0 !important;
-      padding: 40px 48px !important;
+      padding: 32px 44px !important;
       box-sizing: border-box !important;
       display: flex !important;
       flex-direction: column !important;
       justify-content: space-between !important;
-      width: 100% !important;
-      max-width: none !important;
     }
 
     .capa-modulo .my-auto {

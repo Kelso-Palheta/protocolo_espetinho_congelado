@@ -102,7 +102,7 @@ const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
  * 4. Configura a Capa Modular na Página 1 com page-break-after: always
  * 5. Oculta cabeçalhos web, menus drawers e botões interativos
  */
-function prepararHtmlParaPdf(caminhoHtml) {
+export function prepararHtmlParaPdf(caminhoHtml) {
   let html = fs.readFileSync(caminhoHtml, 'utf-8');
 
   // 1. Injetar todos os arquivos CSS de /_astro/ inline no HTML
@@ -156,7 +156,7 @@ function prepararHtmlParaPdf(caminhoHtml) {
      1. RESET GERAL & CONFIGURAÇÃO A4 PAISAGEM (HORIZONTAL)
      ==================================================================== */
   @page {
-    size: A4 landscape;
+    size: 297mm 210mm;
     margin: 0;
   }
 
@@ -189,7 +189,8 @@ function prepararHtmlParaPdf(caminhoHtml) {
     print-color-adjust: exact !important;
     margin: 0 !important;
     padding: 0 !important;
-    width: 100% !important;
+    width: 297mm !important;
+    height: 210mm !important;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   }
 
@@ -260,26 +261,26 @@ function prepararHtmlParaPdf(caminhoHtml) {
     font-weight: 600 !important;
   }
 
-  /* Capa Modular (Página 1 — Ocupação Total 100vh) */
+  /* Capa Modular (Página 1 — Ocupação Total A4 Paisagem) */
   .capa-modulo {
     page-break-before: avoid !important;
     break-before: avoid !important;
     page-break-after: always !important;
     break-after: page !important;
-    break-inside: avoid !important;
     page-break-inside: avoid !important;
-    height: 100vh !important;
-    min-height: 100vh !important;
-    max-height: 100vh !important;
+    break-inside: avoid !important;
+    height: 210mm !important;
+    min-height: 210mm !important;
+    max-height: 210mm !important;
+    width: 297mm !important;
+    max-width: 297mm !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
     box-sizing: border-box !important;
-    padding: 36px 44px !important;
+    padding: 32px 44px !important;
     border-radius: 0 !important;
     border: none !important;
-    width: 100% !important;
-    max-width: none !important;
     background-color: #09090b !important;
     position: relative !important;
     overflow: hidden !important;
@@ -304,7 +305,7 @@ function prepararHtmlParaPdf(caminhoHtml) {
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
-    padding: 24px 36px !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
     background: transparent !important;
     display: block !important;
@@ -312,38 +313,86 @@ function prepararHtmlParaPdf(caminhoHtml) {
 
   /* O primeiro elemento dentro do main NUNCA quebra página (elimina folha em branco!) */
   main > :first-child,
-  .visual-block:first-of-type {
+  .visual-block:first-of-type,
+  .prancha:first-of-type {
     page-break-before: avoid !important;
     break-before: avoid !important;
     margin-top: 0 !important;
   }
 
-  /* Bloco Visual (Página 2 — Slide Hero com Ilustração IA) */
+  main > *,
+  main > :not([hidden]) ~ :not([hidden]),
+  .prancha {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ====================================================================
+     PRANCHAS EDITORIAIS AUTOCONTIDAS (Uma prancha por folha A4 Paisagem)
+     ==================================================================== */
+  .prancha {
+    page-break-before: always !important;
+    break-before: page !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    height: 210mm !important;
+    min-height: 210mm !important;
+    max-height: 210mm !important;
+    width: 297mm !important;
+    max-width: 297mm !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    padding: 16px 44px !important;
+    overflow: hidden !important;
+    background-color: #09090b !important;
+  }
+
+  .prancha:first-of-type {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+  }
+
+  .prancha > section,
+  .prancha > .visual-block,
+  .prancha > div {
+    width: 100% !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Bloco Visual (Página 2 — Slide Hero com Ilustração IA Sozinha na Folha) */
   .visual-block {
     page-break-before: avoid !important;
     break-before: avoid !important;
-    page-break-after: always !important;
-    break-after: page !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     background: #18181b !important;
     border: 1px solid #27272a !important;
-    border-radius: 16px !important;
-    padding: 24px 28px !important;
-    margin: 0 0 20px 0 !important;
+    border-radius: 18px !important;
+    padding: 28px 32px !important;
+    margin: 0 !important;
     display: grid !important;
-    grid-template-columns: 1fr 1.15fr !important;
-    gap: 24px !important;
+    grid-template-columns: 1.15fr 1fr !important;
+    gap: 28px !important;
     align-items: center !important;
     box-sizing: border-box !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    width: 100% !important;
   }
 
   .visual-media {
     width: 100% !important;
-    aspect-ratio: 16 / 9 !important;
-    max-height: 220px !important;
-    border-radius: 12px !important;
+    aspect-ratio: 16 / 10 !important;
+    max-height: 330px !important;
+    border-radius: 14px !important;
     overflow: hidden !important;
     background: #09090b !important;
     border: 1px solid #27272a !important;
@@ -390,25 +439,172 @@ function prepararHtmlParaPdf(caminhoHtml) {
     border: 1px solid #27272a !important;
     border-radius: 16px !important;
     padding: 22px 28px !important;
-    margin: 0 0 20px 0 !important;
+    margin: 0 !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     box-sizing: border-box !important;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
     display: block !important;
+    width: 100% !important;
   }
 
-  /* Sub-cards dentro das seções (ex: 4 blocos de Diagnóstico, Equipamentos, etc.) */
-  section:not(.capa-modulo) .grid > div,
-  section:not(.capa-modulo) .rounded-xl,
+  /* Sub-cards dentro das seções (ex: blocos de passos e cards destacados) */
   .step-block {
     background-color: #121215 !important;
     border: 1px solid #27272a !important;
     border-radius: 12px !important;
-    padding: 14px 16px !important;
+    padding: 12px 16px !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     box-sizing: border-box !important;
+  }
+
+  .equipamentos-cards,
+  .equipamentos-media {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Layout Editorial Split (Duas colunas reais em paisagem: 58% texto / 42% mídia) */
+  .editorial-split {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 24px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .editorial-split.items-start {
+    align-items: flex-start !important;
+  }
+
+  .editorial-split.reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .editorial-col-text {
+    flex: 1 1 58% !important;
+    width: 58% !important;
+    max-width: 58% !important;
+    min-width: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+  }
+
+  .editorial-col-media {
+    flex: 1 1 42% !important;
+    width: 42% !important;
+    max-width: 42% !important;
+    min-width: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Grid Simétrico de Equipamentos (Seção 3) */
+  .equipamentos-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 16px !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  .equipamentos-cards {
+    flex: 0 0 58% !important;
+    width: 58% !important;
+    max-width: 58% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .equipamentos-media {
+    flex: 0 0 calc(42% - 16px) !important;
+    width: calc(42% - 16px) !important;
+    max-width: calc(42% - 16px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    max-height: none !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .equipamentos-media .editorial-image-card {
+    height: 100% !important;
+    max-height: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .equipamentos-media .editorial-image-card img {
+    height: 100% !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+
+  .editorial-image-card {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 1px solid #27272a !important;
+    background: #09090b !important;
+    width: 100% !important;
+  }
+
+  .editorial-image-card img {
+    width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+    max-height: 220px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .editorial-image-card.h-full,
+  .h-full.editorial-image-card,
+  .editorial-image-card[class*="h-full"] {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .editorial-image-card.h-full img,
+  .h-full.editorial-image-card img,
+  .editorial-image-card[class*="h-full"] img {
+    max-height: none !important;
+    height: 100% !important;
+    flex: 1 1 auto !important;
+    object-fit: cover !important;
+  }
+
+  .editorial-image-caption {
+    padding: 6px 10px !important;
+    font-size: 10.5px !important;
+    color: #a1a1aa !important;
+    text-align: center !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    background-color: #121215 !important;
+    border-top: 1px solid #27272a !important;
   }
 
   section:not(.capa-modulo) ul {
@@ -422,15 +618,16 @@ function prepararHtmlParaPdf(caminhoHtml) {
 
   /* Checklist Operacional (Página Dedicada 2 Colunas) */
   .checklist-operacional {
-    page-break-before: always !important;
-    break-before: page !important;
+    page-break-before: avoid !important;
+    break-before: avoid !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     background-color: #18181b !important;
     border: 1px solid #27272a !important;
     border-radius: 16px !important;
     padding: 24px 28px !important;
-    margin: 0 0 20px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
     box-sizing: border-box !important;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
   }
@@ -479,7 +676,8 @@ function prepararHtmlParaPdf(caminhoHtml) {
     border: 1px solid #27272a !important;
     border-radius: 16px !important;
     padding: 20px 24px !important;
-    margin: 0 0 20px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     box-sizing: border-box !important;
@@ -609,7 +807,7 @@ async function main() {
       const page = await browser.newPage();
 
       // Ajustar viewport padrão A4 Paisagem (Horizontal Widescreen)
-      await page.setViewport({ width: 1754, height: 1240, deviceScaleFactor: 2 });
+      await page.setViewport({ width: 1123, height: 794, deviceScaleFactor: 2 });
 
       // Preparar HTML com injeção forçada de Dark Theme, CSS Tailwind e Imagens Base64
       const htmlProcessado = prepararHtmlParaPdf(arquivoDist);
@@ -674,7 +872,9 @@ async function main() {
   console.log('='.repeat(70) + '\n');
 }
 
-main().catch((err) => {
-  console.error('❌ Erro fatal no script:', err);
-  process.exit(1);
-});
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch((err) => {
+    console.error('❌ Erro fatal no script:', err);
+    process.exit(1);
+  });
+}
