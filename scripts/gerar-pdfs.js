@@ -1314,8 +1314,13 @@ async function main() {
 
       // Espelhar também para dist/pdfs/ por conveniência
       try {
+        if (!fs.existsSync(DIST_OUTPUT_DIR)) {
+          fs.mkdirSync(DIST_OUTPUT_DIR, { recursive: true });
+        }
         fs.copyFileSync(caminhoDestino, path.join(DIST_OUTPUT_DIR, item.nomeArquivo));
-      } catch (e) {}
+      } catch (e) {
+        console.warn(`     ⚠️ Aviso: Não foi possível espelhar para dist/pdfs:`, e.message);
+      }
 
       await page.close();
 

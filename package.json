@@ -6,6 +6,7 @@
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "start": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "postbuild": "mkdir -p dist/pdfs && cp -r pdfs/*.pdf dist/pdfs/ 2>/dev/null || true",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "astro": "ASTRO_TELEMETRY_DISABLED=1 astro",
     "gerar:ilustracoes": "node scripts/gerar-ilustracoes.js",
