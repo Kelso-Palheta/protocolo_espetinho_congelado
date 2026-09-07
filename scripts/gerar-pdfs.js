@@ -213,16 +213,29 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   p, li, dd, blockquote {
-    orphans: 3 !important;
-    widows: 3 !important;
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-    color: #d4d4d8 !important;
+    orphans: 3;
+    widows: 3;
+    color: #d4d4d8;
   }
 
   p {
-    margin-top: 0 !important;
-    margin-bottom: 8px !important;
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+
+  /* Preservar tipografia intencional e evitar estufamento vertical */
+  .font-mono,
+  .font-mono p,
+  .font-mono div,
+  .font-mono span,
+  .subcard-item p,
+  .callout-alerta p,
+  .checklist-operacional p,
+  .prompt-box p,
+  pre, code {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    margin-bottom: 3px !important;
   }
 
   /* Tipografia Proporcional Editorial */
@@ -532,11 +545,12 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   /* Cards de Seção */
-  section:not(.capa-modulo) {
+  .prancha > section,
+  .card-prancha {
     background-color: #18181b !important;
     border: 1px solid #27272a !important;
     border-radius: 16px !important;
-    padding: 20px 26px !important;
+    padding: 18px 24px !important;
     margin: 0 !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
@@ -548,6 +562,28 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     width: 100% !important;
     height: 100% !important;
     overflow: hidden !important;
+  }
+
+  /* Seções aninhadas como checklist operacional não devem herdar altura total */
+  section.checklist-operacional {
+    height: auto !important;
+    max-height: none !important;
+    background: #18181b !important;
+    border: 1px solid #27272a !important;
+    border-radius: 14px !important;
+    padding: 10px 14px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    display: block !important;
+  }
+
+  section.checklist-operacional .checklist-items {
+    gap: 4px !important;
+  }
+
+  section.checklist-operacional li {
+    padding: 5px 8px !important;
+    margin-bottom: 4px !important;
   }
 
   /* Sub-cards dentro das seções */
