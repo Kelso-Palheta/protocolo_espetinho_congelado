@@ -9,203 +9,413 @@ import imgCapa from '../assets/illustrations/capa-bonus-2.png';
 ---
 
 <EbookLayout
-  title="Bônus 2 — Protocolo da Recompra: Como Construir Clientes Recorrentes"
+  title="Bônus 2 — Protocolo da Recompra: Clientes Recorrentes"
   category="bonus"
   chapterNumber="02"
   chapterTitle="BÔNUS 2 — PROTOCOLO DA RECOMPRA"
-  chapterSubtitle="Fidelização Ativa, Calendário Semanal de Contatos e Boca a Boca Programado"
+  chapterSubtitle="Como Construir Clientes Recorrentes e Previsibilidade Semanal de Caixa"
   imagemCapa={imgCapa.src}
-  prevLink={{ title: "Bônus 1: Operação & Delivery", href: "/bonus-1" }}
+  prevLink={{ title: "Bônus 1: Delivery", href: "/bonus-1" }}
   nextLink={{ title: "Bônus 3: Expansão", href: "/bonus-3" }}
 >
-  <!-- Bloco Visual com Ilustração Gerada via IA -->
-  <VisualBlock
-    stepNumber="B2"
-    badge="Retenção & LTV"
-    title="A Máquina de Vendas Sem Custo de Aquisição"
-    subtitle="Como 20 clientes fiéis garantem a produção semanal vendida"
-    description="A maioria dos iniciantes gasta 100% da energia buscando novos clientes diariamente. Quem já comprou, assou os espetinhos no fim de semana e comprovou a maciez da carne compra novamente com esforço zero de convencimento. Uma base de 15 a 25 clientes fiéis garante previsibilidade financeira absoluta."
-    tip="Envie a mensagem de pós-venda sempre na segunda ou terça-feira pela manhã. É o momento perfeito em que o churrasco ainda está fresco na memória e os elogios são mais espontâneos."
-    imageSrc={imgRecompra.src}
-    imageAlt="Smartphone exibindo planilha de clientes e mensagens de recompra de espetinhos"
-    imagePosition="left"
-  />
+  <!-- Prancha 2: Bloco Visual Hero (Ocupação Nobre de 90% da Página) -->
+  <div class="prancha">
+    <VisualBlock
+      stepNumber="B2"
+      badge="Retenção & LTV"
+      title="A Máquina Silenciosa de Pedidos Recorrentes"
+      subtitle="Transformando uma compra única em um cliente que pede a cada 15 dias"
+      description="Buscar novos clientes todo dia é exaustivo e caro. O cliente que já comprou, assou os espetinhos no fim de semana e comprovou a maciez da carne é o ativo mais valioso da sua operação. Com uma régua simples de pós-venda e histórico de preferências, uma base de 20 clientes fiéis sustenta sua produção semanal com custo zero de aquisição."
+      tip="Nunca mande promoções todo dia. O segredo da recompra é o timing: pergunte a opinião dele 48h após o consumo (terça-feira) e abra a agenda de reposição na quinta-feira de manhã."
+      imageSrc={imgRecompra.src}
+      imageAlt="Caderno de cadastro de clientes com pedidos de recompra de espetinhos sobre bancada"
+      imagePosition="left"
+    />
+  </div>
 
-  <!-- 1. A LÓGICA DA RECOMPRA NO MERCADO DE ALIMENTAÇÃO -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">1.</span> A Lógica da Recompra no Mercado de Alimentação
-    </h2>
-    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
-      A maioria dos iniciantes comete o erro de focar 100% da sua energia em buscar clientes novos todos os dias. Conquistar uma pessoa nova exige esforço de divulgação, quebra de desconfiança e tempo de explicação sobre o produto. Já o cliente que comprou, assou os espetinhos no fim de semana e gostou da qualidade já confia na sua entrega.
-    </p>
-    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
-      O alimento congelado para churrasco possui um ciclo natural de consumo contínuo:
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
-        <h4 class="font-bold text-amber-400 text-sm">Ciclo Semanal/Quinzenal</h4>
-        <p class="text-xs text-zinc-300 leading-relaxed">A carne consumida no almoço de domingo ou na resenha com amigos precisa ser reposta para a próxima semana.</p>
-      </div>
-      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
-        <h4 class="font-bold text-amber-400 text-sm">Custo Zero de Aquisição</h4>
-        <p class="text-xs text-zinc-300 leading-relaxed">Vender novamente para quem já é seu cliente não custa nada em novos anúncios ou prospecção cansativa.</p>
-      </div>
-      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-1.5">
-        <h4 class="font-bold text-amber-400 text-sm">Previsibilidade Financeira</h4>
-        <p class="text-xs text-zinc-300 leading-relaxed">Com uma base de apenas 15 a 25 clientes recorrentes comprando quinzenalmente, a produção nasce com a demanda garantida.</p>
-      </div>
-    </div>
-    <p class="text-zinc-400 text-xs md:text-sm italic pt-1">
-      O objetivo deste bônus é ensinar você a nunca deixar uma venda morrer na entrega do pacote, construindo um relacionamento comercial estruturado e duradouro.
-    </p>
-  </section>
-
-  <!-- 2. A RÉGUA DE PÓS-VENDA -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">2.</span> A Régua de Pós-Venda (O Timing Correto da Mensagem)
-    </h2>
-    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
-      O erro clássico do vendedor amador é mandar mensagens promocionais todos os dias, tornando-se inconveniente e sendo bloqueado no WhatsApp. O contato pós-venda possui um momento exato para acontecer:
-    </p>
-    <div class="space-y-4 pt-1">
-      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-2">
-        <h4 class="font-bold text-amber-400 text-sm">A Janela das 24h a 48h Pós-Consumo (Segunda ou Terça-feira)</h4>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          Se o cliente retirou ou recebeu os espetinhos na sexta-feira ou sábado, ele provavelmente consumiu o produto no fim de semana. O momento de perguntar a opinião dele é na segunda ou terça-feira de manhã.<br />
-          <strong>Objetivo do Contato:</strong> Coletar o feedback real de maciez e tempero, demonstrar cuidado profissional e registrar depoimentos em texto para usar como prova social.
+  <!-- Prancha 3: Seção 1 - A Lógica da Recompra no Mercado de Alimentação -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-2">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">1.</span> A Lógica da Recompra no Mercado de Alimentação
+        </h2>
+        <p class="secao-intro">
+          O erro comum do iniciante é gastar 100% da energia buscando clientes novos. Conquistar uma pessoa desconhecida exige quebra de desconfiança e tempo. Quem já comprou e elogiou seu espetinho já confia na sua entrega:
         </p>
       </div>
 
-      <div class="p-4 rounded-xl bg-charcoal-950/70 border border-charcoal-800 space-y-2">
-        <h4 class="font-bold text-amber-400 text-sm">A Janela da Antecipação de Nova Compra (Quinta-feira)</h4>
-        <p class="text-xs text-zinc-300 leading-relaxed">
-          É o dia em que as famílias e grupos de amigos começam a planejar o cardápio do próximo fim de semana. É a oportunidade de abrir a agenda de encomendas e oferecer a reposição do estoque do freezer com prioridade para quem já comprou.
+      <div class="grid grid-cols-3 gap-3 flex-1 my-2">
+        <!-- Pilar 1 -->
+        <div class="subcard-item p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag amber">Pilar 01</span>
+              <span class="text-xs text-zinc-400 font-mono">Ciclo Natural</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">Consumo Semanal / Quinzenal</h3>
+            <p class="subcard-texto text-[11px] mb-2">
+              A carne consumida no churrasco de domingo ou no jantar prático da família precisa ser reposta no freezer para a semana seguinte.
+            </p>
+          </div>
+          <div class="mt-2 pt-2 border-t border-charcoal-800 text-[10.5px] text-amber-400 font-mono">
+            Demanda contínua que nunca cessa.
+          </div>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="subcard-item p-4 flex flex-col justify-between border-amber-500/30 bg-amber-950/10">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag amber">Pilar 02</span>
+              <span class="text-xs text-amber-400 font-mono font-bold">CAC Zero</span>
+            </div>
+            <h3 class="subcard-titulo text-xs text-amber-300">Custo Zero de Aquisição</h3>
+            <p class="subcard-texto text-[11px] mb-2">
+              Vender novamente para a sua própria lista de contatos não custa nem um centavo em publicidade, tráfego ou anúncios pagos.
+            </p>
+          </div>
+          <div class="mt-2 pt-2 border-t border-amber-900/40 text-[10.5px] text-emerald-300 font-mono">
+            Margem líquida 100% preservada no bolso.
+          </div>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="subcard-item p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag emerald">Pilar 03</span>
+              <span class="text-xs text-emerald-400 font-mono font-bold">Estabilidade</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">Previsibilidade Financeira</h3>
+            <p class="subcard-texto text-[11px] mb-2">
+              Com apenas <strong>15 a 25 clientes recorrentes</strong> comprando quinzenalmente, sua produção semanal já nasce vendida antes mesmo de cortar a carne.
+            </p>
+          </div>
+          <div class="mt-2 pt-2 border-t border-charcoal-800 text-[10.5px] text-zinc-300 font-mono">
+            Fim do desespero de não saber quanto vai faturar.
+          </div>
+        </div>
+      </div>
+
+      <CalloutAlerta
+        tipo="norma"
+        titulo="Regra Inegociável da Recompra: O Pedido Nunca Morre na Entrega"
+        destaque="Construção de Relacionamento Comercial Duradouro"
+        mensagem="Ao entregar o pacote, não considere o processo encerrado. O cliente que volta a comprar a cada duas semanas vale no mínimo R$ 2.500,00 por ano no faturamento da sua cozinha. Trate cada comprador como um cliente fixo de longo prazo."
+      />
+    </section>
+  </div>
+
+  <!-- Prancha 4: Seção 2 - A Régua de Pós-Venda (O Timing Correto da Mensagem) -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-1">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">2.</span> A Régua de Pós-Venda: O Timing Exato do Contato
+        </h2>
+        <p class="secao-intro">
+          Mandar mensagens promocionais todo dia é o caminho mais rápido para ser bloqueado no WhatsApp. A abordagem pós-venda possui dois momentos estratégicos:
         </p>
       </div>
-    </div>
-  </section>
 
-  <!-- 3. MODELO DE CONTROLE E CADASTRO DE CLIENTES -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">3.</span> Modelo de Controle e Cadastro de Clientes
-    </h2>
-    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
-      Você não precisa de sistemas caros de informática para registrar sua carteira. Mantenha um caderno ou planilha simples atualizada após cada entrega realizada:
-    </p>
-    <div class="rounded-xl border border-charcoal-800 bg-charcoal-950 p-5 font-mono text-xs md:text-sm text-zinc-300 leading-relaxed space-y-2">
-      <p>• <strong class="text-amber-400">Nome Completo do Cliente:</strong> [ __________________________________________________ ]</p>
-      <p>• <strong class="text-amber-400">WhatsApp:</strong> [ (____) ____________________ ]</p>
-      <p>• <strong class="text-amber-400">Bairro / Endereço:</strong> [ __________________________________________________ ]</p>
-      <p>• <strong class="text-amber-400">Data da Última Compra:</strong> [ ____/____/________ ]</p>
-      <p>• <strong class="text-amber-400">Sabores / Kits Favoritos:</strong> [ Ex: Prefere carne e medalhão; não gosta de pimenta ]</p>
-      <p>• <strong class="text-amber-400">Tamanho Médio do Pedido:</strong> [ Ex: Kit Família de R$ 119,00 ]</p>
-      <p>• <strong class="text-amber-400">Frequência Média Estimada:</strong> [ Compra a cada 15 dias ]</p>
-      <p>• <strong class="text-amber-400">Data Programada para Próximo Contato:</strong> [ ____/____/________ ]</p>
-    </div>
-    <p class="text-xs text-zinc-400 italic">
-      Ter essas preferências anotadas permite um atendimento personalizado que nenhum grande supermercado consegue oferecer.
-    </p>
-  </section>
-
-  <!-- 4. O CALENDÁRIO SEMANAL DE RECOMPRA -->
-  <TabelaTecnica
-    titulo="4. O Calendário Semanal de Recompra"
-    descricao="Rotina estruturada de segunda a sexta para manter a base aquecida sem sobrecarregar seus contatos"
-    colunas={["Dia da Semana", "Etapa Operacional", "Ação Prática", "Objetivo"]}
-    linhas={[
-      ["Segunda-feira", "Pesquisa de Satisfação", "Envio da mensagem de pós-venda para os compradores do último fim de semana", "Coleta de feedbacks e prova social"],
-      ["Terça-feira", "Organização dos Feedbacks", "Leitura das respostas, anotação no CRM e ajustes finos na produção", "Controle de qualidade e preferências"],
-      ["Quarta-feira", "Planejamento de Produção", "Avaliação de clientes antigos completando 15 a 20 dias sem comprar", "Previsão de demanda para o corte"],
-      ["Quinta-feira", "Aviso de Lote Exclusivo", "Mensagem personalizada avisando sobre abertura antecipada de encomendas", "Reserva prioritária para clientes ativos"],
-      ["Sexta-feira", "Fechamento da Grade", "Confirmação final das entregas e rotas programadas para o fim de semana", "Garantia de saída do estoque produzido"]
-    ]}
-    destaqueIndice={3}
-    rodape="A rotina semanal substitui a ansiedade de 'não saber se vai vender' pela previsibilidade de encomendas agendadas."
-  />
-
-  <!-- 5. ESTRATÉGIA PARA GERAR INDICAÇÕES LOCAIS -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">5.</span> Estratégia para Gerar Indicações Locais (Boca a Boca Programado)
-    </h2>
-    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
-      Clientes satisfeitos gostam de indicar produtos bons para amigos e familiares, mas muitas vezes esquecem de fazer isso espontaneamente. Você pode conduzir essa indicação com incentivos inteligentes:
-    </p>
-    <ul class="space-y-3 text-sm text-zinc-300">
-      <li class="flex items-start gap-2.5">
-        <span class="text-amber-500 font-bold">•</span>
-        <div>
-          <strong class="text-zinc-100">Aproveitando o Feedback Positivo:</strong> Nunca peça indicação no momento da entrega do pacote. O melhor momento é imediatamente após o cliente responder à sua mensagem elogiando o sabor e a maciez da carne.
+      <div class="grid grid-cols-2 gap-3.5 flex-1 my-2">
+        <!-- Janela 1 -->
+        <div class="subcard-item p-4 flex flex-col justify-between border-amber-500/30 bg-amber-950/10">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag amber">Janela 01 (24h a 48h)</span>
+              <span class="text-xs text-amber-400 font-mono font-bold">Segunda ou Terça</span>
+            </div>
+            <h3 class="subcard-titulo text-sm text-zinc-100">Pesquisa de Satisfação & Prova Social</h3>
+            <p class="subcard-texto text-xs mb-3 text-zinc-300">
+              Se o cliente retirou ou recebeu os espetinhos no fim de semana, o momento de perguntar a opinião é no início da semana:
+            </p>
+            <ul class="lista-topicos text-[11px] gap-1.5 text-zinc-300 font-mono">
+              <li>• Coletar feedback real de maciez, sal e sabor.</li>
+              <li>• Demonstrar cuidado e zelo profissional.</li>
+              <li>• Coletar depoimentos em texto para postar nos Status.</li>
+            </ul>
+          </div>
+          <div class="mt-2 pt-2 border-t border-amber-900/40 text-[11px] text-amber-300 font-semibold">
+            Gera empatia profunda e desarma qualquer insegurança.
+          </div>
         </div>
-      </li>
-      <li class="flex items-start gap-2.5">
-        <span class="text-amber-500 font-bold">•</span>
-        <div>
-          <strong class="text-zinc-100">Incentivo com Benefício Real:</strong> Ofereça uma vantagem concreta na próxima compra dele ou um bônus para o amigo indicado:
-          <p class="mt-1 text-xs text-amber-200/90 italic">"Se você indicar um vizinho ou amigo e ele fechar um kit conosco, na sua próxima compra você ganha um pacote extra de 5 espetinhos de linguiça ou R$ 15,00 de desconto na sua entrega".</p>
-        </div>
-      </li>
-      <li class="flex items-start gap-2.5">
-        <span class="text-amber-500 font-bold">•</span>
-        <div>
-          <strong class="text-zinc-100">O Efeito Vizinhança:</strong> Quando fizer uma entrega em um condomínio ou rua específica, peça autorização ao comprador para compartilhar o cardápio no grupo do condomínio ou entre os vizinhos próximos, facilitando entregas agrupadas no mesmo endereço.
-        </div>
-      </li>
-    </ul>
-  </section>
 
-  <!-- 6. SCRIPTS PRONTOS DE COMUNICAÇÃO PARA RECOMPRA -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">6.</span> Scripts Prontos de Comunicação para Recompra
-    </h2>
-    <p class="text-zinc-300 text-sm md:text-base leading-relaxed">
-      Copie, adapte e utilize estes textos oficiais para gerenciar o relacionamento com sua base:
-    </p>
-    <div class="space-y-4 pt-1">
-      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
-        <span class="text-amber-400 font-bold text-xs uppercase tracking-wider">Script 1 — Mensagem de Pós-Venda (Envio 48h após o consumo):</span>
-        <div class="text-xs md:text-sm font-mono text-zinc-300 space-y-2 italic border-l-2 border-amber-500/40 pl-3">
-          <p>"Olá, [Nome do Cliente]! Tudo bem por aí?</p>
-          <p>Passando rapidinho para saber como foi o churrasco no fim de semana! Os espetinhos estavam do seu agrado? A maciez e o tempero atenderam à sua expectativa?</p>
-          <p>Sua opinião é fundamental para a gente manter o padrão da nossa produção artesanal!"</p>
+        <!-- Janela 2 -->
+        <div class="subcard-item p-4 flex flex-col justify-between border-emerald-500/30 bg-emerald-950/10">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag emerald">Janela 02 (Antecipação)</span>
+              <span class="text-xs text-emerald-400 font-mono font-bold">Quinta-Feira</span>
+            </div>
+            <h3 class="subcard-titulo text-sm text-zinc-100">Abertura Exclusiva de Encomendas</h3>
+            <p class="subcard-texto text-xs mb-3 text-zinc-300">
+              Quinta-feira é o dia em que as famílias começam a planejar o cardápio e o lazer do fim de semana:
+            </p>
+            <ul class="lista-topicos text-[11px] gap-1.5 text-zinc-300 font-mono">
+              <li>• Avisar que os lotes frescos estão sendo montados.</li>
+              <li>• Dar prioridade de escolha para quem já é cliente da casa.</li>
+              <li>• Lembrar que o estoque do freezer dele pode estar acabando.</li>
+            </ul>
+          </div>
+          <div class="mt-2 pt-2 border-t border-emerald-900/40 text-[11px] text-emerald-300 font-semibold">
+            Transforma o desejo de churrasco em pedido reservado.
+          </div>
         </div>
       </div>
 
-      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
-        <span class="text-amber-400 font-bold text-xs uppercase tracking-wider">Script 2 — Pedido de Indicação (Envio após o elogio do cliente):</span>
-        <div class="text-xs md:text-sm font-mono text-zinc-300 space-y-2 italic border-l-2 border-amber-500/40 pl-3">
-          <p>"Fico muito feliz que você e sua família tenham gostado, [Nome do Cliente]! É muito gratificante ouvir isso.</p>
-          <p>Se você tiver algum amigo, parente ou vizinho que também adora praticidade e churrasco de qualidade em casa, sinta-se à vontade para compartilhar nosso contato com ele.</p>
-          <p>Inclusive, se algum amigo seu fizer um pedido por sua indicação, faço questão de te mandar um brinde especial no seu próximo kit!"</p>
+      <CalloutAlerta
+        tipo="alerta"
+        titulo="Alerta de Invasão: Proibido Mensagens Coletivas no Fim de Semana"
+        destaque="Comunicação Individual e Cirúrgica"
+        mensagem="Nunca mande mensagens aos domingos perguntando se a pessoa quer comprar. Respeite os momentos de lazer. As compras de carne congelada são planejadas previamente de quinta a sexta-feira."
+      />
+    </section>
+  </div>
+
+  <!-- Prancha 5: Seção 3 - O Calendário Semanal de Recompra -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-1">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">3.</span> O Calendário Semanal de Recompra (Rotina de 5 Dias)
+        </h2>
+        <p class="secao-intro">
+          Para manter sua carteira de clientes aquecida sem esforço braçal excessivo, execute esta sequência estruturada de segunda a sexta-feira:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-5 gap-2.5 flex-1 my-2">
+        <!-- Seg -->
+        <div class="subcard-item p-3 flex flex-col justify-between">
+          <div>
+            <span class="badge-tag amber mb-1.5 inline-block">Segunda</span>
+            <h3 class="subcard-titulo text-xs">Pós-Venda</h3>
+            <p class="subcard-texto text-[11px]">
+              Dispare a mensagem de pesquisa de satisfação para os compradores do último fim de semana.
+            </p>
+          </div>
+        </div>
+
+        <!-- Ter -->
+        <div class="subcard-item p-3 flex flex-col justify-between">
+          <div>
+            <span class="badge-tag amber mb-1.5 inline-block">Terça</span>
+            <h3 class="subcard-titulo text-xs">Organização</h3>
+            <p class="subcard-texto text-[11px]">
+              Anote preferências na ficha de clientes e ajuste eventuais detalhes de tempero ou corte no novo lote.
+            </p>
+          </div>
+        </div>
+
+        <!-- Qua -->
+        <div class="subcard-item p-3 flex flex-col justify-between">
+          <div>
+            <span class="badge-tag amber mb-1.5 inline-block">Quarta</span>
+            <h3 class="subcard-titulo text-xs">Filtro Ativo</h3>
+            <p class="subcard-texto text-[11px]">
+              Liste quais clientes completam 15 a 20 dias sem pedir para enviar lembrete de reposição na quinta.
+            </p>
+          </div>
+        </div>
+
+        <!-- Qui -->
+        <div class="subcard-item p-3 flex flex-col justify-between border-amber-500/30 bg-amber-950/10">
+          <div>
+            <span class="badge-tag amber mb-1.5 inline-block">Quinta</span>
+            <h3 class="subcard-titulo text-xs text-amber-300">Lote Exclusivo</h3>
+            <p class="subcard-texto text-[11px]">
+              Envie mensagem personalizada avisando sobre a abertura antecipada de encomendas para clientes VIP.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sex -->
+        <div class="subcard-item p-3 flex flex-col justify-between border-emerald-500/30 bg-emerald-950/10">
+          <div>
+            <span class="badge-tag emerald mb-1.5 inline-block">Sexta</span>
+            <h3 class="subcard-titulo text-xs text-emerald-300">Fechamento</h3>
+            <p class="subcard-texto text-[11px]">
+              Confirme os horários de retirada e entregas agendadas no fim de semana com comprovantes Pix.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2">
-        <span class="text-amber-400 font-bold text-xs uppercase tracking-wider">Script 3 — Mensagem de Reativação (Para clientes sem compras há mais de 20 dias):</span>
-        <div class="text-xs md:text-sm font-mono text-zinc-300 space-y-2 italic border-l-2 border-amber-500/40 pl-3">
-          <p>"Olá, [Nome do Cliente]! Como você está?</p>
-          <p>Percebi por aqui que já faz alguns dias desde a sua última encomenda e imaginei que o estoque do seu freezer já deve estar no finalzinho!</p>
-          <p>Estamos montando os lotes frescos desta semana com os sabores que você mais gosta ([citar o sabor preferido dele, ex: Alcatra e Frango com Bacon]).</p>
-          <p>Vou fechar a grade de entregas do fim de semana hoje. Quer que eu já reserve um kit para deixar seu fim de semana garantido?"</p>
+      <div class="p-3.5 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-center justify-between">
+        <span class="text-xs text-zinc-300">
+          <strong>Previsibilidade Operacional:</strong> Com esse calendário, na quinta-feira à tarde você já sabe com precisão quantos quilos de carne comprar e desossar na sexta-feira.
+        </span>
+        <span class="badge-tag emerald">Zero Desperdício de Carne</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 6: Seção 4 - Estratégia para Gerar Indicações Locais (Boca a Boca Programado) -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-1">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">4.</span> Estratégia para Gerar Indicações Locais (Boca a Boca Programado)
+        </h2>
+        <p class="secao-intro">
+          Clientes satisfeitos adoram indicar coisas boas para amigos e familiares, mas esquecem de fazer espontaneamente. Conduza o processo com 3 táticas ativas:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 flex-1 my-2">
+        <!-- Tática 1 -->
+        <div class="subcard-item p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag amber">Tática 01</span>
+              <span class="text-xs text-zinc-400 font-mono">Timing de Ouro</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">No Pico do Elogio</h3>
+            <p class="subcard-texto text-[11px] mb-2">
+              Nunca peça indicação no portão ao entregar o pacote.
+            </p>
+            <p class="text-[10.5px] text-zinc-400">
+              O momento exato é imediatamente após o cliente responder elogiando a maciez e o sabor da carne na mensagem de terça-feira.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tática 2 -->
+        <div class="subcard-item p-4 flex flex-col justify-between border-amber-500/30 bg-amber-950/10">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag amber">Tática 02</span>
+              <span class="text-xs text-amber-400 font-mono font-bold">Incentivo</span>
+            </div>
+            <h3 class="subcard-titulo text-xs text-amber-300">Benefício Real e Concreto</h3>
+            <p class="subcard-texto text-[11px] mb-2">
+              Ofereça vantagem palpável para a próxima compra dele:
+            </p>
+            <div class="p-2 rounded-lg bg-charcoal-900 border border-charcoal-800 text-[10.5px] text-zinc-200 font-mono italic">
+              "Se um amigo indicado comprar um kit, você ganha 1 pacote extra de 5 espetinhos de linguiça ou R$ 15 de desconto no seu próximo pedido!"
+            </div>
+          </div>
+        </div>
+
+        <!-- Tática 3 -->
+        <div class="subcard-item p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag emerald">Tática 03</span>
+              <span class="text-xs text-emerald-400 font-mono">Geografia</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">O Efeito Condomínio / Rua</h3>
+            <p class="subcard-texto text-[11px] mb-2">
+              Ao entregar em uma rua ou condomínio fechado, pergunte com gentileza se o cliente pode compartilhar o cardápio no grupo do prédio ou vizinhos.
+            </p>
+            <p class="text-[10.5px] text-emerald-300 font-mono">
+              Facilita entregas em lote no mesmo endereço físico.
+            </p>
+          </div>
         </div>
       </div>
+
+      <CalloutAlerta
+        tipo="norma"
+        titulo="O Poder da Indicação Pessoal: A Venda Mais Fácil da Sua Operação"
+        destaque="Confiança Transferida Imediata"
+        mensagem="Quando um amigo recomenda seu espetinho a outro amigo, o cliente indicado compra sem pedir desconto e sem duvidar da qualidade. Cada cliente satisfeito tem potencial para trazer de 2 a 3 novos compradores fixos."
+      />
+    </section>
+  </div>
+
+  <!-- Prancha 7: Seção 5 - Scripts Prontos de Comunicação para Recompra -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-1">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">5.</span> Scripts Prontos de Comunicação para Recompra no WhatsApp
+        </h2>
+        <p class="secao-intro">
+          Copie, personalize e utilize estes textos oficiais para gerenciar o relacionamento com sua base ativa:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 flex-1 my-1">
+        <!-- Script 1 -->
+        <div class="subcard-item p-3.5 flex flex-col justify-between">
+          <div>
+            <span class="badge-tag amber mb-1 inline-block">Script 01 • Terça 48h</span>
+            <h3 class="subcard-titulo text-xs">Pesquisa Pós-Consumo</h3>
+            <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800 text-[10.5px] text-zinc-300 italic space-y-1 mt-1 leading-relaxed">
+              <p>"Olá, [Nome]! Tudo bem por aí?</p>
+              <p>Passando rapidinho para saber como foi o churrasco no fim de semana! Os espetinhos estavam do seu agrado? A maciez e o tempero atenderam sua expectativa?</p>
+              <p class="text-amber-300">Sua opinião é fundamental para a gente manter o padrão artesanal!"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Script 2 -->
+        <div class="subcard-item p-3.5 flex flex-col justify-between border-amber-500/30 bg-amber-950/10">
+          <div>
+            <span class="badge-tag amber mb-1 inline-block">Script 02 • Pós-Elogio</span>
+            <h3 class="subcard-titulo text-xs text-amber-300">Pedido de Indicação</h3>
+            <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800 text-[10.5px] text-zinc-300 italic space-y-1 mt-1 leading-relaxed">
+              <p>"Fico muito feliz que tenha gostado, [Nome]! É gratificante ouvir isso.</p>
+              <p>Se tiver algum amigo ou parente que também adora praticidade e churrasco de qualidade, compartilhe nosso contato!</p>
+              <p class="text-emerald-400 font-semibold">Se algum amigo fechar pedido por sua indicação, faço questão de mandar um brinde especial no seu próximo kit!"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Script 3 -->
+        <div class="subcard-item p-3.5 flex flex-col justify-between">
+          <div>
+            <span class="badge-tag emerald mb-1 inline-block">Script 03 • Quinta 20 dias</span>
+            <h3 class="subcard-titulo text-xs">Reativação de Estoque</h3>
+            <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800 text-[10.5px] text-zinc-300 italic space-y-1 mt-1 leading-relaxed">
+              <p>"Olá, [Nome]! Como você está?</p>
+              <p>Percebi que faz alguns dias desde a sua última encomenda e imaginei que o estoque do seu freezer já deve estar no finalzinho!</p>
+              <p>Estamos montando os lotes com os sabores que você mais gosta ([ex: Alcatra e Medalhão]).</p>
+              <p class="text-amber-400 font-semibold">Quer que eu já reserve um kit para seu fim de semana?"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 8: Seção 6 - Modelo de Controle e Cadastro de Clientes (Tabela Técnica) -->
+  <div class="prancha">
+    <div class="card-prancha flex flex-col justify-between p-6">
+      <TabelaTecnica
+        titulo="Ficha de Cadastro, Histórico e Frequência de Recompra"
+        descricao="Mantenha este registro atualizado para personalizar o atendimento e antecipar as compras de cada cliente:"
+        colunas={["Nome do Cliente", "WhatsApp", "Bairro", "Sabores Favoritos", "Última Compra", "Frequência", "Próximo Contato"]}
+        linhas={[
+          ["Marcos Oliveira", "(11) 98765-4321", "Jardim América", "Kit Família (Alcatra + Medalhão s/ pimenta)", "05/09", "Quinzenal", "Quinta (17/09)"],
+          ["Carla Rodrigues", "(11) 97123-8899", "Bela Vista", "Kit Degustação Casal (Adora Queijo Coalho)", "06/09", "Semanal", "Quinta (10/09)"],
+          ["Roberto Santos", "(11) 99456-1122", "Parque Sul", "Pacote Galera (Espetos bovinos bem passados)", "29/08", "Mensal", "Quinta (24/09)"],
+          ["Juliana Mendes", "(11) 98877-3344", "Centro", "Pacotes Fechados Frango c/ Bacon (Só peito)", "05/09", "Quinzenal", "Quinta (17/09)"],
+          ["Felipe Barbosa", "(11) 97654-2211", "Jardim Flores", "Kit Família + Linguiça Toscana picante", "06/09", "Quinzenal", "Quinta (17/09)"]
+        ]}
+        destaqueIndice={0}
+        rodape="Dica de Ouro: Citar o sabor favorito do cliente no momento da mensagem gera conexão emocional imediata e taxa de resposta acima de 85%."
+      />
     </div>
-  </section>
+  </div>
 
-  <!-- 7. CHECKLIST PRÁTICO DO PROTOCOLO DA RECOMPRA -->
-  <ChecklistOperacional
-    titulo="7. Checklist Prático do Protocolo da Recompra"
-    subtitulo="Rotina sistemática para manter a taxa de retenção sempre alta:"
-    itens={[
-      { texto: "Mensagem de pós-venda disparada para todos os compradores do fim de semana até terça-feira", obrigatorio: true, detalhe: "Garante feedback no calor da experiência." },
-      { texto: "Respostas e elogios registrados no controle de histórico de cada cliente", obrigatorio: true, detalhe: "Personalização de atendimento para os próximos contatos." },
-      { texto: "Solicitação de indicação enviada imediatamente após a recepção de feedbacks positivos", obrigatorio: true, detalhe: "Aproveitamento do ápice de encantamento do cliente." },
-      { texto: "Clientes inativos há mais de duas semanas listados e abordados com mensagens de reposição na quinta-feira", obrigatorio: true, detalhe: "Reativação preventiva antes do cliente buscar outra opção." },
-      { texto: "Preferências de corte e tempero de cada cliente consultadas antes de ofertar os novos lotes", obrigatorio: false, detalhe: "Experiência de açougue boutique exclusivo." }
-    ]}
-  />
+  <!-- Prancha 9: Seção 7 - Checklist Prático do Protocolo da Recompra -->
+  <div class="prancha">
+    <div class="card-prancha flex flex-col justify-between p-6">
+      <ChecklistOperacional
+        titulo="Checklist Prático de Execução do Protocolo da Recompra"
+        subtitulo="Auditoria semanal de retenção e acompanhamento da base de clientes:"
+        itens={[
+          { texto: "Mensagem de pesquisa pós-venda disparada para todos os compradores até terça-feira.", obrigatorio: true, detalhe: "Coleta de feedbacks e garantia de satisfação no consumo." },
+          { texto: "Respostas e elogios registrados no controle de histórico de preferências de cada cliente.", obrigatorio: true, detalhe: "Base de dados para personalizar o próximo contato de reposição." },
+          { texto: "Solicitação de indicação com brinde enviada imediatamente após a recepção do elogio.", obrigatorio: true, detalhe: "Ativação do boca a boca programado no pico da satisfação." },
+          { texto: "Clientes inativos há mais de 15 a 20 dias listados na quarta e abordados na quinta-feira.", obrigatorio: true, detalhe: "Reativação do estoque do freezer antes que comprem em supermercados." },
+          { texto: "Preferências de cortes e temperos consultadas antes de disparar a oferta semanal.", obrigatorio: true, detalhe: "Atendimento consultivo que nenhum grande açougue industrial replica." }
+        ]}
+      />
+    </div>
+  </div>
 </EbookLayout>
