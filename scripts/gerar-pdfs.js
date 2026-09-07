@@ -1102,14 +1102,15 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     color: #a1a1aa !important;
   }
 
-  /* Tabelas Técnicas */
+  /* Tabelas Técnicas no PDF - Largura 100% Fixa e Quebra Fluida (Sem Scroll Lateral) */
   .tabela-tecnica {
     background-color: #18181b !important;
     border: 1px solid #27272a !important;
     border-radius: 16px !important;
-    padding: 16px 22px !important;
+    padding: 14px 18px !important;
     margin: 0 !important;
     width: 100% !important;
+    max-width: 100% !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
     box-sizing: border-box !important;
@@ -1117,12 +1118,26 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     flex-direction: column !important;
     justify-content: flex-start !important;
     gap: 8px !important;
+    overflow: visible !important;
   }
 
-  .tabela-tecnica table {
+  .tabela-tecnica .overflow-x-auto,
+  .overflow-x-auto {
+    overflow: visible !important;
+    overflow-x: visible !important;
     width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .tabela-tecnica table,
+  table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
     border-collapse: collapse !important;
     flex: 1 1 auto !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
 
   .tabela-tecnica tbody tr {
@@ -1130,15 +1145,21 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   .tabela-tecnica th {
-    padding: 8px 14px !important;
-    font-size: 12px !important;
+    padding: 7px 10px !important;
+    font-size: 11px !important;
     font-weight: 700 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
 
   .tabela-tecnica td {
-    padding: 7px 14px !important;
-    font-size: 12px !important;
+    padding: 6px 10px !important;
+    font-size: 10.5px !important;
     line-height: 1.35 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
 
   table {

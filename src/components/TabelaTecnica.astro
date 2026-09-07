@@ -5,6 +5,7 @@ interface Props {
   colunas?: string[];
   linhas?: (string | number)[][];
   destaqueIndice?: number;
+  largurasColunas?: string[];
   rodape?: string;
 }
 
@@ -14,6 +15,7 @@ const {
   colunas = [],
   linhas = [],
   destaqueIndice = -1,
+  largurasColunas = [],
   rodape
 } = Astro.props;
 ---
@@ -33,11 +35,18 @@ const {
 
   <div class="overflow-x-auto">
     <table class="w-full text-left text-sm text-zinc-300">
+      {largurasColunas.length > 0 && (
+        <colgroup>
+          {largurasColunas.map((w) => (
+            <col style={`width: ${w};`} />
+          ))}
+        </colgroup>
+      )}
       {colunas.length > 0 && (
         <thead class="bg-charcoal-950/80 text-xs font-semibold uppercase tracking-wider text-amber-400/90 border-b border-charcoal-800">
           <tr>
             {colunas.map((col, idx) => (
-              <th scope="col" class={`px-6 py-3.5 ${idx === destaqueIndice ? 'text-amber-300 bg-amber-500/5' : ''}`}>
+              <th scope="col" class={`px-4 py-3 text-left ${idx === destaqueIndice ? 'text-amber-300 bg-amber-500/5' : ''}`}>
                 {col}
               </th>
             ))}
@@ -49,7 +58,7 @@ const {
         {linhas.map((linha, rowIndex) => (
           <tr class="transition-colors hover:bg-charcoal-800/40">
             {linha.map((celula, cellIndex) => (
-              <td class={`px-6 py-3.5 font-mono text-xs md:text-sm ${cellIndex === 0 ? 'font-sans font-semibold text-zinc-100 whitespace-nowrap' : 'whitespace-normal leading-relaxed'} ${cellIndex === destaqueIndice ? 'font-bold text-amber-400 bg-amber-500/5 whitespace-nowrap' : 'text-zinc-300'}`}>
+              <td class={`px-4 py-3 font-mono text-xs leading-relaxed whitespace-normal break-words ${cellIndex === 0 ? 'font-sans font-semibold text-zinc-100' : ''} ${cellIndex === destaqueIndice ? 'font-bold text-amber-400 bg-amber-500/5' : 'text-zinc-300'}`}>
                 {celula}
               </td>
             ))}
