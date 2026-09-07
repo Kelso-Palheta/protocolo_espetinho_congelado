@@ -370,7 +370,6 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   .prancha > section,
-  .prancha > .visual-block,
   .prancha > div,
   .prancha > .card-prancha {
     width: 100% !important;
@@ -381,22 +380,27 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     box-sizing: border-box !important;
   }
 
-  /* Card de Prancha Editorial (Preenche 100% da área útil = 90% da folha) */
-  .card-prancha {
-    background-color: #18181b !important;
-    border: 1px solid #27272a !important;
-    border-radius: 16px !important;
-    padding: 20px 26px !important;
-    height: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
+  .prancha > .visual-block,
+  .prancha > article.visual-block,
+  article.visual-block {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    margin: auto 0 !important;
     box-sizing: border-box !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-    overflow: hidden !important;
+    background: #18181b !important;
+    border: 1px solid #27272a !important;
+    border-radius: 20px !important;
+    padding: 24px 28px !important;
+    display: grid !important;
+    grid-template-columns: 1.45fr 1fr !important;
+    gap: 32px !important;
+    align-items: stretch !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
   }
 
-  /* Bloco Visual (Página 2 — Slide Hero Ocupando 90% da Página) */
   .visual-block {
     page-break-before: avoid !important;
     break-before: avoid !important;
@@ -404,30 +408,15 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     break-after: avoid !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
-    background: #18181b !important;
-    border: 1px solid #27272a !important;
-    border-radius: 20px !important;
-    padding: 24px 30px !important;
-    margin: 0 !important;
-    display: grid !important;
-    grid-template-columns: 1.15fr 1fr !important;
-    gap: 36px !important;
-    align-items: stretch !important;
-    box-sizing: border-box !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    max-height: 100% !important;
-    overflow: hidden !important;
   }
 
   .visual-media {
     width: 100% !important;
-    height: 100% !important;
-    min-height: 100% !important;
+    aspect-ratio: 4 / 3 !important;
+    height: auto !important;
+    min-height: 0 !important;
     max-height: none !important;
-    border-radius: 16px !important;
+    border-radius: 14px !important;
     overflow: hidden !important;
     background: #09090b !important;
     border: 1px solid #27272a !important;
@@ -438,18 +427,18 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   .visual-image {
     width: 100% !important;
     height: 100% !important;
-    min-height: 100% !important;
-    max-height: none !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
     object-position: center !important;
     display: block !important;
-    border-radius: 14px !important;
+    border-radius: 12px !important;
   }
 
   .visual-content {
     display: flex !important;
     flex-direction: column !important;
+    justify-content: space-between !important;
     height: 100% !important;
+    min-height: 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
   }
@@ -458,52 +447,52 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     display: flex !important;
     align-items: center !important;
     gap: 10px !important;
-    margin-bottom: 14px !important;
+    margin-bottom: 12px !important;
     flex-shrink: 0 !important;
   }
 
   .visual-content .step-pill {
     background: #be123c !important;
     color: #ffffff !important;
-    font-size: 13px !important;
+    font-size: 12.5px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
-    padding: 5px 14px !important;
+    padding: 4px 12px !important;
     border-radius: 9999px !important;
   }
 
   .visual-content .tag-badge {
     background: rgba(245, 158, 11, 0.15) !important;
     color: #fcd34d !important;
-    font-size: 13px !important;
+    font-size: 12.5px !important;
     font-weight: 600 !important;
-    padding: 5px 12px !important;
+    padding: 4px 10px !important;
     border-radius: 8px !important;
     border: 1px solid rgba(245, 158, 11, 0.35) !important;
   }
 
   .visual-content .visual-title {
     font-family: 'Outfit', sans-serif !important;
-    font-size: 28px !important;
-    line-height: 1.2 !important;
+    font-size: 26px !important;
+    line-height: 1.22 !important;
     font-weight: 800 !important;
     color: #ffffff !important;
-    margin: 0 0 12px 0 !important;
+    margin: 0 0 10px 0 !important;
     flex-shrink: 0 !important;
   }
 
   .visual-content .visual-subtitle {
-    font-size: 17.5px !important;
+    font-size: 16.5px !important;
     line-height: 1.35 !important;
     font-weight: 600 !important;
     color: #fbbf24 !important;
-    margin: 0 0 16px 0 !important;
+    margin: 0 0 14px 0 !important;
     flex-shrink: 0 !important;
   }
 
   .visual-content .visual-desc {
-    font-size: 15.5px !important;
+    font-size: 14.5px !important;
     line-height: 1.6 !important;
     color: #d4d4d8 !important;
     margin: 0 !important;
@@ -513,12 +502,12 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   .visual-content .pro-tip {
     display: flex !important;
     align-items: flex-start !important;
-    gap: 14px !important;
+    gap: 12px !important;
     background: rgba(245, 158, 11, 0.09) !important;
     border: 1px solid rgba(245, 158, 11, 0.3) !important;
     border-radius: 12px !important;
-    padding: 16px 20px !important;
-    margin-top: auto !important; /* Pushes to exact bottom of column */
+    padding: 13px 16px !important;
+    margin-top: auto !important;
     box-sizing: border-box !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
@@ -526,15 +515,15 @@ export function prepararHtmlParaPdf(caminhoHtml) {
   }
 
   .visual-content .tip-icon {
-    font-size: 1.5rem !important;
+    font-size: 1.35rem !important;
     line-height: 1 !important;
     flex-shrink: 0 !important;
   }
 
   .visual-content .tip-content {
-    font-size: 13.5px !important;
+    font-size: 13px !important;
     color: #fef08a !important;
-    line-height: 1.5 !important;
+    line-height: 1.45 !important;
   }
 
   .visual-content .tip-content strong {
@@ -687,7 +676,9 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     min-height: 0 !important;
     max-height: none !important;
     width: 100% !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background-color: #09090b !important;
   }
 
   .editorial-image-card {
@@ -708,8 +699,10 @@ export function prepararHtmlParaPdf(caminhoHtml) {
     flex: 1 1 auto !important;
     min-height: 0 !important;
     max-height: none !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
+    object-position: center !important;
     display: block !important;
+    background-color: #09090b !important;
   }
 
   .editorial-image-caption {
