@@ -5,6 +5,7 @@ interface Props {
   destaque?: string;
   mensagem?: string;
   texto?: string;
+  compacto?: boolean;
 }
 
 const {
@@ -12,7 +13,8 @@ const {
   titulo,
   destaque,
   mensagem,
-  texto
+  texto,
+  compacto = false
 } = Astro.props;
 
 const conteudo = mensagem || texto;
@@ -63,30 +65,30 @@ const tiposConfig = {
 const config = tiposConfig[tipo as keyof typeof tiposConfig] || tiposConfig.alerta;
 ---
 
-<aside class={`relative my-6 overflow-hidden rounded-2xl border bg-gradient-to-br ${config.glow} ${config.border} p-5 shadow-2xl backdrop-blur-md transition-all duration-300`}>
+<aside class={`relative overflow-hidden border bg-gradient-to-br ${config.glow} ${config.border} shadow-xl backdrop-blur-md transition-all duration-300 ${compacto ? 'my-1.5 p-2.5 rounded-xl' : 'my-2.5 p-3.5 md:p-4 rounded-2xl'}`}>
   <!-- Glowing ember backdrop effect -->
   <div class="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-amber-500/10 blur-2xl"></div>
   
-  <div class="flex items-start gap-4">
+  <div class={`flex items-start ${compacto ? 'gap-2.5' : 'gap-3.5'}`}>
     <!-- Icon Container -->
-    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-charcoal-800/90 border border-charcoal-700/60 text-2xl shadow-inner shadow-black/40">
+    <div class={`shrink-0 flex items-center justify-center rounded-xl bg-charcoal-800/90 border border-charcoal-700/60 shadow-inner shadow-black/40 ${compacto ? 'h-8 w-8 text-base rounded-lg' : 'h-10 w-10 text-xl'}`}>
       <span>{config.icon}</span>
     </div>
 
     <!-- Content Block -->
-    <div class="flex-1 space-y-1.5">
-      <div class="flex flex-wrap items-center gap-2.5">
-        <h4 class="font-display font-bold text-base md:text-lg text-zinc-100 tracking-tight">
+    <div class="flex-1 space-y-1">
+      <div class="flex flex-wrap items-center gap-2">
+        <h4 class={`font-display font-bold text-zinc-100 tracking-tight ${compacto ? 'text-xs' : 'text-sm md:text-base'}`}>
           {titulo || config.defaultTitle}
         </h4>
         {destaque && (
-          <span class={`rounded-full border px-2.5 py-0.5 text-xs font-mono font-bold tracking-wide ${config.badgeBg}`}>
+          <span class={`rounded-full border px-2 py-0.5 text-[10.5px] font-mono font-bold tracking-wide ${config.badgeBg}`}>
             {destaque}
           </span>
         )}
       </div>
 
-      <div class="text-sm md:text-base text-zinc-300/90 leading-relaxed">
+      <div class={`text-zinc-300/90 leading-relaxed ${compacto ? 'text-[10.5px]' : 'text-xs md:text-sm'}`}>
         {conteudo ? <p>{conteudo}</p> : <slot />}
       </div>
     </div>
