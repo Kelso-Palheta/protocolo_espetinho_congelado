@@ -79,14 +79,14 @@ const MODULOS_PDF = [
   },
   {
     id: 'modulo-whatsapp-vendas',
-    nomeArquivo: 'Modulo-Liberado-01-Kit-WhatsApp.pdf',
-    titulo: 'Módulo Liberado 1: Kit WhatsApp Que Vende',
+    nomeArquivo: 'Kit-WhatsApp-Que-Vende.pdf',
+    titulo: 'Kit WhatsApp Que Vende: Guia Definitivo de Conversão',
     path: '/modulo-whatsapp-vendas'
   },
   {
     id: 'modulo-cardapio-visual',
-    nomeArquivo: 'Modulo-Liberado-02-Kit-Cardapio-Visual.pdf',
-    titulo: 'Módulo Liberado 2: Kit Cardápio & Comunicação Visual',
+    nomeArquivo: 'Kit-Cardapio-Comunicacao-Visual.pdf',
+    titulo: 'Kit Cardápio & Comunicação Visual: Design de Conversão',
     path: '/modulo-cardapio-visual'
   }
 ];
