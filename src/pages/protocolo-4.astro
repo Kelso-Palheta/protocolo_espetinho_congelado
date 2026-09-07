@@ -20,344 +20,684 @@ import imgCapa from '../assets/illustrations/capa-protocolo-4.png';
   prevLink={{ title: "Protocolo 3: Padronização", href: "/protocolo-3" }}
   nextLink={{ title: "Protocolo 5: Precificação", href: "/protocolo-5" }}
 >
-  <!-- Bloco Visual com Ilustração Gerada via IA (Sem Placeholders) -->
-  <VisualBlock
-    stepNumber="04"
-    badge="Engenharia do Frio"
-    title="Congelamento Aberto e Selagem Sem Fusão"
-    subtitle="Carne solta no pacote e integridade celular preservada"
-    description="Colocar espetos frescos juntos dentro de um saco gera fusão das fibras e um bloco maciço de gelo. O método de pré-congelamento aberto (IQF) congela a superfície externa da carne individualmente em 2 a 4 horas a -18°C. Assim, ao aplicar o vácuo, cada espetinho permanece solto e intacto."
-    tip="Nunca empilhe pacotes recém-selados enquanto a carne estiver mole. O peso esmaga os espetos inferiores e retarda o congelamento no miolo do bloco."
-    imageSrc={imgCongelamento.src}
-    imageAlt="Bandeja de espetinhos em pré-congelamento com cristais delicados de gelo sobre metal a -18C"
-    imagePosition="right"
-  />
-
-  <!-- 1. O Método de Pré-Congelamento Aberto (Técnica Antiaderente) -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">1.</span> O Método de Pré-Congelamento Aberto (Técnica Antiaderente)
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      O erro mais frequente de quem inicia a produção caseira de congelados é colocar os espetinhos recém-montados diretamente dentro do saco plástico final. Quando a carne crua entra em contato úmido com a outra sob o frio, as fibras se fundem e criam um bloco maciço de gelo e carne. Se o cliente tentar puxar um único palito, a carne se rasga ou o palito quebra.
-    </p>
-    <p class="text-zinc-300 leading-relaxed font-semibold">
-      Para garantir que cada espetinho fique completamente solto e independente dentro do pacote, o Protocolo exige o uso do <strong class="text-amber-400">Pré-Congelamento Aberto</strong>:
-    </p>
-
-    <div class="space-y-3 text-xs md:text-sm text-zinc-300">
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
-        <span class="text-amber-500 font-bold">•</span>
-        <div>
-          <strong class="text-zinc-100">Montagem das Assadeiras de Apoio:</strong> Utilize assadeiras de alumínio ou bandejas plásticas forradas com plástico filme ou papel manteiga limpo.
-        </div>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
-        <span class="text-amber-500 font-bold">•</span>
-        <div>
-          <strong class="text-zinc-100">Disposição sem Contato Físico:</strong> Posicione os espetinhos montados lado a lado sobre a bandeja, mantendo um espaço livre de cerca de 1 centímetro entre cada palito. Nenhum pedaço de carne pode encostar no pedaço vizinho.
-        </div>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
-        <span class="text-amber-500 font-bold">•</span>
-        <div>
-          <strong class="text-zinc-100">Camada Dupla com Separador:</strong> Se o espaço no congelador for reduzido, coloque uma folha de plástico grosso sobre a primeira fileira de espetinhos e monte uma segunda camada por cima, sem amassar os produtos da base.
-        </div>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
-        <span class="text-amber-500 font-bold">•</span>
-        <div>
-          <strong class="text-zinc-100">Tempo de Congelamento Rápido:</strong> Leve as bandejas ao freezer na potência máxima por um período de 2 a 4 horas.
-        </div>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-start gap-3">
-        <span class="text-amber-500 font-bold">•</span>
-        <div>
-          <strong class="text-zinc-100">O Ponto de Ensacamento:</strong> Assim que a superfície externa da carne estiver dura ao toque ("pedrada"), retire as bandejas rapidamente da refrigeração e proceda imediatamente para a etapa de embalagem definitiva.
-        </div>
-      </div>
-    </div>
-
-    <!-- Pré-Resfriamento -->
-    <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-2 text-xs md:text-sm">
-      <p class="text-zinc-300 leading-relaxed">
-        Antes de aplicar o vácuo ou ensacar para o congelamento profundo, os espetinhos montados devem passar pelo <strong class="text-amber-400">pré-resfriamento</strong>:
-      </p>
-      <ul class="space-y-1.5 pl-4 list-disc marker:text-amber-500 text-zinc-400">
-        <li>Acomode os espetos em bandejas limpas e mantenha sob refrigeração de 0°C a 5°C por 30 a 60 minutos.</li>
-        <li>Essa queda de temperatura firma a gordura da carne e reduz a evaporação de vapores internos, melhorando o desempenho da máquina embaladora a vácuo e impedindo que a carne deforme ou perca sucos na hora da sucção de ar.</li>
-      </ul>
-    </div>
-
-    <!-- Regra do Não-Empilhamento Inicial -->
-    <CalloutAlerta
-      tipo="perigo"
-      titulo="A Regra do Não-Empilhamento Inicial (Congelamento em Camada Fina)"
-      destaque="Deformação e Cristais de Gelo"
-      mensagem="Jamais empilhe pacotes a vácuo recém-selados uns sobre os outros dentro do freezer enquanto as carnes ainda estiverem moles. O peso dos sacos superiores esmaga os espetinhos de baixo, deformando a estética do produto e comprimindo a carne contra os palitos. Além disso, o centro do bloco empilhado demora até três vezes mais para congelar, formando cristais grandes de gelo que alteram a maciez do lote. Procedimento correto: disponha os pacotes a vácuo em camadas finas de no máximo 1 nível sobre as prateleiras durante as primeiras 4 a 6 horas. Somente após os pacotes estarem 100% duros e congelados a -18°C é permitida a organização em pilhas ou cestos verticais."
+  <!-- Prancha 2: Bloco Visual Hero (Ocupação Nobre de 90% da Página) -->
+  <div class="prancha">
+    <VisualBlock
+      stepNumber="04"
+      badge="Engenharia do Frio"
+      title="Congelamento Aberto e Selagem Sem Fusão"
+      subtitle="Carne solta no pacote e integridade celular preservada"
+      description="Colocar espetos frescos juntos dentro de um saco gera fusão das fibras e um bloco maciço de gelo. O método de pré-congelamento aberto (IQF) congela a superfície externa da carne individualmente em 2 a 4 horas a -18°C. Assim, ao aplicar o vácuo, cada espetinho permanece solto e intacto."
+      tip="Nunca empilhe pacotes recém-selados enquanto a carne estiver mole. O peso esmaga os espetos inferiores e retarda o congelamento no miolo do bloco."
+      imageSrc={imgCongelamento.src}
+      imageAlt="Bandeja de espetinhos em pré-congelamento com cristais delicados de gelo sobre metal a -18C"
+      imagePosition="left"
     />
-  </section>
+  </div>
 
-  <!-- 2. Embalagem Técnica e Proteção Contra a Queimadura de Frio -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">2.</span> Embalagem Técnica e Proteção Contra a Queimadura de Frio
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      O ar dentro do freezer é extremamente seco. Se o espetinho congelado ficar em contato direto com o ar gelado, ocorre a evaporação da umidade interna da carne (sublimação do gelo), provocando a chamada <strong>queimadura de freezer (freezer burn)</strong>. A carne fica com manchas acinzentadas, textura ressecada e perde sabor e suculência ao assar.
-    </p>
-
-    <div class="grid sm:grid-cols-2 gap-4 text-xs md:text-sm">
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-zinc-100">Espessura do Plástico</h3>
-        <p class="text-zinc-400 leading-relaxed">
-          Utilize sacos de polietileno transparente de alta ou baixa densidade com espessura mínima de 0,08 mm a 0,10 mm. Plásticos finos de feira ou bobinas picotadas comuns deixam passar o odor do freezer e ressecam a proteína.
+  <!-- Prancha 3: Seção 1 - O Método de Pré-Congelamento Aberto (Técnica Antiaderente) -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-2">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">1.</span> O Método de Pré-Congelamento Aberto (Técnica Antiaderente)
+        </h2>
+        <p class="secao-intro">
+          O erro mais comum ao iniciar congelados caseiros é colocar espetinhos recém-montados direto no saco final. Em contato úmido sob o frio, as fibras se fundem em um bloco maciço: puxar um espeto rasga a carne ou quebra o palito.
         </p>
       </div>
 
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-zinc-100">Remoção Manual do Ar</h3>
-        <p class="text-zinc-400 leading-relaxed">
-          Se não possuir seladora a vácuo no início, posicione os espetinhos pré-congelados dentro do saco. Pressione suavemente a embalagem das pontas em direção à boca para expulsar todo o ar retido antes de amarrar ou selar.
-        </p>
+      <div class="destaque-tag">
+        OS 5 PASSOS DO PRÉ-CONGELAMENTO ABERTO (MÉTODO ANTIADERENTE)
       </div>
 
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-zinc-100">Selagem Manual com Fita ou Seladora Térmica</h3>
-        <p class="text-zinc-400 leading-relaxed">
-          Feche a boca da embalagem com fita adesiva larga bem prensada ou utilize uma seladora térmica de bancada simples, garantindo fechamento hermético.
-        </p>
-      </div>
-
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-zinc-100">Selagem a Vácuo (Etapa de Crescimento)</h3>
-        <p class="text-zinc-400 leading-relaxed">
-          A máquina seladora a vácuo doméstica eleva o padrão visual da entrega e estende a conservação, mas deve ser encarada como uma melhoria após as primeiras vendas, nunca como uma barreira de entrada para começar.
-        </p>
-      </div>
-    </div>
-
-    <!-- Fracionamento Prático em Embalagens a Vácuo -->
-    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3">
-      <h3 class="font-bold text-amber-400 text-sm">
-        FRACIONAMENTO PRÁTICO EM EMBALAGENS A VÁCUO (1 A 4 UNIDADES)
-      </h3>
-      <p class="text-xs md:text-sm text-zinc-300 leading-relaxed">
-        Seladoras a vácuo portáteis e domésticas possuem barra de solda de 28 cm a 30 cm de largura e utilizam sacos gofrados de 15x30 cm ou 18x30 cm. Tentar colocar 10 espetinhos em um único saco doméstico impede o vácuo correto e gera falhas de selagem nas pontas.
-      </p>
-
-      <div class="grid sm:grid-cols-2 gap-3 text-xs">
-        <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1">
-          <strong class="text-zinc-100 block">Sacos de 15 cm × 30 cm:</strong>
-          <p class="text-zinc-400">Acondicionam perfeitamente de <strong>1 a 2 espetinhos</strong>.</p>
-        </div>
-        <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1">
-          <strong class="text-zinc-100 block">Sacos de 18 cm × 30 cm:</strong>
-          <p class="text-zinc-400">Acondicionam perfeitamente de <strong>3 a 4 espetinhos</strong> alinhados lado a lado, sem sobreposição.</p>
-        </div>
-      </div>
-
-      <div class="pt-2 border-t border-charcoal-800 text-xs md:text-sm text-zinc-300 space-y-1.5">
-        <strong class="text-amber-300">Composição de Kits Maiores no Cardápio:</strong>
-        <p class="text-zinc-400 leading-relaxed">
-          Ao vender um "Kit Churrasco em Família com 20 unidades", você não entrega um pacote gigante de 20 espetos. Você entrega <strong>5 pacotes lacrados a vácuo contendo 4 unidades cada</strong>. O cliente final adora esse modelo porque pode abrir apenas 1 ou 2 pacotes para um jantar rápido e manter os outros pacotes intocados e conservados a vácuo no freezer de casa.
-        </p>
-      </div>
-    </div>
-
-    <!-- Guia Operacional: Falhas na Embalagem a Vácuo e Soluções -->
-    <div class="rounded-xl border border-charcoal-800 bg-charcoal-950 p-5 md:p-6 space-y-4">
-      <h3 class="font-display font-bold text-sm md:text-base text-zinc-100 flex items-center gap-2">
-        <span>🛠️</span> GUIA OPERACIONAL: FALHAS NA EMBALAGEM A VÁCUO E SOLUÇÕES DE BANCADA
-      </h3>
-      <p class="text-xs text-zinc-400">
-        Na rotina de embalagem com máquinas seladoras externas, utilize este diagnóstico rápido para corrigir falhas operacionais:
-      </p>
-
-      <div class="space-y-3 text-xs md:text-sm">
-        <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1">
-          <h4 class="font-bold text-rose-400">Falha 1: O saco plástico não sela ou abre a solda.</h4>
-          <p class="text-zinc-300"><strong>Causa:</strong> Umidade, óleo ou tempero na borda interna da embalagem.</p>
-          <p class="text-amber-300"><strong>Solução:</strong> Passe um papel toalha limpo na borda interna antes de posicionar o plástico na barra térmica de solda.</p>
+      <div class="grid grid-cols-5 gap-2.5 flex-1 my-2">
+        <!-- Passo 1 -->
+        <div class="subcard-item flex flex-col justify-between p-3">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="flavor-badge">1</span>
+              <span class="badge-tag amber">Bancada</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">Assadeiras de Apoio</h3>
+            <p class="subcard-texto text-[11px]">
+              Use assadeiras de alumínio ou bandejas plásticas forradas com filme plástico ou papel manteiga limpo.
+            </p>
+          </div>
         </div>
 
-        <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1">
-          <h4 class="font-bold text-rose-400">Falha 2: O líquido da carne sobe para a barra da máquina.</h4>
-          <p class="text-zinc-300"><strong>Causa:</strong> Carne com excesso de marinada líquida ou que não passou pelo descanso correto.</p>
-          <p class="text-amber-300"><strong>Solução:</strong> Escorra bem a carne antes de espetar ou realize o pré-congelamento aberto em assadeiras antes de levar o produto ao vácuo.</p>
+        <!-- Passo 2 -->
+        <div class="subcard-item flex flex-col justify-between p-3">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="flavor-badge">2</span>
+              <span class="badge-tag amber">Vão Livre</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">Sem Contato Físico</h3>
+            <p class="subcard-texto text-[11px]">
+              Posicione lado a lado com <strong>1 cm livre</strong> entre palitos. Nenhum pedaço de carne pode encostar no vizinho.
+            </p>
+          </div>
         </div>
 
-        <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1">
-          <h4 class="font-bold text-rose-400">Falha 3: O palito perfura o saco plástico durante o vácuo.</h4>
-          <p class="text-zinc-300"><strong>Causa:</strong> Ponta de bambu afiada exposta pressionada contra a embalagem na sucção.</p>
-          <p class="text-amber-300"><strong>Solução:</strong> Corte a pontinha afiada do palito com tesoura culinária ou dobre uma pequena tira de plástico grosso sobre as pontas antes de fechar o saco.</p>
+        <!-- Passo 3 -->
+        <div class="subcard-item flex flex-col justify-between p-3">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="flavor-badge">3</span>
+              <span class="badge-tag amber">Espaço</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">Camada Dupla</h3>
+            <p class="subcard-texto text-[11px]">
+              Se faltar espaço, coloque folha de plástico grosso sobre a 1ª fileira e monte a 2ª sem esmagar a base.
+            </p>
+          </div>
         </div>
 
-        <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1">
-          <h4 class="font-bold text-rose-400">Falha 4: O espetinho fica achatado ou deformado.</h4>
-          <p class="text-zinc-300"><strong>Causa:</strong> Sucção de vácuo muito forte em carnes macias sem pré-resfriamento.</p>
-          <p class="text-amber-300"><strong>Solução:</strong> Interrompa o ciclo de sucção manualmente um instante antes do esmagamento e acione a selagem térmica imediata.</p>
+        <!-- Passo 4 -->
+        <div class="subcard-item flex flex-col justify-between p-3">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="flavor-badge">4</span>
+              <span class="badge-tag amber">Potência</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">Congelamento Rápido</h3>
+            <p class="subcard-texto text-[11px]">
+              Leve ao freezer na potência máxima por <strong>2 a 4 horas</strong> a -18°C até congelar a superfície.
+            </p>
+          </div>
+        </div>
+
+        <!-- Passo 5 -->
+        <div class="subcard-item flex flex-col justify-between p-3">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="flavor-badge">5</span>
+              <span class="badge-tag emerald">Ponto</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">Ponto de Ensacar</h3>
+            <p class="subcard-texto text-[11px]">
+              Quando a carne estiver dura ao toque ("pedrada"), retire imediatamente e embale sem perder frio.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- 3. Padrão de Rotulagem e Modelo de Etiqueta -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">3.</span> Padrão de Rotulagem e Modelo de Etiqueta
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      Todo pacote armazenado no seu freezer deve ter uma identificação clara e padronizada. Produto sem etiqueta não tem controle de custo, gera desconfiança no comprador e viola as boas práticas de segurança alimentar.
-    </p>
-
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Identificação do Produto</span>
-        <span class="text-amber-400 font-bold">Ex: Espetinho Bovino Clássico</span>
-      </div>
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Quantidade Líquida</span>
-        <span class="text-zinc-200 font-bold">Contém 10 unidades / Aprox. 1,0 kg</span>
-      </div>
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Número do Lote</span>
-        <span class="text-zinc-200 font-bold">Lote 01-B</span>
-      </div>
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Data de Fabricação</span>
-        <span class="text-zinc-200 font-bold">[ Dia / Mês / Ano ]</span>
-      </div>
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Data Limite de Consumo</span>
-        <span class="text-amber-400 font-bold">30 a 60 dias (Janela Ideal)</span>
-      </div>
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Instruções de Conservação</span>
-        <span class="text-zinc-200 font-bold">Manter congelado a -12°C ou mais frio</span>
-      </div>
-    </div>
-
-    <!-- Diretriz Sanitária Responsável -->
-    <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-5 space-y-2 text-xs md:text-sm text-zinc-200 leading-relaxed">
-      <strong class="text-amber-300">Diretriz Sanitária Responsável:</strong> Não invente prazos de validade industriais arbitrários de 6 meses a 1 ano para manipulações caseiras sem laudo laboratorial. Trabalhe com orientações responsáveis de rotação rápida: em freezers domésticos bem regulados (-12°C a -18°C), adote uma janela conservadora de <strong>30 a 60 dias</strong> para consumo ideal, incentivando um ciclo semanal constante de produção e venda.
-    </div>
-
-    <!-- Instrução Oficial de Preparo e Descongelamento -->
-    <div class="p-5 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-3 text-xs md:text-sm text-zinc-300">
-      <h3 class="font-bold text-zinc-100 text-sm">
-        INSTRUÇÃO OFICIAL DE PREPARO E DESCONGELAMENTO PARA O CLIENTE
-      </h3>
-      <p class="text-zinc-400">
-        Nunca recomende ao cliente descongelar o pacote de espetinhos sobre a pia ou em temperatura ambiente, pois a parte externa atinge faixas perigosas de contaminação antes do centro descongelar. Insira na etiqueta e nas respostas do WhatsApp apenas as duas orientações técnicas corretas:
-      </p>
-      <div class="grid sm:grid-cols-2 gap-3 pt-1">
-        <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1">
-          <strong class="text-amber-400 block">1. Direto do Freezer para a Grelha:</strong>
-          <p class="text-zinc-400 text-xs">
-            Como os espetos vêm embalados a vácuo e sem excesso de água, eles podem ir direto para a churrasqueira. Posicione na parte mais alta da grelha (brasa média/baixa) para assar por dentro e desça para a brasa forte apenas nos minutos finais para dourar.
+      <!-- Pré-Resfriamento de Segurança -->
+      <div class="p-3 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-center justify-between">
+        <div class="space-y-0.5">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Etapa Crítica de Bancada: Pré-Resfriamento (0°C a 5°C)</span>
+          <p class="text-xs text-zinc-300">
+            Antes de selar a vácuo, mantenha os espetos sob refrigeração por <strong>30 a 60 minutos</strong>. Isso firma a gordura e evita que o vácuo puxe sucos para a barra de solda.
           </p>
         </div>
-        <div class="p-3.5 rounded-lg bg-charcoal-900 border border-charcoal-800 space-y-1">
-          <strong class="text-emerald-400 block">2. Descongelamento sob Refrigeração:</strong>
-          <p class="text-zinc-400 text-xs">
-            Caso o cliente queira assar em chapa ou frigideira, retire o pacote do freezer e transfira para a parte de baixo da geladeira 4 a 6 horas antes do consumo, mantendo a carne macia e sem perda de sucos.
-          </p>
+        <span class="badge-tag amber">0°C a 5°C / 30-60 min</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 4: Seção 1.1 - A Regra do Não-Empilhamento Inicial -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-2">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">1.1</span> A Regra do Não-Empilhamento Inicial (Congelamento em Camada Fina)
+        </h2>
+        <p class="secao-intro">
+          Jamais empilhe pacotes recém-selados uns sobre os outros no freezer enquanto a carne estiver mole. O peso e o bloqueio térmico destroem a qualidade do lote.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3.5 flex-1 my-2">
+        <!-- O que Acontece se Empilhar -->
+        <div class="subcard-item border-rose-500/30 bg-rose-950/10 p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-rose-400 text-base">⚠️</span>
+              <h3 class="subcard-titulo text-rose-300 text-sm">O Que Acontece se Empilhar Pacotes Moles</h3>
+            </div>
+            <ul class="lista-topicos text-xs gap-2 text-zinc-300">
+              <li>
+                <span class="marcador-amber text-rose-400">•</span>
+                <span><strong>Esmagamento Físico:</strong> O peso dos sacos superiores comprime os espetinhos inferiores contra os palitos, deformando os cubos e estragando a apresentação.</span>
+              </li>
+              <li>
+                <span class="marcador-amber text-rose-400">•</span>
+                <span><strong>Demora Térmica Tripla:</strong> O centro do bloco empilhado demora até <strong>3 vezes mais</strong> para atingir -18°C devido à barreira de isolamento entre pacotes.</span>
+              </li>
+              <li>
+                <span class="marcador-amber text-rose-400">•</span>
+                <span><strong>Macrocristais de Gelo:</strong> O congelamento lento forma agulhas de gelo gigantes que rompem a membrana celular, soltando toda a água e deixando a carne dura na brasa.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-3 pt-2 border-t border-rose-900/40 text-[11px] text-rose-300/80 font-mono">
+            Consequência: Perda de suculência e deformação estética definitiva.
+          </div>
+        </div>
+
+        <!-- O Procedimento Correto em 3 Etapas -->
+        <div class="subcard-item border-emerald-500/30 bg-emerald-950/10 p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-emerald-400 text-base">✅</span>
+              <h3 class="subcard-titulo text-emerald-300 text-sm">O Procedimento Correto de Bancada</h3>
+            </div>
+            <ul class="lista-topicos text-xs gap-2 text-zinc-300">
+              <li>
+                <span class="marcador-amber text-emerald-400">1.</span>
+                <span><strong>Camada Fina (1 Nível):</strong> Disponha os pacotes selados lado a lado, em no máximo 1 nível sobre as prateleiras ou grades do freezer.</span>
+              </li>
+              <li>
+                <span class="marcador-amber text-emerald-400">2.</span>
+                <span><strong>Circulação de Ar (4 a 6 Horas):</strong> Deixe 1 cm a 2 cm entre os pacotes para que o fluxo de ar frio envolva 100% da superfície térmica.</span>
+              </li>
+              <li>
+                <span class="marcador-amber text-emerald-400">3.</span>
+                <span><strong>Empilhamento Apenas Após Rigidez Total:</strong> Somente quando os pacotes estiverem 100% rígidos como pedra a -18°C é permitido organizar em pilhas verticais.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-3 pt-2 border-t border-emerald-900/40 text-[11px] text-emerald-300/80 font-mono">
+            Resultado: Cubos perfeitos, congelamento ultra-rápido e maciez preservada.
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- 4. Organização do Freezer e o Método PEPS -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-5">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">4.</span> Organização do Freezer e o Método PEPS
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      Trabalhar com estoque congelado exige ordem física para não deixar pacotes antigos esquecidos no fundo do equipamento:
-    </p>
+      <CalloutAlerta
+        tipo="perigo"
+        titulo="Alerta Térmico: Nunca Pule o Pré-Congelamento Aberto"
+        destaque="Proteção da Integridade Celular"
+        mensagem="Ao congelar a carne rapidamente em camada fina a -18°C, a água intracelular congela em microcristais arredondados que mantêm as células intactas. Quando descongelado na churrasqueira, o espetinho retém 100% dos sucos naturais."
+      />
+    </section>
+  </div>
 
-    <div class="space-y-3 text-xs md:text-sm text-zinc-300">
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-amber-400">O Princípio PEPS (Primeiro que Entra, Primeiro que Sai)</h3>
-        <p class="text-zinc-400 leading-relaxed">
-          Todo lote novo produzido deve ser alocado atrás ou embaixo dos lotes fabricados anteriormente. O produto que entrou primeiro no congelador é obrigatoriamente o primeiro a ser separado para entrega ao cliente.
+  <!-- Prancha 5: Seção 2 - Embalagem Técnica e Proteção Contra a Queimadura de Frio -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-2">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">2.</span> Embalagem Técnica e Proteção Contra Queimadura de Frio
+        </h2>
+        <p class="secao-intro">
+          O ar interno do freezer é extremamente seco. O contato direto da carne desprotegida causa sublimação do gelo: a temida <strong>queimadura de freezer (freezer burn)</strong>, que cria manchas cinzas, resseca a fibra e anula o sabor.
         </p>
       </div>
 
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-zinc-100">Setorização por Sabores</h3>
-        <p class="text-zinc-400 leading-relaxed">
-          Divida o espaço do freezer por nichos ou caixas organizadoras plásticas perfuradas: Caixa 1 para bovino tradicional; Caixa 2 para frango e medalhões; Caixa 3 para linguiças e outros cortes.
+      <div class="grid grid-cols-4 gap-3 flex-1 my-2">
+        <!-- Pilar 1 -->
+        <div class="subcard-item p-3 flex flex-col justify-between">
+          <div>
+            <span class="badge-tag amber mb-2 inline-block">Material</span>
+            <h3 class="subcard-titulo text-xs">Espessura do Plástico</h3>
+            <p class="subcard-texto text-[11px]">
+              Use sacos de polietileno transparente com espessura de <strong>0,08 mm a 0,10 mm</strong>. Plásticos comuns de bobina deixam passar ar e ressecam a proteína.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="subcard-item p-3 flex flex-col justify-between">
+          <div>
+            <span class="badge-tag amber mb-2 inline-block">Manual</span>
+            <h3 class="subcard-titulo text-xs">Remoção Manual do Ar</h3>
+            <p class="subcard-texto text-[11px]">
+              Sem seladora a vácuo, pressione a embalagem suavemente da base para a boca para expulsar o ar residual antes da fita adesiva ou amarração hermética.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="subcard-item p-3 flex flex-col justify-between">
+          <div>
+            <span class="badge-tag amber mb-2 inline-block">Térmica</span>
+            <h3 class="subcard-titulo text-xs">Selagem Hermética</h3>
+            <p class="subcard-texto text-[11px]">
+              Use fita adesiva larga bem prensada ou seladora térmica manual de bancada. Uma solda uniforme e contínua impede a oxidação das gorduras pelo ar frio.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pilar 4 -->
+        <div class="subcard-item p-3 flex flex-col justify-between">
+          <div>
+            <span class="badge-tag emerald mb-2 inline-block">Escala</span>
+            <h3 class="subcard-titulo text-xs">Vácuo Doméstico</h3>
+            <p class="subcard-texto text-[11px]">
+              A seladora a vácuo eleva o padrão visual para nível industrial e estende a validade. É um passo de melhoria para quando o negócio engrenar.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <CalloutAlerta
+        tipo="alerta"
+        titulo="A Armadilha dos Sacos Finos de Feira ou Bobina Picotada"
+        destaque="Microperfurações e Absorção de Odores"
+        mensagem="Sacos plásticos finos (menos de 0,05 mm) possuem microporosidades que ressecam a carne em menos de 15 dias no freezer e absorvem odores do ambiente. Invista desde o início em embalagens profissionais de polietileno de alta barreira."
+      />
+    </section>
+  </div>
+
+  <!-- Prancha 6: Seção 2.1 - Fracionamento Prático a Vácuo e Engenharia de Kits Comerciais -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-1">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">2.1</span> Fracionamento Prático a Vácuo e Engenharia de Kits Comerciais
+        </h2>
+        <p class="secao-intro">
+          Seladoras portáteis possuem barra de solda de 28 a 30 cm e usam sacos gofrados de 15x30 cm ou 18x30 cm. Tentar colocar 10 espetinhos em um saco só impede o vácuo e queima a seladora.
         </p>
       </div>
 
-      <div class="p-4 rounded-xl bg-charcoal-950 border border-charcoal-800 space-y-1.5">
-        <h3 class="font-bold text-zinc-100">Controle da Cadeia de Frio</h3>
-        <p class="text-zinc-400 leading-relaxed">
-          Mantenha a porta ou tampa do freezer aberta pelo menor tempo possível durante a guarda e a separação dos pacotes, evitando oscilações térmicas que causam cristais de gelo sobre a carne.
+      <div class="grid grid-cols-2 gap-3.5 flex-1 my-2">
+        <!-- Padrão 1 -->
+        <div class="subcard-item p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag amber">15 cm × 30 cm</span>
+              <span class="text-xs text-zinc-400 font-mono">1 a 2 Espetos</span>
+            </div>
+            <h3 class="subcard-titulo text-sm">Porções Individuais e Degustação</h3>
+            <p class="subcard-texto text-xs mb-3">
+              Perfeito para espetos nobres (picanha, cordeiro) ou porções individuais de consumo rápido durante a semana.
+            </p>
+            <ul class="lista-topicos text-[11px] gap-1.5 text-zinc-300">
+              <li><span class="marcador-amber">•</span> Vácuo instantâneo em menos de 10 segundos.</li>
+              <li><span class="marcador-amber">•</span> Zero sobreposição ou deformação mecânica.</li>
+            </ul>
+          </div>
+          <div class="mt-2 pt-2 border-t border-charcoal-800 text-[11px] text-amber-400 font-semibold">
+            Ideal para kits degustação e jantares rápidos.
+          </div>
+        </div>
+
+        <!-- Padrão 2 -->
+        <div class="subcard-item p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag amber">18 cm × 30 cm</span>
+              <span class="text-xs text-zinc-400 font-mono">3 a 4 Espetos</span>
+            </div>
+            <h3 class="subcard-titulo text-sm">O Módulo Padrão de Venda Comercial</h3>
+            <p class="subcard-texto text-xs mb-3">
+              Acomoda rigorosamente de <strong>3 a 4 espetinhos alinhados lado a lado</strong>, sem encavalar os palitos.
+            </p>
+            <ul class="lista-topicos text-[11px] gap-1.5 text-zinc-300">
+              <li><span class="marcador-amber">•</span> Distribuição plana perfeita para congelamento rápido.</li>
+              <li><span class="marcador-amber">•</span> Formato ideal para compor kits de 10, 15 ou 20 unidades.</li>
+            </ul>
+          </div>
+          <div class="mt-2 pt-2 border-t border-charcoal-800 text-[11px] text-emerald-400 font-semibold">
+            O pacote comercial mais vendido do ecossistema.
+          </div>
+        </div>
+      </div>
+
+      <!-- Estratégia de Kits -->
+      <div class="p-3.5 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-center justify-between">
+        <div class="space-y-0.5 max-w-[80%]">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">A Estratégia dos Kits Fracionados (O Segredo da Recompra)</span>
+          <p class="text-xs text-zinc-300">
+            Ao vender um <strong>"Kit Churrasco em Família de 20 Espetinhos"</strong>, entregue <strong>5 pacotes lacrados com 4 unidades</strong>. O cliente assa 1 pacote na terça-feira sem descongelar os outros 4, preservando o produto intacto por meses.
+          </p>
+        </div>
+        <span class="badge-tag emerald">5 pacotes × 4 un</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 7: Seção 2.2 - Guia Operacional: Diagnóstico de Falhas na Embalagem a Vácuo -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-1">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">2.2</span> Guia Operacional: Diagnóstico de Falhas na Embalagem a Vácuo
+        </h2>
+        <p class="secao-intro">
+          Na rotina de embalagem com máquinas seladoras de bancada, utilize este diagnóstico rápido para solucionar falhas operacionais:
         </p>
       </div>
+
+      <div class="grid grid-cols-2 gap-3 flex-1 my-2">
+        <!-- Falha 1 -->
+        <div class="subcard-item p-3.5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="badge-tag zinc">Falha 01</span>
+              <span class="text-rose-400 font-mono text-[11px] font-bold">Solda Abrindo</span>
+            </div>
+            <h3 class="subcard-titulo text-xs text-rose-300">O saco plástico não sela ou abre a solda</h3>
+            <p class="text-[11px] text-zinc-300 mb-1.5">
+              <strong>Causa:</strong> Resíduos de umidade, óleo da marinada ou tempero na borda interna.
+            </p>
+            <p class="text-[11px] text-amber-300 bg-amber-500/10 p-2 rounded-lg border border-amber-500/20">
+              <strong>Solução:</strong> Passe papel toalha limpo na borda interna antes de posicionar o saco na barra.
+            </p>
+          </div>
+        </div>
+
+        <!-- Falha 2 -->
+        <div class="subcard-item p-3.5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="badge-tag zinc">Falha 02</span>
+              <span class="text-rose-400 font-mono text-[11px] font-bold">Líquido na Barra</span>
+            </div>
+            <h3 class="subcard-titulo text-xs text-rose-300">Líquido da carne sobe para a barra da seladora</h3>
+            <p class="text-[11px] text-zinc-300 mb-1.5">
+              <strong>Causa:</strong> Carne com marinada líquida em excesso ou sem o descanso correto.
+            </p>
+            <p class="text-[11px] text-amber-300 bg-amber-500/10 p-2 rounded-lg border border-amber-500/20">
+              <strong>Solução:</strong> Escorra bem a carne e aplique o pré-congelamento aberto antes do vácuo.
+            </p>
+          </div>
+        </div>
+
+        <!-- Falha 3 -->
+        <div class="subcard-item p-3.5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="badge-tag zinc">Falha 03</span>
+              <span class="text-rose-400 font-mono text-[11px] font-bold">Saco Perfurado</span>
+            </div>
+            <h3 class="subcard-titulo text-xs text-rose-300">O palito perfura o saco durante a sucção de ar</h3>
+            <p class="text-[11px] text-zinc-300 mb-1.5">
+              <strong>Causa:</strong> Ponta de bambu afiada exposta pressionada sob sucção extrema.
+            </p>
+            <p class="text-[11px] text-amber-300 bg-amber-500/10 p-2 rounded-lg border border-amber-500/20">
+              <strong>Solução:</strong> Corte a pontinha afiada com tesoura culinária ou dobre fita plástica protetora nas pontas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Falha 4 -->
+        <div class="subcard-item p-3.5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="badge-tag zinc">Falha 04</span>
+              <span class="text-rose-400 font-mono text-[11px] font-bold">Carne Achatada</span>
+            </div>
+            <h3 class="subcard-titulo text-xs text-rose-300">O espetinho fica achatado ou deformado</h3>
+            <p class="text-[11px] text-zinc-300 mb-1.5">
+              <strong>Causa:</strong> Sucção de ar forte contínua em carnes macias sem pré-resfriamento.
+            </p>
+            <p class="text-[11px] text-amber-300 bg-amber-500/10 p-2 rounded-lg border border-amber-500/20">
+              <strong>Solução:</strong> Interrompa o ciclo de sucção manualmente antes de amassar e acione a selagem rápida.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 8: Seção 3 - Padrão de Rotulagem Profissional e Modelo de Etiqueta -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-1">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">3.</span> Padrão de Rotulagem Profissional e Modelo de Etiqueta
+        </h2>
+        <p class="secao-intro">
+          Todo pacote armazenado no seu freezer deve ter identificação padronizada. Produto sem etiqueta gera desconfiança no cliente, impossibilita o controle de custos e viola normas sanitárias.
+        </p>
+      </div>
+
+      <!-- Mockup Visual da Etiqueta Oficial -->
+      <div class="p-4 rounded-xl bg-charcoal-950 border border-amber-500/30 flex-1 my-2 flex flex-col justify-between">
+        <div class="flex items-center justify-between border-b border-charcoal-800 pb-2 mb-2">
+          <div class="flex items-center gap-2">
+            <span class="text-amber-400 font-bold text-sm">🥩 PROTOCOLO ESPETINHO CONGELADO</span>
+            <span class="badge-tag amber">ETIQUETA OFICIAL</span>
+          </div>
+          <span class="text-xs text-zinc-400 font-mono">CONTROLE SANITÁRIO E OPERACIONAL</span>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2.5 text-xs">
+          <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+            <span class="text-zinc-400 block text-[10.5px]">Identificação do Produto</span>
+            <strong class="text-amber-400 text-xs">Espetinho Bovino Clássico</strong>
+          </div>
+          <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+            <span class="text-zinc-400 block text-[10.5px]">Quantidade Líquida</span>
+            <strong class="text-zinc-100 text-xs">4 unidades / Aprox. 400 g</strong>
+          </div>
+          <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+            <span class="text-zinc-400 block text-[10.5px]">Número do Lote</span>
+            <strong class="text-zinc-100 text-xs">Lote 01-B (Frigorífico X)</strong>
+          </div>
+          <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+            <span class="text-zinc-400 block text-[10.5px]">Data de Fabricação</span>
+            <strong class="text-zinc-100 text-xs">[ ___ / ___ / ______ ]</strong>
+          </div>
+          <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+            <span class="text-zinc-400 block text-[10.5px]">Data Limite de Consumo</span>
+            <strong class="text-amber-400 text-xs">60 dias (-18°C)</strong>
+          </div>
+          <div class="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-800">
+            <span class="text-zinc-400 block text-[10.5px]">Instruções de Conservação</span>
+            <strong class="text-emerald-400 text-xs">Manter congelado a -18°C</strong>
+          </div>
+        </div>
+
+        <div class="mt-2 pt-2 border-t border-charcoal-800 flex items-center justify-between text-[11px] text-zinc-400">
+          <span>Ingredientes: Carne bovina, sal, especiarias naturais e óleo vegetal. Zero conservantes artificiais.</span>
+          <span class="text-amber-400 font-semibold font-mono">PESO LÍQUIDO RIGOROSO</span>
+        </div>
+      </div>
+
+      <CalloutAlerta
+        tipo="norma"
+        titulo="Diretriz Sanitária Responsável: Janela Conservadora de 30 a 60 Dias"
+        destaque="Segurança para Produção Doméstica"
+        mensagem="Não invente prazos industriais arbitrários de 6 meses a 1 ano sem laudo bromatológico. Em freezers domésticos bem regulados (-12°C a -18°C), adote uma janela segura de 30 a 60 dias para consumo ideal, incentivando um ciclo semanal constante de produção, rotação rápida e venda de produto sempre fresco."
+      />
+    </section>
+  </div>
+
+  <!-- Prancha 9: Seção 3.1 - Instruções Oficiais de Preparo e Descongelamento para o Cliente -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-1">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">3.1</span> Instruções Oficiais de Preparo e Descongelamento para o Cliente
+        </h2>
+        <p class="secao-intro">
+          Nunca recomende ao cliente descongelar espetinhos na pia ou em temperatura ambiente. A parte externa atinge a zona de contaminação bacteriana antes do centro descongelar. Oriente apenas os dois métodos técnicos:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3.5 flex-1 my-2">
+        <!-- Método 1 -->
+        <div class="subcard-item p-4 flex flex-col justify-between border-amber-500/30 bg-amber-950/10">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag amber">Método 01 — Recomendado</span>
+              <span class="text-amber-400 font-bold text-sm">🔥 Churrasqueira</span>
+            </div>
+            <h3 class="subcard-titulo text-sm text-zinc-100">Direto do Freezer para a Grelha</h3>
+            <p class="subcard-texto text-xs mb-3 text-zinc-300">
+              Como os espetos vêm a vácuo sem blocos de gelo ou água residual, eles vão direto para a grelha quente.
+            </p>
+            <ul class="lista-topicos text-[11px] gap-2 text-zinc-300">
+              <li>
+                <span class="marcador-amber">•</span>
+                <span><strong>Parte Alta (Brasa Média):</strong> Deixe 6 a 8 minutos na parte superior para assar o miolo suavemente sem queimar.</span>
+              </li>
+              <li>
+                <span class="marcador-amber">•</span>
+                <span><strong>Parte Baixa (Brasa Forte):</strong> Desça o espeto apenas nos 2 minutos finais para selar, tostar e atingir a reação de Maillard perfeita.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-2 pt-2 border-t border-amber-900/40 text-[11px] text-amber-300 font-semibold">
+            Zero sujeira, zero perda de sucos e textura idêntica à carne fresca.
+          </div>
+        </div>
+
+        <!-- Método 2 -->
+        <div class="subcard-item p-4 flex flex-col justify-between border-emerald-500/30 bg-emerald-950/10">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-tag emerald">Método 02 — Chapa / Frigideira</span>
+              <span class="text-emerald-400 font-bold text-sm">🍳 Fogão</span>
+            </div>
+            <h3 class="subcard-titulo text-sm text-zinc-100">Descongelamento sob Refrigeração</h3>
+            <p class="subcard-texto text-xs mb-3 text-zinc-300">
+              Indicado caso o cliente queira assar em chapa, frigideira de ferro ou grill elétrico dentro de casa.
+            </p>
+            <ul class="lista-topicos text-[11px] gap-2 text-zinc-300">
+              <li>
+                <span class="marcador-amber text-emerald-400">•</span>
+                <span><strong>Geladeira (0°C a 5°C):</strong> Retire do freezer e transfira o pacote lacrado para a gaveta inferior da geladeira <strong>4 a 6 horas antes</strong>.</span>
+              </li>
+              <li>
+                <span class="marcador-amber text-emerald-400">•</span>
+                <span><strong>Retenção de Sucos:</strong> A carne amolece lentamente sem romper as fibras e sem acumular água no fundo da embalagem.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-2 pt-2 border-t border-emerald-900/40 text-[11px] text-emerald-300 font-semibold">
+            Oriente sempre no script de WhatsApp de pós-venda ao cliente.
+          </div>
+        </div>
+      </div>
+
+      <CalloutAlerta
+        tipo="perigo"
+        titulo="Zona de Perigo Térmico Sanitário: Entre 5°C e 60°C"
+        destaque="Proibido Descongelar sobre a Pia"
+        mensagem="Em temperatura ambiente, bactérias como Salmonella e Staphylococcus duplicam a cada 20 minutos na superfície úmida da carne. Eduque seu cliente: descongelar na pia arruina a textura e traz risco alimentar grave."
+      />
+    </section>
+  </div>
+
+  <!-- Prancha 10: Seção 4 - Organização do Freezer e o Método PEPS -->
+  <div class="prancha">
+    <section class="card-prancha">
+      <div class="secao-header mb-1">
+        <h2 class="secao-titulo">
+          <span class="text-amber-500">4.</span> Organização do Freezer e o Método PEPS
+        </h2>
+        <p class="secao-intro">
+          Trabalhar com estoque congelado exige ordem física rigorosa para nunca deixar lotes antigos esquecidos no fundo do freezer:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 flex-1 my-2">
+        <!-- Pilar 1: PEPS -->
+        <div class="subcard-item p-3.5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="badge-tag amber">Logística</span>
+              <span class="text-xs text-amber-400 font-mono font-bold">PEPS</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">Primeiro que Entra, Primeiro que Sai</h3>
+            <p class="subcard-texto text-[11px] mb-2">
+              Todo lote novo produzido é guardado <strong>atrás ou embaixo</strong> dos anteriores.
+            </p>
+            <p class="text-[11px] text-zinc-400 leading-relaxed">
+              O produto que entrou primeiro no congelador é obrigatoriamente o primeiro a ser despachado para entrega.
+            </p>
+          </div>
+          <div class="mt-2 pt-2 border-t border-charcoal-800 text-[10.5px] text-amber-300 font-mono">
+            Evita perdas por vencimento e mantém estoque sempre novo.
+          </div>
+        </div>
+
+        <!-- Pilar 2: Setorização -->
+        <div class="subcard-item p-3.5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="badge-tag amber">Setorização</span>
+              <span class="text-xs text-zinc-400 font-mono">Caixas Perfuradas</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">Caixas Organizadoras por Sabor</h3>
+            <p class="subcard-texto text-[11px] mb-2">
+              Divida o freezer com caixas plásticas vazadas que facilitam a ventilação de ar frio:
+            </p>
+            <ul class="lista-topicos text-[11px] gap-1 text-zinc-300">
+              <li><span class="marcador-amber">•</span> <strong>Caixa 1:</strong> Bovino Tradicional e Nobres.</li>
+              <li><span class="marcador-amber">•</span> <strong>Caixa 2:</strong> Frango e Medalhões c/ Bacon.</li>
+              <li><span class="marcador-amber">•</span> <strong>Caixa 3:</strong> Linguiças e Suínos temperados.</li>
+            </ul>
+          </div>
+          <div class="mt-2 pt-2 border-t border-charcoal-800 text-[10.5px] text-zinc-400 font-mono">
+            Agilidade na montagem do pedido de delivery sem procurar.
+          </div>
+        </div>
+
+        <!-- Pilar 3: Cadeia de Frio -->
+        <div class="subcard-item p-3.5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="badge-tag emerald">Cadeia de Frio</span>
+              <span class="text-xs text-emerald-400 font-mono font-bold">-18°C Estável</span>
+            </div>
+            <h3 class="subcard-titulo text-xs">Blindagem Térmica da Tampa</h3>
+            <p class="subcard-texto text-[11px] mb-2">
+              Abra a tampa do congelador pelo menor tempo possível na retirada dos pedidos.
+            </p>
+            <p class="text-[11px] text-zinc-400 leading-relaxed">
+              Oscilações térmicas frequentes derretem a camada superficial da carne, criando gotas que recongelam em cristais de gelo brancos indesejados.
+            </p>
+          </div>
+          <div class="mt-2 pt-2 border-t border-charcoal-800 text-[10.5px] text-emerald-300 font-mono">
+            Freezer fechado = economia de luz e preservação do vácuo.
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-xl bg-charcoal-950 border border-charcoal-800 flex items-center justify-between">
+        <span class="text-xs text-zinc-300">
+          <strong>Auditoria Visual Diária:</strong> Verifique semanalmente se há algum pacote com perda de vácuo ou etiqueta danificada. Dê saída imediata nesses itens para degustação ou consumo próprio.
+        </span>
+        <span class="badge-tag amber">Auditoria Semanal</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- Prancha 11: Seção 5 - Modelo de Planilha de Controle de Estoque (Tabela Técnica) -->
+  <div class="prancha">
+    <div class="card-prancha flex flex-col justify-between p-6">
+      <TabelaTecnica
+        titulo="Ficha Operacional de Controle de Estoque do Freezer"
+        descricao="Fixe esta planilha na porta do equipamento para registrar cada lote de entrada e cada pacote vendido no delivery:"
+        colunas={["Parâmetro de Controle", "Descrição Operacional", "Registro de Bancada"]}
+        linhas={[
+          ["Data do Registro", "Dia, mês e ano da movimentação no freezer", "[ ___ / ___ / ______ ]"],
+          ["Produto & Sabor", "Identificação comercial do espetinho", "Espetinho Bovino Tradicional"],
+          ["Código do Lote", "Identificador do lote de produção vinculado", "Lote 01-B"],
+          ["Pacotes Entrados (Produção)", "Quantidade de pacotes recém-congelados adicionados", "+ [ _____ ] pacotes"],
+          ["Pacotes Saídos (Vendas)", "Quantidade de pacotes despachados ou entregues", "- [ _____ ] pacotes"],
+          ["Saldo Atual no Freezer", "Estoque físico real disponível para venda imediata", "[ _____ ] pacotes disponíveis"],
+          ["Estoque Mínimo de Segurança", "Gatilho para iniciar novo ciclo de compras e produção", "15 a 20 pacotes"],
+          ["Data da Próxima Produção", "Agendamento da próxima fornada antes do desabastecimento", "[ ___ / ___ / ______ ]"]
+        ]}
+        destaqueIndice={5}
+        rodape="Dica de Gestão: O estoque mínimo de segurança garante que você nunca precise recusar um pedido grande de última hora para o fim de semana."
+      />
     </div>
-  </section>
+  </div>
 
-  <!-- 5. Modelo de Planilha de Controle de Estoque -->
-  <section class="rounded-2xl border border-charcoal-800 bg-charcoal-900/60 p-6 md:p-8 space-y-4">
-    <h2 class="font-display text-xl md:text-2xl font-bold text-zinc-100 flex items-center gap-2.5">
-      <span class="text-amber-500">5.</span> Modelo de Planilha de Controle de Estoque
-    </h2>
-    <p class="text-zinc-300 leading-relaxed">
-      Mantenha uma folha ou ficha de controle afixada próxima ao freezer para atualizar o saldo a cada pacote produzido ou retirado:
-    </p>
-
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Data do Registro</span>
-        <span class="text-zinc-200 font-bold">[ ___ / ___ / ______ ]</span>
-      </div>
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Produto / Sabor</span>
-        <span class="text-amber-400 font-bold">Ex: Espetinho Bovino Clássico</span>
-      </div>
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Número do Lote</span>
-        <span class="text-zinc-200 font-bold">Ex: Lote 01-B</span>
-      </div>
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Pacotes Entrados (Produção)</span>
-        <span class="text-emerald-400 font-bold">+ [ _____ ] pacotes</span>
-      </div>
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Pacotes Saídos (Vendas)</span>
-        <span class="text-rose-400 font-bold">- [ _____ ] pacotes</span>
-      </div>
-      <div class="p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Saldo Atual no Freezer</span>
-        <span class="text-amber-400 font-bold">[ _____ ] pacotes disponíveis</span>
-      </div>
-      <div class="col-span-2 sm:col-span-2 md:col-span-3 p-3.5 rounded-lg bg-charcoal-950 border border-charcoal-800">
-        <span class="text-zinc-400 block font-mono">Data da Próxima Produção Necessária</span>
-        <span class="text-zinc-200 font-bold">[ ___ / ___ / ______ ]</span>
-      </div>
+  <!-- Prancha 12: Seção 6 - Checklist Prático do Protocolo 4 -->
+  <div class="prancha">
+    <div class="card-prancha flex flex-col justify-between p-6">
+      <ChecklistOperacional
+        titulo="Checklist Prático de Execução do Protocolo 4"
+        subtitulo="Auditoria técnica antes de liberar os lotes para estocagem definitiva e venda:"
+        itens={[
+          { texto: "Espetinhos dispostos em assadeiras de pré-congelamento sem encostar uns nos outros.", obrigatorio: true, detalhe: "Técnica antiaderente que impede a fusão das fibras e dos palitos." },
+          { texto: "Tempo mínimo de 2 a 4 horas de congelamento rápido respeitado até superfície 'pedrada'.", obrigatorio: true, detalhe: "Evita deformação mecânica sob a sucção da embaladora a vácuo." },
+          { texto: "Pacotes montados em frações comerciais padronizadas (1 a 4 unidades por saco).", obrigatorio: true, detalhe: "Facilita o uso doméstico fracionado e a montagem de kits de 20 un." },
+          { texto: "Sacos plásticos com espessura de 0,08 mm a 0,10 mm utilizados e excesso de ar removido.", obrigatorio: true, detalhe: "Barreira protetora total contra queimaduras de frio e oxidação." },
+          { texto: "Etiquetas preenchidas com nome, lote, data de produção e prazo responsável de 30 a 60 dias.", obrigatorio: true, detalhe: "Rastreabilidade sanitária e credibilidade profissional imediata." },
+          { texto: "Lotes organizados no freezer respeitando rigorosamente o método PEPS e setorização por caixas.", obrigatorio: true, detalhe: "Primeiro que entra, primeiro que sai: giro contínuo e fresco." },
+          { texto: "Quantidade final lançada na ficha de controle de estoque físico.", obrigatorio: true, detalhe: "Conferência do saldo disponível para alimentar o cardápio no WhatsApp." }
+        ]}
+      />
     </div>
-  </section>
-
-  <!-- 6. Checklist Prático do Protocolo 4 (Integral) -->
-  <ChecklistOperacional
-    titulo="Checklist Prático de Execução do Protocolo 4"
-    subtitulo="Auditoria do lote antes de transferir para o freezer de estocagem comercial"
-    itens={[
-      { texto: "Espetinhos colocados em assadeiras de pré-congelamento sem encostar uns nos outros.", obrigatorio: true, detalhe: "Técnica antiaderente que impede a fusão das fibras." },
-      { texto: "Tempo mínimo de 2 a 4 horas de pré-congelamento respeitado até endurecimento total da superfície.", obrigatorio: true, detalhe: "Garante estado 'pedrada' antes da embalagem." },
-      { texto: "Pacotes montados em frações comerciais padronizadas (5 ou 10 unidades).", obrigatorio: true, detalhe: "Facilita a montagem de kits e o uso doméstico fracionado." },
-      { texto: "Sacos plásticos com espessura adequada utilizados e excesso de ar removido antes do fechamento.", obrigatorio: true, detalhe: "Proteção contra a queimadura de frio e oxidação." },
-      { texto: "Etiquetas preenchidas com nome, lote, data de produção e prazo responsável de consumo.", obrigatorio: true, detalhe: "Rastreabilidade e segurança para o consumidor." },
-      { texto: "Lotes organizados no freezer respeitando rigorosamente o método PEPS.", obrigatorio: true, detalhe: "Primeiro que entra, primeiro que sai: giro de estoque seguro." },
-      { texto: "Quantidade final lançada na ficha de controle de estoque.", obrigatorio: true, detalhe: "Conferência em tempo real para novos ciclos de compra." }
-    ]}
-  />
+  </div>
 </EbookLayout>
