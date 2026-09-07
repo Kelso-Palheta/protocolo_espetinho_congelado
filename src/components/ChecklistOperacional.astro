@@ -10,13 +10,15 @@ interface Props {
   subtitulo?: string;
   itens?: (string | ItemChecklist)[];
   id?: string;
+  duasColunas?: boolean;
 }
 
 const {
   titulo = "Checklist Operacional de Produção",
   subtitulo = "Marque cada etapa conforme a execução para garantir conformidade técnica",
   itens = [],
-  id = `checklist-${Math.random().toString(36).substring(2, 9)}`
+  id = `checklist-${Math.random().toString(36).substring(2, 9)}`,
+  duasColunas = itens.length > 6
 } = Astro.props;
 
 const normalizados: ItemChecklist[] = itens.map((item) =>
@@ -47,7 +49,7 @@ const normalizados: ItemChecklist[] = itens.map((item) =>
   </div>
 
   <!-- Checklist Items -->
-  <ul class="space-y-3 checklist-items">
+  <ul class={`checklist-items ${duasColunas ? 'grid grid-cols-1 md:grid-cols-2 gap-2.5 space-y-0' : 'space-y-3'}`}>
     {normalizados.map((item, index) => (
       <li class="group flex items-start gap-3.5 rounded-xl border border-charcoal-800/80 bg-charcoal-800/40 p-3.5 transition-all duration-200 hover:border-amber-500/40 hover:bg-charcoal-800/70 cursor-pointer">
         <label class="relative flex items-center justify-center cursor-pointer mt-0.5">
